@@ -1,0 +1,40 @@
+<div style="display: flex; flex-direction: column; max-width: 1300px; max-height: 800px; margin-top: 20px; margin-left: 10px;">
+  <div class="igx-grid__tr-pivot" style="display: flex; justify-content: space-between; min-height: 40px; border: solid 1px color(srgb 0.74 0.74 0.74 / 0.38); background: var(--igx-grid-header-background, hsl(from var(--ig-surface-500) h s l/1));">
+    <span class="igx-grid-toolbar__title">Quick Action</span>
+    <div>
+      <button igxButton="outlined" style="margin-right: 10px;" [igxToggleAction]="viewDropdown"><igx-icon>visibility</igx-icon>Change View<igx-icon [family]="'default'" [name]="'arrow_drop_down'"></igx-icon></button>
+      <button igxButton="outlined" [igxToggleAction]="exportDropdown"><igx-icon>download</igx-icon>Export<igx-icon [family]="'default'" [name]="'arrow_drop_down'" ></igx-icon></button>
+      <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
+        <igx-drop-down-item [id]="'brands'"><span>Brands</span></igx-drop-down-item>
+        <igx-drop-down-item [id]="'stores'"><span>Stores: Bulgaria</span></igx-drop-down-item>
+      </igx-drop-down>
+      <igx-drop-down #exportDropdown (selectionChanging)="onExportSelection($event)">
+        <igx-drop-down-item [id]="'excel'"><span>Export to Excel</span></igx-drop-down-item>
+        <igx-drop-down-item [id]="'csv'"><span>Export to CSV</span></igx-drop-down-item>
+    </igx-drop-down>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: row;">
+    <div style="width: 100%; border-left: solid 1px color(srgb 0.74 0.74 0.74 / 0.38);">
+      <igx-pivot-grid style="box-shadow: initial;"
+          #grid1
+          [data]="data"
+          [height]="'100%'"
+          [width]="'100%'"
+          [superCompactMode]="true"
+          [defaultExpandState]="true"
+          [rowSelection]="'single'"
+          [pivotConfiguration]="pivotConfigBrands"
+          [pivotUI]="pivotUISettings"
+          (columnInit)="onColumnInit($event)"
+      >
+      </igx-pivot-grid>
+    </div>
+    <div style="min-width: 180px;">
+      <igx-pivot-data-selector style="border: solid 1px color(srgb 0.74 0.74 0.74 / 0.38); border-top: none;" [grid]="grid1"></igx-pivot-data-selector>
+    </div>
+    <ng-template igxHeader #countryColumn let-col>
+      <div><img src="{{flagsData[col.field]}}" style="height: 15px; vertical-align: middle; margin: 5px;" /><span style="vertical-align: middle;">{{col.field}}</span></div>
+    </ng-template>
+  </div>
+</div>
