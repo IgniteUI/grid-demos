@@ -5,7 +5,7 @@
       <button igxButton="outlined" style="margin-right: 10px;" [igxToggleAction]="viewDropdown"><igx-icon>visibility</igx-icon>Change View<igx-icon [family]="'default'" [name]="'arrow_drop_down'"></igx-icon></button>
       <button igxButton="outlined" [igxToggleAction]="exportDropdown"><igx-icon>download</igx-icon>Export<igx-icon [family]="'default'" [name]="'arrow_drop_down'" ></igx-icon></button>
       <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
-        <igx-drop-down-item [id]="'brands'"><span>Brands</span></igx-drop-down-item>
+        <igx-drop-down-item [id]="'brands'"><span>Brands: HM</span></igx-drop-down-item>
         <igx-drop-down-item [id]="'stores'"><span>Stores: Bulgaria</span></igx-drop-down-item>
       </igx-drop-down>
       <igx-drop-down #exportDropdown (selectionChanging)="onExportSelection($event)">
@@ -18,7 +18,7 @@
     <div class="pivotContainer">
       <igx-pivot-grid style="box-shadow: initial;"
           #grid1
-          [data]="data"
+          [data]="data100"
           [height]="'100%'"
           [width]="'100%'"
           [superCompactMode]="true"

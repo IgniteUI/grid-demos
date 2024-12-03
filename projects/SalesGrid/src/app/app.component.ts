@@ -28,7 +28,9 @@ import {
   FilteringLogic
 } from 'igniteui-angular';
 import FLAGS from '../assets/flags.json'
-import SALES_DATA from '../assets/SalesData.json';
+import SALES_DATA_10 from '../assets/SalesData10k.json';
+import SALES_DATA_50 from '../assets/SalesData50k.json';
+import SALES_DATA_100 from '../assets/SalesData100k.json';
 
 @Component({
   selector: 'app-root',
@@ -74,7 +76,7 @@ export class AppComponent {
         enabled: true
       },
       {
-        fullDate: false,
+        fullDate: true,
         quarters: true,
         months: false,
       })
@@ -89,10 +91,7 @@ export class AppComponent {
             aggregatorName: 'SUM',
             label: 'Sum'
         },
-        dataType: 'currency',
-        formatter: (value) => {
-            return value ? '$' + value : undefined;
-        }
+        dataType: 'currency'
       },
       {
         enabled: true,
@@ -105,10 +104,7 @@ export class AppComponent {
             },
             label: 'Sum'
         },
-        dataType: 'currency',
-        formatter: (value) => {
-            return value ? '$' + value : undefined;
-        }
+        dataType: 'currency'
       }
     ]
   };
@@ -116,7 +112,7 @@ export class AppComponent {
     columns: [
       new IgxPivotDateDimension({
         memberName: 'Date',
-        displayName: 'Data',
+        displayName: 'All Periods',
         enabled: true
       },
       {
@@ -149,10 +145,7 @@ export class AppComponent {
             label: 'Sum'
         },
         enabled: true,
-        dataType: 'currency',
-        formatter: (value) => {
-            return value ? '$' + value : undefined;
-        }
+        dataType: 'currency'
       },
       {
         member: 'Cost',
@@ -163,10 +156,7 @@ export class AppComponent {
             label: 'Sum'
         },
         enabled: true,
-        dataType: 'currency',
-        formatter: (value) => {
-            return value ? '$' + value : undefined;
-        }
+        dataType: 'currency'
       }
     ],
     filters: [
@@ -180,7 +170,9 @@ export class AppComponent {
   };
 
   public flagsData = FLAGS;
-  public data = SALES_DATA;
+  public data10: any = SALES_DATA_10;
+  public data50: any = SALES_DATA_50;
+  public data100: any = SALES_DATA_100;
 
   constructor(public iconService: IgxIconService, public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
     var tree = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
