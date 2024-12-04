@@ -57,4 +57,14 @@ igx-pivot-data-selector {
     border-top: none;
     min-height: 100%;
     max-height: 100%;
+
+    ::ng-deep {
+        .igx-list__item-content {
+            padding: 0 !important;
+            
+            span {
+                margin-inline-start: initial;
+            }
+        }
+    }
 }
