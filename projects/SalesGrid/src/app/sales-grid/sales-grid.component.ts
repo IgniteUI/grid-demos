@@ -17,11 +17,9 @@ import {
   IgxBaseExporter,
   IgxExporterOptionsBase,
   CsvFileTypes,
-  IPivotUISettings,
   IgxPivotDateDimension,
   IgxColumnComponent,
   IgxCellHeaderTemplateDirective,
-  IgxIconService,
   IgxStringFilteringOperand,
   FilteringExpressionsTree,
   FilteringLogic
@@ -46,7 +44,6 @@ export class SalesGridComponent {
   public bulgariaCountryFilter = new FilteringExpressionsTree(FilteringLogic.And);
 
   public fileName = 'SalesGridApp';
-  public pivotUISettings: IPivotUISettings = {};
   public pivotConfigBrands: IPivotConfiguration = {
     columns: [
       {
@@ -169,9 +166,9 @@ export class SalesGridComponent {
   public flagsData = FLAGS;
   public data100: any = SALES_DATA_100;
 
-  constructor(public iconService: IgxIconService, public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
-    var tree = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
-    tree.filteringOperands = [
+  constructor(public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
+    var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
+    multipleFilters.filteringOperands = [
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
         fieldName: 'Brand',
@@ -183,7 +180,7 @@ export class SalesGridComponent {
         searchVal: 'HM Home'
       },
     ];
-    this.brandFilter.filteringOperands = [tree];
+    this.brandFilter.filteringOperands = [multipleFilters];
     this.bulgariaCountryFilter.filteringOperands = [
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
