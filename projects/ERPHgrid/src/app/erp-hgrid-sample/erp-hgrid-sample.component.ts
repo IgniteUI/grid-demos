@@ -32,34 +32,33 @@ import { OrderStatus, TemplateDataModel } from '../data/dataModels';
 defineComponents(IgcRatingComponent);
 
 @Component({
-  selector: 'app-erp-hgrid-sample',
-  standalone: true,
-  imports: [
-    IgxHierarchicalGridComponent,
-    IgxColumnComponent,
-    IgxCellTemplateDirective,
-    IgxRowIslandComponent,
-    IgxTooltipTargetDirective,
-    IgxTooltipDirective,
-    IgxIconComponent,
-    IgxCollapsibleIndicatorTemplateDirective,
-    IgxColumnGroupComponent,
-    IgxGridToolbarComponent,
-    IgxGridToolbarActionsComponent,
-    IgxGridToolbarHidingComponent,
-    IgxGridToolbarPinningComponent,
-    IgxGridToolbarExporterComponent,
-    IgxGridToolbarAdvancedFilteringComponent,
-    IgxGridToolbarTitleComponent,
-    IgxIconModule,
-    IgxBadgeModule,
-    IgxBadgeComponent,
-    IgxAvatarComponent,
-    NgIf
-],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './erp-hgrid-sample.component.html',
-  styleUrl: './erp-hgrid-sample.component.scss'
+    selector: 'app-erp-hgrid-sample',
+    imports: [
+        IgxHierarchicalGridComponent,
+        IgxColumnComponent,
+        IgxCellTemplateDirective,
+        IgxRowIslandComponent,
+        IgxTooltipTargetDirective,
+        IgxTooltipDirective,
+        IgxIconComponent,
+        IgxCollapsibleIndicatorTemplateDirective,
+        IgxColumnGroupComponent,
+        IgxGridToolbarComponent,
+        IgxGridToolbarActionsComponent,
+        IgxGridToolbarHidingComponent,
+        IgxGridToolbarPinningComponent,
+        IgxGridToolbarExporterComponent,
+        IgxGridToolbarAdvancedFilteringComponent,
+        IgxGridToolbarTitleComponent,
+        IgxIconModule,
+        IgxBadgeModule,
+        IgxBadgeComponent,
+        IgxAvatarComponent,
+        NgIf
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    templateUrl: './erp-hgrid-sample.component.html',
+    styleUrl: './erp-hgrid-sample.component.scss'
 })
 export class ErpHgridSampleComponent {
   public hgridData: TemplateDataModel[];
