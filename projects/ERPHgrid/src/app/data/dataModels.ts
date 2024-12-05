@@ -17,7 +17,7 @@ interface OrderDetails {
     country: string;
     countryFlag: CountryFlag;
     city: string;
-    zipCode: number | string;
+    zipCode: number;
     streetName: string;
     streetNumber: string;
     customer: string;
@@ -31,6 +31,11 @@ interface Order {
     orderInformation: OrderDetails;
 }
 
+export interface DataPoint {
+  label: number | string;
+  value: number | string;
+}
+
 export interface TemplateDataModel {
     sku: string;
     imageUrl: string;
@@ -40,6 +45,7 @@ export interface TemplateDataModel {
     unitsSold: number;
     grossPrice: number;
     netPrice: number;
+    salesTrendData:DataPoint[];
     orders: Order[];
 }
 

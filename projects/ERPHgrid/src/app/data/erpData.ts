@@ -1,4 +1,5 @@
 import { CountryFlag, OrderStatus, TemplateDataModel } from "./dataModels";
+import { TREND_DATA } from "./productOrdersTrendsData";
 
 export const InventoryList: TemplateDataModel[] = [{
     sku: "SKU1001",
@@ -9,6 +10,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 20,
     grossPrice: 49.99,
     netPrice: 39.99,
+    salesTrendData: TREND_DATA[0],
     orders: [
       {
         orderId: 1234,
@@ -152,6 +154,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 40,
     grossPrice: 59.99,
     netPrice: 47.99,
+    salesTrendData: TREND_DATA[1],
     orders: [{
         orderId: 2,
         status: OrderStatus.PACKED,
@@ -227,6 +230,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 60,
     grossPrice: 69.99,
     netPrice: 55.99,
+    salesTrendData: TREND_DATA[2],
     orders: [{
         orderId: 3,
         status: OrderStatus.PACKED,
@@ -346,6 +350,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 80,
     grossPrice: 79.99,
     netPrice: 63.99,
+    salesTrendData: TREND_DATA[3],
     orders: [{
         orderId: 4,
         status: OrderStatus.DELIVERED,
@@ -465,6 +470,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 100,
     grossPrice: 89.99,
     netPrice: 71.99,
+    salesTrendData: TREND_DATA[4],
     orders: [{
         orderId: 5,
         status: OrderStatus.PACKED,
@@ -540,6 +546,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 120,
     grossPrice: 99.99,
     netPrice: 79.99,
+    salesTrendData: TREND_DATA[5],
     orders: [{
         orderId: 6,
         status: OrderStatus.PACKED,
@@ -571,6 +578,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 140,
     grossPrice: 109.99,
     netPrice: 87.99,
+    salesTrendData: TREND_DATA[6],
     orders: [{
         orderId: 7,
         status: OrderStatus.DELIVERED,
@@ -627,7 +635,7 @@ export const InventoryList: TemplateDataModel[] = [{
           country: "Canada",
           countryFlag: CountryFlag.CANADA,
           city: "Toronto",
-          zipCode: "M4B 1B3",
+          zipCode: 69923,
           streetName: "Queen Street West",
           streetNumber: "78A",
           customer: "Sophia Wilson",
@@ -671,7 +679,7 @@ export const InventoryList: TemplateDataModel[] = [{
           country: "United Kingdom",
           countryFlag: CountryFlag.UK,
           city: "London",
-          zipCode: "WC2N 5DU",
+          zipCode: 5372588,
           streetName: "Piccadilly",
           streetNumber: "22D",
           customer: "Olivia Brown",
@@ -690,6 +698,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 160,
     grossPrice: 119.99,
     netPrice: 95.99,
+    salesTrendData: TREND_DATA[7],
     orders: [{
         orderId: 8,
         status: OrderStatus.PACKED,
@@ -790,7 +799,7 @@ export const InventoryList: TemplateDataModel[] = [{
         country: "Brazil",
         countryFlag: CountryFlag.BRAZIL,
         city: "São Paulo",
-        zipCode: "01000-000",
+        zipCode: 1000000,
         streetName: "Paulista Avenue",
         streetNumber: "333F",
         customer: "Carlos Oliveira",
@@ -853,6 +862,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 180,
     grossPrice: 129.99,
     netPrice: 103.99,
+    salesTrendData: TREND_DATA[8],
     orders: [{
         orderId: 9,
         status: OrderStatus.PACKED,
@@ -884,6 +894,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 200,
     grossPrice: 139.99,
     netPrice: 111.99,
+    salesTrendData: TREND_DATA[9],
     orders: [{
         orderId: 10,
         status: OrderStatus.DELIVERED,
@@ -915,6 +926,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 220,
     grossPrice: 149.99,
     netPrice: 119.99,
+    salesTrendData: TREND_DATA[10],
     orders: [{
         orderId: 11,
         status: OrderStatus.PACKED,
@@ -946,6 +958,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 240,
     grossPrice: 159.99,
     netPrice: 127.99,
+    salesTrendData: TREND_DATA[11],
     orders: [{
         orderId: 12,
         status: OrderStatus.PACKED,
@@ -977,6 +990,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 260,
     grossPrice: 169.99,
     netPrice: 135.99,
+    salesTrendData: TREND_DATA[12],
     orders: [{
         orderId: 13,
         status: OrderStatus.DELIVERED,
@@ -1008,6 +1022,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 280,
     grossPrice: 179.99,
     netPrice: 143.99,
+    salesTrendData: TREND_DATA[13],
     orders: [{
         orderId: 14,
         status: OrderStatus.PACKED,
@@ -1039,6 +1054,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 300,
     grossPrice: 189.99,
     netPrice: 151.99,
+    salesTrendData: TREND_DATA[14],
     orders: [{
         orderId: 15,
         status: OrderStatus.PACKED,
@@ -1061,7 +1077,8 @@ export const InventoryList: TemplateDataModel[] = [{
             }
         }
     }]
-}, {
+},
+{
     sku: "SKU1016",
     imageUrl: "assets/images/products/EPSON_printer-1516580_1920-2.jpg",
     productName: "Epson_Printer 1516580_1920 2",
@@ -1070,6 +1087,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 320,
     grossPrice: 199.99,
     netPrice: 159.99,
+    salesTrendData: TREND_DATA[9],
     orders: [{
         orderId: 16,
         status: OrderStatus.DELIVERED,
@@ -1101,6 +1119,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 340,
     grossPrice: 209.99,
     netPrice: 167.99,
+    salesTrendData: TREND_DATA[1],
     orders: [{
         orderId: 17,
         status: OrderStatus.PACKED,
@@ -1132,6 +1151,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 360,
     grossPrice: 219.99,
     netPrice: 175.99,
+    salesTrendData: TREND_DATA[10],
     orders: [{
         orderId: 18,
         status: OrderStatus.PACKED,
@@ -1163,6 +1183,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 380,
     grossPrice: 229.99,
     netPrice: 183.99,
+    salesTrendData: TREND_DATA[7],
     orders: [{
         orderId: 19,
         status: OrderStatus.DELIVERED,
@@ -1194,6 +1215,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 400,
     grossPrice: 239.99,
     netPrice: 191.99,
+    salesTrendData: TREND_DATA[3],
     orders: [{
         orderId: 20,
         status: OrderStatus.PACKED,
@@ -1225,6 +1247,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 420,
     grossPrice: 249.99,
     netPrice: 199.99,
+    salesTrendData: TREND_DATA[2],
     orders: [{
         orderId: 21,
         status: OrderStatus.PACKED,
@@ -1256,6 +1279,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 440,
     grossPrice: 259.99,
     netPrice: 207.99,
+    salesTrendData: TREND_DATA[2],
     orders: [{
         orderId: 22,
         status: OrderStatus.DELIVERED,
@@ -1287,6 +1311,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 460,
     grossPrice: 269.99,
     netPrice: 215.99,
+    salesTrendData: TREND_DATA[0],
     orders: [{
         orderId: 23,
         status: OrderStatus.PACKED,
@@ -1318,6 +1343,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 480,
     grossPrice: 279.99,
     netPrice: 223.99,
+    salesTrendData: TREND_DATA[14],
     orders: [{
         orderId: 24,
         status: OrderStatus.PACKED,
@@ -1349,6 +1375,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 500,
     grossPrice: 289.99,
     netPrice: 231.99,
+    salesTrendData: TREND_DATA[1],
     orders: [{
         orderId: 25,
         status: OrderStatus.DELIVERED,
@@ -1380,6 +1407,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 520,
     grossPrice: 299.99,
     netPrice: 239.99,
+    salesTrendData: TREND_DATA[10],
     orders: [{
         orderId: 26,
         status: OrderStatus.PACKED,
@@ -1411,6 +1439,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 540,
     grossPrice: 309.99,
     netPrice: 247.99,
+    salesTrendData: TREND_DATA[4],
     orders: [{
         orderId: 27,
         status: OrderStatus.PACKED,
@@ -1442,6 +1471,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 560,
     grossPrice: 319.99,
     netPrice: 255.99,
+    salesTrendData: TREND_DATA[0],
     orders: [{
         orderId: 28,
         status: OrderStatus.DELIVERED,
@@ -1473,6 +1503,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 580,
     grossPrice: 329.99,
     netPrice: 263.99,
+    salesTrendData: TREND_DATA[11],
     orders: [{
         orderId: 29,
         status: OrderStatus.PACKED,
@@ -1504,6 +1535,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 600,
     grossPrice: 339.99,
     netPrice: 271.99,
+    salesTrendData: TREND_DATA[13],
     orders: [{
         orderId: 30,
         status: OrderStatus.PACKED,
@@ -1535,6 +1567,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 620,
     grossPrice: 349.99,
     netPrice: 279.99,
+    salesTrendData: TREND_DATA[2],
     orders: [{
         orderId: 31,
         status: OrderStatus.DELIVERED,
@@ -1566,6 +1599,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 640,
     grossPrice: 359.99,
     netPrice: 287.99,
+    salesTrendData: TREND_DATA[6],
     orders: [{
         orderId: 32,
         status: OrderStatus.PACKED,
@@ -1597,6 +1631,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 660,
     grossPrice: 369.99,
     netPrice: 295.99,
+    salesTrendData: TREND_DATA[14],
     orders: [{
         orderId: 33,
         status: OrderStatus.PACKED,
@@ -1628,6 +1663,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 680,
     grossPrice: 379.99,
     netPrice: 303.99,
+    salesTrendData: TREND_DATA[1],
     orders: [{
         orderId: 34,
         status: OrderStatus.DELIVERED,
@@ -1659,6 +1695,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 700,
     grossPrice: 389.99,
     netPrice: 311.99,
+    salesTrendData: TREND_DATA[14],
     orders: [{
         orderId: 35,
         status: OrderStatus.PACKED,
@@ -1690,6 +1727,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 720,
     grossPrice: 399.99,
     netPrice: 319.99,
+    salesTrendData: TREND_DATA[9],
     orders: [{
         orderId: 36,
         status: OrderStatus.PACKED,
@@ -1721,6 +1759,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 740,
     grossPrice: 409.99,
     netPrice: 327.99,
+    salesTrendData: TREND_DATA[5],
     orders: [{
         orderId: 37,
         status: OrderStatus.DELIVERED,
@@ -1752,6 +1791,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 760,
     grossPrice: 419.99,
     netPrice: 335.99,
+    salesTrendData: TREND_DATA[2],
     orders: [{
         orderId: 38,
         status: OrderStatus.PACKED,
@@ -1783,6 +1823,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 780,
     grossPrice: 429.99,
     netPrice: 343.99,
+    salesTrendData: TREND_DATA[10],
     orders: [{
         orderId: 39,
         status: OrderStatus.PACKED,
@@ -1814,6 +1855,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 800,
     grossPrice: 439.99,
     netPrice: 351.99,
+    salesTrendData: TREND_DATA[8],
     orders: [{
         orderId: 40,
         status: OrderStatus.DELIVERED,
@@ -1845,6 +1887,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 820,
     grossPrice: 449.99,
     netPrice: 359.99,
+    salesTrendData: TREND_DATA[12],
     orders: [{
         orderId: 41,
         status: OrderStatus.PACKED,
@@ -1876,6 +1919,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 840,
     grossPrice: 459.99,
     netPrice: 367.99,
+    salesTrendData: TREND_DATA[4],
     orders: [{
         orderId: 42,
         status: OrderStatus.PACKED,
@@ -1907,6 +1951,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 860,
     grossPrice: 469.99,
     netPrice: 375.99,
+    salesTrendData: TREND_DATA[10],
     orders: [{
         orderId: 43,
         status: OrderStatus.DELIVERED,
@@ -1938,6 +1983,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 880,
     grossPrice: 479.99,
     netPrice: 383.99,
+    salesTrendData: TREND_DATA[13],
     orders: [{
         orderId: 44,
         status: OrderStatus.PACKED,
@@ -1969,6 +2015,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 900,
     grossPrice: 489.99,
     netPrice: 391.99,
+    salesTrendData: TREND_DATA[11],
     orders: [{
         orderId: 45,
         status: OrderStatus.PACKED,
@@ -2000,6 +2047,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 920,
     grossPrice: 499.99,
     netPrice: 399.99,
+    salesTrendData: TREND_DATA[7],
     orders: [{
         orderId: 46,
         status: OrderStatus.DELIVERED,
@@ -2031,6 +2079,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 940,
     grossPrice: 509.99,
     netPrice: 407.99,
+    salesTrendData: TREND_DATA[5],
     orders: [{
         orderId: 47,
         status: OrderStatus.PACKED,
@@ -2062,6 +2111,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 960,
     grossPrice: 519.99,
     netPrice: 415.99,
+    salesTrendData: TREND_DATA[9],
     orders: [{
         orderId: 48,
         status: OrderStatus.PACKED,
@@ -2093,6 +2143,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 980,
     grossPrice: 529.99,
     netPrice: 423.99,
+    salesTrendData: TREND_DATA[2],
     orders: [{
         orderId: 49,
         status: OrderStatus.DELIVERED,
@@ -2124,6 +2175,7 @@ export const InventoryList: TemplateDataModel[] = [{
     unitsSold: 1000,
     grossPrice: 539.99,
     netPrice: 431.99,
+    salesTrendData: TREND_DATA[10],
     orders: [{
         orderId: 50,
         status: OrderStatus.PACKED,

@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild } from '@angular/core';
 import {
     IgxHierarchicalGridComponent,
     IgxColumnGroupComponent,
@@ -20,19 +20,20 @@ import {
     IgxIconModule,
     IgxIconService,
     IgxBadgeModule,
-    IgxBadgeComponent,
-    IgxAvatarComponent,
+    IgxBadgeComponent
 } from 'igniteui-angular';
 import { NgIf } from '@angular/common';
 import { InventoryList } from '../data/erpData';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
 import { OrderStatus, TemplateDataModel } from '../data/dataModels';
+import { IgxSparklineModule } from "igniteui-angular-charts";
 
 defineComponents(IgcRatingComponent);
 
 @Component({
     selector: 'app-erp-hgrid-sample',
+    standalone: true,
     imports: [
         IgxHierarchicalGridComponent,
         IgxColumnComponent,
@@ -53,8 +54,8 @@ defineComponents(IgcRatingComponent);
         IgxIconModule,
         IgxBadgeModule,
         IgxBadgeComponent,
-        IgxAvatarComponent,
-        NgIf
+        NgIf,
+        IgxSparklineModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',

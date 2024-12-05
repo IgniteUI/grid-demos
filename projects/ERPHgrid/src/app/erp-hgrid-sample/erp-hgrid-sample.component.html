@@ -45,6 +45,21 @@
             </ng-template>
         </igx-column>
         <igx-column field="unitsSold" header="Sold Units" dataType="number" [sortable]="true"></igx-column>
+        <igx-column field="salesTrendData" header="Performance">
+          <ng-template igxCell let-cell="cell" let-val>
+            @defer {
+              <igx-sparkline #sparkline
+                [dataSource]="cell.value"
+                valueMemberPath="value"
+                width="100%"
+                height="100%"
+                lineThickness="1"
+                brush="#faa419"
+                displayType="Line">
+              </igx-sparkline>
+            }
+        </ng-template>
+        </igx-column>
 
 
         <igx-column field="grossPrice" header="Gross Price" dataType="number" [sortable]="true">

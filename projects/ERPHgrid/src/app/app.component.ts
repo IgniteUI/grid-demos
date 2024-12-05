@@ -4,6 +4,7 @@ import { ErpHgridSampleComponent } from './erp-hgrid-sample/erp-hgrid-sample.com
 
 @Component({
     selector: 'app-root',
+    standalone: true,
     imports: [CommonModule, ErpHgridSampleComponent],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
