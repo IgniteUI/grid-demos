@@ -1,19 +1,27 @@
-@use "igniteui-angular/theming" as *;
-
 // IMPORTANT: Prior to Ignite UI for Angular version 13 use:
 // @import '~igniteui-angular/lib/core/styles/themes/index';
 
-
-
 .flex-container {
-  display: flex;
+  display: block;
+  margin: 0 auto;
   align-items: center; /* Align items vertically centered */
+  text-align: center;
+  justify-content: center;
   gap: 8px; /* Optional: Add some space between items */
 }
 
 igx-tree-grid {
   --ig-size: var(--ig-size-medium);
 
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
  .employeeDiv {
@@ -35,7 +43,6 @@ igx-tree-grid {
   display: block;
   overflow: hidden;
 }
-
 
 ::ng-deep {
   :root {
