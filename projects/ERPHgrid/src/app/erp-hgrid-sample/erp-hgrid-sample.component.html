@@ -45,7 +45,7 @@
             </ng-template>
         </igx-column>
         <igx-column field="unitsSold" header="Sold Units" dataType="number" [sortable]="true"></igx-column>
-        <igx-column field="salesTrendData" header="Performance">
+        <igx-column field="salesTrendData" header="Performance" filterable="false">
           <ng-template igxCell let-cell="cell" let-val>
             @defer {
               <igx-sparkline #sparkline
