@@ -1,7 +1,7 @@
 <div class="wrapper">
     <igx-hierarchical-grid
         class="hgrid"
-        [data]="localdata"
+        [data]="hgridData"
         [autoGenerate]="false"
         [allowFiltering]="true"
         [allowAdvancedFiltering]="true"
@@ -76,10 +76,10 @@
                 <ng-template igxCell let-cell="cell">
                     <div class="status-cell">
                         <span>
-                            <igx-badge  *ngIf="cell.value === orderStatus.PACKED" type="primary" shape="rounded">
+                            <igx-badge  *ngIf="cell.value === 'Packed'" type="primary" shape="rounded">
                                 <igx-icon family="imx-icons" name="dropbox" class="custom-icon"></igx-icon>
                             </igx-badge>
-                            <igx-badge  *ngIf="cell.value === orderStatus.IN_TRANSIT" type="warning" shape="rounded">
+                            <!-- <igx-badge  *ngIf="cell.value === orderStatus.IN_TRANSIT" type="warning" shape="rounded">
                                 <igx-icon family="imx-icons" name="delivery" class="custom-icon"></igx-icon>
                             </igx-badge>
                             <igx-badge  *ngIf="cell.value === orderStatus.CUSTOMS" type="error" shape="rounded">
@@ -87,7 +87,7 @@
                             </igx-badge>
                             <igx-badge  *ngIf="cell.value === orderStatus.DELIVERED" type="success" shape="rounded">
                                 <igx-icon family="imx-icons" name="check" class="custom-icon"></igx-icon>
-                            </igx-badge>
+                            </igx-badge> -->
                         </span>
                         <span>{{cell.value}}</span>
                     </div>
