@@ -1,4 +1,4 @@
-<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees" width="1800" height="900"
+<igx-tree-grid #treeGrid [data]="localData" primaryKey="ID" childDataKey="Employees"
   [rowStyles]="rowStyles" rowSelection="multipleCascade" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
   <igx-paginator [perPage]="20"></igx-paginator>
   <igx-grid-toolbar>
@@ -28,7 +28,7 @@
   </igx-column>
   <igx-column field="JobTitle" header="Job Title" dataType="string" minWidth="200px" sortable="true"></igx-column>
   <igx-column field="Department" dataType="string" minWidth="200px" sortable="true"></igx-column>
-  <igx-column field="Location" dataType="string">
+  <igx-column field="Location" dataType="string" sortable="true">
     <ng-template igxCell let-cell="cell">
       <div class="flagDiv">
         <igx-icon family="country-icons" name="{{cell.row.data.Country}}"></igx-icon>
