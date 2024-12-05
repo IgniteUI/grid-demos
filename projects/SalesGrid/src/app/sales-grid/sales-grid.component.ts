@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import {
   IgxButtonDirective,
@@ -22,12 +22,41 @@ import {
   IgxCellHeaderTemplateDirective,
   IgxStringFilteringOperand,
   FilteringExpressionsTree,
-  FilteringLogic
+  FilteringLogic,
+  IPivotValue
 } from 'igniteui-angular';
 import FLAGS from './data/flags.json'
-import SALES_DATA_100 from './data/SalesData100k.json';
+import SALES_DATA from './data/SalesData.json';
+
+export class IgxSaleProfitAggregate {
+  public static totalProfit = (_, data: any[] | undefined) =>
+    data?.reduce((accumulator, value) => accumulator + (value.Sale - value.Cost), 0) || 0;
+
+  public static minProfit = (_, data: any[] | undefined) => {
+      let min = 0;
+      if (data?.length === 1) {
+          min = data[0].Sale - data[0].Cost;
+      } else if (data && data.length > 1) {
+          const mappedData = data.map(x => x.Sale - x.Cost);
+          min = mappedData.reduce((a, b) => Math.min(a, b));
+      }
+      return min;
+  };
+
+  public static maxProfit = (_, data: any[] | undefined) => {
+      let max = 0;
+      if (data?.length === 1) {
+          max = data[0].Sale - data[0].Cost;
+      } else if (data && data.length > 1) {
+          const mappedData = data.map(x => x.Sale - x.Cost);
+          max = mappedData.reduce((a, b) => Math.max(a, b));
+      }
+      return max;
+  };
+}
 
 @Component({
+  standalone: true,
   selector: 'app-sales-grid',
   imports: [CommonModule, IgxPivotGridComponent, IgxPivotDataSelectorComponent, IgxButtonDirective, IgxIconComponent, IgxToggleActionDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxCellHeaderTemplateDirective],
   templateUrl: './sales-grid.component.html',
@@ -40,10 +69,59 @@ export class SalesGridComponent {
   @ViewChild('countryColumn')
   public countryColumnTemplate!: TemplateRef<any>;
 
+  public currencyPipe = new CurrencyPipe('en-US');
   public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
   public bulgariaCountryFilter = new FilteringExpressionsTree(FilteringLogic.And);
 
   public fileName = 'SalesGridApp';
+  public saleValue: IPivotValue = {
+    enabled: true,
+    member: 'Sale',
+    displayName: 'Sales',
+    aggregate: {
+      key: 'SUM',
+      aggregatorName: 'SUM',
+      label: 'Sum'
+    },
+    formatter: (value, _, __) => {
+      return this.currencyFormatter(value, 'Sale');
+    }
+  };
+  public costValue: IPivotValue = {
+    enabled: true,
+    member: 'Cost',
+    displayName: 'Profit',
+    aggregate: {
+      key: 'SUM',
+      aggregator: IgxSaleProfitAggregate.totalProfit,
+      label: 'Sum'
+    },
+    aggregateList: [
+      {
+        key: 'SUM',
+        aggregator: IgxSaleProfitAggregate.totalProfit,
+        label: 'Sum'
+      },
+      {
+        key: 'MAX',
+        aggregator: IgxSaleProfitAggregate.maxProfit,
+        label: 'Max'
+      },
+      {
+        key: 'MIN',
+        aggregator: IgxSaleProfitAggregate.minProfit,
+        label: 'Min'
+      },
+      {
+        key: 'COUNT',
+        aggregatorName: 'COUNT',
+        label: 'Count'
+      },
+    ],
+    formatter: (value, _, __) => {
+      return this.currencyFormatter(value, 'Cost');
+    }
+  };
   public pivotConfigBrands: IPivotConfiguration = {
     columns: [
       {
@@ -76,30 +154,8 @@ export class SalesGridComponent {
         })
     ],
     values: [
-      {
-        enabled: true,
-        member: 'Sale',
-        displayName: 'Sales',
-        aggregate: {
-          key: 'SUM',
-          aggregatorName: 'SUM',
-          label: 'Sum'
-        },
-        dataType: 'currency'
-      },
-      {
-        enabled: true,
-        member: 'Cost',
-        displayName: 'Profit',
-        aggregate: {
-          key: 'SUM',
-          aggregator: function (members, data) {
-            return data?.reduce((accumulator, value) => accumulator + (value.Sale - value.Cost), 0) || 0;
-          },
-          label: 'Sum'
-        },
-        dataType: 'currency'
-      }
+      this.saleValue,
+      this.costValue
     ]
   };
   public pivotConfigStores: IPivotConfiguration = {
@@ -130,28 +186,8 @@ export class SalesGridComponent {
       }
     ],
     values: [
-      {
-        member: 'Sale',
-        displayName: 'Sales',
-        aggregate: {
-          key: 'SUM',
-          aggregatorName: 'SUM',
-          label: 'Sum'
-        },
-        enabled: true,
-        dataType: 'currency'
-      },
-      {
-        member: 'Cost',
-        displayName: 'Profit',
-        aggregate: {
-          key: 'SUM',
-          aggregatorName: 'SUM',
-          label: 'Sum'
-        },
-        enabled: true,
-        dataType: 'currency'
-      }
+      this.saleValue,
+      this.costValue
     ],
     filters: [
       {
@@ -164,7 +200,7 @@ export class SalesGridComponent {
   };
 
   public flagsData = FLAGS;
-  public data100: any = SALES_DATA_100;
+  public data: any = SALES_DATA;
 
   constructor(public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
     var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
@@ -220,5 +256,13 @@ export class SalesGridComponent {
     if (countryKeys.includes(col.field)) {
       col.headerTemplate = this.countryColumnTemplate;
     }
+  }
+
+  public currencyFormatter(value: any, field: string) {
+    var valueConfig = this.pivotGrid.values.find(value => value.member === field);
+    if (!valueConfig || valueConfig.aggregate.key === "COUNT") {
+      return value;
+    }
+    return this.currencyPipe.transform(value, 'USD', 'symbol', '1.0-2');
   }
 }
