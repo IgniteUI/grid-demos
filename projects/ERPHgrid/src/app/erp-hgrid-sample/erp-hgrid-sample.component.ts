@@ -55,7 +55,7 @@ defineComponents(IgcRatingComponent);
     IgxBadgeModule,
     IgxBadgeComponent,
     IgxAvatarComponent,
-    NgIf,
+    NgIf
 ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './erp-hgrid-sample.component.html',
@@ -88,6 +88,6 @@ export class ErpHgridSampleComponent {
 
   public getTooltipText(expanded: any) {
     return expanded ?
-      'The column is expanded! Click here to collapse.' : 'The column is collapsed! Click here to expand';
+        'The column is expanded! Click here to collapse.' : 'The column is collapsed! Click here to expand';
   }
 }
