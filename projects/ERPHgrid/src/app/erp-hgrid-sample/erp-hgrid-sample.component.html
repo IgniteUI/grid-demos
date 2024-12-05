@@ -10,6 +10,7 @@
         [rowHeight]="'32px'"
         [rowSelection]="selectionMode"
         [rowStyles]="rowStyles"
+        [moving]="true"
         #hierarchicalGrid>
 
         <igx-grid-toolbar>
@@ -118,14 +119,14 @@
                     </div>
                 </ng-template>
                 <igx-column field="Delivery Details" [width]="'300px'" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="true"></igx-column>
-                <igx-column field="delivery.dateOrdered" header="Date Ordered" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                <igx-column field="delivery.dateOrdered" header="Date Ordered" dataType="date" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
                     <ng-template igxCell let-cell="cell">
                         <div>
                             <span>{{cell.value || 'N/A' }}</span>
                         </div>
                     </ng-template>
                 </igx-column>
-                <igx-column field="delivery.dateShipped" header="Date Shipped" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                <igx-column field="delivery.dateShipped" header="Date Shipped" dataType="date" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
                     <ng-template igxCell let-cell="cell">
                         <div>
                             <span>{{cell.value || 'N/A' }}</span>
@@ -133,7 +134,7 @@
                     </ng-template>
                 </igx-column>
 
-                <igx-column field="delivery.dateDelivered" header="Date Delivered" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                <igx-column field="delivery.dateDelivered" header="Date Delivered" dataType="date" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
                     <ng-template igxCell let-cell="cell">
                         <div>
                             <span>{{cell.value || 'N/A' }}</span>
