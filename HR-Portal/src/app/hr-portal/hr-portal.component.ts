@@ -50,17 +50,17 @@ export class HrPortalComponent implements OnInit {
   ngOnInit() {
     this.localData = EMPLOYEE_DATA;
     const icons = [
-      { name: 'linkedIn', path: 'assets/images/others/linkedin.svg', category: 'hr-icons' },
-      { name: 'USA', path: 'assets/images/countries/United States.svg', category: 'country-icons' },
-      { name: 'CAN', path: 'assets/images/countries/Canada.svg', category: 'country-icons' },
-      { name: 'GBR', path: 'assets/images/countries/United Kingdom.svg', category: 'country-icons' },
-      { name: 'DEU', path: 'assets/images/countries/Germany.svg', category: 'country-icons' },
-      { name: 'FRA', path: 'assets/images/countries/France.svg', category: 'country-icons' },
-      { name: 'ESP', path: 'assets/images/countries/Spain.svg', category: 'country-icons' },
-      { name: 'ITA', path: 'assets/images/countries/Italy.svg', category: 'country-icons' },
-      { name: 'AUS', path: 'assets/images/countries/Australia.svg', category: 'country-icons' },
-      { name: 'JPN', path: 'assets/images/countries/Japan.svg', category: 'country-icons' },
-      { name: 'ARE', path: 'assets/images/countries/uae.svg', category: 'country-icons' }
+      { name: 'linkedIn', path: 'images/others/linkedin.svg', category: 'hr-icons' },
+      { name: 'USA', path: 'images/countries/United States.svg', category: 'country-icons' },
+      { name: 'CAN', path: 'images/countries/Canada.svg', category: 'country-icons' },
+      { name: 'GBR', path: 'images/countries/United Kingdom.svg', category: 'country-icons' },
+      { name: 'DEU', path: 'images/countries/Germany.svg', category: 'country-icons' },
+      { name: 'FRA', path: 'images/countries/France.svg', category: 'country-icons' },
+      { name: 'ESP', path: 'images/countries/Spain.svg', category: 'country-icons' },
+      { name: 'ITA', path: 'images/countries/Italy.svg', category: 'country-icons' },
+      { name: 'AUS', path: 'images/countries/Australia.svg', category: 'country-icons' },
+      { name: 'JPN', path: 'images/countries/Japan.svg', category: 'country-icons' },
+      { name: 'ARE', path: 'images/countries/uae.svg', category: 'country-icons' }
     ];
 
     icons.forEach(icon => {
