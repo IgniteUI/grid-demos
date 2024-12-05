@@ -32,7 +32,6 @@
               }
             ],
             "styles": [
-              "node_modules/igniteui-angular/styles/igniteui-indigo-light.css",
               "src/styles.scss"
             ],
             "scripts": [
