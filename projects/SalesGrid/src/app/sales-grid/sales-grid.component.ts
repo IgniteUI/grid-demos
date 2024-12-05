@@ -32,6 +32,17 @@ export class IgxSaleProfitAggregate {
   public static totalProfit = (_, data: any[] | undefined) =>
     data?.reduce((accumulator, value) => accumulator + (value.Sale - value.Cost), 0) || 0;
 
+  public static averageProfit = (_, data: any[] | undefined) => {
+    let average = 0;
+    if (data?.length === 1) {
+      average = data[0].Sale - data[0].Cost;
+    } else if (data && data.length > 1) {
+        const mappedData = data.map(x => x.Sale - x.Cost);
+        average = mappedData.reduce((a, b) => a + b) / mappedData.length;
+    }
+    return average;
+  }
+
   public static minProfit = (_, data: any[] | undefined) => {
       let min = 0;
       if (data?.length === 1) {
@@ -87,7 +98,7 @@ export class SalesGridComponent {
       return this.currencyFormatter(value, 'Sale');
     }
   };
-  public costValue: IPivotValue = {
+  public profitValue: IPivotValue = {
     enabled: true,
     member: 'Cost',
     displayName: 'Profit',
@@ -98,24 +109,29 @@ export class SalesGridComponent {
     },
     aggregateList: [
       {
-        key: 'SUM',
-        aggregator: IgxSaleProfitAggregate.totalProfit,
-        label: 'Sum'
-      },
-      {
-        key: 'MAX',
-        aggregator: IgxSaleProfitAggregate.maxProfit,
-        label: 'Max'
-      },
-      {
-        key: 'MIN',
-        aggregator: IgxSaleProfitAggregate.minProfit,
-        label: 'Min'
+        key: 'AVG',
+        aggregator: IgxSaleProfitAggregate.averageProfit,
+        label: 'Average'
       },
       {
         key: 'COUNT',
         aggregatorName: 'COUNT',
         label: 'Count'
+      },
+      {
+        key: 'MAX',
+        aggregator: IgxSaleProfitAggregate.maxProfit,
+        label: 'Maximum'
+      },
+      {
+        key: 'MIN',
+        aggregator: IgxSaleProfitAggregate.minProfit,
+        label: 'Minimum'
+      },
+      {
+        key: 'SUM',
+        aggregator: IgxSaleProfitAggregate.totalProfit,
+        label: 'Sum'
       },
     ],
     formatter: (value, _, __) => {
@@ -155,7 +171,7 @@ export class SalesGridComponent {
     ],
     values: [
       this.saleValue,
-      this.costValue
+      this.profitValue
     ]
   };
   public pivotConfigStores: IPivotConfiguration = {
@@ -187,7 +203,7 @@ export class SalesGridComponent {
     ],
     values: [
       this.saleValue,
-      this.costValue
+      this.profitValue
     ],
     filters: [
       {
