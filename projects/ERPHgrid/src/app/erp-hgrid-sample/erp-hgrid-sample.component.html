@@ -156,21 +156,16 @@
 
                 <igx-column field="orderInformation.city" header="City" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
                 <igx-column field="orderInformation.zipCode" header="Zip Code" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
-                <igx-column field="orderInformation.streetName" header="Street Name" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
-                <igx-column field="orderInformation.streetNumber" header="Street Number" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
-                <igx-column field="orderInformation.customer" header="Customer" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                <igx-column field="orderInformation" header="Address" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                  <ng-template igxCell let-cell="cell">
+                    <div>
+                        <span>{{cell.value.streetName}} {{cell.value.streetNumber}}</span>
+                    </div>
+                </ng-template>
+                </igx-column>
             </igx-column-group>
 
         </igx-row-island>
     </igx-hierarchical-grid>
 </div>
-
-<div class="container vertical">
-    <div class="container">
-        <igx-sparkline #sparkline
-            [dataSource]="chartData"
-            valueMemberPath="Value"
-            displayType="Area"></igx-sparkline>
-    </div>
-</div >
 

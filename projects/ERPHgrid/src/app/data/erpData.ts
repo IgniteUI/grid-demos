@@ -10,7 +10,7 @@ export const InventoryList: TemplateDataModel[] = [{
     grossPrice: 49.99,
     netPrice: 39.99,
     orders: [
-    {
+      {
         orderId: 1234,
         status: OrderStatus.PACKED,
         delivery: {
@@ -22,13 +22,79 @@ export const InventoryList: TemplateDataModel[] = [{
             country: "United States",
             countryFlag: CountryFlag.US,
             city: "New York",
-            zipCode: 100001,
-            streetName: "Street 0",
-            streetNumber: "100A",
+            zipCode: 10001,
+            streetName: "5th Avenue",
+            streetNumber: "501B",
             customer: "Joseph King",
             contactLinks: {
-                email: "customer0@example.com",
-                linkedin: "https://linkedin.com/in/customer0"
+                email: "joseph.king@example.com",
+                linkedin: "https://linkedin.com/in/joseph-king"
+            }
+        }
+    },
+    {
+        orderId: 1235,
+        status: OrderStatus.IN_TRANSIT,
+        delivery: {
+            dateOrdered: "2024-01-10",
+            dateShipped: "2024-01-12",
+            dateDelivered: ""
+        },
+        orderInformation: {
+            country: "Canada",
+            countryFlag: CountryFlag.CANADA,
+            city: "Toronto",
+            zipCode: 12345,
+            streetName: "Yonge Street",
+            streetNumber: "300C",
+            customer: "Emma Taylor",
+            contactLinks: {
+                email: "emma.taylor@example.com",
+                linkedin: "https://linkedin.com/in/emma-taylor"
+            }
+        }
+    },
+    {
+        orderId: 1236,
+        status: OrderStatus.CUSTOMS,
+        delivery: {
+            dateOrdered: "2024-01-05",
+            dateShipped: "2024-01-08",
+            dateDelivered: ""
+        },
+        orderInformation: {
+            country: "France",
+            countryFlag: CountryFlag.FRANCE,
+            city: "Paris",
+            zipCode: 75001,
+            streetName: "Rue de Rivoli",
+            streetNumber: "10A",
+            customer: "Pierre Dubois",
+            contactLinks: {
+                email: "pierre.dubois@example.com",
+                linkedin: "https://linkedin.com/in/pierre-dubois"
+            }
+        }
+    },
+    {
+        orderId: 1237,
+        status: OrderStatus.DELIVERED,
+        delivery: {
+            dateOrdered: "2024-01-01",
+            dateShipped: "2024-01-03",
+            dateDelivered: "2024-01-07"
+        },
+        orderInformation: {
+            country: "Germany",
+            countryFlag: CountryFlag.GERMANY,
+            city: "Berlin",
+            zipCode: 10115,
+            streetName: "Unter den Linden",
+            streetNumber: "25D",
+            customer: "Hans Müller",
+            contactLinks: {
+                email: "hans.muller@example.com",
+                linkedin: "https://linkedin.com/in/hans-muller"
             }
         }
     },
@@ -107,7 +173,51 @@ export const InventoryList: TemplateDataModel[] = [{
                 linkedin: "https://linkedin.com/in/customer1"
             }
         }
-    }]
+    },
+    {
+      orderId: 1238,
+      status: OrderStatus.PACKED,
+      delivery: {
+          dateOrdered: "2024-01-20",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "Australia",
+          countryFlag: CountryFlag.AUSTRALIA,
+          city: "Sydney",
+          zipCode: 2000,
+          streetName: "George Street",
+          streetNumber: "42E",
+          customer: "Lucy Brown",
+          contactLinks: {
+              email: "lucy.brown@example.com",
+              linkedin: "https://linkedin.com/in/lucy-brown"
+          }
+      }
+  },
+  {
+    orderId: 1239,
+    status: OrderStatus.IN_TRANSIT,
+    delivery: {
+        dateOrdered: "2024-01-11",
+        dateShipped: "2024-01-13",
+        dateDelivered: ""
+    },
+    orderInformation: {
+        country: "India",
+        countryFlag: CountryFlag.INDIA,
+        city: "Mumbai",
+        zipCode: 400001,
+        streetName: "Marine Drive",
+        streetNumber: "88B",
+        customer: "Ravi Patel",
+        contactLinks: {
+            email: "ravi.patel@example.com",
+            linkedin: "https://linkedin.com/in/ravi-patel"
+        }
+    }
+}]
 }, {
     sku: "SKU1003",
     imageUrl: "assets/images/products/Apple-Magic-Mouse-Depositphotos.jpg",
@@ -138,7 +248,95 @@ export const InventoryList: TemplateDataModel[] = [{
                 linkedin: "https://linkedin.com/in/customer2"
             }
         }
-    }]
+    },
+    {
+      orderId: 1240,
+      status: OrderStatus.DELIVERED,
+      delivery: {
+          dateOrdered: "2024-01-15",
+          dateShipped: "2024-01-17",
+          dateDelivered: "2024-01-20"
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Delhi",
+          zipCode: 110001,
+          streetName: "Connaught Place",
+          streetNumber: "12A",
+          customer: "Priya Sharma",
+          contactLinks: {
+              email: "priya.sharma@example.com",
+              linkedin: "https://linkedin.com/in/priya-sharma"
+          }
+      }
+  },
+  {
+      orderId: 1241,
+      status: OrderStatus.CUSTOMS,
+      delivery: {
+          dateOrdered: "2024-01-10",
+          dateShipped: "2024-01-12",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Chennai",
+          zipCode: 600001,
+          streetName: "Mount Road",
+          streetNumber: "45C",
+          customer: "Arun Rajan",
+          contactLinks: {
+              email: "arun.rajan@example.com",
+              linkedin: "https://linkedin.com/in/arun-rajan"
+          }
+      }
+  },
+  {
+      orderId: 1242,
+      status: OrderStatus.PACKED,
+      delivery: {
+          dateOrdered: "2024-01-09",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Kolkata",
+          zipCode: 700001,
+          streetName: "Park Street",
+          streetNumber: "22D",
+          customer: "Meera Banerjee",
+          contactLinks: {
+              email: "meera.banerjee@example.com",
+              linkedin: "https://linkedin.com/in/meera-banerjee"
+          }
+      }
+  },
+  {
+      orderId: 1243,
+      status: OrderStatus.IN_TRANSIT,
+      delivery: {
+          dateOrdered: "2024-01-14",
+          dateShipped: "2024-01-16",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Bangalore",
+          zipCode: 560001,
+          streetName: "MG Road",
+          streetNumber: "100E",
+          customer: "Kiran Nair",
+          contactLinks: {
+              email: "kiran.nair@example.com",
+              linkedin: "https://linkedin.com/in/kiran-nair"
+          }
+      }
+  },]
 }, {
     sku: "SKU1004",
     imageUrl: "assets/images/products/ballpoint-pen.jpg",
@@ -169,7 +367,95 @@ export const InventoryList: TemplateDataModel[] = [{
                 linkedin: "https://linkedin.com/in/customer3"
             }
         }
-    }]
+    },
+    {
+      orderId: 1244,
+      status: OrderStatus.DELIVERED,
+      delivery: {
+          dateOrdered: "2024-01-08",
+          dateShipped: "2024-01-10",
+          dateDelivered: "2024-01-13"
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Hyderabad",
+          zipCode: 500001,
+          streetName: "Charminar Road",
+          streetNumber: "77F",
+          customer: "Anita Reddy",
+          contactLinks: {
+              email: "anita.reddy@example.com",
+              linkedin: "https://linkedin.com/in/anita-reddy"
+          }
+      }
+  },
+  {
+      orderId: 1245,
+      status: OrderStatus.CUSTOMS,
+      delivery: {
+          dateOrdered: "2024-01-05",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Pune",
+          zipCode: 411001,
+          streetName: "Deccan Gymkhana",
+          streetNumber: "9G",
+          customer: "Rahul Deshmukh",
+          contactLinks: {
+              email: "rahul.deshmukh@example.com",
+              linkedin: "https://linkedin.com/in/rahul-deshmukh"
+          }
+      }
+  },
+  {
+      orderId: 1246,
+      status: OrderStatus.PACKED,
+      delivery: {
+          dateOrdered: "2024-01-13",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Jaipur",
+          zipCode: 302001,
+          streetName: "Pink City Lane",
+          streetNumber: "16B",
+          customer: "Rajveer Singh",
+          contactLinks: {
+              email: "rajveer.singh@example.com",
+              linkedin: "https://linkedin.com/in/rajveer-singh"
+          }
+      }
+  },
+  {
+      orderId: 1247,
+      status: OrderStatus.IN_TRANSIT,
+      delivery: {
+          dateOrdered: "2024-01-12",
+          dateShipped: "2024-01-14",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.INDIA,
+          city: "Ahmedabad",
+          zipCode: 380001,
+          streetName: "Sabarmati Ashram Road",
+          streetNumber: "33C",
+          customer: "Sneha Patel",
+          contactLinks: {
+              email: "sneha.patel@example.com",
+              linkedin: "https://linkedin.com/in/sneha-patel"
+          }
+      }
+  }]
 }, {
     sku: "SKU1005",
     imageUrl: "assets/images/products/Barcode-reader-Depositphotos.jpg",
@@ -200,7 +486,51 @@ export const InventoryList: TemplateDataModel[] = [{
                 linkedin: "https://linkedin.com/in/customer4"
             }
         }
-    }]
+    },
+    {
+      orderId: 1248,
+      status: OrderStatus.DELIVERED,
+      delivery: {
+          dateOrdered: "2024-01-06",
+          dateShipped: "2024-01-08",
+          dateDelivered: "2024-01-11"
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.IN,
+          city: "Goa",
+          zipCode: 403001,
+          streetName: "Beach Road",
+          streetNumber: "44H",
+          customer: "Aditi D'Souza",
+          contactLinks: {
+              email: "aditi.dsouza@example.com",
+              linkedin: "https://linkedin.com/in/aditi-dsouza"
+          }
+      }
+  },
+  {
+      orderId: 1249,
+      status: OrderStatus.PACKED,
+      delivery: {
+          dateOrdered: "2024-01-11",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "India",
+          countryFlag: CountryFlag.IN,
+          city: "Lucknow",
+          zipCode: 226001,
+          streetName: "Hazratganj Lane",
+          streetNumber: "55D",
+          customer: "Vikram Tandon",
+          contactLinks: {
+              email: "vikram.tandon@example.com",
+              linkedin: "https://linkedin.com/in/vikram-tandon"
+          }
+      }
+  }]
 }, {
     sku: "SKU1006",
     imageUrl: "assets/images/products/Barcode-readers-Depositphotos_10803475_L.jpg",
@@ -262,7 +592,95 @@ export const InventoryList: TemplateDataModel[] = [{
                 linkedin: "https://linkedin.com/in/customer6"
             }
         }
-    }]
+    },
+    {
+      orderId: 1250,
+      status: OrderStatus.IN_TRANSIT,
+      delivery: {
+          dateOrdered: "2024-01-15",
+          dateShipped: "2024-01-17",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "United States",
+          countryFlag: CountryFlag.US,
+          city: "New York",
+          zipCode: 10001,
+          streetName: "Broadway",
+          streetNumber: "123",
+          customer: "Michael Johnson",
+          contactLinks: {
+              email: "michael.johnson@example.com",
+              linkedin: "https://linkedin.com/in/michael-johnson"
+          }
+      }
+  },
+  {
+      orderId: 1251,
+      status: OrderStatus.PACKED,
+      delivery: {
+          dateOrdered: "2024-01-12",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "Canada",
+          countryFlag: CountryFlag.CANADA,
+          city: "Toronto",
+          zipCode: "M4B 1B3",
+          streetName: "Queen Street West",
+          streetNumber: "78A",
+          customer: "Sophia Wilson",
+          contactLinks: {
+              email: "sophia.wilson@example.ca",
+              linkedin: "https://linkedin.com/in/sophia-wilson"
+          }
+      }
+  },
+  {
+      orderId: 1252,
+      status: OrderStatus.CUSTOMS,
+      delivery: {
+          dateOrdered: "2024-01-10",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "Germany",
+          countryFlag: CountryFlag.GERMANY,
+          city: "Berlin",
+          zipCode: 10115,
+          streetName: "Unter den Linden",
+          streetNumber: "45C",
+          customer: "Maximilian Müller",
+          contactLinks: {
+              email: "max.mueller@example.de",
+              linkedin: "https://linkedin.com/in/max-mueller"
+          }
+      }
+  },
+  {
+      orderId: 1253,
+      status: OrderStatus.DELIVERED,
+      delivery: {
+          dateOrdered: "2024-01-08",
+          dateShipped: "2024-01-10",
+          dateDelivered: "2024-01-12"
+      },
+      orderInformation: {
+          country: "United Kingdom",
+          countryFlag: CountryFlag.UK,
+          city: "London",
+          zipCode: "WC2N 5DU",
+          streetName: "Piccadilly",
+          streetNumber: "22D",
+          customer: "Olivia Brown",
+          contactLinks: {
+              email: "olivia.brown@example.co.uk",
+              linkedin: "https://linkedin.com/in/olivia-brown"
+          }
+      }
+  }]
 }, {
     sku: "SKU1008",
     imageUrl: "assets/images/products/Canon_Depositphotos_1793394_L.jpg",
@@ -293,7 +711,139 @@ export const InventoryList: TemplateDataModel[] = [{
                 linkedin: "https://linkedin.com/in/customer7"
             }
         }
-    }]
+    },
+    {
+      orderId: 1254,
+      status: OrderStatus.IN_TRANSIT,
+      delivery: {
+          dateOrdered: "2024-01-14",
+          dateShipped: "2024-01-16",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "Australia",
+          countryFlag: CountryFlag.AUSTRALIA,
+          city: "Sydney",
+          zipCode: 2000,
+          streetName: "George Street",
+          streetNumber: "99B",
+          customer: "Liam Taylor",
+          contactLinks: {
+              email: "liam.taylor@example.com.au",
+              linkedin: "https://linkedin.com/in/liam-taylor"
+          }
+      }
+  },
+  {
+      orderId: 1255,
+      status: OrderStatus.PACKED,
+      delivery: {
+          dateOrdered: "2024-01-09",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "France",
+          countryFlag: CountryFlag.FRANCE,
+          city: "Paris",
+          zipCode: 75001,
+          streetName: "Rue de Rivoli",
+          streetNumber: "14E",
+          customer: "Emma Dupont",
+          contactLinks: {
+              email: "emma.dupont@example.fr",
+              linkedin: "https://linkedin.com/in/emma-dupont"
+          }
+      }
+  },
+  {
+      orderId: 1256,
+      status: OrderStatus.CUSTOMS,
+      delivery: {
+          dateOrdered: "2024-01-11",
+          dateShipped: "",
+          dateDelivered: ""
+      },
+      orderInformation: {
+          country: "Japan",
+          countryFlag: CountryFlag.JAPAN,
+          city: "Tokyo",
+          zipCode: 1000001,
+          streetName: "Chuo Dori",
+          streetNumber: "8A",
+          customer: "Hiroshi Tanaka",
+          contactLinks: {
+              email: "hiroshi.tanaka@example.jp",
+              linkedin: "https://linkedin.com/in/hiroshi-tanaka"
+          }
+      }
+  },
+  {
+    orderId: 1257,
+    status: OrderStatus.DELIVERED,
+    delivery: {
+        dateOrdered: "2024-01-05",
+        dateShipped: "2024-01-07",
+        dateDelivered: "2024-01-10"
+    },
+    orderInformation: {
+        country: "Brazil",
+        countryFlag: CountryFlag.BRAZIL,
+        city: "São Paulo",
+        zipCode: "01000-000",
+        streetName: "Paulista Avenue",
+        streetNumber: "333F",
+        customer: "Carlos Oliveira",
+        contactLinks: {
+            email: "carlos.oliveira@example.com.br",
+            linkedin: "https://linkedin.com/in/carlos-oliveira"
+        }
+    }
+},
+{
+    orderId: 1258,
+    status: OrderStatus.IN_TRANSIT,
+    delivery: {
+        dateOrdered: "2024-01-13",
+        dateShipped: "2024-01-15",
+        dateDelivered: ""
+    },
+    orderInformation: {
+        country: "Italy",
+        countryFlag: CountryFlag.ITALY,
+        city: "Rome",
+        zipCode: 18400,
+        streetName: "Via del Corso",
+        streetNumber: "25B",
+        customer: "Giulia Rossi",
+        contactLinks: {
+            email: "giulia.rossi@example.it",
+            linkedin: "https://linkedin.com/in/giulia-rossi"
+        }
+    }
+},
+{
+    orderId: 1259,
+    status: OrderStatus.PACKED,
+    delivery: {
+        dateOrdered: "2024-01-06",
+        dateShipped: "",
+        dateDelivered: ""
+    },
+    orderInformation: {
+        country: "Brazil",
+        countryFlag: CountryFlag.BRAZIL,
+        city: "São Paulo",
+        zipCode: 8001,
+        streetName: "Long Street",
+        streetNumber: "17D",
+        customer: "Thabo Nkosi",
+        contactLinks: {
+            email: "thabo.nkosi@example.co.za",
+            linkedin: "https://linkedin.com/in/thabo-nkosi"
+        }
+    }
+}]
 }, {
     sku: "SKU1009",
     imageUrl: "assets/images/products/climbing-boots-2558324_1920.jpg",
