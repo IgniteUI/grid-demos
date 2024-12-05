@@ -1,0 +1,176 @@
+<div class="wrapper">
+    <igx-hierarchical-grid
+        class="hgrid"
+        [data]="localdata"
+        [autoGenerate]="false"
+        [allowFiltering]="true"
+        [allowAdvancedFiltering]="true"
+        [height]="'775px'"
+        [width]="'100%'"
+        [rowHeight]="'32px'"
+        [rowSelection]="selectionMode"
+        [rowStyles]="rowStyles"
+        #hierarchicalGrid>
+
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-title class>Actions</igx-grid-toolbar-title>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+                <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
+        <igx-column field="sku" header="SKU" [sortable]="true" dataType="string"></igx-column>
+        <igx-column
+            field="imageUrl"
+            header="Image"
+            [filterable]="false"
+            [dataType]="'image'"
+            [cellClasses]="{'product-img': true}"
+            [cellStyles]="columnCenteredStyles"
+            [headerStyles]="headerCenteredStyles">
+        </igx-column>
+        <igx-column field="productName" header="Product Name" dataType="string" [sortable]="true" []></igx-column>
+        <igx-column field="category" header="Category" dataType="string" [sortable]="true"></igx-column>
+        <igx-column
+            field="rating"
+            header="Rating"
+            [sortable]="true"
+            [cellStyles]="columnCenteredStyles"
+            [headerStyles]="headerCenteredStyles">
+            <ng-template igxCell let-cell="cell" let-val>
+                <igc-rating [value]="val" readonly="true" min="0" max="5"></igc-rating>
+            </ng-template>
+        </igx-column>
+        <igx-column field="unitsSold" header="Sold Units" dataType="number" [sortable]="true"></igx-column>
+
+
+        <igx-column field="grossPrice" header="Gross Price" dataType="number" [sortable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div>
+                    <span>{{ '$' + cell.value }}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="netPrice" header="Net Price" dataType="number" [sortable]="true">
+            <ng-template igxCell let-cell="cell">
+                <div>
+                    <span>{{ '$' + cell.value }}</span>
+                </div>
+            </ng-template>
+        </igx-column>
+
+
+
+        <igx-row-island
+            [height]="null"
+            [key]="'orders'"
+            [autoGenerate]="false"
+            [allowFiltering]='true'
+            [rowSelection]="selectionMode"
+            [rowStyles]="rowStyles">
+            <igx-column field="orderId" header="Order ID" dataType="number"></igx-column>
+            <igx-column field="status" header="Status">
+                <ng-template igxCell let-cell="cell">
+                    <div class="status-cell">
+                        <span>
+                            <igx-badge  *ngIf="cell.value === orderStatus.PACKED" type="primary" shape="rounded">
+                                <igx-icon family="imx-icons" name="dropbox" class="custom-icon"></igx-icon>
+                            </igx-badge>
+                            <igx-badge  *ngIf="cell.value === orderStatus.IN_TRANSIT" type="warning" shape="rounded">
+                                <igx-icon family="imx-icons" name="delivery" class="custom-icon"></igx-icon>
+                            </igx-badge>
+                            <igx-badge  *ngIf="cell.value === orderStatus.CUSTOMS" type="error" shape="rounded">
+                                <igx-icon family="imx-icons" name="bill-paid" class="custom-icon"></igx-icon>
+                            </igx-badge>
+                            <igx-badge  *ngIf="cell.value === orderStatus.DELIVERED" type="success" shape="rounded">
+                                <igx-icon family="imx-icons" name="check" class="custom-icon"></igx-icon>
+                            </igx-badge>
+                        </span>
+                        <span>{{cell.value}}</span>
+                    </div>
+                </ng-template>
+            </igx-column>
+
+
+            <igx-column-group header="Delivery" [collapsible]="true">
+                <ng-template igxCollapsibleIndicator let-column="column">
+                    <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                    <div #tooltipRef="tooltip" igxTooltip>
+                        <span style="width: 200px"> {{getTooltipText(column.expanded)}}</span>
+                    </div>
+                </ng-template>
+                <igx-column field="Delivery Details" [width]="'300px'" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="true"></igx-column>
+                <igx-column field="delivery.dateOrdered" header="Date Ordered" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                    <ng-template igxCell let-cell="cell">
+                        <div>
+                            <span>{{cell.value || 'N/A' }}</span>
+                        </div>
+                    </ng-template>
+                </igx-column>
+                <igx-column field="delivery.dateShipped" header="Date Shipped" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                    <ng-template igxCell let-cell="cell">
+                        <div>
+                            <span>{{cell.value || 'N/A' }}</span>
+                        </div>
+                    </ng-template>
+                </igx-column>
+
+                <igx-column field="delivery.dateDelivered" header="Date Delivered" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+                    <ng-template igxCell let-cell="cell">
+                        <div>
+                            <span>{{cell.value || 'N/A' }}</span>
+                        </div>
+                    </ng-template>
+                </igx-column>
+            </igx-column-group>
+
+            <igx-column-group header="Order Information" [collapsible]="true">
+                <ng-template igxCollapsibleIndicator let-column="column">
+                    <igx-icon [attr.draggable]="false" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef" [showDelay]="0" [hideDelay]="0">{{column.expanded ? 'expand_more' : 'chevron_right'}} </igx-icon>
+                    <div #tooltipRef="tooltip" igxTooltip>
+                        <span style="width: 200px"> {{getTooltipText(column.expanded)}}</span>
+                    </div>
+                </ng-template>
+                <igx-column field="Order Details" [width]="'300px'" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="true"></igx-column>
+                <igx-column field="orderInformation.country" header="Country" [width]="'300px'" dataType="string" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false">
+
+                </igx-column>
+
+                <igx-column
+                    [field]="'orderInformation'"
+                    header="Country"
+                    [width]="'300px'"
+                    [sortable]="true">
+                    <ng-template igxCell let-cell="cell">
+                        <div class="country-cell">
+                            <span class="cup">
+                                <img [src]="cell.value.countryFlag" alt="Country Flag"/>
+                            </span>
+                            <span>{{cell.value.country}}</span>
+                        </div>
+                    </ng-template>
+                </igx-column>
+
+                <igx-column field="orderInformation.city" header="City" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                <igx-column field="orderInformation.zipCode" header="Zip Code" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                <igx-column field="orderInformation.streetName" header="Street Name" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                <igx-column field="orderInformation.streetNumber" header="Street Number" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+                <igx-column field="orderInformation.customer" header="Customer" dataType="string" [width]="'200px'" [sortable]="true" [resizable]="true" [visibleWhenCollapsed]="false"></igx-column>
+            </igx-column-group>
+
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
+
+<div class="container vertical">
+    <div class="container">
+        <igx-sparkline #sparkline
+            [dataSource]="chartData"
+            valueMemberPath="Value"
+            displayType="Area"></igx-sparkline>
+    </div>
+</div >
+
