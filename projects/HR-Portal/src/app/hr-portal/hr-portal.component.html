@@ -9,13 +9,13 @@
         <igx-icon>clear</igx-icon>
         <label>Clear Sort</label>
       </button>
-      <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
-      <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
       <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+      <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
       <igx-grid-toolbar-exporter>
         <span excelText>Export to Excel</span>
         <span csvText>Export to CSV</span>
       </igx-grid-toolbar-exporter>
+      <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
     </igx-grid-toolbar-actions>
   </igx-grid-toolbar>
   <igx-column field="Name" width="300px" sortable="true" [pinned]="true">
@@ -32,7 +32,7 @@
     <ng-template igxCell let-cell="cell">
       <div class="flagDiv">
         <igx-icon family="country-icons" name="{{cell.row.data.Country}}"></igx-icon>
-        {{ cell.row.data.Country }}, {{ cell.row.data.Location }}
+        {{ cell.row.data.Location }}, {{ cell.row.data.Country }}
       </div>
     </ng-template>
   </igx-column>

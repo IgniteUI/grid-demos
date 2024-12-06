@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Employee, EMPLOYEE_DATA } from './localData';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Employee, EMPLOYEE_DATA } from '../data/localData';
 import { IgxTreeGridComponent, IgxColumnComponent, IgxAvatarComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent,
   IgxGridToolbarHidingComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxGridToolbarExporterComponent,
-  IgxCellTemplateDirective, IgxIconComponent, IgxIconModule, IgxIconService, IgxIconButtonDirective, IgxButtonModule, RowType } from 'igniteui-angular';
-import { HttpClient } from '@angular/common/http';
+  IgxCellTemplateDirective, IgxIconComponent, IgxIconModule, IgxIconService, IgxIconButtonDirective, IgxButtonModule, RowType,
+  SortingDirection,
+  DefaultSortingStrategy} from 'igniteui-angular';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-hr-portal',
@@ -29,7 +30,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
     ]
 })
-export class HrPortalComponent implements OnInit {
+export class HrPortalComponent implements OnInit, AfterViewInit {
   public localData: Employee[] = [];
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
   public treeGrid!: IgxTreeGridComponent;
@@ -45,7 +46,7 @@ export class HrPortalComponent implements OnInit {
     'justify-content': 'end'
   };
 
-  constructor(private iconService: IgxIconService, private http: HttpClient) { }
+  constructor(private iconService: IgxIconService) { }
 
   ngOnInit() {
     this.localData = EMPLOYEE_DATA;
@@ -66,5 +67,13 @@ export class HrPortalComponent implements OnInit {
     icons.forEach(icon => {
       this.iconService.addSvgIcon(icon.name, icon.path, icon.category);
     });
+  }
+
+  ngAfterViewInit(): void {
+      this.treeGrid.sortingExpressions = [
+        {
+          dir: SortingDirection.Asc, fieldName: 'Name', ignoreCase: false, strategy: DefaultSortingStrategy.instance()
+         }
+      ];
   }
 }
