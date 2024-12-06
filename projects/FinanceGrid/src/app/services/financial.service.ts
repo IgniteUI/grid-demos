@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import DATA from '../data/data.json';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import DATA from "../data/data.json";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class FinancialService {
   public records: BehaviorSubject<any>;
@@ -18,23 +18,12 @@ export class FinancialService {
       return acc;
     }, 0);
     currData.forEach((record: any) => {
-      record['profitLossValue'] = this.calculateProfitLossValue(
-        record.value.currentPrice,
-        record.value.boughtPrice,
-        record.positions
-      );
+      record["profitLossValue"] = this.calculateProfitLossValue(record.value.currentPrice, record.value.boughtPrice, record.positions);
 
-      record['profitLossPercentage'] = this.calculateProfitLossPercentage(
-        record.profitLossValue,
-        record.value.boughtPrice,
-        record.positions
-      );
+      record["profitLossPercentage"] = this.calculateProfitLossPercentage(record.profitLossValue, record.value.boughtPrice, record.positions);
 
-      const totalInitialInvestment =
-        record.value.boughtPrice * record.positions;
-      record['allocation'] = parseFloat(
-        (totalInitialInvestment / totalPortfolioInvestment).toFixed(4)
-      );
+      const totalInitialInvestment = record.value.boughtPrice * record.positions;
+      record["allocation"] = parseFloat((totalInitialInvestment / totalPortfolioInvestment).toFixed(4));
     });
     this.records.next(currData);
   }
@@ -49,20 +38,12 @@ export class FinancialService {
     this.records.next(Array.from(data));
   }
 
-  private calculateProfitLossValue(
-    currentPrice: number,
-    boughtPrice: number,
-    positions: number
-  ) {
+  private calculateProfitLossValue(currentPrice: number, boughtPrice: number, positions: number) {
     const profitLossValue = (currentPrice - boughtPrice) * positions;
     return parseFloat(profitLossValue.toFixed(2));
   }
 
-  private calculateProfitLossPercentage(
-    profitLossValue: number,
-    boughtPrice: number,
-    positions: number
-  ) {
+  private calculateProfitLossPercentage(profitLossValue: number, boughtPrice: number, positions: number) {
     const totalInitialInvestment = boughtPrice * positions;
     const profitLossPercentage = profitLossValue / totalInitialInvestment;
     return parseFloat(profitLossPercentage.toFixed(4));
@@ -82,24 +63,13 @@ export class FinancialService {
       changePercent -= 2 * volatility;
     }
     const changeAmount = dataRow.value.currentPrice * (changePercent / 100);
-    const newPrice = parseFloat(
-      (dataRow.value.currentPrice + changeAmount).toFixed(2)
-    );
-    const newProfitLossValue = this.calculateProfitLossValue(
-      newPrice,
-      dataRow.value.boughtPrice,
-      dataRow.positions
-    );
-    const newProfitLossPercentage = this.calculateProfitLossPercentage(
-      newProfitLossValue,
-      dataRow.value.boughtPrice,
-      dataRow.positions
-    );
-    const result = {
+    const newPrice = parseFloat((dataRow.value.currentPrice + changeAmount).toFixed(2));
+    const newProfitLossValue = this.calculateProfitLossValue(newPrice, dataRow.value.boughtPrice, dataRow.positions);
+    const newProfitLossPercentage = this.calculateProfitLossPercentage(newProfitLossValue, dataRow.value.boughtPrice, dataRow.positions);
+    return {
       newPrice,
       profitLossValue: newProfitLossValue,
       profitLossPercentage: newProfitLossPercentage,
     };
-    return result;
   }
 }
