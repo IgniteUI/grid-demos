@@ -45,12 +45,10 @@
 
 .countryImage {
     height: 1rem;
-    margin-right: 0.3rem;
+    margin-right: 0.2rem;
+    box-shadow: var(--ig-elevation-1);
 }
 
-igx-pivot-grid {
-    box-shadow: initial;
-}
 
 igx-pivot-data-selector {
     border: solid 1px hsl(from var(--ig-gray-400) h s l / 1);
