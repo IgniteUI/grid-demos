@@ -44,7 +44,7 @@
 }
 
 .countryImage {
-    height: 1rem;
+    height: 14px;
     margin-right: 0.2rem;
     box-shadow: var(--ig-elevation-1);
 }
@@ -58,7 +58,7 @@ igx-pivot-data-selector {
 
     ::ng-deep {
         .igx-list__item-content {
-            padding: 0 !important;
+            padding: 0 8px !important;
             
             span {
                 margin-inline-start: initial;

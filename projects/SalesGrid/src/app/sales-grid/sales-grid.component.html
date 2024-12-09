@@ -1,16 +1,16 @@
 <div class="rootSample">
     <div class="pivotToolbar igx-grid__tr-pivot">
-        <span class="igx-grid-toolbar__title">Quick Action</span>
+        <span class="igx-grid-toolbar__title">Quick Actions</span>
         <div>
             <button igxButton="outlined" style="margin-right: 10px;" [igxToggleAction]="viewDropdown">
-                <igx-icon>visibility</igx-icon>
+                <igx-icon [name]="'visibility'" [family]="'material'"></igx-icon>
                 Change View
-                <igx-icon [family]="'default'" [name]="'arrow_drop_down'"></igx-icon>
+                <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
             </button>
             <button igxButton="outlined" [igxToggleAction]="exportDropdown">
-                <igx-icon>download</igx-icon>
+                <igx-icon [name]="'file_download'" [family]="'internal_indigo'"></igx-icon>
                 Export
-                <igx-icon [family]="'default'" [name]="'arrow_drop_down'"></igx-icon>
+                <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
             </button>
             <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
                 <igx-drop-down-item [id]="'brands'"><span>Brands: HM and HM Home</span></igx-drop-down-item>

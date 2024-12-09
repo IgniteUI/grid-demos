@@ -94,6 +94,33 @@ export class SalesGridComponent {
       aggregatorName: 'SUM',
       label: 'Sum'
     },
+    aggregateList: [
+      {
+        key: 'AVG',
+        aggregatorName: 'AVG',
+        label: 'Average'
+      },
+      {
+        key: 'COUNT',
+        aggregatorName: 'COUNT',
+        label: 'Count'
+      },
+      {
+        key: 'MAX',
+        aggregatorName: 'MAX',
+        label: 'Maximum'
+      },
+      {
+        key: 'MIN',
+        aggregatorName: 'MIN',
+        label: 'Minimum'
+      },
+      {
+        key: 'SUM',
+        aggregatorName: 'SUM',
+        label: 'Sum'
+      },
+    ],
     formatter: (value, _, __) => {
       return this.currencyFormatter(value, 'Sale');
     }
