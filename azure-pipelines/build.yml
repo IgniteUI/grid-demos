@@ -1,0 +1,7 @@
+# TODO install the igniteui-cli - gonna use it for licensed;
+# npx ng g @igniteui/angular-schematics:upgrade-packages --skip-install 
+# follow steps from existing legacy/classic pipeline, but question each one & put each one to the test.
+# generate source code artifact ASAP
+
+
+# On deployment, put the artifact on the download server; deploy with full clean before that
