@@ -11,6 +11,7 @@ export interface Employee {
   Department: string;
   Contacts: string;
   GrossSalary: number;
+  Phone: string;
 }
 
 export const EMPLOYEE_DATA: Employee[] = [
@@ -32,7 +33,8 @@ export const EMPLOYEE_DATA: Employee[] = [
             JobTitle: 'Marketing Specialist',
             Department: 'Marketing',
             Contacts: 'Anna.White@outlook.com',
-            GrossSalary: 62000
+            GrossSalary: 6200,
+            Phone: '555-3868',
           },
           {
             Age: 30,
@@ -41,24 +43,26 @@ export const EMPLOYEE_DATA: Employee[] = [
             ID: 8,
             Name: 'James Lee',
             Location: 'New York',
-    Country: 'USA',
+            Country: 'USA',
             Picture: 'images/men/1.jpg',
             JobTitle: 'Sales Manager',
             Department: 'Sales',
             Contacts: 'James.Lee@outlook.com',
-            GrossSalary: 75000
-          }
+            GrossSalary: 7500,
+            Phone: '555-6997',
+          },
         ],
         HireDate: new Date(2011, 6, 3),
         ID: 3,
         Name: 'Michael Burke',
         Location: 'London',
-    Country: 'GBR',
+        Country: 'GBR',
         Picture: 'images/men/2.jpg',
         JobTitle: 'Director of Engineering',
         Department: 'Engineering',
         Contacts: 'Michael.Burke@outlook.com',
-        GrossSalary: 95000
+        GrossSalary: 9500,
+        Phone: '555-1343',
       },
       {
         Age: 29,
@@ -70,25 +74,27 @@ export const EMPLOYEE_DATA: Employee[] = [
             ID: 9,
             Name: 'Sophia Green',
             Location: 'Paris',
-    Country: 'FRA',
+            Country: 'FRA',
             Picture: 'images/women/2.jpg',
             JobTitle: 'Graphic Designer',
             Department: 'Marketing',
             Contacts: 'Sophia.Green@outlook.com',
-            GrossSalary: 58000
-          }
+            GrossSalary: 5800,
+            Phone: '555-2725',
+          },
         ],
         HireDate: new Date(2015, 3, 12),
         ID: 4,
         Name: 'Sarah Johnson',
         Location: 'New York',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/women/3.jpg',
         JobTitle: 'VP of Marketing',
         Department: 'Marketing',
         Contacts: 'Sarah.Johnson@outlook.com',
-        GrossSalary: 87000
-      }
+        GrossSalary: 8700,
+        Phone: '555-4496',
+      },
     ],
     HireDate: new Date(2005, 11, 1),
     ID: 1,
@@ -99,7 +105,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'CEO',
     Department: 'Operations',
     Contacts: 'John.Smith@outlook.com',
-    GrossSalary: 150000
+    GrossSalary: 15000,
+    Phone: '555-9785',
   },
   {
     Age: 42,
@@ -114,24 +121,26 @@ export const EMPLOYEE_DATA: Employee[] = [
             ID: 10,
             Name: 'Daniel Brown',
             Location: 'Berlin',
-    Country: 'DEU',
+            Country: 'DEU',
             Picture: 'images/men/4.jpg',
             JobTitle: 'Account Manager',
             Department: 'Finance',
             Contacts: 'Daniel.Brown@outlook.com',
-            GrossSalary: 70000
-          }
+            GrossSalary: 7000,
+            Phone: '555-4224',
+          },
         ],
         HireDate: new Date(2013, 4, 21),
         ID: 5,
         Name: 'David Wilson',
         Location: 'Chicago',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/men/5.jpg',
         JobTitle: 'VP of Sales',
         Department: 'Sales',
         Contacts: 'David.Wilson@outlook.com',
-        GrossSalary: 120000
+        GrossSalary: 12000,
+        Phone: '555-2529',
       },
       {
         Age: 31,
@@ -140,13 +149,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 6,
         Name: 'Emily Davis',
         Location: 'Paris',
-    Country: 'FRA',
+        Country: 'FRA',
         Picture: 'images/women/4.jpg',
         JobTitle: 'Director of Marketing',
         Department: 'Marketing',
         Contacts: 'Emily.Davis@outlook.com',
-        GrossSalary: 98000
-      }
+        GrossSalary: 9800,
+        Phone: '555-6899',
+      },
     ],
     HireDate: new Date(2010, 9, 13),
     ID: 2,
@@ -157,7 +167,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'COO',
     Department: 'Operations',
     Contacts: 'Emma.Thompson@outlook.com',
-    GrossSalary: 140000
+    GrossSalary: 14000,
+    Phone: '555-5748',
   },
   {
     Age: 48,
@@ -172,24 +183,26 @@ export const EMPLOYEE_DATA: Employee[] = [
             ID: 11,
             Name: 'Lucas Wright',
             Location: 'Madrid',
-    Country: 'ESP',
+            Country: 'ESP',
             Picture: 'images/men/6.jpg',
             JobTitle: 'Software Engineer',
             Department: 'Engineering',
             Contacts: 'Lucas.Wright@outlook.com',
-            GrossSalary: 82000
-          }
+            GrossSalary: 8200,
+            Phone: '555-1357',
+          },
         ],
         HireDate: new Date(2014, 5, 10),
         ID: 12,
         Name: 'Nina Parker',
         Location: 'Madrid',
-    Country: 'ESP',
+        Country: 'ESP',
         Picture: 'images/women/6.jpg',
         JobTitle: 'HR Manager',
         Department: 'Human Resources',
         Contacts: 'Nina.Parker@outlook.com',
-        GrossSalary: 78000
+        GrossSalary: 7800,
+        Phone: '555-4806',
       },
       {
         Age: 32,
@@ -198,13 +211,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 13,
         Name: 'Oliver King',
         Location: 'San Francisco',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/men/7.jpg',
         JobTitle: 'Product Manager',
         Department: 'Product',
         Contacts: 'Oliver.King@outlook.com',
-        GrossSalary: 90000
-      }
+        GrossSalary: 9000,
+        Phone: '555-1447',
+      },
     ],
     HireDate: new Date(2008, 3, 4),
     ID: 14,
@@ -215,7 +229,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Chief Product Officer',
     Department: 'Product',
     Contacts: 'Sophie.Harris@outlook.com',
-    GrossSalary: 145000
+    GrossSalary: 14500,
+    Phone: '555-8702',
   },
   {
     Age: 50,
@@ -227,12 +242,13 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 15,
         Name: 'Rachel Moore',
         Location: 'Sydney',
-    Country: 'AUS',
+        Country: 'AUS',
         Picture: 'images/women/8.jpg',
         JobTitle: 'Financial Analyst',
         Department: 'Finance',
         Contacts: 'Rachel.Moore@outlook.com',
-        GrossSalary: 89000
+        GrossSalary: 8900,
+        Phone: '555-5205',
       },
       {
         Age: 33,
@@ -241,13 +257,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 16,
         Name: 'William White',
         Location: 'Chicago',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/men/8.jpg',
         JobTitle: 'Sales Engineer',
         Department: 'Sales',
         Contacts: 'William.White@outlook.com',
-        GrossSalary: 85000
-      }
+        GrossSalary: 8500,
+        Phone: '555-6084',
+      },
     ],
     HireDate: new Date(2010, 11, 30),
     ID: 17,
@@ -258,7 +275,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'CTO',
     Department: 'Technology',
     Contacts: 'Aaron.Miller@outlook.com',
-    GrossSalary: 155000
+    GrossSalary: 15500,
+    Phone: '555-9687',
   },
   {
     Age: 45,
@@ -273,25 +291,27 @@ export const EMPLOYEE_DATA: Employee[] = [
             ID: 18,
             Name: 'Mia Scott',
             Location: 'Paris',
-    Country: 'FRA',
+            Country: 'FRA',
             Picture: 'images/women/9.jpg',
             JobTitle: 'UX Designer',
             Department: 'Design',
             Contacts: 'Mia.Scott@outlook.com',
-            GrossSalary: 72000
-          }
+            GrossSalary: 7200,
+            Phone: '555-5002',
+          },
         ],
         HireDate: new Date(2016, 4, 19),
         ID: 19,
         Name: 'Noah Lewis',
         Location: 'Berlin',
-    Country: 'DEU',
+        Country: 'DEU',
         Picture: 'images/men/10.jpg',
         JobTitle: 'Senior Developer',
         Department: 'Engineering',
         Contacts: 'Noah.Lewis@outlook.com',
-        GrossSalary: 95000
-      }
+        GrossSalary: 9500,
+        Phone: '555-8020',
+      },
     ],
     HireDate: new Date(2009, 7, 11),
     ID: 20,
@@ -302,7 +322,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Chief Design Officer',
     Department: 'Design',
     Contacts: 'Grace.Martinez@outlook.com',
-    GrossSalary: 138000
+    GrossSalary: 13800,
+    Phone: '555-7214',
   },
   {
     Age: 39,
@@ -314,13 +335,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 21,
         Name: 'Harry Turner',
         Location: 'Tokyo',
-    Country: 'JPN',
+        Country: 'JPN',
         Picture: 'images/men/11.jpg',
         JobTitle: 'Project Manager',
         Department: 'Project Management',
         Contacts: 'Harry.Turner@outlook.com',
-        GrossSalary: 88000
-      }
+        GrossSalary: 8800,
+        Phone: '555-5512',
+      },
     ],
     HireDate: new Date(2011, 3, 19),
     ID: 22,
@@ -331,7 +353,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'VP of Product',
     Department: 'Product',
     Contacts: 'Chloe.Edwards@outlook.com',
-    GrossSalary: 125000
+    GrossSalary: 12500,
+    Phone: '555-8430',
   },
   {
     Age: 55,
@@ -343,12 +366,13 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 23,
         Name: 'Mark Hughes',
         Location: 'London',
-    Country: 'GBR',
+        Country: 'GBR',
         Picture: 'images/men/12.jpg',
         JobTitle: 'Engineering Manager',
         Department: 'Engineering',
         Contacts: 'Mark.Hughes@outlook.com',
-        GrossSalary: 105000
+        GrossSalary: 10500,
+        Phone: '555-7500',
       },
       {
         Age: 30,
@@ -357,13 +381,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 24,
         Name: 'Ella Watson',
         Location: 'London',
-    Country: 'GBR',
+        Country: 'GBR',
         Picture: 'images/women/12.jpg',
         JobTitle: 'Software Engineer',
         Department: 'Engineering',
         Contacts: 'Ella.Watson@outlook.com',
-        GrossSalary: 82000
-      }
+        GrossSalary: 8200,
+        Phone: '555-7647',
+      },
     ],
     HireDate: new Date(2007, 8, 2),
     ID: 25,
@@ -374,7 +399,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'VP of Engineering',
     Department: 'Engineering',
     Contacts: 'William.Carter@outlook.com',
-    GrossSalary: 150000
+    GrossSalary: 15000,
+    Phone: '555-8686',
   },
   {
     Age: 47,
@@ -386,13 +412,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 26,
         Name: 'Olivia James',
         Location: 'New York',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/women/13.jpg',
         JobTitle: 'Finance Manager',
         Department: 'Finance',
         Contacts: 'Olivia.James@outlook.com',
-        GrossSalary: 95000
-      }
+        GrossSalary: 9500,
+        Phone: '555-6026',
+      },
     ],
     HireDate: new Date(2009, 6, 21),
     ID: 27,
@@ -403,7 +430,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'CFO',
     Department: 'Finance',
     Contacts: 'Henry.Bell@outlook.com',
-    GrossSalary: 160000
+    GrossSalary: 16000,
+    Phone: '555-4332',
   },
   {
     Age: 41,
@@ -415,13 +443,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 28,
         Name: 'Samantha Adams',
         Location: 'Berlin',
-    Country: 'DEU',
+        Country: 'DEU',
         Picture: 'images/women/14.jpg',
         JobTitle: 'Business Analyst',
         Department: 'Business',
         Contacts: 'Samantha.Adams@outlook.com',
-        GrossSalary: 78000
-      }
+        GrossSalary: 7800,
+        Phone: '555-2518',
+      },
     ],
     HireDate: new Date(2013, 7, 8),
     ID: 29,
@@ -432,7 +461,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Head of Business Development',
     Department: 'Business',
     Contacts: 'Nathan.Evans@outlook.com',
-    GrossSalary: 115000
+    GrossSalary: 11500,
+    Phone: '555-4925',
   },
   {
     Age: 53,
@@ -444,13 +474,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 30,
         Name: 'Isaac Thomas',
         Location: 'Chicago',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/men/16.jpg',
         JobTitle: 'Operations Manager',
         Department: 'Operations',
         Contacts: 'Isaac.Thomas@outlook.com',
-        GrossSalary: 98000
-      }
+        GrossSalary: 9800,
+        Phone: '555-8237',
+      },
     ],
     HireDate: new Date(2011, 2, 25),
     ID: 31,
@@ -461,7 +492,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'COO',
     Department: 'Operations',
     Contacts: 'Charlotte.Foster@outlook.com',
-    GrossSalary: 145000
+    GrossSalary: 14500,
+    Phone: '555-8379',
   },
   {
     Age: 60,
@@ -473,13 +505,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 32,
         Name: 'Victoria Perry',
         Location: 'Madrid',
-    Country: 'ESP',
+        Country: 'ESP',
         Picture: 'images/women/16.jpg',
         JobTitle: 'Lead Designer',
         Department: 'Design',
         Contacts: 'Victoria.Perry@outlook.com',
-        GrossSalary: 97000
-      }
+        GrossSalary: 9700,
+        Phone: '555-4380',
+      },
     ],
     HireDate: new Date(2006, 4, 18),
     ID: 33,
@@ -490,7 +523,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Chief Creative Officer',
     Department: 'Design',
     Contacts: 'Adrian.Hill@outlook.com',
-    GrossSalary: 142000
+    GrossSalary: 14200,
+    Phone: '555-6275',
   },
   {
     Age: 37,
@@ -502,13 +536,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 34,
         Name: 'Dylan Ward',
         Location: 'Sydney',
-    Country: 'AUS',
+        Country: 'AUS',
         Picture: 'images/men/18.jpg',
         JobTitle: 'Sales Executive',
         Department: 'Sales',
         Contacts: 'Dylan.Ward@outlook.com',
-        GrossSalary: 71000
-      }
+        GrossSalary: 7100,
+        Phone: '555-8160',
+      },
     ],
     HireDate: new Date(2015, 9, 25),
     ID: 35,
@@ -519,7 +554,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Sales Director',
     Department: 'Sales',
     Contacts: 'Zoe.Wood@outlook.com',
-    GrossSalary: 115000
+    GrossSalary: 11500,
+    Phone: '555-4486',
   },
   {
     Age: 55,
@@ -531,13 +567,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 36,
         Name: 'Benjamin Clark',
         Location: 'Toronto',
-    Country: 'CAN',
+        Country: 'CAN',
         Picture: 'images/men/19.jpg',
         JobTitle: 'Junior Developer',
         Department: 'Engineering',
         Contacts: 'Benjamin.Clark@outlook.com',
-        GrossSalary: 68000
-      }
+        GrossSalary: 6800,
+        Phone: '555-7733',
+      },
     ],
     HireDate: new Date(2010, 3, 4),
     ID: 37,
@@ -548,7 +585,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Senior Developer',
     Department: 'Engineering',
     Contacts: 'Sophie.Ward@outlook.com',
-    GrossSalary: 118000
+    GrossSalary: 11800,
+    Phone: '555-1097',
   },
   {
     Age: 46,
@@ -560,13 +598,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 38,
         Name: 'Liam Bell',
         Location: 'San Francisco',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/men/20.jpg',
         JobTitle: 'HR Specialist',
         Department: 'Human Resources',
         Contacts: 'Liam.Bell@outlook.com',
-        GrossSalary: 85000
-      }
+        GrossSalary: 8500,
+        Phone: '555-8819',
+      },
     ],
     HireDate: new Date(2008, 11, 25),
     ID: 39,
@@ -577,7 +616,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'HR Director',
     Department: 'Human Resources',
     Contacts: 'Olivia.Nelson@outlook.com',
-    GrossSalary: 132000
+    GrossSalary: 13200,
+    Phone: '555-8323',
   },
   {
     Age: 50,
@@ -589,13 +629,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 40,
         Name: 'Noah Harris',
         Location: 'Sydney',
-    Country: 'AUS',
+        Country: 'AUS',
         Picture: 'images/men/21.jpg',
         JobTitle: 'Network Administrator',
         Department: 'IT',
         Contacts: 'Noah.Harris@outlook.com',
-        GrossSalary: 78000
-      }
+        GrossSalary: 7800,
+        Phone: '555-2282',
+      },
     ],
     HireDate: new Date(2011, 10, 3),
     ID: 41,
@@ -606,7 +647,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'IT Manager',
     Department: 'IT',
     Contacts: 'Ava.Thompson@outlook.com',
-    GrossSalary: 125000
+    GrossSalary: 12500,
+    Phone: '555-7343',
   },
   {
     Age: 57,
@@ -618,13 +660,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 42,
         Name: 'Mason Young',
         Location: 'Berlin',
-    Country: 'DEU',
+        Country: 'DEU',
         Picture: 'images/men/22.jpg',
         JobTitle: 'Legal Assistant',
         Department: 'Legal',
         Contacts: 'Mason.Young@outlook.com',
-        GrossSalary: 90000
-      }
+        GrossSalary: 9000,
+        Phone: '555-3901',
+      },
     ],
     HireDate: new Date(2007, 6, 16),
     ID: 43,
@@ -635,7 +678,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Legal Director',
     Department: 'Legal',
     Contacts: 'Ella.King@outlook.com',
-    GrossSalary: 148000
+    GrossSalary: 14800,
+    Phone: '555-1672',
   },
   {
     Age: 45,
@@ -647,13 +691,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 44,
         Name: 'Sophia Wright',
         Location: 'Tokyo',
-    Country: 'JPN',
+        Country: 'JPN',
         Picture: 'images/women/22.jpg',
         JobTitle: 'Customer Support Specialist',
         Department: 'Support',
         Contacts: 'Sophia.Wright@outlook.com',
-        GrossSalary: 68000
-      }
+        GrossSalary: 6800,
+        Phone: '555-4763',
+      },
     ],
     HireDate: new Date(2012, 1, 5),
     ID: 45,
@@ -664,7 +709,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Support Director',
     Department: 'Support',
     Contacts: 'Jacob.Lewis@outlook.com',
-    GrossSalary: 125000
+    GrossSalary: 12500,
+    Phone: '555-5543',
   },
   {
     Age: 49,
@@ -676,13 +722,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 46,
         Name: 'Henry Baker',
         Location: 'Madrid',
-    Country: 'ESP',
+        Country: 'ESP',
         Picture: 'images/men/24.jpg',
         JobTitle: 'Sales Associate',
         Department: 'Sales',
         Contacts: 'Henry.Baker@outlook.com',
-        GrossSalary: 74000
-      }
+        GrossSalary: 7400,
+        Phone: '555-6960',
+      },
     ],
     HireDate: new Date(2014, 11, 17),
     ID: 47,
@@ -693,7 +740,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Sales Director',
     Department: 'Sales',
     Contacts: 'Mia.Mitchell@outlook.com',
-    GrossSalary: 140000
+    GrossSalary: 14000,
+    Phone: '555-2782',
   },
   {
     Age: 56,
@@ -705,13 +753,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 48,
         Name: 'Emily Ramirez',
         Location: 'Dubai',
-    Country: 'ARE',
+        Country: 'ARE',
         Picture: 'images/women/24.jpg',
         JobTitle: 'Marketing Associate',
         Department: 'Marketing',
         Contacts: 'Emily.Ramirez@outlook.com',
-        GrossSalary: 78000
-      }
+        GrossSalary: 7800,
+        Phone: '555-8717',
+      },
     ],
     HireDate: new Date(2009, 3, 9),
     ID: 49,
@@ -722,7 +771,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Chief Marketing Officer',
     Department: 'Marketing',
     Contacts: 'James.Cox@outlook.com',
-    GrossSalary: 160000
+    GrossSalary: 16000,
+    Phone: '555-9289',
   },
   {
     Age: 51,
@@ -734,13 +784,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 50,
         Name: 'Avery Perez',
         Location: 'London',
-    Country: 'GBR',
+        Country: 'GBR',
         Picture: 'images/men/26.jpg',
         JobTitle: 'IT Technician',
         Department: 'IT',
         Contacts: 'Avery.Perez@outlook.com',
-        GrossSalary: 67000
-      }
+        GrossSalary: 6700,
+        Phone: '555-1973',
+      },
     ],
     HireDate: new Date(2012, 5, 11),
     ID: 51,
@@ -751,7 +802,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'IT Director',
     Department: 'IT',
     Contacts: 'Grace.Scott@outlook.com',
-    GrossSalary: 145000
+    GrossSalary: 14500,
+    Phone: '555-1369',
   },
   {
     Age: 53,
@@ -763,13 +815,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 52,
         Name: 'Harper Blake',
         Location: 'New York',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/women/26.jpg',
         JobTitle: 'Systems Analyst',
         Department: 'IT',
         Contacts: 'Harper.Blake@outlook.com',
-        GrossSalary: 93000
-      }
+        GrossSalary: 9300,
+        Phone: '555-5412',
+      },
     ],
     HireDate: new Date(2008, 9, 4),
     ID: 53,
@@ -780,7 +833,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'IT Manager',
     Department: 'IT',
     Contacts: 'Nathan.Bell@outlook.com',
-    GrossSalary: 130000
+    GrossSalary: 13000,
+    Phone: '555-9105',
   },
   {
     Age: 45,
@@ -792,13 +846,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 54,
         Name: 'Ella Brooks',
         Location: 'Paris',
-    Country: 'FRA',
+        Country: 'FRA',
         Picture: 'images/women/27.jpg',
         JobTitle: 'Customer Success Manager',
         Department: 'Support',
         Contacts: 'Ella.Brooks@outlook.com',
-        GrossSalary: 78000
-      }
+        GrossSalary: 7800,
+        Phone: '555-7691',
+      },
     ],
     HireDate: new Date(2010, 11, 7),
     ID: 55,
@@ -809,7 +864,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Customer Success Director',
     Department: 'Support',
     Contacts: 'Jack.Scott@outlook.com',
-    GrossSalary: 120000
+    GrossSalary: 12000,
+    Phone: '555-9708',
   },
   {
     Age: 59,
@@ -821,13 +877,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 56,
         Name: 'Olivia Barnes',
         Location: 'Berlin',
-    Country: 'DEU',
+        Country: 'DEU',
         Picture: 'images/women/28.jpg',
         JobTitle: 'Senior Financial Analyst',
         Department: 'Finance',
         Contacts: 'Olivia.Barnes@outlook.com',
-        GrossSalary: 99000
-      }
+        GrossSalary: 9900,
+        Phone: '555-8283',
+      },
     ],
     HireDate: new Date(2006, 6, 2),
     ID: 57,
@@ -838,7 +895,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Chief Financial Officer',
     Department: 'Finance',
     Contacts: 'Lucas.Cook@outlook.com',
-    GrossSalary: 175000
+    GrossSalary: 17500,
+    Phone: '555-6914',
   },
   {
     Age: 40,
@@ -850,13 +908,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 58,
         Name: 'Emma Morris',
         Location: 'Chicago',
-    Country: 'USA',
+        Country: 'USA',
         Picture: 'images/women/29.jpg',
         JobTitle: 'Graphic Designer',
         Department: 'Design',
         Contacts: 'Emma.Morris@outlook.com',
-        GrossSalary: 70000
-      }
+        GrossSalary: 7000,
+        Phone: '555-5052',
+      },
     ],
     HireDate: new Date(2013, 1, 25),
     ID: 59,
@@ -867,7 +926,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Head of Design',
     Department: 'Design',
     Contacts: 'Mason.Perez@outlook.com',
-    GrossSalary: 130000
+    GrossSalary: 13000,
+    Phone: '555-5484',
   },
   {
     Age: 48,
@@ -879,13 +939,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 60,
         Name: 'Lily Turner',
         Location: 'Dubai',
-    Country: 'ARE',
+        Country: 'ARE',
         Picture: 'images/women/30.jpg',
         JobTitle: 'Operations Analyst',
         Department: 'Operations',
         Contacts: 'Lily.Turner@outlook.com',
-        GrossSalary: 82000
-      }
+        GrossSalary: 8200,
+        Phone: '555-4044',
+      },
     ],
     HireDate: new Date(2009, 10, 28),
     ID: 61,
@@ -896,7 +957,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'VP of Operations',
     Department: 'Operations',
     Contacts: 'James.Jenkins@outlook.com',
-    GrossSalary: 145000
+    GrossSalary: 14500,
+    Phone: '555-5345',
   },
   {
     Age: 43,
@@ -908,13 +970,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 62,
         Name: 'Sophia Nelson',
         Location: 'Madrid',
-    Country: 'ESP',
+        Country: 'ESP',
         Picture: 'images/women/31.jpg',
         JobTitle: 'Sales Coordinator',
         Department: 'Sales',
         Contacts: 'Sophia.Nelson@outlook.com',
-        GrossSalary: 77000
-      }
+        GrossSalary: 7700,
+        Phone: '555-3373',
+      },
     ],
     HireDate: new Date(2011, 7, 14),
     ID: 63,
@@ -925,7 +988,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Sales Director',
     Department: 'Sales',
     Contacts: 'Aiden.Stewart@outlook.com',
-    GrossSalary: 130000
+    GrossSalary: 13000,
+    Phone: '555-4471',
   },
   {
     Age: 52,
@@ -937,13 +1001,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 64,
         Name: 'Evelyn Bryant',
         Location: 'Toronto',
-    Country: 'CAN',
+        Country: 'CAN',
         Picture: 'images/women/32.jpg',
         JobTitle: 'Marketing Manager',
         Department: 'Marketing',
         Contacts: 'Evelyn.Bryant@outlook.com',
-        GrossSalary: 88000
-      }
+        GrossSalary: 8800,
+        Phone: '555-4903',
+      },
     ],
     HireDate: new Date(2007, 12, 11),
     ID: 65,
@@ -954,7 +1019,8 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Chief Marketing Officer',
     Department: 'Marketing',
     Contacts: 'Henry.Foster@outlook.com',
-    GrossSalary: 155000
+    GrossSalary: 15500,
+    Phone: '555-8637',
   },
   {
     Age: 47,
@@ -966,13 +1032,14 @@ export const EMPLOYEE_DATA: Employee[] = [
         ID: 66,
         Name: 'Isabella Hayes',
         Location: 'Tokyo',
-    Country: 'JPN',
+        Country: 'JPN',
         Picture: 'images/women/33.jpg',
         JobTitle: 'Product Designer',
         Department: 'Product',
         Contacts: 'Isabella.Hayes@outlook.com',
-        GrossSalary: 89000
-      }
+        GrossSalary: 8900,
+        Phone: '555-2488',
+      },
     ],
     HireDate: new Date(2010, 4, 30),
     ID: 67,
@@ -983,6 +1050,7 @@ export const EMPLOYEE_DATA: Employee[] = [
     JobTitle: 'Product Lead',
     Department: 'Product',
     Contacts: 'Benjamin.Rivera@outlook.com',
-    GrossSalary: 135000
-  }
+    GrossSalary: 13500,
+    Phone: '555-4062',
+  },
 ];

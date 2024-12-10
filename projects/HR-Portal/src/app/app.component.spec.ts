@@ -8,9 +8,8 @@ describe('AppComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ AppComponent, RouterModule.forRoot([]) ]
-    })
-    .compileComponents();
+      imports: [AppComponent, RouterModule.forRoot([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;

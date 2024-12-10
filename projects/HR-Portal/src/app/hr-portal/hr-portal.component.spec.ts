@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IgxCheckboxModule, IgxDatePickerModule, IgxTreeGridModule } from 'igniteui-angular';
+import {
+  IgxCheckboxModule,
+  IgxDatePickerModule,
+  IgxTreeGridModule,
+} from 'igniteui-angular';
 import { HrPortalComponent } from './hr-portal.component';
 
 describe('TreeGrid1Component', () => {
@@ -9,9 +13,14 @@ describe('TreeGrid1Component', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, IgxTreeGridModule, IgxDatePickerModule, IgxCheckboxModule, HrPortalComponent]
-    })
-      .compileComponents();
+      imports: [
+        BrowserAnimationsModule,
+        IgxTreeGridModule,
+        IgxDatePickerModule,
+        IgxCheckboxModule,
+        HrPortalComponent,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
