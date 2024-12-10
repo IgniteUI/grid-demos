@@ -1,8 +1,8 @@
 [
   {
-    "id": "US0079031078",
-    "holdingName": "Advanced Micro Devices Inc. (AMD)",
-    "positions": 12,
+    "id": "AMD",
+    "holdingName": "Advanced Micro Devices Inc.",
+    "positions": 24,
     "holdingPeriod": 157,
     "value": {
       "currentPrice": 130.36,
@@ -10,9 +10,9 @@
     }
   },
   {
-    "id": "ETC",
-    "holdingName": "Ethereum (ETH)",
-    "positions": 15,
+    "id": "ETH",
+    "holdingName": "Ethereum",
+    "positions": 3,
     "holdingPeriod": 120,
     "value": {
       "currentPrice": 3568,
@@ -20,9 +20,9 @@
     }
   },
   {
-    "id": "US0090661010",
-    "holdingName": "Airbnb Inc. (ABNB)",
-    "positions": 24,
+    "id": "ABNB",
+    "holdingName": "Airbnb Inc.",
+    "positions": 23,
     "holdingPeriod": 540,
     "value": {
       "currentPrice": 130.66,
@@ -30,9 +30,9 @@
     }
   },
   {
-    "id": "US01609W1027",
-    "holdingName": "Alibaba Group Holding Limited (BABA)",
-    "positions": 3,
+    "id": "BABA",
+    "holdingName": "Alibaba Group Holding Limited",
+    "positions": 12,
     "holdingPeriod": 91,
     "value": {
       "currentPrice": 81.8,
@@ -41,8 +41,8 @@
   },
   {
     "id": "BTC",
-    "holdingName": "Bitcoin (BTC)",
-    "positions": 0.3,
+    "holdingName": "Bitcoin",
+    "positions": 0.2,
     "holdingPeriod": 323,
     "value": {
       "currentPrice": 95294,
@@ -50,9 +50,9 @@
     }
   },
   {
-    "id": "US09857L1089",
-    "holdingName": "Booking Holdings Inc (BKNG)",
-    "positions": 1,
+    "id": "BKNG",
+    "holdingName": "Booking Holdings Inc",
+    "positions": 0.2,
     "holdingPeriod": 17,
     "value": {
       "currentPrice": 4932,
@@ -60,9 +60,9 @@
     }
   },
   {
-    "id": "US22160K1051",
-    "holdingName": "Costco Wholesale Corporation (COST)",
-    "positions": 3,
+    "id": "COST",
+    "holdingName": "Costco Wholesale Corporation",
+    "positions": 10,
     "holdingPeriod": 32,
     "value": {
       "currentPrice": 911.4,
@@ -70,8 +70,8 @@
     }
   },
   {
-    "id": "AU000000DMP0",
-    "holdingName": "Dominos Pizza Inc (DPZ)",
+    "id": "DPZ",
+    "holdingName": "Dominos Pizza Inc",
     "positions": 21,
     "holdingPeriod": 54,
     "value": {
@@ -80,8 +80,8 @@
     }
   },
   {
-    "id": "US31428X1063",
-    "holdingName": "FedEx Corporation (FDX)",
+    "id": "FDX",
+    "holdingName": "FedEx Corporation",
     "positions": 2,
     "holdingPeriod": 72,
     "value": {
@@ -90,9 +90,9 @@
     }
   },
   {
-    "id": "US3453708600",
-    "holdingName": "Ford Motor Company (F)",
-    "positions": 56,
+    "id": "F",
+    "holdingName": "Ford Motor Company",
+    "positions": 5.6,
     "holdingPeriod": 431,
     "value": {
       "currentPrice": 10.41,
@@ -100,9 +100,9 @@
     }
   },
   {
-    "id": "US37045V1008",
-    "holdingName": "General Motors Company (GM)",
-    "positions": 31,
+    "id": "GM",
+    "holdingName": "General Motors Company",
+    "positions": 3.1,
     "holdingPeriod": 652,
     "value": {
       "currentPrice": 53.25,
@@ -110,9 +110,9 @@
     }
   },
   {
-    "id": "US0378331005",
-    "holdingName": "Apple Inc. (AAPL)",
-    "positions": 11,
+    "id": "AAPL",
+    "holdingName": "Apple Inc.",
+    "positions": 1.1,
     "holdingPeriod": 632,
     "value": {
       "currentPrice": 223.35,
@@ -120,9 +120,9 @@
     }
   },
   {
-    "id": "US5949181045",
-    "holdingName": "Microsoft Corp. (MSFT)",
-    "positions": 7,
+    "id": "MSFT",
+    "holdingName": "Microsoft Corp.",
+    "positions": 0.7,
     "holdingPeriod": 342,
     "value": {
       "currentPrice": 401.2,
@@ -130,9 +130,9 @@
     }
   },
   {
-    "id": "US02079K3059",
-    "holdingName": "Alphabet Inc. (GOOGL)",
-    "positions": 13,
+    "id": "GOOGL",
+    "holdingName": "Alphabet Inc.",
+    "positions": 1.3,
     "holdingPeriod": 376,
     "value": {
       "currentPrice": 160,
@@ -140,9 +140,9 @@
     }
   },
   {
-    "id": "US0231351067",
-    "holdingName": "Amazon.com Inc. (AMZN)",
-    "positions": 43,
+    "id": "AMZN",
+    "holdingName": "Amazon.com Inc.",
+    "positions": 4.3,
     "holdingPeriod": 352,
     "value": {
       "currentPrice": 205.86,
@@ -150,9 +150,9 @@
     }
   },
   {
-    "id": "US46625H1005",
-    "holdingName": "JPMorgan Chase and Co (JPM)",
-    "positions": 3,
+    "id": "JPM",
+    "holdingName": "JPMorgan Chase and Co",
+    "positions": 0.3,
     "holdingPeriod": 13,
     "value": {
       "currentPrice": 238.85,
@@ -160,9 +160,9 @@
     }
   },
   {
-    "id": "US88160R1014",
-    "holdingName": "Tesla Inc. (TSLA)",
-    "positions": 48,
+    "id": "TSLA",
+    "holdingName": "Tesla Inc.",
+    "positions": 4.8,
     "holdingPeriod": 452,
     "value": {
       "currentPrice": 332.89,
@@ -170,9 +170,9 @@
     }
   },
   {
-    "id": "US67066G1040",
-    "holdingName": "NVIDIA Corp. (NVDA)",
-    "positions": 12,
+    "id": "NVDA",
+    "holdingName": "NVIDIA Corp.",
+    "positions": 1.2,
     "holdingPeriod": 237,
     "value": {
       "currentPrice": 136.92,
@@ -180,9 +180,9 @@
     }
   },
   {
-    "id": "US4878361082",
-    "holdingName": "Kellogg Company (K)",
-    "positions": 2,
+    "id": "K",
+    "holdingName": "Kellogg Company",
+    "positions": 0.2,
     "holdingPeriod": 2,
     "value": {
       "currentPrice": 76.66,
@@ -190,9 +190,9 @@
     }
   },
   {
-    "id": "US92826C8394",
-    "holdingName": "Visa Inc. (V)",
-    "positions": 8,
+    "id": "V",
+    "holdingName": "Visa Inc.",
+    "positions": 0.08,
     "holdingPeriod": 365,
     "value": {
       "currentPrice": 307.9,
@@ -200,9 +200,9 @@
     }
   },
   {
-    "id": "US4781601046",
-    "holdingName": "Johnson & Johnson (JNJ)",
-    "positions": 21,
+    "id": "JNJ",
+    "holdingName": "Johnson & Johnson",
+    "positions": 2.1,
     "holdingPeriod": 420,
     "value": {
       "currentPrice": 155.78,
@@ -210,9 +210,9 @@
     }
   },
   {
-    "id": "US7427181091",
-    "holdingName": "Procter & Gamble Co. (PG)",
-    "positions": 9,
+    "id": "PG",
+    "holdingName": "Procter & Gamble Co.",
+    "positions": 0.9,
     "holdingPeriod": 150,
     "value": {
       "currentPrice": 156.89,
@@ -220,19 +220,19 @@
     }
   },
   {
-    "id": "US9311421039",
-    "holdingName": "Walmart Inc. (WMT)",
-    "positions": 36,
+    "id": "WMT",
+    "holdingName": "Walmart Inc.",
+    "positions": 0.36,
     "holdingPeriod": 250,
     "value": {
       "currentPrice": 145.67,
-      "boughtPrice": 120.0
+      "boughtPrice": 120
     }
   },
   {
-    "id": "US4370761029",
-    "holdingName": "The Home Depot Inc. (HD)",
-    "positions": 34,
+    "id": "HD",
+    "holdingName": "The Home Depot Inc.",
+    "positions": 0.34,
     "holdingPeriod": 290,
     "value": {
       "currentPrice": 428.67,
@@ -240,9 +240,9 @@
     }
   },
   {
-    "id": "US1912161007",
-    "holdingName": "Coca-Cola Co. (KO)",
-    "positions": 40,
+    "id": "KO",
+    "holdingName": "Coca-Cola Co.",
+    "positions": 0.40,
     "holdingPeriod": 180,
     "value": {
       "currentPrice": 56.79,
@@ -250,9 +250,9 @@
     }
   },
   {
-    "id": "US7134481081",
-    "holdingName": "PepsiCo Inc. (PEP)",
-    "positions": 20,
+    "id": "PEP",
+    "holdingName": "PepsiCo Inc.",
+    "positions": 0.20,
     "holdingPeriod": 430,
     "value": {
       "currentPrice": 184.39,
@@ -260,9 +260,9 @@
     }
   },
   {
-    "id": "US2546871060",
-    "holdingName": "Walt Disney Co. (DIS)",
-    "positions": 19,
+    "id": "DIS",
+    "holdingName": "Walt Disney Co.",
+    "positions": 0.19,
     "holdingPeriod": 380,
     "value": {
       "currentPrice": 177.99,
@@ -270,9 +270,9 @@
     }
   },
   {
-    "id": "US7170811035",
-    "holdingName": "Pfizer Inc. (PFE)",
-    "positions": 1,
+    "id": "PFE",
+    "holdingName": "Pfizer Inc.",
+    "positions": 0.1,
     "holdingPeriod": 180,
     "value": {
       "currentPrice": 39.81,
@@ -280,9 +280,9 @@
     }
   },
   {
-    "id": "US30231G1022",
-    "holdingName": "Exxon Mobil Corp. (XOM)",
-    "positions": 34,
+    "id": "XOM",
+    "holdingName": "Exxon Mobil Corp.",
+    "positions": 3.4,
     "holdingPeriod": 400,
     "value": {
       "currentPrice": 114.36,
@@ -290,9 +290,9 @@
     }
   },
   {
-    "id": "US1667641005",
-    "holdingName": "Chevron Corp. (CVX)",
-    "positions": 40,
+    "id": "CVX",
+    "holdingName": "Chevron Corp.",
+    "positions": 0.40,
     "holdingPeriod": 320,
     "value": {
       "currentPrice": 179.63,
@@ -300,9 +300,9 @@
     }
   },
   {
-    "id": "US5801351017",
-    "holdingName": "McDonalds Corporation (MCD)",
-    "positions": 31,
+    "id": "MCD",
+    "holdingName": "McDonalds Corporation",
+    "positions": 0.31,
     "holdingPeriod": 589,
     "value": {
       "currentPrice": 281.25,
@@ -310,9 +310,9 @@
     }
   },
   {
-    "id": "US4581401001",
-    "holdingName": "Intel Corp. (INTC)",
-    "positions": 27,
+    "id": "INTC",
+    "holdingName": "Intel Corp.",
+    "positions": 0.27,
     "holdingPeriod": 342,
     "value": {
       "currentPrice": 23.65,
@@ -320,9 +320,9 @@
     }
   },
   {
-    "id": "US64110L1061",
-    "holdingName": "Netflix Inc. (NFLX)",
-    "positions": 12,
+    "id": "NFLX",
+    "holdingName": "Netflix Inc.",
+    "positions": 0.12,
     "holdingPeriod": 289,
     "value": {
       "currentPrice": 877.34,
@@ -330,9 +330,9 @@
     }
   },
   {
-    "id": "US00724F1012",
-    "holdingName": "Adobe Inc. (ADBE)",
-    "positions": 34,
+    "id": "ADBE",
+    "holdingName": "Adobe Inc.",
+    "positions": 0.34,
     "holdingPeriod": 412,
     "value": {
       "currentPrice": 513.68,
@@ -340,9 +340,9 @@
     }
   },
   {
-    "id": "US79466L3024",
-    "holdingName": "Salesforce Inc. (CRM)",
-    "positions": 9,
+    "id": "CRM",
+    "holdingName": "Salesforce Inc.",
+    "positions": 0.9,
     "holdingPeriod": 198,
     "value": {
       "currentPrice": 341.45,
@@ -350,9 +350,9 @@
     }
   },
   {
-    "id": "US0970231058",
-    "holdingName": "Boeing Co (BA)",
-    "positions": 47,
+    "id": "BA",
+    "holdingName": "Boeing Co",
+    "positions": 0.47,
     "holdingPeriod": 276,
     "value": {
       "currentPrice": 152.4,
@@ -360,9 +360,9 @@
     }
   },
   {
-    "id": "US4592001014",
-    "holdingName": "IBM Corp. (IBM)",
-    "positions": 3,
+    "id": "IBM",
+    "holdingName": "IBM Corp.",
+    "positions": 0.3,
     "holdingPeriod": 365,
     "value": {
       "currentPrice": 222.97,
@@ -370,9 +370,9 @@
     }
   },
   {
-    "id": "US6092071058",
-    "holdingName": "Mondelez International Inc (MDLZ)",
-    "positions": 95,
+    "id": "MDLZ",
+    "holdingName": "Mondelez International Inc",
+    "positions": 0.95,
     "holdingPeriod": 2,
     "value": {
       "currentPrice": 64.4,
@@ -380,9 +380,9 @@
     }
   },
   {
-    "id": "US6174464486",
-    "holdingName": "Morgan Stanley (MS)",
-    "positions": 100,
+    "id": "MS",
+    "holdingName": "Morgan Stanley",
+    "positions": 0.67,
     "holdingPeriod": 13,
     "value": {
       "currentPrice": 131.2,
@@ -390,9 +390,9 @@
     }
   },
   {
-    "id": "LU1778762911",
-    "holdingName": "Spotify Technology SA (SPOT)",
-    "positions": 35,
+    "id": "SPOT",
+    "holdingName": "Spotify Technology SA",
+    "positions": 0.35,
     "holdingPeriod": 41,
     "value": {
       "currentPrice": 475.87,
@@ -400,9 +400,9 @@
     }
   },
   {
-    "id": "US88579Y1010",
-    "holdingName": "3M Co. (MMM)",
-    "positions": 15,
+    "id": "MMM",
+    "holdingName": "3M Co.",
+    "positions": 1.5,
     "holdingPeriod": 123,
     "value": {
       "currentPrice": 130.32,
@@ -410,9 +410,9 @@
     }
   },
   {
-    "id": "US17275R1023",
-    "holdingName": "Cisco Systems Inc. (CSCO)",
-    "positions": 48,
+    "id": "CSCO",
+    "holdingName": "Cisco Systems Inc.",
+    "positions": 0.48,
     "holdingPeriod": 456,
     "value": {
       "currentPrice": 58.74,
@@ -420,9 +420,9 @@
     }
   },
   {
-    "id": "US8552441094",
-    "holdingName": "Starbucks Corp. (SBUX)",
-    "positions": 22,
+    "id": "SBUX",
+    "holdingName": "Starbucks Corp.",
+    "positions": 0.22,
     "holdingPeriod": 234,
     "value": {
       "currentPrice": 101.51,
@@ -430,9 +430,9 @@
     }
   },
   {
-    "id": "US0258161092",
-    "holdingName": "American Express Co. (AXP)",
-    "positions": 33,
+    "id": "AXP",
+    "holdingName": "American Express Co.",
+    "positions": 0.33,
     "holdingPeriod": 389,
     "value": {
       "currentPrice": 304.28,
@@ -440,9 +440,9 @@
     }
   },
   {
-    "id": "US3696041033",
-    "holdingName": "General Electric Co. (GE)",
-    "positions": 7,
+    "id": "GE",
+    "holdingName": "General Electric Co.",
+    "positions": 0.7,
     "holdingPeriod": 178,
     "value": {
       "currentPrice": 181.15,
@@ -450,9 +450,9 @@
     }
   },
   {
-    "id": "US90353T1007",
-    "holdingName": "Uber Technologies Inc (UBER)",
-    "positions": 23,
+    "id": "UBER",
+    "holdingName": "Uber Technologies Inc",
+    "positions": 0.23,
     "holdingPeriod": 487,
     "value": {
       "currentPrice": 71.51,
@@ -460,9 +460,9 @@
     }
   },
   {
-    "id": "US98980L1017",
-    "holdingName": "Zoom Video Communications Inc (ZM)",
-    "positions": 11,
+    "id": "ZM",
+    "holdingName": "Zoom Video Communications Inc",
+    "positions": 0.11,
     "holdingPeriod": 276,
     "value": {
       "currentPrice": 89.03,
@@ -470,9 +470,9 @@
     }
   },
   {
-    "id": "US1491231015",
-    "holdingName": "Caterpillar Inc. (CAT)",
-    "positions": 19,
+    "id": "CAT",
+    "holdingName": "Caterpillar Inc.",
+    "positions": 0.19,
     "holdingPeriod": 87,
     "value": {
       "currentPrice": 406.35,
@@ -480,9 +480,9 @@
     }
   },
   {
-    "id": "US4385161066",
-    "holdingName": "Honeywell International Inc. (HON)",
-    "positions": 22,
+    "id": "HON",
+    "holdingName": "Honeywell International Inc.",
+    "positions": 0.22,
     "holdingPeriod": 276,
     "value": {
       "currentPrice": 229.64,
@@ -490,9 +490,9 @@
     }
   },
   {
-    "id": "US70450Y1038",
-    "holdingName": "PayPal Holdings Inc. (PYPL)",
-    "positions": 37,
+    "id": "PYPL",
+    "holdingName": "PayPal Holdings Inc.",
+    "positions": 0.37,
     "holdingPeriod": 412,
     "value": {
       "currentPrice": 86.57,

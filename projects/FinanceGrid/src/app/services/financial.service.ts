@@ -24,6 +24,12 @@ export class FinancialService {
 
       const totalInitialInvestment = record.value.boughtPrice * record.positions;
       record["allocation"] = parseFloat((totalInitialInvestment / totalPortfolioInvestment).toFixed(4));
+
+      record["marketValue"] = record.value.currentPrice * record.positions;
+
+      record["initialPrice"] = record.value.currentPrice;
+
+      record["dailyPercentageChange"] = 0;
     });
     this.records.next(currData);
   }
@@ -34,6 +40,8 @@ export class FinancialService {
       dataRow.value.currentPrice = randomizedData.newPrice;
       dataRow.profitLossValue = randomizedData.profitLossValue;
       dataRow.profitLossPercentage = randomizedData.profitLossPercentage;
+      dataRow.marketValue = randomizedData.marketValue;
+      dataRow.dailyPercentageChange = randomizedData.dailyPercentageChange;
     }
     this.records.next(Array.from(data));
   }
@@ -49,13 +57,21 @@ export class FinancialService {
     return parseFloat(profitLossPercentage.toFixed(4));
   }
 
+  private calculateDailyPercentageChange(initialPrice: number, finalPrice: number) {
+    const priceDifference = finalPrice - initialPrice;
+    const percentageChange = (priceDifference / initialPrice) * 100;
+    return percentageChange;
+  }
+
   private randomizeData(dataRow: any): {
     newPrice: number;
     profitLossValue: number;
     profitLossPercentage: number;
+    marketValue: number;
+    dailyPercentageChange: number
   } {
     const rnd = parseFloat(Math.random().toFixed(2));
-    const volatility = 2; // Maximum percentage change of a price will be either -2% or 2%
+    const volatility = 0.01; // Maximum percentage change of a price will be either -0.01% or 0.01%
 
     let changePercent = 2 * volatility * rnd; // this can exceed volatility when rnd is > 0.5
     if (changePercent > volatility) {
@@ -66,10 +82,14 @@ export class FinancialService {
     const newPrice = parseFloat((dataRow.value.currentPrice + changeAmount).toFixed(2));
     const newProfitLossValue = this.calculateProfitLossValue(newPrice, dataRow.value.boughtPrice, dataRow.positions);
     const newProfitLossPercentage = this.calculateProfitLossPercentage(newProfitLossValue, dataRow.value.boughtPrice, dataRow.positions);
+    const newMarketValue = newPrice * dataRow.positions;
+    const newDailyPercentage = this.calculateDailyPercentageChange(dataRow.initialPrice, newPrice);
     return {
       newPrice,
       profitLossValue: newProfitLossValue,
       profitLossPercentage: newProfitLossPercentage,
+      marketValue: newMarketValue,
+      dailyPercentageChange: newDailyPercentage
     };
   }
 }

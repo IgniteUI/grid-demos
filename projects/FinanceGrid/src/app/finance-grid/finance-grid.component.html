@@ -8,8 +8,8 @@
       <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
     </igx-grid-toolbar-actions>
   </igx-grid-toolbar>
-  <igx-column field="id" header="ID" width="auto"></igx-column>
-  <igx-column field="holdingName" header="Holdings" [width]="'350px'" sortable="true">
+  <igx-column field="id" header="Symbol" width="auto"></igx-column>
+  <igx-column field="holdingName" header="Assets" [width]="'300px'" sortable="true">
     <ng-template igxCell let-cell="cell" let-val>
       <div class="assets-container">
         <igx-avatar [src]="getPathToImage(val)" [shape]="'rounded'"></igx-avatar>
@@ -21,7 +21,24 @@
   <igx-column field="holdingPeriod" header="Holding Period" sortable="true" width="auto">
     <ng-template igxCell let-val> {{ val }} days </ng-template>
   </igx-column>
-  <igx-column field="value.currentPrice" header="Value" [dataType]="'currency'" width="auto" sortable="true"></igx-column>
+  <igx-column field="value.boughtPrice" header="Average Cost Per Share" dataType="currency" width="auto"></igx-column>
+  <igx-column field="value.currentPrice" header="Last Price" [dataType]="'currency'" width="auto" sortable="true"></igx-column>
+  <igx-column field="dailyPercentageChange" header="Daily Change %" width="auto" dataType="percent" [cellClasses]="profitLossValueClasses">
+    <ng-template igxCell let-val>
+      <div class="assets-container">
+        <div>
+          {{ val | percent : "1.0-2" }}
+        </div>
+
+        @if (val >= 0) {
+        <igx-icon>trending_up</igx-icon>
+        } @else {
+        <igx-icon>trending_down</igx-icon>
+        }
+      </div>
+    </ng-template>
+  </igx-column>
+  <igx-column field="marketValue" header="Market Value" [dataType]="'currency'" width="auto" sortable="true"></igx-column>
   <igx-column field="profitLossValue" header="NET Profit/Loss" width="auto" sortable="true" dataType="currency" [cellClasses]="profitLossValueClasses">
     <ng-template igxCell let-val>
       <div class="assets-container">
@@ -52,6 +69,15 @@
       </div>
     </ng-template>
   </igx-column>
-  <igx-column field="allocation" header="Allocation" width="auto" sortable="true" dataType="percent"> </igx-column>
+  <igx-column field="allocation" header="Allocation" sortable="true" dataType="percent" width="auto">
+    <ng-template igxCell let-val>
+      <div class="progress-container">
+        <div>
+          {{ val | percent : "1.0-2" }}
+        </div>
+        <igx-linear-bar [value]="val * 100" [animate]="false" textVisibility="false"></igx-linear-bar>
+      </div>
+    </ng-template>
+  </igx-column>
   <igx-paginator [perPage]="15"></igx-paginator>
 </igx-grid>

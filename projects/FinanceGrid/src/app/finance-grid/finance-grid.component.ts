@@ -1,12 +1,12 @@
 import { afterNextRender, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { IgxAvatarComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxGridComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxPaginatorComponent } from "igniteui-angular";
+import { IgxAvatarComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxGridComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxLinearProgressBarComponent, IgxPaginatorComponent } from "igniteui-angular";
 import { CurrencyPipe, PercentPipe, AsyncPipe } from "@angular/common";
 import { FinancialService } from "../services/financial.service";
 import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: "app-finance-grid",
-  imports: [CurrencyPipe, PercentPipe, AsyncPipe, IgxAvatarComponent, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxPaginatorComponent],
+  imports: [CurrencyPipe, PercentPipe, AsyncPipe, IgxLinearProgressBarComponent, IgxAvatarComponent, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxPaginatorComponent],
   templateUrl: "./finance-grid.component.html",
   styleUrl: "./finance-grid.component.scss",
 })
@@ -20,14 +20,14 @@ export class FinanceGridComponent implements OnInit, OnDestroy {
     lossCondition: this.lossConditionHandler,
   };
   private _timer!: ReturnType<typeof setInterval>;
-  private readonly updateTimerinMs = 2000;
+  private readonly updateTimerInMs = 3000;
   constructor(private financialService: FinancialService) {
     afterNextRender({
       write: () => {
         this._timer = setInterval(() => {
           this.financialService.updateAllPrices(this.grid.data);
           this.grid.markForCheck();
-        }, this.updateTimerinMs);
+        }, this.updateTimerInMs);
       },
     });
   }
