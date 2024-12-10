@@ -8,7 +8,7 @@
       <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
     </igx-grid-toolbar-actions>
   </igx-grid-toolbar>
-  <igx-column field="id" header="Symbol" width="auto"></igx-column>
+  <igx-column field="id" header="Symbol" width="auto" sortable="true"></igx-column>
   <igx-column field="holdingName" header="Assets" [width]="'300px'" sortable="true">
     <ng-template igxCell let-cell="cell" let-val>
       <div class="assets-container">
@@ -21,9 +21,9 @@
   <igx-column field="holdingPeriod" header="Holding Period" sortable="true" width="auto">
     <ng-template igxCell let-val> {{ val }} days </ng-template>
   </igx-column>
-  <igx-column field="value.boughtPrice" header="Average Cost Per Share" dataType="currency" width="auto"></igx-column>
+  <igx-column field="value.boughtPrice" header="Average Cost Per Share" dataType="currency" width="auto" sortable="true"></igx-column>
   <igx-column field="value.currentPrice" header="Last Price" [dataType]="'currency'" width="auto" sortable="true"></igx-column>
-  <igx-column field="dailyPercentageChange" header="Daily Change %" width="auto" dataType="percent" [cellClasses]="profitLossValueClasses">
+  <igx-column field="dailyPercentageChange" header="Daily Change %" width="auto" dataType="percent" [cellClasses]="profitLossValueClasses" sortable="true">
     <ng-template igxCell let-val>
       <div class="assets-container">
         <div>
