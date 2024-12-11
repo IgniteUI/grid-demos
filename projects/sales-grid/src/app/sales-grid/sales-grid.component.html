@@ -1,0 +1,46 @@
+<div class="rootSample">
+    <div class="pivotToolbar igx-grid__tr-pivot">
+        <span class="igx-grid-toolbar__title">Quick Actions</span>
+        <div>
+            <button igxButton="outlined" style="margin-right: 10px;" [igxToggleAction]="viewDropdown">
+                <igx-icon [name]="'visibility'" [family]="'material'"></igx-icon>
+                Change View
+                <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
+            </button>
+            <button igxButton="outlined" [igxToggleAction]="exportDropdown">
+                <igx-icon [name]="'file_download'" [family]="'internal_indigo'"></igx-icon>
+                Export
+                <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
+            </button>
+            <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
+                <igx-drop-down-item [id]="'brands'"><span>Brands: HM and HM Home</span></igx-drop-down-item>
+                <igx-drop-down-item [id]="'stores'"><span>Stores: Bulgaria</span></igx-drop-down-item>
+            </igx-drop-down>
+            <igx-drop-down #exportDropdown (selectionChanging)="onExportSelection($event)">
+                <igx-drop-down-item [id]="'excel'"><span>Export to Excel</span></igx-drop-down-item>
+                <igx-drop-down-item [id]="'csv'"><span>Export to CSV</span></igx-drop-down-item>
+            </igx-drop-down>
+        </div>
+    </div>
+    <div class="pivotRow">
+        <div class="pivotContainer">
+            <igx-pivot-grid #salesGrid
+                [data]="data"
+                [width]="'100%'"
+                [height]="'100%'"
+                [superCompactMode]="true"
+                [defaultExpandState]="true"
+                [pivotConfiguration]="pivotConfigBrands"
+                (columnInit)="onColumnInit($event)">
+            </igx-pivot-grid>
+        </div>
+        <div class="selectorContainer">
+            <igx-pivot-data-selector [grid]="salesGrid"></igx-pivot-data-selector>
+        </div>
+        <ng-template igxHeader #countryColumn let-col>
+            <div class="countryHeader">
+                <img class="countryImage" src="{{flagsData[col.field]}}" /><span>{{col.field}}</span>
+            </div>
+        </ng-template>
+    </div>
+</div>
