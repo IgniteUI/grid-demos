@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Employee, EMPLOYEE_DATA } from '../data/localData';
 import {
   IgxTreeGridComponent,
@@ -18,7 +18,6 @@ import {
   IgxIconService,
   IgxIconButtonDirective,
   IgxButtonModule,
-  RowType,
   SortingDirection,
   DefaultSortingStrategy,
 } from 'igniteui-angular';
@@ -50,16 +49,11 @@ import { CommonModule } from '@angular/common';
 })
 export class HrPortalComponent implements OnInit, AfterViewInit {
   public localData: Employee[] = [];
-  @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
-  public treeGrid!: IgxTreeGridComponent;
   public formatOptions = {
     format: 'currency',
     timezone: 'GMT',
   };
-  public rowStyles = {
-    background: (row: RowType) =>
-      row.index % 2 === 0 ? 'rgba(255,255,255)' : '',
-  };
+
   public rightAlign = {
     'text-align': 'right',
     'justify-content': 'end',
