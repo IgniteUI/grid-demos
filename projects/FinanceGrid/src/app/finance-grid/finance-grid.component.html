@@ -9,7 +9,7 @@
     </igx-grid-toolbar-actions>
   </igx-grid-toolbar>
   <igx-column field="id" header="Symbol" width="auto" sortable="true"></igx-column>
-  <igx-column field="holdingName" header="Assets" [width]="'300px'" sortable="true">
+  <igx-column field="holdingName" header="Asset" [width]="'300px'" sortable="true">
     <ng-template igxCell let-cell="cell" let-val>
       <div class="assets-container">
         <igx-avatar [src]="getPathToImage(val)" [shape]="'rounded'"></igx-avatar>
