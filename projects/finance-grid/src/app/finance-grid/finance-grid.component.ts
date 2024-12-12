@@ -5,10 +5,11 @@ import { FinancialService } from "../services/financial.service";
 import { BehaviorSubject } from "rxjs";
 
 @Component({
+  standalone: true,
   selector: "app-finance-grid",
   imports: [CurrencyPipe, PercentPipe, AsyncPipe, IgxLinearProgressBarComponent, IgxAvatarComponent, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxPaginatorComponent],
   templateUrl: "./finance-grid.component.html",
-  styleUrl: "./finance-grid.component.scss",
+  styleUrl: "./finance-grid.component.scss"
 })
 export class FinanceGridComponent implements OnInit, OnDestroy {
   @ViewChild(IgxGridComponent, { static: true }) public grid!: IgxGridComponent;

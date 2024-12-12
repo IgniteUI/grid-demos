@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "GridDemos": {
+    "grid-demos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,7 +21,8 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "hammerjs"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -49,9 +50,6 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "scripts": [
-              "./node_modules/hammerjs/hammer.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -92,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "GridDemos:build:production"
+              "buildTarget": "grid-demos:build:production"
             },
             "development": {
-              "buildTarget": "GridDemos:build:development"
+              "buildTarget": "grid-demos:build:development"
             }
           },
           "defaultConfiguration": "development"
