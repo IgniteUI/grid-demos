@@ -13,7 +13,7 @@ interface ContactDetails {
     phone?: string;
 }
 
-interface OrderDetails {
+export interface OrderDetails {
     country: string;
     countryFlag: CountryFlag;
     city: string;
@@ -45,6 +45,7 @@ export interface TemplateDataModel {
     unitsSold: number;
     grossPrice: number;
     netPrice: number;
+    totalNetProfit?: number;
     salesTrendData:DataPoint[];
     orders: Order[];
 }
@@ -57,24 +58,24 @@ export enum OrderStatus  {
 }
 
 export enum CountryFlag {
-    AUSTRALIA = "assets/images/country-flags/Australia.svg",
-    BELGIUM = "assets/images/country-flags/Belgium.svg",
-    BRAZIL = "assets/images/country-flags/Brazil.svg",
-    BULGARIA = "assets/images/country-flags/Bulgaria.svg",
-    CANADA = "assets/images/country-flags/Canada.svg",
-    CHINA = "assets/images/country-flags/China.svg",
-    DENMARK = "assets/images/country-flags/Denmark.svg",
-    FINLAND = "assets/images/country-flags/Finland.svg",
-    FRANCE = "assets/images/country-flags/France.svg",
-    GERMANY = "assets/images/country-flags/Germany.svg",
-    GREECE = "assets/images/country-flags/Greece.svg",
-    INDIA = "assets/images/country-flags/India.svg",
-    ITALY = "assets/images/country-flags/Italy.svg",
-    JAPAN = "assets/images/country-flags/Japan.svg",
-    NETHERLANDS = "assets/images/country-flags/Netherlands.svg",
-    POLAND = "assets/images/country-flags/Poland.svg",
-    ROMANIA = "assets/images/country-flags/Romania.svg",
-    UK = "assets/images/country-flags/United Kingdom.svg",
-    US = "assets/images/country-flags/United States.svg",
-    URUGUAY = "assets/images/country-flags/Uruguay.svg"
+    AUSTRALIA = "country-flags/Australia.svg",
+    BELGIUM = "country-flags/Belgium.svg",
+    BRAZIL = "country-flags/Brazil.svg",
+    BULGARIA = "country-flags/Bulgaria.svg",
+    CANADA = "country-flags/Canada.svg",
+    CHINA = "country-flags/China.svg",
+    DENMARK = "country-flags/Denmark.svg",
+    FINLAND = "country-flags/Finland.svg",
+    FRANCE = "country-flags/France.svg",
+    GERMANY = "country-flags/Germany.svg",
+    GREECE = "country-flags/Greece.svg",
+    INDIA = "country-flags/India.svg",
+    ITALY = "country-flags/Italy.svg",
+    JAPAN = "country-flags/Japan.svg",
+    NETHERLANDS = "country-flags/Netherlands.svg",
+    POLAND = "country-flags/Poland.svg",
+    ROMANIA = "country-flags/Romania.svg",
+    UK = "country-flags/United Kingdom.svg",
+    US = "country-flags/United States.svg",
+    URUGUAY = "country-flags/Uruguay.svg"
 }

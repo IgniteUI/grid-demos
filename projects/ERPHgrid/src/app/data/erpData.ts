@@ -3,7 +3,7 @@ import { TREND_DATA } from "./productOrdersTrendsData";
 
 export const InventoryList: TemplateDataModel[] = [{
     sku: "SKU1001",
-    imageUrl: "assets/images/products/adidas-sports-shoes.jpg",
+    imageUrl: "products/adidas-sports-shoes.jpg",
     productName: "Adidas Sports Shoes",
     category: "Footwear",
     rating: 3.5,
@@ -147,7 +147,7 @@ export const InventoryList: TemplateDataModel[] = [{
     ]
 }, {
     sku: "SKU1002",
-    imageUrl: "assets/images/products/Android-Tablet-11inch-Depositphotos.jpg",
+    imageUrl: "products/Android-Tablet-11inch-Depositphotos.jpg",
     productName: "Android Tablet 11Inch Depositphotos",
     category: "Electronics",
     rating: 5.0,
@@ -223,7 +223,7 @@ export const InventoryList: TemplateDataModel[] = [{
 }]
 }, {
     sku: "SKU1003",
-    imageUrl: "assets/images/products/Apple-Magic-Mouse-Depositphotos.jpg",
+    imageUrl: "products/Apple-Magic-Mouse-Depositphotos.jpg",
     productName: "Apple Magic Mouse Depositphotos",
     category: "Accessories",
     rating: 3.5,
@@ -343,7 +343,7 @@ export const InventoryList: TemplateDataModel[] = [{
   },]
 }, {
     sku: "SKU1004",
-    imageUrl: "assets/images/products/ballpoint-pen.jpg",
+    imageUrl: "products/ballpoint-pen.jpg",
     productName: "Ballpoint Pen",
     category: "Office Supplies",
     rating: 5.0,
@@ -463,7 +463,7 @@ export const InventoryList: TemplateDataModel[] = [{
   }]
 }, {
     sku: "SKU1005",
-    imageUrl: "assets/images/products/Barcode-reader-Depositphotos.jpg",
+    imageUrl: "products/Barcode-reader-Depositphotos.jpg",
     productName: "Barcode Reader Depositphotos",
     category: "Home Appliances",
     rating: 3.5,
@@ -539,8 +539,8 @@ export const InventoryList: TemplateDataModel[] = [{
   }]
 }, {
     sku: "SKU1006",
-    imageUrl: "assets/images/products/Barcode-readers-Depositphotos_10803475_L.jpg",
-    productName: "Barcode Readers Depositphotos_10803475_L",
+    imageUrl: "products/Barcode-readers-Depositphotos-10803475-L.jpg",
+    productName: "Barcode Readers Depositphotos-10803475-L",
     category: "Clothing",
     rating: 5.0,
     unitsSold: 120,
@@ -571,8 +571,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1007",
-    imageUrl: "assets/images/products/Black-espresso-maker-Depositphotos_166033946_L.jpg",
-    productName: "Black Espresso Maker Depositphotos_166033946_L",
+    imageUrl: "products/Black-espresso-maker-Depositphotos-166033946-L.jpg",
+    productName: "Black Espresso Maker Depositphotos-166033946-L",
     category: "Gaming",
     rating: 3.5,
     unitsSold: 140,
@@ -691,8 +691,8 @@ export const InventoryList: TemplateDataModel[] = [{
   }]
 }, {
     sku: "SKU1008",
-    imageUrl: "assets/images/products/Canon_Depositphotos_1793394_L.jpg",
-    productName: "Canon_Depositphotos_1793394_L",
+    imageUrl: "products/Canon-Depositphotos-1793394-L.jpg",
+    productName: "Canon-Depositphotos-1793394-L",
     category: "Audio Devices",
     rating: 5.0,
     unitsSold: 160,
@@ -855,8 +855,8 @@ export const InventoryList: TemplateDataModel[] = [{
 }]
 }, {
     sku: "SKU1009",
-    imageUrl: "assets/images/products/climbing-boots-2558324_1920.jpg",
-    productName: "Climbing Boots 2558324_1920",
+    imageUrl: "products/climbing-boots-2558324-1920.jpg",
+    productName: "Climbing Boots 2558324-1920",
     category: "Computers",
     rating: 3.5,
     unitsSold: 180,
@@ -887,8 +887,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1010",
-    imageUrl: "assets/images/products/Crivit_jacket-2899728_1920-2.jpg",
-    productName: "Crivit_Jacket 2899728_1920 2",
+    imageUrl: "products/Crivit-jacket-2899728-1920-2.jpg",
+    productName: "Crivit-Jacket 2899728-1920 2",
     category: "Photography",
     rating: 5.0,
     unitsSold: 200,
@@ -919,8 +919,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1011",
-    imageUrl: "assets/images/products/Down-Winter-Jacket-Depositphotos_58152061_L.jpg",
-    productName: "Down Winter Jacket Depositphotos_58152061_L",
+    imageUrl: "products/Down-Winter-Jacket-Depositphotos-58152061-L.jpg",
+    productName: "Down Winter Jacket Depositphotos-58152061-L",
     category: "Footwear",
     rating: 3.5,
     unitsSold: 220,
@@ -951,8 +951,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1012",
-    imageUrl: "assets/images/products/dyson_hairdryer_Depositphotos_653422044_L.jpg",
-    productName: "Dyson_Hairdryer_Depositphotos_653422044_L",
+    imageUrl: "products/dyson-hairdryer-Depositphotos-653422044-L.jpg",
+    productName: "Dyson-Hairdryer-Depositphotos-653422044-L",
     category: "Electronics",
     rating: 5.0,
     unitsSold: 240,
@@ -983,8 +983,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1013",
-    imageUrl: "assets/images/products/dyson_hairdryer_Depositphotos_751409932_L.jpg",
-    productName: "Dyson_Hairdryer_Depositphotos_751409932_L",
+    imageUrl: "products/dyson-hairdryer-Depositphotos-751409932-L.jpg",
+    productName: "Dyson-Hairdryer-Depositphotos-751409932-L",
     category: "Accessories",
     rating: 3.5,
     unitsSold: 260,
@@ -1015,8 +1015,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1014",
-    imageUrl: "assets/images/products/dyson_vacuum_appliance-2255_1920.jpg",
-    productName: "Dyson_Vacuum_Appliance 2255_1920",
+    imageUrl: "products/dyson-vacuum-appliance-2255-1920.jpg",
+    productName: "Dyson-Vacuum-Appliance 2255-1920",
     category: "Office Supplies",
     rating: 5.0,
     unitsSold: 280,
@@ -1047,8 +1047,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1015",
-    imageUrl: "assets/images/products/earphone-2640990_1920.jpg",
-    productName: "Earphone 2640990_1920",
+    imageUrl: "products/earphone-2640990-1920.jpg",
+    productName: "Earphone 2640990-1920",
     category: "Home Appliances",
     rating: 3.5,
     unitsSold: 300,
@@ -1080,8 +1080,8 @@ export const InventoryList: TemplateDataModel[] = [{
 },
 {
     sku: "SKU1016",
-    imageUrl: "assets/images/products/EPSON_printer-1516580_1920-2.jpg",
-    productName: "Epson_Printer 1516580_1920 2",
+    imageUrl: "products/EPSON-printer-1516580-1920-2.jpg",
+    productName: "Epson-Printer 1516580-1920 2",
     category: "Clothing",
     rating: 5.0,
     unitsSold: 320,
@@ -1112,8 +1112,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1017",
-    imageUrl: "assets/images/products/Gaggia-coffee-machine-Depositphotos_171399082_L.jpg",
-    productName: "Gaggia Coffee Machine Depositphotos_171399082_L",
+    imageUrl: "products/Gaggia-coffee-machine-Depositphotos-171399082-L.jpg",
+    productName: "Gaggia Coffee Machine Depositphotos-171399082-L",
     category: "Gaming",
     rating: 3.5,
     unitsSold: 340,
@@ -1144,8 +1144,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1018",
-    imageUrl: "assets/images/products/HP_laptop_black-5141242_1920.jpg",
-    productName: "Hp_Laptop_Black 5141242_1920",
+    imageUrl: "products/HP-laptop-black-5141242-1920.jpg",
+    productName: "Hp-Laptop-Black 5141242-1920",
     category: "Audio Devices",
     rating: 5.0,
     unitsSold: 360,
@@ -1176,8 +1176,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1019",
-    imageUrl: "assets/images/products/iPad-Pro-Depositphotos_241726176_L.jpg",
-    productName: "Ipad Pro Depositphotos_241726176_L",
+    imageUrl: "products/iPad-Pro-Depositphotos-241726176-L.jpg",
+    productName: "Ipad Pro Depositphotos-241726176-L",
     category: "Computers",
     rating: 3.5,
     unitsSold: 380,
@@ -1208,8 +1208,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1020",
-    imageUrl: "assets/images/products/iPhone_X_Depositphotos_184416460_L.jpg",
-    productName: "Iphone_X_Depositphotos_184416460_L",
+    imageUrl: "products/iphone-X-2854322-1920.jpg",
+    productName: "Iphone-X-Depositphotos-184416460-L",
     category: "Photography",
     rating: 5.0,
     unitsSold: 400,
@@ -1240,8 +1240,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1021",
-    imageUrl: "assets/images/products/JBL_speaker-5800162_1920-2.jpg",
-    productName: "Jbl_Speaker 5800162_1920 2",
+    imageUrl: "products/JBL-speaker-5800162-1920-2.jpg",
+    productName: "Jbl-Speaker 5800162-1920 2",
     category: "Footwear",
     rating: 3.5,
     unitsSold: 420,
@@ -1272,8 +1272,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1022",
-    imageUrl: "assets/images/products/Kitchen-Multicooker-Depositphotos_35751187_L.jpg",
-    productName: "Kitchen Multicooker Depositphotos_35751187_L",
+    imageUrl: "products/Kitchen-Multicooker-Depositphotos-35751187-L.jpg",
+    productName: "Kitchen Multicooker Depositphotos-35751187-L",
     category: "Electronics",
     rating: 5.0,
     unitsSold: 440,
@@ -1304,8 +1304,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1023",
-    imageUrl: "assets/images/products/laptop_Depositphotos_2996767_L.jpg",
-    productName: "Laptop_Depositphotos_2996767_L",
+    imageUrl: "products/laptop-Depositphotos-2996767-L.jpg",
+    productName: "Laptop-Depositphotos-2996767-L",
     category: "Accessories",
     rating: 3.5,
     unitsSold: 460,
@@ -1336,8 +1336,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1024",
-    imageUrl: "assets/images/products/laptop_Depositphotos_6271974_L.jpg",
-    productName: "Laptop_Depositphotos_6271974_L",
+    imageUrl: "products/laptop-Depositphotos-6271974-L.jpg",
+    productName: "Laptop-Depositphotos-6271974-L",
     category: "Office Supplies",
     rating: 5.0,
     unitsSold: 480,
@@ -1368,8 +1368,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1025",
-    imageUrl: "assets/images/products/Macbook_Depositphotos_205657722_L-2.jpg",
-    productName: "Macbook_Depositphotos_205657722_L 2",
+    imageUrl: "products/Macbook-Depositphotos-205657722-L-2.jpg",
+    productName: "Macbook-Depositphotos-205657722-L 2",
     category: "Home Appliances",
     rating: 3.5,
     unitsSold: 500,
@@ -1400,8 +1400,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1026",
-    imageUrl: "assets/images/products/Markers-pack-Depositphotos_113646792_L.jpg",
-    productName: "Markers Pack Depositphotos_113646792_L",
+    imageUrl: "products/Markers-pack-Depositphotos-113646792-L.jpg",
+    productName: "Markers Pack Depositphotos-113646792-L",
     category: "Clothing",
     rating: 5.0,
     unitsSold: 520,
@@ -1432,8 +1432,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1027",
-    imageUrl: "assets/images/products/Merrel-shoes-584850_1920.jpg",
-    productName: "Merrel Shoes 584850_1920",
+    imageUrl: "products/Merrel-shoes-584850-1920.jpg",
+    productName: "Merrel Shoes 584850-1920",
     category: "Gaming",
     rating: 3.5,
     unitsSold: 540,
@@ -1464,8 +1464,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1028",
-    imageUrl: "assets/images/products/Microwave-Depositphotos_26880443_L.jpg",
-    productName: "Microwave Depositphotos_26880443_L",
+    imageUrl: "products/Microwave-Depositphotos-26880443-L.jpg",
+    productName: "Microwave Depositphotos-26880443-L",
     category: "Audio Devices",
     rating: 5.0,
     unitsSold: 560,
@@ -1496,8 +1496,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1029",
-    imageUrl: "assets/images/products/Monitor-curved-27inch-Depositphotos_282647566_L.jpg",
-    productName: "Monitor Curved 27Inch Depositphotos_282647566_L",
+    imageUrl: "products/Monitor-curved-27inch-Depositphotos-282647566-L.jpg",
+    productName: "Monitor Curved 27Inch Depositphotos-282647566-L",
     category: "Computers",
     rating: 3.5,
     unitsSold: 580,
@@ -1528,8 +1528,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1030",
-    imageUrl: "assets/images/products/Nike_Depositphotos_146077297_L.jpg",
-    productName: "Nike_Depositphotos_146077297_L",
+    imageUrl: "products/Nike-Depositphotos-146077297-L.jpg",
+    productName: "Nike-Depositphotos-146077297-L",
     category: "Photography",
     rating: 5.0,
     unitsSold: 600,
@@ -1560,8 +1560,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1031",
-    imageUrl: "assets/images/products/Nike_footwear-5408643_1920.jpg",
-    productName: "Nike_Footwear 5408643_1920",
+    imageUrl: "products/Nike-footwear-5408643-1920.jpg",
+    productName: "Nike-Footwear 5408643-1920",
     category: "Footwear",
     rating: 3.5,
     unitsSold: 620,
@@ -1592,8 +1592,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1032",
-    imageUrl: "assets/images/products/Nike_sneakers-5408646_1920.jpg",
-    productName: "Nike_Sneakers 5408646_1920",
+    imageUrl: "products/Nike-sneakers-5408646-1920.jpg",
+    productName: "Nike-Sneakers 5408646-1920",
     category: "Electronics",
     rating: 5.0,
     unitsSold: 640,
@@ -1624,8 +1624,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1033",
-    imageUrl: "assets/images/products/PC-Mouse-wired-Depositphotos_12621359_L.jpg",
-    productName: "Pc Mouse Wired Depositphotos_12621359_L",
+    imageUrl: "products/PC-Mouse-wired-Depositphotos-12621359-L.jpg",
+    productName: "Pc Mouse Wired Depositphotos-12621359-L",
     category: "Accessories",
     rating: 3.5,
     unitsSold: 660,
@@ -1656,8 +1656,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1034",
-    imageUrl: "assets/images/products/Pencil-Depositphotos_293936972_L.jpg",
-    productName: "Pencil Depositphotos_293936972_L",
+    imageUrl: "products/Pencil-Depositphotos-293936972-L.jpg",
+    productName: "Pencil Depositphotos-293936972-L",
     category: "Office Supplies",
     rating: 5.0,
     unitsSold: 680,
@@ -1688,8 +1688,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1035",
-    imageUrl: "assets/images/products/Post-it-notes-Depositphotos_2275156_L.jpg",
-    productName: "Post It Notes Depositphotos_2275156_L",
+    imageUrl: "products/Post-it-notes-Depositphotos-2275156-L.jpg",
+    productName: "Post It Notes Depositphotos-2275156-L",
     category: "Home Appliances",
     rating: 3.5,
     unitsSold: 700,
@@ -1720,8 +1720,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1036",
-    imageUrl: "assets/images/products/Print-paper-Depositphotos_191385040_L.jpg",
-    productName: "Print Paper Depositphotos_191385040_L",
+    imageUrl: "products/Print-paper-Depositphotos-191385040-L.jpg",
+    productName: "Print Paper Depositphotos-191385040-L",
     category: "Clothing",
     rating: 5.0,
     unitsSold: 720,
@@ -1752,8 +1752,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1037",
-    imageUrl: "assets/images/products/Samsung-Tablet_black-4766996_1920.jpg",
-    productName: "Samsung Tablet_Black 4766996_1920",
+    imageUrl: "products/Samsung-Tablet-black-4766996-1920.jpg",
+    productName: "Samsung Tablet-Black 4766996-1920",
     category: "Gaming",
     rating: 3.5,
     unitsSold: 740,
@@ -1784,8 +1784,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1038",
-    imageUrl: "assets/images/products/Scanner-Depositphotos_7372129_XL.jpg",
-    productName: "Scanner Depositphotos_7372129_Xl",
+    imageUrl: "products/Scanner-Depositphotos-7372129-XL.jpg",
+    productName: "Scanner Depositphotos-7372129-Xl",
     category: "Audio Devices",
     rating: 5.0,
     unitsSold: 760,
@@ -1816,8 +1816,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1039",
-    imageUrl: "assets/images/products/Sony_Alpha7_camera-275007_1920.jpg",
-    productName: "Sony_Alpha7_Camera 275007_1920",
+    imageUrl: "products/Sony-Alpha7-camera-275007-1920.jpg",
+    productName: "Sony-Alpha7-Camera 275007-1920",
     category: "Computers",
     rating: 3.5,
     unitsSold: 780,
@@ -1848,8 +1848,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1040",
-    imageUrl: "assets/images/products/Sony_Alpha7_camera-4833557_1920-2.jpg",
-    productName: "Sony_Alpha7_Camera 4833557_1920 2",
+    imageUrl: "products/Sony-Alpha7-camera-4833557-1920-2.jpg",
+    productName: "Sony-Alpha7-Camera 4833557-1920 2",
     category: "Photography",
     rating: 5.0,
     unitsSold: 800,
@@ -1880,8 +1880,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1041",
-    imageUrl: "assets/images/products/Sony_lens-274986_1920.jpg",
-    productName: "Sony_Lens 274986_1920",
+    imageUrl: "products/Sony-lens-274986-1920.jpg",
+    productName: "Sony-Lens 274986-1920",
     category: "Footwear",
     rating: 3.5,
     unitsSold: 820,
@@ -1912,8 +1912,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1042",
-    imageUrl: "assets/images/products/Speaker_Depositphotos_252611752_L.jpg",
-    productName: "Speaker_Depositphotos_252611752_L",
+    imageUrl: "products/Speaker-Depositphotos-252611752-L.jpg",
+    productName: "Speaker-Depositphotos-252611752-L",
     category: "Electronics",
     rating: 5.0,
     unitsSold: 840,
@@ -1944,8 +1944,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1043",
-    imageUrl: "assets/images/products/T-shirt-blue-Depositphotos_163437494_L.jpg",
-    productName: "T Shirt Blue Depositphotos_163437494_L",
+    imageUrl: "products/T-shirt-blue-Depositphotos-163437494-L.jpg",
+    productName: "T Shirt Blue Depositphotos-163437494-L",
     category: "Accessories",
     rating: 3.5,
     unitsSold: 860,
@@ -1976,8 +1976,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1044",
-    imageUrl: "assets/images/products/T-Shirt-gray-Depositphotos_138950992_L.jpg",
-    productName: "T Shirt Gray Depositphotos_138950992_L",
+    imageUrl: "products/T-Shirt-gray-Depositphotos-138950992-L.jpg",
+    productName: "T Shirt Gray Depositphotos-138950992-L",
     category: "Office Supplies",
     rating: 5.0,
     unitsSold: 880,
@@ -2008,8 +2008,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1045",
-    imageUrl: "assets/images/products/T-Shirt-red-Depositphotos_138951004_L.jpg",
-    productName: "T Shirt Red Depositphotos_138951004_L",
+    imageUrl: "products/T-Shirt-red-Depositphotos-138951004-L.jpg",
+    productName: "T Shirt Red Depositphotos-138951004-L",
     category: "Home Appliances",
     rating: 3.5,
     unitsSold: 900,
@@ -2040,7 +2040,7 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1046",
-    imageUrl: "assets/images/products/vacuum-cleaner-8114145-2.jpg",
+    imageUrl: "products/vacuum-cleaner-8114145-2.jpg",
     productName: "Vacuum Cleaner 8114145 2",
     category: "Clothing",
     rating: 5.0,
@@ -2072,8 +2072,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1047",
-    imageUrl: "assets/images/products/video-game-console-2202582_1920.jpg",
-    productName: "Video Game Console 2202582_1920",
+    imageUrl: "products/video-game-console-2202582-1920.jpg",
+    productName: "Video Game Console 2202582-1920",
     category: "Gaming",
     rating: 3.5,
     unitsSold: 940,
@@ -2104,8 +2104,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1048",
-    imageUrl: "assets/images/products/Winter-Jacket-Depositphotos_89349846_L.jpg",
-    productName: "Winter Jacket Depositphotos_89349846_L",
+    imageUrl: "products/Winter-Jacket-Depositphotos-89349846-L.jpg",
+    productName: "Winter Jacket Depositphotos-89349846-L",
     category: "Audio Devices",
     rating: 5.0,
     unitsSold: 960,
@@ -2136,8 +2136,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1049",
-    imageUrl: "assets/images/products/xbox-1200296_1920.jpg",
-    productName: "Xbox 1200296_1920",
+    imageUrl: "products/xbox-1200296-1920.jpg",
+    productName: "Xbox 1200296-1920",
     category: "Computers",
     rating: 3.5,
     unitsSold: 980,
@@ -2168,8 +2168,8 @@ export const InventoryList: TemplateDataModel[] = [{
     }]
 }, {
     sku: "SKU1050",
-    imageUrl: "assets/images/products/Xbox_controller_gamepad-6646645_1920-2.jpg",
-    productName: "Xbox_Controller_Gamepad 6646645_1920 2",
+    imageUrl: "products/Xbox-controller-gamepad-6646645-1920-2.jpg",
+    productName: "Xbox-Controller-Gamepad 6646645-1920 2",
     category: "Photography",
     rating: 5.0,
     unitsSold: 1000,

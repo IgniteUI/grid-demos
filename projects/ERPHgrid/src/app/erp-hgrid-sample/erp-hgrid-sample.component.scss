@@ -1,65 +1,68 @@
+.wrapper {
+  --ig-size: var(--ig-size-small);
 
-@use "igniteui-angular/theming" as *;
+  igx-badge[type="primary"]{
+    background-color: var(--ig-primary-50);
+  }
 
+  igx-badge[type="warning"]{
+    background-color: var(--ig-warn-100);
+  }
+
+  igx-badge[type="error"]{
+    background-color: var(--ig-error-50);
+  }
+
+  igx-badge[type="success"]{
+    background-color: var(--ig-success-100);
+  }
+}
+
+
+.custom-icon {
+  --size: 12px;
+  color:  black;
+}
+
+.country-cell {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0px 4px;
+  gap: 8px;
+
+  img {
+    font-size: 16px;
+    width: 18px;
+    height: 14px;
+    margin-top: 2px;
+    box-shadow: var(--ig-elevation-1);
+  }
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0px 4px;
+  gap: 8px;
+}
+
+// Overridden styles for design purposes
 ::ng-deep {
 
-  igx-hierarchical-grid {
-    --ig-size: var(--ig-size-small);
+  // Setting background color of the element containing the child gird
+  .igx-grid__tr-container {
+    background-color: white;
+  }
 
-    .igx-grid__tr-container {
-      background-color: white;
-    }
-
-    igx-icon {
-
-      &.igx-icon.custom-icon {
-        --size: 12px;
-        color:  black;
-      }
-    }
-
-    .product-img  img {
-    height: 22px;
-    }
-
-    .country-cell {
+  .product-img {
     display: flex;
-    align-items: center;
-    width: fit-content;
-    padding: 0px 4px;
-    gap: 2px;
+    justify-content: center;
 
     img {
-		font-size: 16px;
-		width: 18px;
-		height: 14px;
-    margin-top: 2px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	  }
-	  }
-
-    .status-cell {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    padding: 0px 4px;
-    gap: 2px;
-    }
-
-    igx-badge[type="primary"]{
-    background-color: var(--ig-primary-50);
-    }
-
-    igx-badge[type="warning"]{
-    background-color: var(--ig-warn-100) !important;
-    }
-
-    igx-badge[type="error"]{
-    background-color: var(--ig-error-100);
-    }
-
-    igx-badge[type="success"]{
-    background-color: var(--ig-success-100);
+      height: 22px;
     }
   }
 }
+
