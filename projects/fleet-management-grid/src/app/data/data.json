@@ -1,0 +1,538 @@
+[
+  {
+    "vehicleId": "A00101",
+    "licensePlate": "KVG 8850",
+    "make": "Ford",
+    "model": "Focus",
+    "type": "Hatchback",
+    "vin": "1FADP3F24HL312717",
+    "status": "Active",
+    "locationCity": "New York, NY",
+    "locationGps": "40.743828, -74.037982",
+    "details": {
+        "generation": "Focus III Hatchback",
+        "yearOfManufacture": 2016,
+        "fuelType": "Petrol (Gasoline)",
+        "doors": 5,
+        "seats": 5,
+        "transmission": "Manual",
+        "engine": "1.0 EcoBoost",
+        "power": "125 Hp",
+        "mileage": "73,321 mi",
+        "cubature": "999 cm3",
+        "color": "Dark Gray",
+        "msrp": "$24,358",
+        "tollPassId": "EZ-733490"
+    },
+    "tripHistory": [
+      {
+        "id": 1,
+        "driver": {
+          "name": "John Davidson",
+          "license": "JD-12345",
+          "address": "123 Main St",
+          "city": "Boston, MA",
+          "phone": "(555) 123-4567",
+          "email": "john.davidson@example.com",
+          "photo": "men/1"
+        },
+        "start": "2024-11-17",
+        "end": "N/A",
+        "startLocation": "Boston, MA",
+        "endLocation": "New York, NY",
+        "startMeter": "73,321.0 mi",
+        "endMeter": "N/A",
+        "distance": "N/A",
+        "totalTime": "N/A"
+      },
+      {
+        "id": 2,
+        "driver": {
+          "name": "Peter Jackson",
+          "license": "PJ-67890",
+          "address": "456 Elm St",
+          "city": "Cranbury, NJ",
+          "phone": "(555) 987-6543",
+          "email": "peter.jackson@example.com",
+          "photo": "men/2"
+        },
+        "start": "2024-10-13",
+        "end": "2024-10-23",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "72,801.9 mi",
+        "endMeter": "73,321.0 mi",
+        "distance": "519.1 mi",
+        "totalTime": "23h 15m"
+      },
+      {
+        "id": 3,
+        "driver": {
+          "name": "J.J. Swan",
+          "license": "JS-23456",
+          "address": "789 Oak St",
+          "city": "Boston, MA",
+          "phone": "(555) 234-5678",
+          "email": "jj.swan@example.com",
+          "photo": "men/3"
+        },
+        "start": "2024-10-03",
+        "end": "2024-10-12",
+        "startLocation": "Boston, MA",
+        "endLocation": "Cranbury, NJ",
+        "startMeter": "72,475.9 mi",
+        "endMeter": "72,801.9 mi",
+        "distance": "326.0 mi",
+        "totalTime": "18h 30m"
+      },
+      {
+        "id": 4,
+        "driver": {
+          "name": "Natalie Simson",
+          "license": "NS-98765",
+          "address": "321 Pine St",
+          "city": "Cranbury, NJ",
+          "phone": "(555) 345-6789",
+          "email": "natalie.simson@example.com",
+          "photo": "women/1"
+        },
+        "start": "2024-09-23",
+        "end": "2024-09-29",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "71,545.1 mi",
+        "endMeter": "72,475.9 mi",
+        "distance": "930.8 mi",
+        "totalTime": "45h 30m"
+      },
+      {
+        "id": 5,
+        "driver": {
+          "name": "Peter Jackson",
+          "license": "PJ-67890",
+          "address": "456 Elm St",
+          "city": "Cranbury, NJ",
+          "phone": "(555) 987-6543",
+          "email": "peter.jackson@example.com",
+          "photo": "men/2"
+        },
+        "start": "2024-08-23",
+        "end": "2024-09-22",
+        "startLocation": "Boston, MA",
+        "endLocation": "Cranbury, NJ",
+        "startMeter": "70,581.0 mi",
+        "endMeter": "71,545.1 mi",
+        "distance": "964.1 mi",
+        "totalTime": "44h 45m"
+      },
+      {
+        "id": 6,
+        "driver": {
+          "name": "Mike Sousan",
+          "license": "MS-54321",
+          "address": "654 Cedar St",
+          "city": "Buffalo, NY",
+          "phone": "(555) 456-7890",
+          "email": "mike.sousan@example.com",
+          "photo": "men/4"
+        },
+        "start": "2024-08-15",
+        "end": "2024-08-20",
+        "startLocation": "Buffalo, NY",
+        "endLocation": "Boston, MA",
+        "startMeter": "69,971.9 mi",
+        "endMeter": "70,581.0 mi",
+        "distance": "609.1 mi",
+        "totalTime": "38h 30m"
+      }
+    ],
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Oil Change",
+        "date": "2024-10-31",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented oil change with 5W-20."
+      },
+      {
+        "id": 2,
+        "event": "Tire Replacement",
+        "date": "2024-10-30",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Installed new front left tire, including brand and mileage."
+      },
+      {
+        "id": 3,
+        "event": "Brake Inspection",
+        "date": "2024-10-01",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Checked and serviced brake system."
+      },
+      {
+        "id": 4,
+        "event": "General Maintenance",
+        "date": "2024-08-20",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Comprehensive vehicle checkup, including fluids and filters."
+      },
+      {
+        "id": 5,
+        "event": "Alignment and Suspension",
+        "date": "2024-08-19",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented wheel alignment and suspension service."
+      }
+    ],
+    "cost": {
+      "costPerType": {
+        "ytd": [
+          {
+            "value": 55,
+            "category": "Fuel",
+            "summary": "Fuel: 55%"
+          },
+
+          {
+            "value": 25,
+            "category": "Maintenance",
+            "summary": "Maintenance: 25%"
+          },
+          {
+            "value": 20,
+            "category": "Other",
+            "summary": "Other: 20%"
+          }
+        ],
+        "3months": [
+          {
+            "value": 50,
+            "category": "Fuel",
+            "summary": "Fuel: 50%"
+          },
+          {
+            "value": 30,
+            "category": "Maintenance",
+            "summary": "Maintenance: 30%"
+          },
+          {
+            "value": 20,
+            "category": "Other",
+            "summary": "Other: 20%"
+          }
+        ],
+        "6months": [
+          {
+            "value": 52,
+            "category": "Fuel",
+            "summary": "Fuel: 52%"
+          },
+          {
+            "value": 28,
+            "category": "Maintenance",
+            "summary": "Maintenance: 28%"
+          },
+          {
+            "value": 20,
+            "category": "Other",
+            "summary": "Other: 20%"
+          }
+        ],
+        "12months": [
+          {
+            "value": 53,
+            "category": "Fuel",
+            "summary": "Fuel: 53%"
+          },
+          {
+            "value": 27,
+            "category": "Maintenance",
+            "summary": "Maintenance: 27%"
+          },
+          {
+            "value": 20,
+            "category": "Other",
+            "summary": "Other: 20%"
+          }
+        ]
+      },
+      "costsPerMeterPerQuarter": {
+        "ytd": [
+          {
+            "quarter": "Q1",
+            "costPerMeter": 10
+          },
+          {
+            "quarter": "Q2",
+            "costPerMeter": 28
+          },
+          {
+            "quarter": "Q3",
+            "costPerMeter": 55
+          }
+        ],
+        "'2023'": [
+          {
+            "quarter": "Q1",
+            "costPerMeter": 12
+          },
+          {
+            "quarter": "Q2",
+            "costPerMeter": 25
+          },
+          {
+            "quarter": "Q3",
+            "costPerMeter": 50
+          }
+        ],
+        "'2022'": [
+          {
+            "quarter": "Q1",
+            "costPerMeter": 15
+          },
+          {
+            "quarter": "Q2",
+            "costPerMeter": 20
+          },
+          {
+            "quarter": "Q3",
+            "costPerMeter": 45
+          }
+        ],
+        "'2021'": [
+          {
+            "quarter": "Q1",
+            "costPerMeter": 10
+          },
+          {
+            "quarter": "Q2",
+            "costPerMeter": 18
+          },
+          {
+            "quarter": "Q3",
+            "costPerMeter": 40
+          }
+        ],
+        "'2020'": [
+          {
+            "quarter": "Q1",
+            "costPerMeter": 8
+          },
+          {
+            "quarter": "Q2",
+            "costPerMeter": 22
+          },
+          {
+            "quarter": "Q3",
+            "costPerMeter": 48
+          }
+        ]
+      },
+      "fuelCostsPerMonth": {
+        "ytd": [
+          {
+            "month": "Jan",
+            "cost": 62
+          },
+          {
+            "month": "Feb",
+            "cost": 76
+          },
+          {
+            "month": "Mar",
+            "cost": 146
+          },
+          {
+            "month": "Apr",
+            "cost": 240
+          },
+          {
+            "month": "May",
+            "cost": 265
+          },
+          {
+            "month": "Jun",
+            "cost": 275
+          },
+          {
+            "month": "Jul",
+            "cost": 300
+          },
+          {
+            "month": "Aug",
+            "cost": 230
+          },
+          {
+            "month": "Sep",
+            "cost": 265
+          },
+          {
+            "month": "Oct",
+            "cost": 287
+          }
+        ],
+        "3months": [
+          {
+            "month": "Aug",
+            "cost": 230
+          },
+          {
+            "month": "Sep",
+            "cost": 265
+          },
+          {
+            "month": "Oct",
+            "cost": 287
+          }
+        ],
+        "6months": [
+          {
+            "month": "May",
+            "cost": 265
+          },
+          {
+            "month": "Jun",
+            "cost": 275
+          },
+          {
+            "month": "Jul",
+            "cost": 300
+          },
+          {
+            "month": "Aug",
+            "cost": 230
+          },
+          {
+            "month": "Sep",
+            "cost": 265
+          },
+          {
+            "month": "Oct",
+            "cost": 287
+          }
+        ],
+        "12months": [
+          {
+            "month": "Oct",
+            "cost": 287
+          },
+          {
+            "month": "Nov",
+            "cost": 310
+          },
+          {
+            "month": "Dec",
+            "cost": 295
+          },
+          {
+            "month": "Jan",
+            "cost": 62
+          },
+          {
+            "month": "Feb",
+            "cost": 76
+          },
+          {
+            "month": "Mar",
+            "cost": 146
+          },
+          {
+            "month": "Apr",
+            "cost": 240
+          },
+          {
+            "month": "May",
+            "cost": 265
+          },
+          {
+            "month": "Jun",
+            "cost": 275
+          },
+          {
+            "month": "Jul",
+            "cost": 300
+          },
+          {
+            "month": "Aug",
+            "cost": 230
+          },
+          {
+            "month": "Sep",
+            "cost": 265
+          },
+          {
+            "month": "Oct",
+            "cost": 287
+          }
+        ]
+      }
+    },
+    "utilization": [
+      {
+        "month": "January",
+        "'2023'": 158,
+        "'2024'": 200
+      },
+      {
+        "month": "February",
+        "'2023'": 231,
+        "'2024'": 182
+      },
+      {
+        "month": "March",
+        "'2023'": 372,
+        "'2024'": 350
+      },
+      {
+        "month": "April",
+        "'2023'": 548,
+        "'2024'": 515
+      },
+      {
+        "month": "May",
+        "'2023'": 647,
+        "'2024'": 800
+      },
+      {
+        "month": "June",
+        "'2023'": 839,
+        "'2024'": 912
+      },
+      {
+        "month": "July",
+        "'2023'": 897,
+        "'2024'": 924
+      },
+      {
+        "month": "August",
+        "'2023'": 930,
+        "'2024'": 989
+      },
+      {
+        "month": "September",
+        "'2023'": 843,
+        "'2024'": 820
+      },
+      {
+        "month": "October",
+        "'2023'": 780,
+        "'2024'": 987
+      },
+      {
+        "month": "November",
+        "'2023'": 489,
+        "'2024'": 690
+      },
+      {
+        "month": "December",
+        "'2023'": 210,
+        "'2024'": 0
+      }
+    ]
+  }
+
+]

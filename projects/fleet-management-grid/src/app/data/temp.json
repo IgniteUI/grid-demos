@@ -1,0 +1,1034 @@
+{
+  "vehicleId": "A00102",
+  "licensePlate": "5VLZ 91",
+  "make": "Ford",
+  "model": "Focus",
+  "type": "Hatchback",
+  "vin": "WF0KXXGCKCY565571",
+  "status": "Active",
+  "locationCity": "Boston, MA",
+  "locationGps": "42.352104, -71.075238",
+  "details": {
+      "generation": "Passat Station Wagon",
+      "yearOfManufacture": 2018,
+      "fuelType": "Diesel",
+      "doors": 5,
+      "seats": 5,
+      "transmission": "Automatic",
+      "engine": "2.0 TDI",
+      "power": "150 Hp",
+      "mileage": "50,890 mi",
+      "cubature": "1968 cm3",
+      "color": "Black",
+      "msrp": "$28,900",
+      "tollPassId": "EZ-733491"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00103",
+  "licensePlate": "C10 EFF",
+  "make": "VW",
+  "model": "Passat",
+  "type": "Station Wagon",
+  "vin": "1VWZYZ33DER623111",
+  "status": "Available",
+  "locationCity": "Camden, NJ",
+  "locationGps": "39.936602, -75.105808",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00104",
+  "licensePlate": "KUM 0269",
+  "make": "VW",
+  "model": "Passat",
+  "type": "Station Wagon",
+  "vin": "1VWZYZ33ZWE623426",
+  "status": "Active",
+  "locationCity": "Philadelphia, PA",
+  "locationGps": "39.992220, -75.141041",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00105",
+  "licensePlate": "C10 UAA",
+  "make": "VW",
+  "model": "Golf",
+  "type": "Hatchback",
+  "vin": "WVWZZZ3BZWE689725",
+  "status": "Active",
+  "locationCity": "Camden, NJ",
+  "locationGps": "39.935249, -75.101969",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00106",
+  "licensePlate": "C34 VBU",
+  "make": "Kia",
+  "model": "Ceed",
+  "type": "Hatchback",
+  "vin": "U5YFF23429L032112",
+  "status": "Available",
+  "locationCity": "Camden, NJ",
+  "locationGps": "39.920728, -75.113277",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00107",
+  "licensePlate": "MA MN4567",
+  "make": "Honda",
+  "model": "Civic",
+  "type": "Sedan",
+  "vin": "19XFC2F59HEE67890",
+  "status": "In Maintenance",
+  "locationCity": "Cranbury, NJ",
+  "locationGps": "40.306846, -74.508342",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00108",
+  "licensePlate": "NY LK1234",
+  "make": "Toyota",
+  "model": "Corolla",
+  "type": "Sedan",
+  "vin": "JTDBR32E330C87654",
+  "status": "In Maintenance",
+  "locationCity": "Cranbury, NJ",
+  "locationGps": "40.306846, -74.508342",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00109",
+  "licensePlate": "PA HJ6543",
+  "make": "Mazda",
+  "model": "3",
+  "type": "Hatchback",
+  "vin": "JM3KE2BE0E023456",
+  "status": "Active",
+  "locationCity": "New York, NY",
+  "locationGps": "40.731433, -74.042163",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00110",
+  "licensePlate": "NY QW6789",
+  "make": "Ford",
+  "model": "Mustang",
+  "type": "Coupe",
+  "vin": "1FAFP40433F278901",
+  "status": "Available",
+  "locationCity": "Boston, MA",
+  "locationGps": "42.378956, -71.064221",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00111",
+  "licensePlate": "MA PQ5678",
+  "make": "Toyota",
+  "model": "RAV4",
+  "type": "SUV",
+  "vin": "2T3WFREV0FW034567",
+  "status": "Available",
+  "locationCity": "Boston, MA",
+  "locationGps": "42.378956, -71.064221",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+},
+{
+  "vehicleId": "A00112",
+  "licensePlate": "MA RS4321",
+  "make": "Toyota",
+  "model": "RAV4",
+  "type": "SUV",
+  "vin": "4S4BRBCC0F1245678",
+  "status": "In Maintenance",
+  "locationCity": "Cranbury, NJ",
+  "locationGps": "40.306846, -74.508342",
+  "details": {
+      "generation": "Corolla Sedan",
+      "yearOfManufacture": 2019,
+      "fuelType": "Hybrid",
+      "doors": 4,
+      "seats": 5,
+      "transmission": "CVT",
+      "engine": "1.8 Hybrid",
+      "power": "121 Hp",
+      "mileage": "33,500 mi",
+      "cubature": "1798 cm3",
+      "color": "White",
+      "msrp": "$23,500",
+      "tollPassId": "EZ-733492"
+  },
+  "tripHistory": [
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    },
+    {
+      "id": 1,
+      "driver": "John Davidson",
+      "start": "2024-11-17",
+      "end": "N/A",
+      "startLocation": "Boston, MA",
+      "endLocation": "New York, NY",
+      "startMeter": "73,3231.0 mi",
+      "endMeter": "N/A",
+      "distance": "N/A",
+      "totalTime": "N/A"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    },
+    {
+      "id": 1,
+      "event": "Oil Change",
+      "date": "2024-10-31",
+      "location": "Cranburry, NJ",
+      "type": "Regular",
+      "remarks": "Documented oil change with 5W-20"
+    }
+  ],
+  "cost": {
+    "costPerType": [],
+    "costsPerMeterPerQuarter": [],
+    "fuelCostsPerMonth": []
+  },
+  "utilization": [
+
+  ]
+}
