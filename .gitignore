@@ -44,3 +44,5 @@ Thumbs.db
 **/node_modules
 **/dist
 **/.angular
+.vscode
+.vs
