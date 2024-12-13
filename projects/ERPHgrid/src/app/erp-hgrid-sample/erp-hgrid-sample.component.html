@@ -9,7 +9,7 @@
         [allowFiltering]="true"
         [allowAdvancedFiltering]="true"
         [rowSelection]="selectionMode"
-        [rowStyles]="rowStyles"
+        [primaryKey]="'sku'"
         [moving]="true">
 
         <igx-grid-toolbar>
@@ -67,8 +67,7 @@
             [key]="'orders'"
             [autoGenerate]="false"
             [allowFiltering]="true"
-            [rowSelection]="selectionMode"
-            [rowStyles]="rowStyles">
+            [rowSelection]="selectionMode">
             <igx-column field="orderId" header="Order ID" dataType="number" width="110px"></igx-column>
             <igx-column field="status" header="Status" width="165px">
                 <ng-template igxCell let-cell="cell">

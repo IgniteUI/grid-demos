@@ -74,11 +74,6 @@ export class ErpHgridSampleComponent implements AfterViewInit {
   public selectionMode: GridSelectionMode = 'multiple';
   public orderStatus = OrderStatus;
 
-  // Styles
-  public rowStyles = {
-    background: 'white'
-  }
-
   constructor(private iconService: IgxIconService) {
       // data
       this.hgridData = InventoryList;
@@ -118,14 +113,14 @@ export class ErpHgridSampleComponent implements AfterViewInit {
   public formatAddress(value: OrderDetails): string {
     return  `${value.streetName} ${value.streetNumber}`;
   }
-  
+
   public exportStarted(args: IgxExporterEvent): void {
     args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
       // Don't export Performance column
       columnArgs.cancel = columnArgs.header === 'Performance';
     });
-  } 
-  
+  }
+
   private calculateTotalNetProfit(productId: string): number {
     const productIndex: number = this.hgridData.findIndex(product => product.sku === productId);
     const product: TemplateDataModel = this.hgridData[productIndex];

@@ -56,6 +56,12 @@
     background-color: white;
   }
 
+  // Setting background color of each row in the grids
+  .igx-grid__tr {
+    --row-odd-background: white;
+    --row-even-background: white;
+  }
+  
   .product-img {
     display: flex;
     justify-content: center;
