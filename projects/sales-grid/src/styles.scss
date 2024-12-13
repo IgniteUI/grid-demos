@@ -4,7 +4,3 @@
 @include core();
 @include typography($font-family: $indigo-typeface, $type-scale: $indigo-type-scale);
 @include indigo-light-theme($light-indigo-palette);
-
-:root {
-  --ig-size: var(--ig-size-small)
-}
