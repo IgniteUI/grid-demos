@@ -1,6 +1,6 @@
 igx-tabs {
-  flex: 1; /* Allow the tabs container to grow and fill the parent */
-  width: 100%; /* Force tabs to use full width of the parent */
+  flex: 1;
+  width: 100%;
 }
 
 .details-container {
@@ -89,7 +89,7 @@ igx-tabs {
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 15px; /* Match the chart-section padding */
+  padding: 15px;
   border-radius: 8px;
   border: 2px solid #8A8A8A;
 }
