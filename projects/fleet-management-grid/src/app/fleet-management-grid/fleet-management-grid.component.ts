@@ -54,31 +54,34 @@ import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolS
 })
 export class FleetManagementGridComponent {
 
+  //view childs
   @ViewChild('grid', { static: true }) public grid!: IgxGridComponent;
-
   @ViewChild(`locationOverlay`) private locationOverlay!: ElementRef;
-
   @ViewChild(`driverOverlay`) private driverOverlay!: ElementRef;
-
   @ViewChild("map", { static: true }) public map!: IgxGeographicMapComponent;
 
-
+  //overlay IDs
   private locationOverlayId: string | null = null;
   private driverOverlayId: string | null = null;
+
+  //overlay toggle flags
   public isLocationOverlayActive = false;
   public isDriverOverlayActive = false;
 
+  //car details for location overlay
   public make: string = '';
   public model: string = '';
   public mileage: string = '';
   public markerLocations: any[] = [];
 
+  //chart periods
   public initialPeriods = {
     costPerTypePeriod: "ytd",
     costPerMeterPeriod: "ytd",
     fuelCostPeriod: "ytd"
   }
 
+  //driver details for detail overlay
   public driverDetails = {
     name: "",
     license: "",
@@ -89,15 +92,14 @@ export class FleetManagementGridComponent {
     photo: ""
   }
 
-  fleetData = DATA;
+  public fleetData = DATA;
 
   constructor(
     private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-    private viewContainerRef: ViewContainerRef) {
-    }
+    private viewContainerRef: ViewContainerRef) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
     this.iconService.addSvgIconFromText(wrench.name, wrench.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
@@ -124,6 +126,7 @@ export class FleetManagementGridComponent {
   }
   }
 
+  //handling for chart periods
   public onPeriodChange(event: any, chart: string): void {
     if (chart == "costsPerType") {
       this.initialPeriods.costPerTypePeriod = event.newSelection.value;
@@ -145,6 +148,7 @@ export class FleetManagementGridComponent {
     }
   }
 
+  //getters for image paths
   public getPathToLogoImage(value: string): string {
     return `/cars/logos/${value}.png`;
   }
@@ -163,6 +167,7 @@ export class FleetManagementGridComponent {
     return `/people/${cell.row.data.driver.photo}.jpg`;
   }
 
+  //overlay logic
   public showLocationOverlay(event: MouseEvent, cell: any) {
 
     const vehicleId = cell.row?.cells?.find((c: any) => c.column.field === 'vehicleId')?.value;
@@ -257,8 +262,7 @@ export class FleetManagementGridComponent {
     }
   }
 
-
-
+  //util function for adding map series
   private addSeriesWith(locations:any[], brush: string) {
     const symbolSeries = new IgxGeographicSymbolSeriesComponent();
     symbolSeries.dataSource = locations;
@@ -269,27 +273,4 @@ export class FleetManagementGridComponent {
         symbolSeries.markerOutline = brush;
         this.map.series.add(symbolSeries);
   }
-
-
-
-  public costPerType = [
-    {
-      value: 20,
-      category: 'Other',
-      summary: 'Other: 20%',
-    },
-    {
-      value: 25,
-      category: 'Maintenance',
-      summary: 'Maintenance: 25%',
-    },
-    {
-      value: 55,
-      category: 'Fuel',
-      summary: 'Fuel: 55%',
-    }
-  ];
-
-  public monthlyChartPeriods: string[] = ["YTD", "Last 3 Months", "Last 6 Months", "Last 12 Months"];
-  public annualChartPeriods: string[] = ["YTD", "2023", "2022", "2021", "2020"];
 }
