@@ -147,9 +147,7 @@ igx-tabs {
 .overlay-location-header {
   height: 38%;
   width: 100%;
-  //display: flex;
   flex-direction: column;
-  //justify-items: center;
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
@@ -200,8 +198,6 @@ igx-tabs {
   display: flex;
   flex-direction: row;
   justify-self: center;
-  //justify-content: center;
-  //align-items: center;
   width: 85%;
 }
 

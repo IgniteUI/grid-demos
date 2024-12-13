@@ -191,7 +191,7 @@ export class FleetManagementGridComponent {
     const centerPoint = {
       left: this.markerLocations[0].longitude - 0.005,
       top: this.markerLocations[0].latitude - 0.02,
-      width: 0.01,     // Zoom in tightly
+      width: 0.01,
       height: 0.01
     };
     this.map.zoomToGeographic(centerPoint);
