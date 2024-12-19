@@ -1,0 +1,28 @@
+@use "igniteui-angular/theming" as *;
+
+@include core();
+@include typography(
+  $font-family: $indigo-typeface,
+  $type-scale: $indigo-type-scale
+);
+@include theme(
+  $palette: $light-indigo-palette,
+  $schema: $light-indigo-schema
+);
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  ::ng-deep {
+    @include typography(
+      $font-family: $indigo-typeface,
+      $type-scale: $indigo-type-scale
+    );
+    @include theme(
+      $palette: $light-indigo-palette,
+      $schema: $light-indigo-schema
+    );
+  }
+}

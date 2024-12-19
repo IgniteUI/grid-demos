@@ -9,6 +9,7 @@
     "start:hr": "ng serve --project=hr-portal",
     "start:sales": "ng serve --project=sales-grid",
     "build": "ng build",
+    "build:ci": "ng build --base-href /angular-grid-examples/",
     "build:erp": "ng build erp-hgrid",
     "build:fin": "ng build finance-grid",
     "build:hr": "ng build hr-portal",
