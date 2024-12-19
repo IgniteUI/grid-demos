@@ -6,7 +6,8 @@ import { provideServerRoutesConfig } from '@angular/ssr';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    provideServerRendering()
+    provideServerRendering(),
+    provideServerRoutesConfig(serverRoutes)
   ]
 };
 

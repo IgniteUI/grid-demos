@@ -32,6 +32,10 @@
                 "input": "public"
               },
               {
+                "glob": "web.config",
+                "input": "./"
+              },
+              {
                 "glob": "**/*",
                 "input": "projects/erp-hgrid/public"
               },
@@ -51,6 +55,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "ssr": {
+              "entry": "src/server.ts"
+            },
             "stylePreprocessorOptions": {
               "includePaths": [
                 "node_modules"
