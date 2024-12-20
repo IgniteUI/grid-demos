@@ -25,7 +25,11 @@ import {
     SortingDirection,
     DefaultSortingStrategy,
     IgxExporterEvent,
-    IColumnExportingEventArgs
+    IColumnExportingEventArgs,
+    IgxButtonModule,
+	  IgxDialogModule,
+	  IgxRippleModule,
+    IColumnPipeArgs,
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
@@ -60,6 +64,9 @@ defineComponents(IgcRatingComponent);
         IgxBadgeComponent,
         NgIf,
         IgxSparklineModule,
+        IgxButtonModule,
+	      IgxDialogModule,
+	      IgxRippleModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',
@@ -112,6 +119,12 @@ export class ErpHgridSampleComponent implements AfterViewInit {
 
   public formatAddress(value: OrderDetails): string {
     return  `${value.streetName} ${value.streetNumber}`;
+  }
+
+  public formatNumberAsIs(value: number): number {
+    // Bypassing the default formatting of larger numbers
+    // Example for 4-digit numbers: 1,234 => 1234
+    return value;
   }
 
   public exportStarted(args: IgxExporterEvent): void {
