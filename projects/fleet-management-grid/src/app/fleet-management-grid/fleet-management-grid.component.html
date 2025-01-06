@@ -1,4 +1,4 @@
-<igx-grid [data]="fleetData" #grid height="600px" width="100%" style="--ig-size: var(--ig-size-small)">
+<igx-grid [data]="fleetData" #grid height="1024px" width="100%" style="--ig-size: var(--ig-size-small)">
   <igx-grid-toolbar>
     <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -18,7 +18,7 @@
   <igx-column field="licensePlate" header="License Plate" [sortable]="true"></igx-column>
   <igx-column field="make" header="Make" [sortable]="true">
     <ng-template igxCell let-value>
-      <igx-avatar shape="rounded" size="small" [src]="getPathToLogoImage(value)"></igx-avatar>
+      <igx-avatar class="logo-avatar" shape="rounded" size="small" [src]="getPathToLogoImage(value)"></igx-avatar>
       <span class="status-value">{{ value }}</span>
     </ng-template>
   </igx-column>
@@ -328,33 +328,34 @@
         </igx-tab-header>
 
         <igx-tab-content>
-          <div class="chart-content utilization-chart">
-            <h6>Utilization per Month</h6>
-            <igx-legend
-              name="Legend"
-              #legend
-              orientation="Horizontal">
-            </igx-legend>
-            <igx-category-chart
-              name="chart"
-              class="column-chart-two-series"
-              #chart
-              chartType="Column"
-              [dataSource]="dataItem.utilization"
-              [legend]="legend"
-              yAxisTitle="Miles"
-              isHorizontalZoomEnabled="false"
-              isVerticalZoomEnabled="false"
-              xAxisLabelTextColor="#ededed"
-              yAxisLabelTextColor="#ededed"
-              yAxisTitleTextColor="#ededed"
-              yAxisMinimumValue="0"
-              yAxisInterval="200"
-              xAxisMinimumGapSize="20"
-              yAxisLabelRightMargin="7.5"
-              style="width: 95%; height: 390px;">
-
-            </igx-category-chart>
+          <div class="content-wrapper">
+            <div class="chart-content utilization-chart">
+              <h6>Utilization per Month</h6>
+              <igx-legend
+                name="Legend"
+                #legend
+                orientation="Horizontal">
+              </igx-legend>
+              <igx-category-chart
+                name="chart"
+                class="column-chart-two-series"
+                #chart
+                chartType="Column"
+                [dataSource]="dataItem.utilization"
+                [legend]="legend"
+                yAxisTitle="Miles"
+                isHorizontalZoomEnabled="false"
+                isVerticalZoomEnabled="false"
+                xAxisLabelTextColor="#ededed"
+                yAxisLabelTextColor="#ededed"
+                yAxisTitleTextColor="#ededed"
+                yAxisMinimumValue="0"
+                yAxisInterval="200"
+                xAxisMinimumGapSize="20"
+                yAxisLabelRightMargin="7.5"
+                style="width: 95%; height: 390px;">
+              </igx-category-chart>
+            </div>
           </div>
         </igx-tab-content>
       </igx-tab-item>
@@ -368,7 +369,7 @@
     <igx-column field="driver" header="Driver" width="18%">
       <ng-template igxCell let-cell="cell">
         <igx-avatar shape="circle" size="small" [src]="getPathToDriverPhoto(cell)" class="driver-avatar"></igx-avatar>
-        <a #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell)">{{ cell.value.name }}</a>
+        <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell)">{{ cell.value.name }}</a>
         <igx-badge class="driver-badge" type="success" *ngIf="cell.row.index === 0">
           Current
         </igx-badge>
