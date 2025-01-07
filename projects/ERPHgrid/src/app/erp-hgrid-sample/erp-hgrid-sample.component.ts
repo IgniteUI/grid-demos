@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, Inject, ViewContainerRef } from '@angular/core';
 import { NgIf } from '@angular/common';
 import {
     IgxHierarchicalGridComponent,
@@ -29,7 +29,9 @@ import {
     IgxButtonModule,
 	  IgxDialogModule,
 	  IgxRippleModule,
-    IColumnPipeArgs,
+    AutoPositionStrategy,
+    IgxDialogComponent,
+    IgxTooltipModule
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
@@ -66,7 +68,8 @@ defineComponents(IgcRatingComponent);
         IgxSparklineModule,
         IgxButtonModule,
 	      IgxDialogModule,
-	      IgxRippleModule
+	      IgxRippleModule,
+        IgxTooltipModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',
@@ -77,6 +80,9 @@ export class ErpHgridSampleComponent implements AfterViewInit {
   public hierarchicalGrid!: IgxHierarchicalGridComponent;
   @ViewChild('rowisland', { read: IgxRowIslandComponent, static: true })
   public rowisland!: IgxRowIslandComponent;
+  @ViewChild('imageElement', { static: true }) imageElement!: ElementRef;
+  @ViewChild('imageDialog', { static: true }) imageDialog!: IgxDialogComponent;
+
   public hgridData: TemplateDataModel[];
   public selectionMode: GridSelectionMode = 'multiple';
   public orderStatus = OrderStatus;
@@ -132,6 +138,26 @@ export class ErpHgridSampleComponent implements AfterViewInit {
       // Don't export Performance column
       columnArgs.cancel = columnArgs.header === 'Performance';
     });
+  }
+
+
+  public onImageHover(event: MouseEvent, dialog: IgxDialogComponent) {
+
+    if(dialog) {
+      const targetEl = event.target as HTMLElement;
+
+      dialog.open({
+        target: targetEl,
+        modal: false,
+        positionStrategy: new AutoPositionStrategy()
+      });
+    }
+  }
+
+  public onImageLeave(event: MouseEvent, dialog: IgxDialogComponent) {
+    if(dialog) {
+      dialog.close();
+    }
   }
 
   private calculateTotalNetProfit(productId: string): number {

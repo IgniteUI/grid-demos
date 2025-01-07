@@ -33,12 +33,14 @@
 
             <ng-template igxCell let-cell="cell" let-val>
                 <img
+                    #imageElement
                     [src]="cell.value"
                     alt="Product"
                     igxRipple="white"
-                    (mouseenter)="imageDialog.open()"
-                    (mouseleave)="imageDialog.close()"/>
-                <igx-dialog #imageDialog
+                    (mouseenter)="onImageHover($event, imageDialog)"
+                    (mouseleave)="onImageLeave($event, imageDialog)"/>
+                <igx-dialog
+                    #imageDialog
                     isModal="false"
                     [title]="cell.row.data.productName">
                     <img [src]="cell.value" width="312px" height="312px" alt="Product View"/>
@@ -66,7 +68,7 @@
                     width="100%"
                     height="100%"
                     lineThickness="1"
-                    brush="gray"
+                    brush="#424242"
                     displayType="Line">
                 </igx-sparkline>
                 }
