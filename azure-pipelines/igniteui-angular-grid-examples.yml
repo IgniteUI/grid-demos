@@ -43,7 +43,7 @@ stages:
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'install --legacy-peer-deps'
-          customEndpoint: 'internal proget'
+
 
       # - task: PowerShell@2
       #   displayName: 'Uninstall all IG trial packages & re-install their licensed variations'
@@ -75,7 +75,7 @@ stages:
         inputs:
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'npm run build:ci'
+          customCommand: 'run build:ci'
 
       # - task: CopyFiles@2
       #   displayName: 'Copy web.config into the dist dir'
