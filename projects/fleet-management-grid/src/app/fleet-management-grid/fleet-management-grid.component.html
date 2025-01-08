@@ -410,7 +410,7 @@
 <div class="overlay overlay-location" [hidden]="!isLocationOverlayActive" #locationOverlay>
   <igx-card elevated>
     <igx-card-header class="overlay-location-header">
-      <igx-avatar class="overlay-avatar" shape="circle" [src]="getPathToCarImage(make.toLowerCase(), model.toLowerCase())[0]"></igx-avatar>
+      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="getPathToCarImage(make.toLowerCase(), model.toLowerCase())[0]"></igx-avatar>
       <h6 class="overlay-title">{{ make }} {{ model }}</h6>
       <span class="overlay-text">Mileage: {{ mileage }}</span>
     </igx-card-header>
@@ -431,7 +431,7 @@
 <div class="overlay overlay-driver" [hidden]="!isDriverOverlayActive" #driverOverlay>
   <igx-card elevated>
     <igx-card-header class="overlay-driver-header">
-      <igx-avatar class="driver-overlay-avatar" shape="circle" [src]="driverDetails.photo"></igx-avatar>
+      <igx-avatar class="driver-overlay-avatar" shape="circle" size="medium" [src]="driverDetails.photo"></igx-avatar>
       <h6 class="overlay-title">{{ driverDetails.name }}</h6>
     </igx-card-header>
     <igx-card-content class="overlay-driver-content">

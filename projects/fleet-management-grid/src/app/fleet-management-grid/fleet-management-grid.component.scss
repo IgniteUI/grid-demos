@@ -1,11 +1,18 @@
+@use "@infragistics/igniteui-angular/theming" as *;
+
 igx-tabs {
   flex: 1;
   width: 100%;
 }
 
 igx-divider {
-  color: --ig-gray-200;
+  color: var(--ig-gray-200);
   opacity: 24%;
+}
+
+igx-card {
+  border: 0px;
+  border-radius: 4px;
 }
 .grid-container {
   padding: 16px;
@@ -143,6 +150,7 @@ igx-divider {
   align-content: center;
   width: 360px;
   height: 396px;
+  box-shadow: var(--ig-elevation-24);
 }
 
 .igx-card {
@@ -230,8 +238,10 @@ igx-divider {
   --size: 22px
 }
 
+.overlay-avatar {}
+
 .driver-overlay-avatar {
-  --size: 64px
+  //--size: 64px
 }
 
 .logo-avatar {
