@@ -84,10 +84,15 @@ stages:
       #     Contents: 'dist.grid-demos.browser'
       #     TargetFolder: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
 
+      - script: |
+          echo "Checking contents of artifact directory..."
+          ls -R $(Build.SourcesDirectory)/dist/grid-demos/browser
+        displayName: 'Verify artifact contents'
+
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
-          targetPath: '$(Build.ArtifactStagingDirectory)\dist\grid-demos\browser'
+          targetPath: '$(Build.ArtifactStagingDirectory)/dist/grid-demos/browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
