@@ -87,7 +87,7 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
-          targetPath: '$(Build.ArtifactStagingDirectory)/dist/grid-demos/browser'
+          targetPath: '$(Build.ArtifactStagingDirectory)\dist\grid-demos\browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
