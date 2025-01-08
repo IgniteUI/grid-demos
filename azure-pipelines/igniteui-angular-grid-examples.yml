@@ -1,5 +1,3 @@
-############# Copy of ignite ui wc examples ##############
-
 trigger:
   branches:
     include:
@@ -40,81 +38,58 @@ stages:
           versionSpec: '18.x'
 
       - task: Npm@1
-        displayName: 'Register licensed npm registry in .npmrc'
-        inputs:
-          command: 'custom'
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
-          customEndpoint: 'public proget'
-
-      - task: Npm@1
         displayName: 'npm install --legacy-peer-deps'
         inputs:
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'install --legacy-peer-deps'
-          customEndpoint: 'public proget'
-      
-      - task: Npm@1
-        displayName: 'Register licensed npm registry in .npmrc'
-        inputs:
-          command: 'custom'
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
-          customEndpoint: 'internal licensed proget'
+          customEndpoint: 'internal proget'
 
-      - task: PowerShell@2
-        displayName: 'Uninstall all IG trial packages & re-install their licensed variations'
-        inputs:
-          failOnStderr: true
-          showWarnings: true
-          workingDirectory: '$(Build.SourcesDirectory)'
-          targetType: 'inline'
-          script: |
-            Get-Content -Path .\.npmrc
-            $packageJson = Get-Content -Raw .\package.json | ConvertFrom-Json
-            $npmUninstallPackages = "npm uninstall --save "
-            $npmInstallPackages = "npm install --legacy-peer-deps "
-            $packageJson.dependencies.PSObject.Properties | `
-                Where-Object {
-                    $_.Name.StartsWith("igniteui-webcomponents-") -or $_.Name.StartsWith("igniteui-dockmanager") `
-                } | `
-                ForEach-Object { `
-                    $npmUninstallPackages += $_.Name + " "
-                    $npmInstallPackages += "@infragistics/" + $_.Name + "@" + $_.Value + " "
-                }
-            Write-Host $npmUninstallPackages
-            Write-Host $npmInstallPackages
-            Invoke-Expression -Command “$npmUninstallPackages”
-            Invoke-Expression -Command “$npmInstallPackages”
+      # - task: PowerShell@2
+      #   displayName: 'Uninstall all IG trial packages & re-install their licensed variations'
+      #   inputs:
+      #     failOnStderr: true
+      #     showWarnings: true
+      #     workingDirectory: '$(Build.SourcesDirectory)'
+      #     targetType: 'inline'
+      #     script: |
+      #       Get-Content -Path .\.npmrc
+      #       $packageJson = Get-Content -Raw .\package.json | ConvertFrom-Json
+      #       $npmUninstallPackages = "npm uninstall --save "
+      #       $npmInstallPackages = "npm install --legacy-peer-deps "
+      #       $packageJson.dependencies.PSObject.Properties | `
+      #           Where-Object {
+      #               $_.Name.StartsWith("igniteui-webcomponents-") -or $_.Name.StartsWith("igniteui-dockmanager") `
+      #           } | `
+      #           ForEach-Object { `
+      #               $npmUninstallPackages += $_.Name + " "
+      #               $npmInstallPackages += "@infragistics/" + $_.Name + "@" + $_.Value + " "
+      #           }
+      #       Write-Host $npmUninstallPackages
+      #       Write-Host $npmInstallPackages
+      #       Invoke-Expression -Command “$npmUninstallPackages”
+      #       Invoke-Expression -Command “$npmInstallPackages”
 
       - task: Npm@1
-        displayName: 'npm run build'
+        displayName: 'npm run build:ci'
         inputs:
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
-          verbose: ${{ parameters.isVerbose }}
-          customCommand: 'run build'
-      - task: CopyFiles@2
-        displayName: 'Copy web.config into the dist dir'
-        inputs:
-          SourceFolder: '$(Build.SourcesDirectory)/browser'
-          Contents: 'web.config'
-          TargetFolder: '$(Build.SourcesDirectory)/browser/dist'
-      - task: ArchiveFiles@2
-        displayName: 'Package samples browser'
-        inputs:
-          verbose: ${{ parameters.isVerbose }}
-          rootFolderOrFile: '$(Build.SourcesDirectory)/browser/dist'
-          includeRootFolder: false
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/WebComponentsSamples.zip'
-          replaceExistingArchive: true
+          customCommand: 'npm run build:ci'
+
+      # - task: CopyFiles@2
+      #   displayName: 'Copy web.config into the dist dir'
+      #   inputs:
+      #     SourceFolder: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
+      #     Contents: 'dist.grid-demos.browser'
+      #     TargetFolder: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
+
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
-          targetPath: '$(Build.ArtifactStagingDirectory)/WebComponentsSamples.zip'
-          artifact: 'WebComponentsSamplesBrowser'
+          targetPath: '$(Build.ArtifactStagingDirectory)/dist/grid-demos/browser'
+          artifact: 'dist.grid-demos.browser'
+          publishLocation: 'pipeline'
 
       - ${{ if eq(parameters.shouldCleanPostExectuion, true) }}:
         - task: PostBuildCleanup@4
