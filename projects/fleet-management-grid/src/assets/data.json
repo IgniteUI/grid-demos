@@ -552,7 +552,7 @@
         "power": "150 Hp",
         "mileage": "50,890 mi",
         "cubature": "1968 cm3",
-        "color": "Black",
+        "color": "Blue",
         "msrp": "$28,900",
         "tollPassId": "EZ-733491"
     },
@@ -1079,7 +1079,7 @@
         "power": "156 Hp",
         "mileage": "33,500 mi",
         "cubature": "1395 cm3",
-        "color": "White",
+        "color": "Black",
         "msrp": "$23,500",
         "tollPassId": "EZ-733492"
     },
@@ -1605,7 +1605,7 @@
         "power": "156 Hp",
         "mileage": "33,500 mi",
         "cubature": "1395 cm3",
-        "color": "White",
+        "color": "Gray",
         "msrp": "$23,500",
         "tollPassId": "EZ-733492"
     },
@@ -2132,7 +2132,7 @@
         "power": "150 Hp",
         "mileage": "33,500 mi",
         "cubature": "1498 cm3",
-        "color": "White",
+        "color": "Gray",
         "msrp": "$24,000",
         "tollPassId": "EZ-733492"
     },

@@ -3,8 +3,9 @@ import { Component, ElementRef, Inject, ViewChild, ViewContainerRef } from '@ang
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
 import { DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from '@infragistics/igniteui-angular';
 import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule, MarkerType } from 'igniteui-angular-charts';
-import DATA from '../data/data.json';
-import CAR_PHOTO_MANIFEST from '../data/car_photo_manifest.json';
+import DATA from '../../assets/data.json';
+import CAR_PHOTO_MANIFEST from '../../assets/car_photo_manifest.json';
+import CAR_IMAGES from '../../assets/car_images.json'
 import { IgxShapeDataSourceModule } from 'igniteui-angular-core';
 import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps';
 
@@ -69,6 +70,7 @@ export class FleetManagementGridComponent {
   public isDriverOverlayActive = false;
 
   //car details for location overlay
+  public vehiclePhoto: string = '';
   public make: string = '';
   public model: string = '';
   public mileage: string = '';
@@ -153,14 +155,21 @@ export class FleetManagementGridComponent {
     return `/cars/logos/${value}.png`;
   }
 
-  public getPathToCarImage(make: any, model: any): string[] {
-    const carPhotoNames = CAR_PHOTO_MANIFEST.photos.filter((photo) =>
-      photo.toLowerCase().includes(make) && photo.toLowerCase().includes(model)
-    );
+  public getPathToCarImage(vehicleId: string): string[] {
+    const carEntry = CAR_PHOTO_MANIFEST.find(car => car.id === vehicleId);
 
-    const carPathToPhotos = carPhotoNames.map(photo => `/cars/photos/${photo}`);
+    if (!carEntry) {
+      console.warn(`No vehicle found with ID: ${vehicleId}`);
+      return [];
+    }
 
-    return carPathToPhotos;
+    const folderName = carEntry.photo;
+
+    const carPhotoNames = (CAR_IMAGES as Record<string, string[]>)[folderName];
+
+    const carPathsToPhotos = carPhotoNames.map(photo => `/cars/photos/${folderName}/${photo}`);
+
+    return carPathsToPhotos;
   }
 
   public getPathToDriverPhoto(cell: any) {
@@ -183,7 +192,7 @@ export class FleetManagementGridComponent {
       console.error(`No vehicle found for ID: ${vehicleId}`);
       return;
     }
-
+    this.vehiclePhoto = this.getPathToCarImage(vehicleId)[0];
     this.make = vehicle.make;
     this.model = vehicle.model;
     this.mileage = vehicle.details.mileage;

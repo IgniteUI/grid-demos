@@ -58,7 +58,7 @@
           <div class="details-container">
             <div class="carousel-container">
               <igx-carousel #carousel>
-                <igx-slide *ngFor="let slide of getPathToCarImage(dataItem.make.toLowerCase(), dataItem.model.toLowerCase())">
+                <igx-slide *ngFor="let slide of getPathToCarImage(dataItem.vehicleId)">
                     <div class="image-container">
                         <img [src]="slide"/>
                     </div>
@@ -410,7 +410,7 @@
 <div class="overlay overlay-location" [hidden]="!isLocationOverlayActive" #locationOverlay>
   <igx-card elevated>
     <igx-card-header class="overlay-location-header">
-      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="getPathToCarImage(make.toLowerCase(), model.toLowerCase())[0]"></igx-avatar>
+      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="vehiclePhoto"></igx-avatar>
       <h6 class="overlay-title">{{ make }} {{ model }}</h6>
       <span class="overlay-text">Mileage: {{ mileage }}</span>
     </igx-card-header>
