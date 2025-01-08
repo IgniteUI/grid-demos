@@ -416,18 +416,7 @@
           }
         ],
         "12months": [
-          {
-            "month": "Oct",
-            "cost": 287
-          },
-          {
-            "month": "Nov",
-            "cost": 310
-          },
-          {
-            "month": "Dec",
-            "cost": 295
-          },
+
           {
             "month": "Jan",
             "cost": 62
@@ -467,6 +456,14 @@
           {
             "month": "Oct",
             "cost": 287
+          },
+          {
+            "month": "Nov",
+            "cost": 310
+          },
+          {
+            "month": "Dec",
+            "cost": 295
           }
         ]
       }
@@ -947,18 +944,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 287
-          },
-          {
-            "month": "Nov",
-            "cost": 310
-          },
-          {
-            "month": "Dec",
-            "cost": 295
-          },
-          {
             "month": "Jan",
             "cost": 62
           },
@@ -997,6 +982,14 @@
           {
             "month": "Oct",
             "cost": 287
+          },
+          {
+            "month": "Nov",
+            "cost": 310
+          },
+          {
+            "month": "Dec",
+            "cost": 295
           }
         ]
       }
@@ -1065,7 +1058,6 @@
       }
     ]
   },
-
   {
     "vehicleId": "A00103",
     "licensePlate": "C10 EFF",
@@ -1479,18 +1471,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 300
-          },
-          {
-            "month": "Nov",
-            "cost": 320
-          },
-          {
-            "month": "Dec",
-            "cost": 310
-          },
-          {
             "month": "Jan",
             "cost": 75
           },
@@ -1529,6 +1509,14 @@
           {
             "month": "Oct",
             "cost": 300
+          },
+          {
+            "month": "Nov",
+            "cost": 320
+          },
+          {
+            "month": "Dec",
+            "cost": 310
           }
         ]
       }
@@ -2008,18 +1996,7 @@
           }
         ],
         "12months": [
-          {
-            "month": "Oct",
-            "cost": 295
-          },
-          {
-            "month": "Nov",
-            "cost": 320
-          },
-          {
-            "month": "Dec",
-            "cost": 310
-          },
+
           {
             "month": "Jan",
             "cost": 70
@@ -2059,6 +2036,14 @@
           {
             "month": "Oct",
             "cost": 295
+          },
+          {
+            "month": "Nov",
+            "cost": 320
+          },
+          {
+            "month": "Dec",
+            "cost": 310
           }
         ]
       }
@@ -2539,18 +2524,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 295
-          },
-          {
-            "month": "Nov",
-            "cost": 330
-          },
-          {
-            "month": "Dec",
-            "cost": 315
-          },
-          {
             "month": "Jan",
             "cost": 78
           },
@@ -2589,6 +2562,14 @@
           {
             "month": "Oct",
             "cost": 295
+          },
+          {
+            "month": "Nov",
+            "cost": 330
+          },
+          {
+            "month": "Dec",
+            "cost": 315
           }
         ]
       }
@@ -3049,18 +3030,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 290
-          },
-          {
-            "month": "Nov",
-            "cost": 320
-          },
-          {
-            "month": "Dec",
-            "cost": 305
-          },
-          {
             "month": "Jan",
             "cost": 65
           },
@@ -3099,6 +3068,14 @@
           {
             "month": "Oct",
             "cost": 290
+          },
+          {
+            "month": "Nov",
+            "cost": 320
+          },
+          {
+            "month": "Dec",
+            "cost": 305
           }
         ]
       }
@@ -3559,18 +3536,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 295
-          },
-          {
-            "month": "Nov",
-            "cost": 320
-          },
-          {
-            "month": "Dec",
-            "cost": 310
-          },
-          {
             "month": "Jan",
             "cost": 65
           },
@@ -3609,6 +3574,14 @@
           {
             "month": "Oct",
             "cost": 295
+          },
+          {
+            "month": "Nov",
+            "cost": 320
+          },
+          {
+            "month": "Dec",
+            "cost": 310
           }
         ]
       }
@@ -4069,18 +4042,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 295
-          },
-          {
-            "month": "Nov",
-            "cost": 320
-          },
-          {
-            "month": "Dec",
-            "cost": 310
-          },
-          {
             "month": "Jan",
             "cost": 65
           },
@@ -4119,6 +4080,14 @@
           {
             "month": "Oct",
             "cost": 295
+          },
+          {
+            "month": "Nov",
+            "cost": 320
+          },
+          {
+            "month": "Dec",
+            "cost": 310
           }
         ]
       }
@@ -4579,18 +4548,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 300
-          },
-          {
-            "month": "Nov",
-            "cost": 315
-          },
-          {
-            "month": "Dec",
-            "cost": 310
-          },
-          {
             "month": "Jan",
             "cost": 70
           },
@@ -4629,6 +4586,14 @@
           {
             "month": "Oct",
             "cost": 300
+          },
+          {
+            "month": "Nov",
+            "cost": 315
+          },
+          {
+            "month": "Dec",
+            "cost": 310
           }
         ]
       }
@@ -5089,18 +5054,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 300
-          },
-          {
-            "month": "Nov",
-            "cost": 315
-          },
-          {
-            "month": "Dec",
-            "cost": 310
-          },
-          {
             "month": "Jan",
             "cost": 70
           },
@@ -5139,6 +5092,14 @@
           {
             "month": "Oct",
             "cost": 300
+          },
+          {
+            "month": "Nov",
+            "cost": 315
+          },
+          {
+            "month": "Dec",
+            "cost": 310
           }
         ]
       }
@@ -5599,18 +5560,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 295
-          },
-          {
-            "month": "Nov",
-            "cost": 320
-          },
-          {
-            "month": "Dec",
-            "cost": 305
-          },
-          {
             "month": "Jan",
             "cost": 70
           },
@@ -5649,6 +5598,14 @@
           {
             "month": "Oct",
             "cost": 295
+          },
+          {
+            "month": "Nov",
+            "cost": 320
+          },
+          {
+            "month": "Dec",
+            "cost": 305
           }
         ]
       }
@@ -6109,18 +6066,6 @@
         ],
         "12months": [
           {
-            "month": "Oct",
-            "cost": 270
-          },
-          {
-            "month": "Nov",
-            "cost": 290
-          },
-          {
-            "month": "Dec",
-            "cost": 280
-          },
-          {
             "month": "Jan",
             "cost": 72
           },
@@ -6159,6 +6104,14 @@
           {
             "month": "Oct",
             "cost": 270
+          },
+          {
+            "month": "Nov",
+            "cost": 290
+          },
+          {
+            "month": "Dec",
+            "cost": 280
           }
         ]
       }
