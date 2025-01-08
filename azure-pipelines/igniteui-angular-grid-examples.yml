@@ -84,10 +84,31 @@ stages:
       #     Contents: 'dist.grid-demos.browser'
       #     TargetFolder: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
 
-      - script: |
-          echo "Checking contents of artifact directory..."
-          ls -R $(Build.SourcesDirectory)/dist/grid-demos/browser
+      - task: PowerShell@2
+        displayName: 'Verify artifact directory exists'
+        inputs:
+          targetType: inline
+          script: |
+            $artifactPath = "$(Build.ArtifactStagingDirectory)\dist\grid-demos\browser"
+            if (Test-Path $artifactPath) {
+              Write-Host "Directory exists: $artifactPath"
+            } else {
+              Write-Error "Directory does not exist: $artifactPath"
+            }
+
+      - task: PowerShell@2
         displayName: 'Verify artifact contents'
+        inputs:
+          targetType: inline
+          script: |
+            $artifactPath = "$(Build.ArtifactStagingDirectory)\dist\grid-demos\browser"
+            if (Test-Path $artifactPath) {
+              Get-ChildItem -Path $artifactPath -Recurse | ForEach-Object {
+                Write-Host "File: $($_.FullName)"
+              }
+            } else {
+              Write-Error "Directory does not exist: $artifactPath"
+            }
 
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
