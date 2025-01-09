@@ -36,12 +36,27 @@ stages:
           versionSource: 'spec'
           versionSpec: '18.x'
 
-      - task: Npm@1
-        displayName: 'npm install --legacy-peer-deps'
-        inputs:
-          command: custom
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'install --legacy-peer-deps'
+      # Separate behavior for vnext and master
+      - ${{ if eq(variables['Build.SourceBranchName'], 'vnext') }}:
+        - script: |
+            echo "Running build steps specific to vnext branch"
+            npm install --legacy-peer-deps
+            npm run build:vnext
+          displayName: 'vnext-specific build steps'
+
+      - ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+        - script: |
+            echo "Running build steps specific to master branch"
+            npm install --legacy-peer-deps
+            npm run build:ci:master
+          displayName: 'master-specific build steps'
+
+      # - task: Npm@1
+      #   displayName: 'npm install --legacy-peer-deps'
+      #   inputs:
+      #     command: custom
+      #     workingDir: '$(Build.SourcesDirectory)'
+      #     customCommand: 'install --legacy-peer-deps'
 
       - task: Npm@1
         displayName: 'Register licensed npm registry in .npmrc'
@@ -51,12 +66,12 @@ stages:
           customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
           customEndpoint: 'internal proget'
 
-      - task: Npm@1
-        displayName: 'npm run build:ci'
-        inputs:
-          command: custom
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'run build:ci'
+      # - task: Npm@1
+      #   displayName: 'npm run build:ci'
+      #   inputs:
+      #     command: custom
+      #     workingDir: '$(Build.SourcesDirectory)'
+      #     customCommand: 'run build:ci'
 
       - task: PowerShell@2
         displayName: 'Verify artifact directory exists'
@@ -91,33 +106,34 @@ stages:
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
-      - task: PowerShell@2
-        displayName: 'package.json - trial to licensed'
-        inputs:
-          targetType: 'inline'
-          script: |
-            $filePath = "$(Build.SourcesDirectory)\package.json"
-            $trialStringsToReplace = @(
-                [pscustomobject]@{ Pattern = '(\"igniteui-angular\")'; Replacement = '"@infragistics/igniteui-angular"' },
-                [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' }
-            )
-            
-            $fileContents = Get-Content -Path $filePath 
-            
-            $trialStringsToReplace | ForEach-Object {
-                $matches = $fileContents -match $_.Pattern 
-            
-                if([string]::IsNullOrEmpty($matches)) {
-                    throw $("No matches for $($_.Pattern) in $filePath !!!")
-                }
-                else {
-                    Write-Output "Found the following matches for $($_.Pattern) in $filePath. To be replaced with $($_.Replacement)"
-                    Write-Output $matches
-                }
-                
-                $fileContents = $fileContents -replace $_.Pattern, $_.Replacement 
-                Set-Content -Path "$filePath" -Value $fileContents -Force
-            }
+      - ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+        - task: PowerShell@2
+          displayName: 'package.json - trial to licensed'
+          inputs:
+            targetType: 'inline'
+            script: |
+              $filePath = "$(Build.SourcesDirectory)\package.json"
+              $trialStringsToReplace = @(
+                  [pscustomobject]@{ Pattern = '(\"igniteui-angular\")'; Replacement = '"@infragistics/igniteui-angular"' },
+                  [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' }
+              )
+              
+              $fileContents = Get-Content -Path $filePath 
+              
+              $trialStringsToReplace | ForEach-Object {
+                  $matches = $fileContents -match $_.Pattern 
+              
+                  if([string]::IsNullOrEmpty($matches)) {
+                      throw $("No matches for $($_.Pattern) in $filePath !!!")
+                  }
+                  else {
+                      Write-Output "Found the following matches for $($_.Pattern) in $filePath. To be replaced with $($_.Replacement)"
+                      Write-Output $matches
+                  }
+                  
+                  $fileContents = $fileContents -replace $_.Pattern, $_.Replacement 
+                  Set-Content -Path "$filePath" -Value $fileContents -Force
+              }
 
       - task: PublishPipelineArtifact@1
         inputs:
