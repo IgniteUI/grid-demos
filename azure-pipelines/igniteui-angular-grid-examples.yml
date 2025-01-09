@@ -70,7 +70,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos"
+            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos\browser"
             if (Test-Path $artifactPath) {
               Write-Host "Directory exists: $artifactPath"
             } else {
@@ -82,7 +82,7 @@ stages:
         inputs:
           targetType: inline
           script: |
-            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos"
+            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos\browser"
             if (Test-Path $artifactPath) {
               Get-ChildItem -Path $artifactPath -Recurse | ForEach-Object {
                 Write-Host "File: $($_.FullName)"
@@ -94,7 +94,7 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
-          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos'
+          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
