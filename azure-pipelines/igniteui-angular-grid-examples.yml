@@ -102,9 +102,6 @@ stages:
                 [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' }
             )
             
-            # Be careful with Get-Content and the replace operator.
-            # This script's verbosity relies on reading the file as a string array so we can display the found matches.
-            # If you read the file with -Raw (a.k.a a single string), then the match output object is a Boolean - not a String.
             $fileContents = Get-Content -Path $filePath 
             
             $trialStringsToReplace | ForEach-Object {
