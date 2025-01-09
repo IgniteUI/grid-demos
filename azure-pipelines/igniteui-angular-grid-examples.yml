@@ -98,7 +98,7 @@ stages:
           targetType: 'inline'
           pwsh: true
           script: |
-            $filePath = "$(Build.SourcesDirectory)\package.json"
+            $filePath = "$(Build.SourcesDirectory)/package.json"
             $trialStringsToReplace = @(
                 [pscustomobject]@{ Pattern = '(\"igniteui-angular\")'; Replacement = '"@infragistics/igniteui-angular"' },
                 [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' },
