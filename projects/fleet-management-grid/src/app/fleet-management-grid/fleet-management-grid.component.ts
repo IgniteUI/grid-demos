@@ -225,10 +225,6 @@ export class FleetManagementGridComponent {
     this.overlayService.show(this.locationOverlayId);
   }
 
-  public printCell(cell: any) {
-    console.log(cell);
-  }
-
   public closeLocationOverlay() {
     this.isLocationOverlayActive = false;
     if (this.locationOverlayId) {
