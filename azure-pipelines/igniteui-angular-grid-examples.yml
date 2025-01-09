@@ -58,13 +58,6 @@ stages:
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'run build:ci'
 
-      # - task: CopyFiles@2
-      #   displayName: 'Copy web.config into the dist dir'
-      #   inputs:
-      #     SourceFolder: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
-      #     Contents: 'dist.grid-demos.browser'
-      #     TargetFolder: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
-
       - task: PowerShell@2
         displayName: 'Verify artifact directory exists'
         inputs:
