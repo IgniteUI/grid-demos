@@ -99,7 +99,7 @@ stages:
             $filePath = "$(Build.SourcesDirectory)\package.json"
             $trialStringsToReplace = @(
                 [pscustomobject]@{ Pattern = '(\"igniteui-angular\")'; Replacement = '"@infragistics/igniteui-angular"' },
-                [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' },
+                [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' }
             )
             
             # Be careful with Get-Content and the replace operator.
