@@ -31,7 +31,10 @@ import {
 	  IgxRippleModule,
     AutoPositionStrategy,
     IgxDialogComponent,
-    IgxTooltipModule
+    IgxTooltipModule,
+    PositionSettings,
+    HorizontalAlignment,
+    VerticalAlignment
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
@@ -142,14 +145,18 @@ export class ErpHgridSampleComponent implements AfterViewInit {
 
 
   public onImageHover(event: MouseEvent, dialog: IgxDialogComponent) {
-
     if(dialog) {
       const targetEl = event.target as HTMLElement;
+
+      const positionSettings: PositionSettings = {
+        horizontalStartPoint: HorizontalAlignment.Right,
+        verticalStartPoint: VerticalAlignment.Top
+      };
 
       dialog.open({
         target: targetEl,
         modal: false,
-        positionStrategy: new AutoPositionStrategy()
+        positionStrategy: new AutoPositionStrategy(positionSettings)
       });
     }
   }

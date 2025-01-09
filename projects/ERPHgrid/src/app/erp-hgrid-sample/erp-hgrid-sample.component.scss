@@ -48,6 +48,11 @@
   gap: 8px;
 }
 
+.sales-sparkline {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 // Overridden styles for design purposes
 ::ng-deep {
 
@@ -61,14 +66,14 @@
     --row-odd-background: white;
     --row-even-background: white;
   }
-  
+
   .product-img {
     display: flex;
     justify-content: center;
 
     img {
       height: 22px;
+      border-radius: 4px;
     }
   }
 }
-

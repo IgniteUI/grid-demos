@@ -63,6 +63,7 @@
             <ng-template igxCell let-cell="cell" let-val>
                 @defer {
                 <igx-sparkline #sparkline
+                    class="sales-sparkline"
                     [dataSource]="cell.value"
                     valueMemberPath="value"
                     width="100%"
