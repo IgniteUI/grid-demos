@@ -29,7 +29,6 @@ stages:
     steps:
       - checkout: 'self' 
         clean: true
-        path: $(Build.Repository.Name)
 
       - task: NodeTool@0
         displayName: 'Install Node'
