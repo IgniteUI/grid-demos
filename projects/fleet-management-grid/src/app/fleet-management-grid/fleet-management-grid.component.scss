@@ -173,6 +173,14 @@ igx-card {
   align-content: space-around;
 }
 
+.overlay-title {
+  padding-top: 8px;
+}
+
+.overlay-text {
+  font-size: 14px;
+}
+
 .overlay-driver {
   width: 327px;
   height: 338px;
@@ -203,9 +211,10 @@ igx-card {
 }
 
 .overlay-location-actions {
-  height: 14%;
+  height: 13%;
   width: 100%;
   justify-content: end;
+  margin: 0px;
 }
 
 .overlay-driver-actions {
