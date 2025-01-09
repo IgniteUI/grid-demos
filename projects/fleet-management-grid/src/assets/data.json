@@ -5205,13 +5205,13 @@
           "photo": "men/5"
         },
         "start": "2024-12-01",
-        "end": "N/A",
+        "end": "2024-12-05",
         "startLocation": "New York, NY",
         "endLocation": "Boston, MA",
-        "startMeter": "40,123.0 mi",
-        "endMeter": "N/A",
-        "distance": "N/A",
-        "totalTime": "N/A"
+        "startMeter": "39,500.0 mi",
+        "endMeter": "40,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "21h 35m"
       },
       {
         "id": 2,
@@ -5711,13 +5711,13 @@
           "photo": "men/5"
         },
         "start": "2024-11-01",
-        "end": "N/A",
+        "end": "2024-11-06",
         "startLocation": "Buffalo, NY",
         "endLocation": "Albany, NY",
         "startMeter": "73,500.0 mi",
-        "endMeter": "N/A",
-        "distance": "N/A",
-        "totalTime": "N/A"
+        "endMeter": "74,112.0 mi",
+        "distance": "612 mi",
+        "totalTime": "23h 25m"
       },
       {
         "id": 2,

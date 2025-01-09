@@ -370,7 +370,7 @@
       <ng-template igxCell let-cell="cell">
         <igx-avatar shape="circle" size="small" [src]="getPathToDriverPhoto(cell)" class="driver-avatar"></igx-avatar>
         <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell)">{{ cell.value.name }}</a>
-        <igx-badge class="driver-badge" type="success" *ngIf="cell.row.index === 0">
+        <igx-badge class="driver-badge" type="success" *ngIf="cell.row.index === 0 && cell.row.data.end === 'N/A'">
           Current
         </igx-badge>
       </ng-template>

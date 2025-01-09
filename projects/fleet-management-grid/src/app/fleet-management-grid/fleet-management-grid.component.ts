@@ -163,7 +163,7 @@ export class FleetManagementGridComponent {
       return [];
     }
 
-    const folderName = carEntry.photo;
+    const folderName = carEntry.folder;
 
     const carPhotoNames = (CAR_IMAGES as Record<string, string[]>)[folderName];
 
@@ -223,6 +223,10 @@ export class FleetManagementGridComponent {
     this.isLocationOverlayActive = true;
     this.locationOverlayId = this.overlayService.attach(this.locationOverlay, overlaySettings);
     this.overlayService.show(this.locationOverlayId);
+  }
+
+  public printCell(cell: any) {
+    console.log(cell);
   }
 
   public closeLocationOverlay() {
