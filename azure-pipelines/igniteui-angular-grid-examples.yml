@@ -25,82 +25,7 @@ stages:
     name: BuildAgentOnPrem
     demands: npm
   jobs:
-  - job: Trial
-    steps:
-      - checkout: 'self' 
-        clean: true
-
-      - task: NodeTool@0
-        displayName: 'Install Node'
-        inputs:
-          versionSource: 'spec'
-          versionSpec: '18.x'
-
-      - task: Npm@1
-        displayName: 'npm install --legacy-peer-deps'
-        inputs:
-          command: custom
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'install --legacy-peer-deps'
-
-      - task: Npm@1
-        displayName: 'Register licensed npm registry in .npmrc'
-        inputs:
-          command: 'custom'
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
-          customEndpoint: 'internal proget'
-
-      - task: Npm@1
-        displayName: 'npm run build:ci'
-        inputs:
-          command: custom
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'run build:ci'
-
-      - task: PowerShell@2
-        displayName: 'Verify artifact directory exists'
-        inputs:
-          targetType: 'inline'
-          script: |
-            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos\browser"
-            if (Test-Path $artifactPath) {
-              Write-Host "Directory exists: $artifactPath"
-            } else {
-              Write-Error "Directory does not exist: $artifactPath"
-            }
-
-      - task: PowerShell@2
-        displayName: 'Verify artifact contents'
-        inputs:
-          targetType: inline
-          script: |
-            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos\browser"
-            if (Test-Path $artifactPath) {
-              Get-ChildItem -Path $artifactPath -Recurse | ForEach-Object {
-                Write-Host "File: $($_.FullName)"
-              }
-            } else {
-              Write-Error "Directory does not exist: $artifactPath"
-            }
-
-      - task: PublishPipelineArtifact@1
-        displayName: 'Publish pipeline artifact'
-        inputs:
-          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
-          artifact: 'dist.grid-demos.browser'
-          publishLocation: 'pipeline'
-
-      - task: PublishPipelineArtifact@1
-        inputs:
-          targetPath: '$(Build.SourcesDirectory)/packageTrial.json'
-          artifact: 'packagejson'
-          publishLocation: 'pipeline'
-
-      - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
-        - task: PostBuildCleanup@4
-
-  - job: Licensed
+  - job: BuildSamples
     steps:
       - checkout: 'self' 
         clean: true
@@ -202,5 +127,3 @@ stages:
 
       - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
         - task: PostBuildCleanup@4
-      # - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
-      #   - task: PostBuildCleanup@4
