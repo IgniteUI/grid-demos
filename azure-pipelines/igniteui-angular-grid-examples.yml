@@ -58,32 +58,6 @@ stages:
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'run build:ci'
 
-      - task: PowerShell@2
-        displayName: 'Verify artifact directory exists'
-        inputs:
-          targetType: 'inline'
-          script: |
-            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos\browser"
-            if (Test-Path $artifactPath) {
-              Write-Host "Directory exists: $artifactPath"
-            } else {
-              Write-Error "Directory does not exist: $artifactPath"
-            }
-
-      - task: PowerShell@2
-        displayName: 'Verify artifact contents'
-        inputs:
-          targetType: inline
-          script: |
-            $artifactPath = "$(Build.SourcesDirectory)\dist\grid-demos\browser"
-            if (Test-Path $artifactPath) {
-              Get-ChildItem -Path $artifactPath -Recurse | ForEach-Object {
-                Write-Host "File: $($_.FullName)"
-              }
-            } else {
-              Write-Error "Directory does not exist: $artifactPath"
-            }
-
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
