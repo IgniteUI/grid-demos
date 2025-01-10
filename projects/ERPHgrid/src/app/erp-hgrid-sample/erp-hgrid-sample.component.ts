@@ -1,40 +1,40 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, Inject, ViewContainerRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { NgIf } from '@angular/common';
 import {
-    IgxHierarchicalGridComponent,
-    IgxColumnGroupComponent,
-    IgxColumnComponent,
-    IgxCellTemplateDirective,
-    IgxRowIslandComponent,
-    GridSelectionMode,
-    IgxTooltipDirective,
-    IgxTooltipTargetDirective,
-    IgxIconComponent,
-    IgxCollapsibleIndicatorTemplateDirective,
-    IgxGridToolbarComponent,
-    IgxGridToolbarActionsComponent,
-    IgxGridToolbarHidingComponent,
-    IgxGridToolbarPinningComponent,
-    IgxGridToolbarExporterComponent,
-    IgxGridToolbarAdvancedFilteringComponent,
-    IgxGridToolbarTitleComponent,
-    IgxIconModule,
-    IgxIconService,
-    IgxBadgeModule,
-    IgxBadgeComponent,
-    SortingDirection,
-    DefaultSortingStrategy,
-    IgxExporterEvent,
-    IColumnExportingEventArgs,
-    IgxButtonModule,
-	  IgxDialogModule,
-	  IgxRippleModule,
-    AutoPositionStrategy,
-    IgxDialogComponent,
-    IgxTooltipModule,
-    PositionSettings,
-    HorizontalAlignment,
-    VerticalAlignment
+  IgxHierarchicalGridComponent,
+  IgxColumnGroupComponent,
+  IgxColumnComponent,
+  IgxCellTemplateDirective,
+  IgxRowIslandComponent,
+  GridSelectionMode,
+  IgxTooltipDirective,
+  IgxTooltipTargetDirective,
+  IgxIconComponent,
+  IgxCollapsibleIndicatorTemplateDirective,
+  IgxGridToolbarComponent,
+  IgxGridToolbarActionsComponent,
+  IgxGridToolbarHidingComponent,
+  IgxGridToolbarPinningComponent,
+  IgxGridToolbarExporterComponent,
+  IgxGridToolbarAdvancedFilteringComponent,
+  IgxGridToolbarTitleComponent,
+  IgxIconModule,
+  IgxIconService,
+  IgxBadgeModule,
+  IgxBadgeComponent,
+  SortingDirection,
+  DefaultSortingStrategy,
+  IgxExporterEvent,
+  IColumnExportingEventArgs,
+  IgxButtonModule,
+	IgxDialogModule,
+	IgxRippleModule,
+  AutoPositionStrategy,
+  IgxDialogComponent,
+  IgxTooltipModule,
+  PositionSettings,
+  HorizontalAlignment,
+  VerticalAlignment
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
@@ -48,31 +48,31 @@ defineComponents(IgcRatingComponent);
     selector: 'app-erp-hgrid-sample',
     standalone: true,
     imports: [
-        IgxHierarchicalGridComponent,
-        IgxColumnComponent,
-        IgxCellTemplateDirective,
-        IgxRowIslandComponent,
-        IgxTooltipTargetDirective,
-        IgxTooltipDirective,
-        IgxIconComponent,
-        IgxCollapsibleIndicatorTemplateDirective,
-        IgxColumnGroupComponent,
-        IgxGridToolbarComponent,
-        IgxGridToolbarActionsComponent,
-        IgxGridToolbarHidingComponent,
-        IgxGridToolbarPinningComponent,
-        IgxGridToolbarExporterComponent,
-        IgxGridToolbarAdvancedFilteringComponent,
-        IgxGridToolbarTitleComponent,
-        IgxIconModule,
-        IgxBadgeModule,
-        IgxBadgeComponent,
-        NgIf,
-        IgxSparklineModule,
-        IgxButtonModule,
-	      IgxDialogModule,
-	      IgxRippleModule,
-        IgxTooltipModule
+      IgxHierarchicalGridComponent,
+      IgxColumnComponent,
+      IgxCellTemplateDirective,
+      IgxRowIslandComponent,
+      IgxTooltipTargetDirective,
+      IgxTooltipDirective,
+      IgxIconComponent,
+      IgxCollapsibleIndicatorTemplateDirective,
+      IgxColumnGroupComponent,
+      IgxGridToolbarComponent,
+      IgxGridToolbarActionsComponent,
+      IgxGridToolbarHidingComponent,
+      IgxGridToolbarPinningComponent,
+      IgxGridToolbarExporterComponent,
+      IgxGridToolbarAdvancedFilteringComponent,
+      IgxGridToolbarTitleComponent,
+      IgxIconModule,
+      IgxBadgeModule,
+      IgxBadgeComponent,
+      NgIf,
+      IgxSparklineModule,
+      IgxButtonModule,
+	    IgxDialogModule,
+	    IgxRippleModule,
+      IgxTooltipModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',
@@ -91,14 +91,14 @@ export class ErpHgridSampleComponent implements AfterViewInit {
   public orderStatus = OrderStatus;
 
   constructor(private iconService: IgxIconService) {
-      // data
-      this.hgridData = InventoryList;
-      this.hgridData.forEach(product => product.totalNetProfit = this.calculateTotalNetProfit(product.sku));
-      // Icons used
-      this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
-      this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
-      this.iconService.addSvgIconFromText(billPaid.name, billPaid.value, 'imx-icons');
-      this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
+    // data
+    this.hgridData = InventoryList;
+    this.hgridData.forEach(product => product.totalNetProfit = this.calculateTotalNetProfit(product));
+    // Icons used
+    this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
+    this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
+    this.iconService.addSvgIconFromText(billPaid.name, billPaid.value, 'imx-icons');
+    this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
   }
 
   public ngAfterViewInit(): void {
@@ -119,7 +119,7 @@ export class ErpHgridSampleComponent implements AfterViewInit {
 
   public getTooltipText(expanded: any): string {
     return expanded ?
-        'The column is expanded! Click here to collapse.' : 'The column is collapsed! Click here to expand';
+      'The column is expanded! Click here to collapse.' : 'The column is collapsed! Click here to expand';
   }
 
   public formatDate(value: string): string {
@@ -127,7 +127,7 @@ export class ErpHgridSampleComponent implements AfterViewInit {
   }
 
   public formatAddress(value: OrderDetails): string {
-    return  `${value.streetName} ${value.streetNumber}`;
+    return `${value.streetName} ${value.streetNumber}`;
   }
 
   public formatNumberAsIs(value: number): number {
@@ -142,7 +142,6 @@ export class ErpHgridSampleComponent implements AfterViewInit {
       columnArgs.cancel = columnArgs.header === 'Performance';
     });
   }
-
 
   public onImageHover(event: MouseEvent, dialog: IgxDialogComponent) {
     if(dialog) {
@@ -167,9 +166,7 @@ export class ErpHgridSampleComponent implements AfterViewInit {
     }
   }
 
-  private calculateTotalNetProfit(productId: string): number {
-    const productIndex: number = this.hgridData.findIndex(product => product.sku === productId);
-    const product: TemplateDataModel = this.hgridData[productIndex];
+  private calculateTotalNetProfit(product: TemplateDataModel): number {
     const itemsSold: number = product.orders.length;
     return itemsSold * (product.netPrice);
   }

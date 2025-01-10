@@ -1,7 +1,8 @@
 import { CountryFlag, OrderStatus, TemplateDataModel } from "./dataModels";
 import { TREND_DATA } from "./productOrdersTrendsData";
 
-export const InventoryList: TemplateDataModel[] = [{
+export const InventoryList: TemplateDataModel[] = [
+  {
     sku: "SKU1001",
     imageUrl: "products/adidas-sports-shoes-4762266_1920.jpg",
     productName: "Adidas Sports Shoes",
