@@ -44,6 +44,13 @@ stages:
           customCommand: 'install --legacy-peer-deps'
 
       - task: Npm@1
+        displayName: 'Install @angular/cli globally'
+        inputs:
+          command: custom
+          workingDir: '$(Build.SourcesDirectory)'
+          customCommand: 'install -g @angular/cli'
+
+      - task: Npm@1
         displayName: 'Register licensed npm registry in .npmrc'
         inputs:
           command: 'custom'
