@@ -50,6 +50,13 @@ stages:
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'install -g @angular/cli'
 
+      - task: PowerShell@2
+        displayName: 'Run Angular Schematics Upgrade Packages'
+        inputs:
+          targetType: 'inline'
+          script: |
+            ng g @igniteui/angular-schematics:upgrade-packages --skip-install
+
       - task: Npm@1
         displayName: 'Register licensed npm registry in .npmrc'
         inputs:
