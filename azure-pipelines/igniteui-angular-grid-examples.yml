@@ -65,34 +65,6 @@ stages:
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
-      - task: PowerShell@2
-        displayName: 'package.json - trial to licensed'
-        inputs:
-          targetType: 'inline'
-          script: |
-            $filePath = "$(Build.SourcesDirectory)\package.json"
-            $trialStringsToReplace = @(
-                [pscustomobject]@{ Pattern = '(\"igniteui-angular\")'; Replacement = '"@infragistics/igniteui-angular"' },
-                [pscustomobject]@{ Pattern = '(\"igniteui-angular-charts\")'; Replacement = '"@infragistics/igniteui-angular-charts"' }
-            )
-            
-            $fileContents = Get-Content -Path $filePath 
-            
-            $trialStringsToReplace | ForEach-Object {
-                $matches = $fileContents -match $_.Pattern 
-            
-                if([string]::IsNullOrEmpty($matches)) {
-                    throw $("No matches for $($_.Pattern) in $filePath !!!")
-                }
-                else {
-                    Write-Output "Found the following matches for $($_.Pattern) in $filePath. To be replaced with $($_.Replacement)"
-                    Write-Output $matches
-                }
-                
-                $fileContents = $fileContents -replace $_.Pattern, $_.Replacement 
-                Set-Content -Path "$filePath" -Value $fileContents -Force
-            }
-
       - task: PublishPipelineArtifact@1
         inputs:
           targetPath: '$(Build.SourcesDirectory)/package.json'
