@@ -1622,13 +1622,13 @@
           "photo": "men/5"
         },
         "start": "2024-11-20",
-        "end": "2024-11-22",
+        "end": "N/A",
         "startLocation": "Albany, NY",
         "endLocation": "Syracuse, NY",
         "startMeter": "34,000.0 mi",
-        "endMeter": "34,400.0 mi",
-        "distance": "400.0 mi",
-        "totalTime": "12h 15m"
+        "endMeter": "N/A",
+        "distance": "N/A",
+        "totalTime": "N/A"
       },
       {
         "id": 2,
@@ -2149,13 +2149,13 @@
           "photo": "men/5"
         },
         "start": "2024-12-01",
-        "end": "2024-12-02",
+        "end": "N/A",
         "startLocation": "Trenton, NJ",
         "endLocation": "Newark, NJ",
         "startMeter": "40,000.0 mi",
-        "endMeter": "40,200.0 mi",
-        "distance": "200.0 mi",
-        "totalTime": "5h 15m"
+        "endMeter": "N/A",
+        "distance": "N/A",
+        "totalTime": "N/A"
       },
       {
         "id": 2,
@@ -4193,13 +4193,13 @@
           "photo": "men/5"
         },
         "start": "2024-11-01",
-        "end": "2024-11-05",
+        "end": "N/A",
         "startLocation": "Chicago, IL",
         "endLocation": "Detroit, MI",
         "startMeter": "85,100.0 mi",
-        "endMeter": "85,600.0 mi",
-        "distance": "500.0 mi",
-        "totalTime": "24h 00m"
+        "endMeter": "N/A",
+        "distance": "N/A",
+        "totalTime": "N/A"
       },
       {
         "id": 2,
