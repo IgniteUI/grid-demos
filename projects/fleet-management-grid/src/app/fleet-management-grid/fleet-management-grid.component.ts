@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
-import { DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from '@infragistics/igniteui-angular';
+import { AutoPositionStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from '@infragistics/igniteui-angular';
 import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule, MarkerType } from 'igniteui-angular-charts';
 import DATA from '../../assets/data.json';
 import CAR_PHOTO_MANIFEST from '../../assets/car_photo_manifest.json';
 import CAR_IMAGES from '../../assets/car_images.json'
 import { IgxShapeDataSourceModule } from 'igniteui-angular-core';
 import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps';
+import { useAnimation } from '@angular/animations';
+import { fadeIn, fadeOut } from '@infragistics/igniteui-angular/animations';
 
 @Component({
   selector: 'app-fleet-management-grid',
@@ -231,6 +233,9 @@ export class FleetManagementGridComponent {
       RelativePositionStrategy.Auto,
     );
 
+    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
+    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
+
     if (this.locationOverlayId) {
       this.overlayService.detach(this.locationOverlayId);
     }
@@ -269,6 +274,9 @@ export class FleetManagementGridComponent {
       RelativePosition.After,
       RelativePositionStrategy.Auto,
     );
+
+    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
+    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
 
     if (this.driverOverlayId) {
       this.overlayService.detach(this.driverOverlayId);
