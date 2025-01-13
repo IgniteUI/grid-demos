@@ -94,12 +94,27 @@ export class FleetManagementGridComponent {
     photo: ""
   }
 
+  private bind: () => void;
+
   public fleetData = DATA;
+
+
 
   constructor(
     private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-    private viewContainerRef: ViewContainerRef) {}
+    private viewContainerRef: ViewContainerRef) {
+
+      this.bind = () => {
+        this.fleetData.forEach(vehicle => {
+          (vehicle.utilization as any).__dataIntents = {
+            "'2023'": ["SeriesTitle/2023"],
+            "'2024'": ["SeriesTitle/2024"]
+          };
+        })
+      };
+      this.bind();
+    }
 
   public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
