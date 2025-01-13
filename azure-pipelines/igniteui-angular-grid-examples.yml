@@ -85,11 +85,5 @@ stages:
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
-      - task: PublishPipelineArtifact@1
-        inputs:
-          targetPath: '$(Build.SourcesDirectory)/package.json'
-          artifact: 'packagejson'
-          publishLocation: 'pipeline'
-
       - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
         - task: PostBuildCleanup@4
