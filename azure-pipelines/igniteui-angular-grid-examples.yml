@@ -55,7 +55,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-            ng g @igniteui/angular-schematics:upgrade-packages --skip-install
+            npx --userconfig=$(Build.SourcesDirectory)/.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
 
       - task: Npm@1
         displayName: 'Register licensed npm registry in .npmrc'
