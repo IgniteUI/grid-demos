@@ -57,7 +57,12 @@ stages:
           command: 'custom'
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
-          customEndpoint: 'internal proget'
+
+      - task: npmAuthenticate@0
+        displayName: '[IG Production ProGet] npm authenticate'
+        inputs:
+          workingFile: '$(Build.SourcesDirectory)\.npmrc'
+          customEndpoint: 'public proget'
 
       - task: PowerShell@2
         displayName: 'Run Angular Schematics Upgrade Packages'
