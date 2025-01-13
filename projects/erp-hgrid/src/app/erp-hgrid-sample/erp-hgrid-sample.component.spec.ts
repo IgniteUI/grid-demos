@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ErpHgridSampleComponent } from './erp-hgrid-sample.component';
+import { ErpHGridSampleComponent } from './erp-hgrid-sample.component';
 
-describe('ErpHgridSampleComponent', () => {
-  let component: ErpHgridSampleComponent;
-  let fixture: ComponentFixture<ErpHgridSampleComponent>;
+describe('ErpHGridSampleComponent', () => {
+  let component: ErpHGridSampleComponent;
+  let fixture: ComponentFixture<ErpHGridSampleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ErpHgridSampleComponent]
+      imports: [ErpHGridSampleComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ErpHgridSampleComponent);
+    fixture = TestBed.createComponent(ErpHGridSampleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

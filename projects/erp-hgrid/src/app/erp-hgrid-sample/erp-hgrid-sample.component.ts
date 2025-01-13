@@ -78,7 +78,7 @@ defineComponents(IgcRatingComponent);
     templateUrl: './erp-hgrid-sample.component.html',
     styleUrl: './erp-hgrid-sample.component.scss'
 })
-export class ErpHgridSampleComponent implements AfterViewInit {
+export class ErpHGridSampleComponent implements AfterViewInit {
   @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
   public hierarchicalGrid!: IgxHierarchicalGridComponent;
   @ViewChild('rowisland', { read: IgxRowIslandComponent, static: true })
