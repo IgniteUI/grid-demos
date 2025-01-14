@@ -39,6 +39,7 @@ stages:
       - task: Npm@1
         displayName: 'npm install --legacy-peer-deps'
         inputs:
+          verbose: ${{ parameters.isVerbose }}
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'install --legacy-peer-deps'
@@ -46,6 +47,7 @@ stages:
       - task: Npm@1
         displayName: 'Install @angular/cli globally'
         inputs:
+          verbose: ${{ parameters.isVerbose }}
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'install -g @angular/cli'
@@ -54,6 +56,7 @@ stages:
       - task: Npm@1
         displayName: 'Register licensed npm registry in .npmrc'
         inputs:
+          verbose: ${{ parameters.isVerbose }}
           command: 'custom'
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
@@ -76,6 +79,7 @@ stages:
         inputs:
           command: custom
           workingDir: '$(Build.SourcesDirectory)'
+          verbose: ${{ parameters.isVerbose }}
           customCommand: 'run build:ci'
 
       - task: PublishPipelineArtifact@1
