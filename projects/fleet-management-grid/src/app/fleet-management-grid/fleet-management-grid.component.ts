@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
 import { AutoPositionStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from '@infragistics/igniteui-angular';
-import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule, MarkerType } from 'igniteui-angular-charts';
+import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule } from 'igniteui-angular-charts';
 import DATA from '../../assets/data.json';
 import CAR_PHOTO_MANIFEST from '../../assets/car_photo_manifest.json';
 import CAR_IMAGES from '../../assets/car_images.json'
-import { IgxShapeDataSourceModule } from 'igniteui-angular-core';
+import { IgDataTemplate, IgxShapeDataSourceModule } from 'igniteui-angular-core';
 import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps';
 import { useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut } from '@infragistics/igniteui-angular/animations';
@@ -220,8 +220,8 @@ export class FleetManagementGridComponent {
     this.map.series.clear();
     this.addSeriesWith(this.markerLocations, "Red");
     const centerPoint = {
-      left: this.markerLocations[0].longitude - 0.005,
-      top: this.markerLocations[0].latitude - 0.02,
+      left: this.markerLocations[0].longitude - 0.01,
+      top: this.markerLocations[0].latitude - 0.01,
       width: 0.01,
       height: 0.01
     };
@@ -298,11 +298,27 @@ export class FleetManagementGridComponent {
   private addSeriesWith(locations:any[], brush: string) {
     const symbolSeries = new IgxGeographicSymbolSeriesComponent();
     symbolSeries.dataSource = locations;
-        symbolSeries.markerType = MarkerType.Diamond;
         symbolSeries.latitudeMemberPath = "latitude";
         symbolSeries.longitudeMemberPath = "longitude";
         symbolSeries.markerBrush  = "White";
         symbolSeries.markerOutline = brush;
+        symbolSeries.markerTemplate = {
+          measure: (measureInfo) => {
+            measureInfo.width = 24;
+            measureInfo.height = 24;
+          },
+          render: (renderInfo) => {
+            const ctx = renderInfo.context;
+            const x = renderInfo.xPosition;
+            const y = renderInfo.yPosition;
+
+            const img = new Image();
+            img.src = 'location_pin.svg';
+            img.onload = () => {
+              ctx.drawImage(img, x - 12, y - 12, 24, 24);
+            };
+          }
+        } as IgDataTemplate;
         this.map.series.add(symbolSeries);
   }
 }
