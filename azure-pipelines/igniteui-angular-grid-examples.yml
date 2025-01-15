@@ -22,8 +22,8 @@ name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 stages:
 - stage: Build
   pool:
-    name: BuildAgentOnPrem
-    demands: npm
+    vmImage: 'ubuntu-latest'
+
   jobs:
   - job: BuildSamples
     steps:
@@ -88,6 +88,35 @@ stages:
           targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
+
+      - task: PowerShell@2
+        displayName: 'Create download artifact per sample'
+        inputs:
+          targetType: 'inline'
+          script: |
+            $rootPath = "$(Build.SourcesDirectory)/projects"
+            
+            # Get all first-level subdirectories in the specified root path
+            $subdirectories = Get-ChildItem -Path $rootPath -Directory
+            
+            $textInfo = [System.Globalization.CultureInfo]::CurrentCulture.TextInfo
+            
+            foreach ($subdirectory in $subdirectories) {
+                # Get the current directory name
+                $dirName = $subdirectory.Name
+                #Write-Output $dirName
+            
+                # Check if the directory name is already in camel-case
+                if ($dirName -cmatch '^[A-Z]+[a-z]+(?:[A-Z][a-z]*)*$') {
+                    # If already camel-case, print it as is
+                    Write-Output $dirName
+                }
+                else {
+                    Write-Output $textInfo.ToTitleCase($dirName).replace("-","")
+                }
+            }
+          failOnStderr: true
+          pwsh: true
 
       - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
         - task: PostBuildCleanup@4
