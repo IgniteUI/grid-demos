@@ -33,7 +33,7 @@
       <igx-badge type="error" *ngIf="value === 'In Maintenance'">
         <igx-icon family="imx-icons" name="wrench" [style.color]="'#000000'"></igx-icon>
       </igx-badge>
-      <igx-badge type="info" *ngIf="value === 'Active'">
+      <igx-badge type="info" *ngIf="value === 'Active'" [style.background-color]="'var(--ig-primary-500)'">
         <igx-icon family="imx-icons" name="delivery" [style.color]="'#000000'"></igx-icon>
       </igx-badge>
       <span class="status-value">{{ value }}</span>

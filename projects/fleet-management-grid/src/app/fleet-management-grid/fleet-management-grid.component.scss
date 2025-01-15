@@ -183,7 +183,7 @@ igx-card {
 
 .overlay-driver {
   width: 327px;
-  height: 338px;
+  height: 344px;
   padding: 0px;
   margin: 0px;
 }
@@ -218,9 +218,10 @@ igx-card {
 }
 
 .overlay-driver-actions {
-  height: 14%;
+  height: 13%;
   width: 100%;
   justify-content: end;
+  margin: 8px;
 }
 
 .driver-block-container {
@@ -254,7 +255,9 @@ igx-card {
 }
 
 .logo-avatar {
-  --size: 22px
+  --size: 22px;
+  border-radius: 0.25rem;
+
 }
 
 .driver-badge {

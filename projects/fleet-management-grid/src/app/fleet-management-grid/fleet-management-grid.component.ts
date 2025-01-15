@@ -290,7 +290,7 @@ export class FleetManagementGridComponent {
             const img = new Image();
             img.src = 'location_pin.svg';
             img.onload = () => {
-              ctx.drawImage(img, x - 12, y - 12, 24, 24);
+              ctx.drawImage(img, x - 12, y - 12, 32, 32);
             };
           }
         } as IgDataTemplate;
