@@ -63,7 +63,7 @@ stages:
       - task: npmAuthenticate@0
         displayName: '[IG Production ProGet] npm authenticate'
         inputs:
-          workingFile: '$(Build.SourcesDirectory)/.npmrc'
+          workingFile: '$(Build.SourcesDirectory)\.npmrc'
           customEndpoint: 'public proget'
 
       - task: PowerShell@2
@@ -84,7 +84,7 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
-          targetPath: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
+          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
