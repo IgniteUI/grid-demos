@@ -1,4 +1,4 @@
-<igx-grid [data]="fleetData" #grid height="1024px" width="100%" style="--ig-size: var(--ig-size-small)">
+<igx-grid [data]="dataService.getVehiclesData()" #grid height="1024px" width="100%" style="--ig-size: var(--ig-size-small)">
   <igx-grid-toolbar>
     <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -203,7 +203,7 @@
 
         <igx-tab-content>
           <div class="grid-container">
-            <ng-container *ngTemplateOutlet="tripHistory; context: { $implicit: dataItem.tripHistory }"></ng-container>
+            <ng-container *ngTemplateOutlet="tripHistory; context: { $implicit: dataService.getTripHistoryData(dataItem.vehicleId) }"></ng-container>
           </div>
         </igx-tab-content>
       </igx-tab-item>
@@ -215,7 +215,7 @@
 
         <igx-tab-content style="width: 100%;">
           <div class="grid-container">
-            <ng-container *ngTemplateOutlet="maintenance; context: { $implicit: dataItem.maintenance }"></ng-container>
+            <ng-container *ngTemplateOutlet="maintenance; context: { $implicit: dataService.getMaintenanceData(dataItem.vehicleId)}"></ng-container>
           </div>
         </igx-tab-content>
       </igx-tab-item>
@@ -230,7 +230,7 @@
             <div class="chart-container pie-chart">
               <div class="chart-header">
                 <span class="chart-title">Costs per Type</span>
-                <igx-select #select class="chart-select" [value]="initialPeriods.costPerTypePeriod" (selectionChanging)="onPeriodChange($event, 'costsPerType')">
+                <igx-select #select class="chart-select" [value]="periods.costPerTypePeriod" (selectionChanging)="onPeriodChange($event, 'costsPerType')">
                   <label igxLabel>Period</label>
                   <igx-select-item value="ytd">YTD</igx-select-item>
                   <igx-select-item value="3months">Last 3 Months</igx-select-item>
@@ -247,7 +247,7 @@
                   valueMemberPath="value"
                   labelsPosition="OutsideEnd"
                   radiusFactor="0.7"
-                  [dataSource]="getPeriodData(dataItem.cost.costPerType, 'costsPerType')"
+                  [dataSource]="dataService.getCostsPerTypeData(dataItem.vehicleId, periods.costPerTypePeriod)"
                   style="width: 100%; height: 100%;"
                   actualLabelOuterColor="#ededed"
                   >
@@ -258,7 +258,7 @@
             <div class="chart-container area-chart">
               <div class="chart-header">
                 <span class="chart-title">Costs per Meter, per Quarter</span>
-                <igx-select #select class="chart-select" [value]="initialPeriods.costPerMeterPeriod" (selectionChanging)="onPeriodChange($event, 'costsPerMeter')">
+                <igx-select #select class="chart-select" [value]="periods.costPerMeterPeriod" (selectionChanging)="onPeriodChange($event, 'costsPerMeter')">
                   <label igxLabel>Period</label>
                   <igx-select-item value="ytd">YTD</igx-select-item>
                   <igx-select-item value="'2023'">2023</igx-select-item>
@@ -270,7 +270,7 @@
               <div class="chart-content">
                 <igx-category-chart
                   name="chart"
-                  [dataSource]="getPeriodData(dataItem.cost.costsPerMeterPerQuarter, 'costsPerMeter')"
+                  [dataSource]="dataService.getCostsPerMeterData(dataItem.vehicleId, periods.costPerMeterPeriod)"
                   chartType="Area"
                   isHorizontalZoomEnabled="false"
                   isVerticalZoomEnabled="false"
@@ -290,7 +290,7 @@
             <div class="chart-container column-chart">
               <div class="chart-header">
                 <span class="chart-title">Fuel Costs per Month</span>
-                <igx-select #select class="chart-select" [value]="initialPeriods.fuelCostPeriod" (selectionChanging)="onPeriodChange($event, 'fuelCosts')">
+                <igx-select #select class="chart-select" [value]="periods.fuelCostPeriod" (selectionChanging)="onPeriodChange($event, 'fuelCosts')">
                   <label igxLabel>Period</label>
                   <igx-select-item value="ytd">YTD</igx-select-item>
                   <igx-select-item value="3months">Last 3 Months</igx-select-item>
@@ -303,7 +303,7 @@
                   name="chart"
                   #chart
                   chartType="Column"
-                  [dataSource]="getPeriodData(dataItem.cost.fuelCostsPerMonth, 'fuelCosts')"
+                  [dataSource]="dataService.getFuelCostsData(dataItem.vehicleId, periods.fuelCostPeriod)"
                   yAxisTitle="Costs in USD"
                   isHorizontalZoomEnabled="false"
                   isVerticalZoomEnabled="false"
@@ -341,7 +341,7 @@
                 class="column-chart-two-series"
                 #chart
                 chartType="Column"
-                [dataSource]="dataItem.utilization"
+                [dataSource]="dataService.getUtilizationData(dataItem.vehicleId)"
                 [legend]="legend"
                 yAxisTitle="Miles"
                 isHorizontalZoomEnabled="false"
@@ -366,10 +366,10 @@
 <ng-template #tripHistory let-tripHistoryData>
   <igx-grid [data]="tripHistoryData" height="100%" width="100%">
     <igx-column field="id" header="ID" width="5%" justif></igx-column>
-    <igx-column field="driver" header="Driver" width="18%">
+    <igx-column field="driverName" header="Driver" width="18%">
       <ng-template igxCell let-cell="cell">
         <igx-avatar shape="circle" size="small" [src]="getPathToDriverPhoto(cell)" class="driver-avatar"></igx-avatar>
-        <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell)">{{ cell.value.name }}</a>
+        <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell)">{{ cell.value }}</a>
         <igx-badge class="driver-badge" type="success" *ngIf="cell.row.index === 0 && cell.row.data.end === 'N/A'">
           Current
         </igx-badge>

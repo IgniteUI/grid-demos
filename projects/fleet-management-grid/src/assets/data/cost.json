@@ -1,0 +1,2511 @@
+[
+  {
+    "vehicleId": "A00101",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 50,
+          "category": "Fuel",
+          "summary": "Fuel: 50%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 52,
+          "category": "Fuel",
+          "summary": "Fuel: 52%"
+        },
+        {
+          "value": 28,
+          "category": "Maintenance",
+          "summary": "Maintenance: 28%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 53,
+          "category": "Fuel",
+          "summary": "Fuel: 53%"
+        },
+        {
+          "value": 27,
+          "category": "Maintenance",
+          "summary": "Maintenance: 27%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 55
+        }
+      ],
+      "'2023'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        }
+      ],
+      "'2022'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 45
+        }
+      ],
+      "'2021'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 18
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 40
+        }
+      ],
+      "'2020'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 8
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 62
+      },
+      {
+        "month": "Feb",
+        "cost": 76
+      },
+      {
+        "month": "Mar",
+        "cost": 146
+      },
+      {
+        "month": "Apr",
+        "cost": 240
+      },
+      {
+        "month": "May",
+        "cost": 265
+      },
+      {
+        "month": "Jun",
+        "cost": 275
+      },
+      {
+        "month": "Jul",
+        "cost": 300
+      },
+      {
+        "month": "Aug",
+        "cost": 230
+      },
+      {
+        "month": "Sep",
+        "cost": 265
+      },
+      {
+        "month": "Oct",
+        "cost": 287
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00102",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 50,
+          "category": "Fuel",
+          "summary": "Fuel: 50%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 52,
+          "category": "Fuel",
+          "summary": "Fuel: 52%"
+        },
+        {
+          "value": 28,
+          "category": "Maintenance",
+          "summary": "Maintenance: 28%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 53,
+          "category": "Fuel",
+          "summary": "Fuel: 53%"
+        },
+        {
+          "value": 27,
+          "category": "Maintenance",
+          "summary": "Maintenance: 27%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 55
+        }
+      ],
+      "'2023'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 55
+        }
+      ],
+      "'2022'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 45
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 50
+        }
+      ],
+      "'2021'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 18
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 40
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 42
+        }
+      ],
+      "'2020'": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 8
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 50
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 62
+      },
+      {
+        "month": "Feb",
+        "cost": 76
+      },
+      {
+        "month": "Mar",
+        "cost": 146
+      },
+      {
+        "month": "Apr",
+        "cost": 240
+      },
+      {
+        "month": "May",
+        "cost": 265
+      },
+      {
+        "month": "Jun",
+        "cost": 275
+      },
+      {
+        "month": "Jul",
+        "cost": 300
+      },
+      {
+        "month": "Aug",
+        "cost": 230
+      },
+      {
+        "month": "Sep",
+        "cost": 265
+      },
+      {
+        "month": "Oct",
+        "cost": 287
+      },
+      {
+        "month": "Nov",
+        "cost": 310
+      },
+      {
+        "month": "Dec",
+        "cost": 295
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00103",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 20,
+          "category": "Maintenance",
+          "summary": "Maintenance: 20%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 22,
+          "category": "Maintenance",
+          "summary": "Maintenance: 22%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 59,
+          "category": "Fuel",
+          "summary": "Fuel: 59%"
+        },
+        {
+          "value": 21,
+          "category": "Maintenance",
+          "summary": "Maintenance: 21%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 30
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 60
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 55
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 58
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 16
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 54
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 45
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 48
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 55
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 75
+      },
+      {
+        "month": "Feb",
+        "cost": 80
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 260
+      },
+      {
+        "month": "May",
+        "cost": 280
+      },
+      {
+        "month": "Jun",
+        "cost": 290
+      },
+      {
+        "month": "Jul",
+        "cost": 310
+      },
+      {
+        "month": "Aug",
+        "cost": 240
+      },
+      {
+        "month": "Sep",
+        "cost": 270
+      },
+      {
+        "month": "Oct",
+        "cost": 300
+      },
+      {
+        "month": "Nov",
+        "cost": 320
+      },
+      {
+        "month": "Dec",
+        "cost": 310
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00104",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 20,
+          "category": "Maintenance",
+          "summary": "Maintenance: 20%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 57,
+          "category": "Fuel",
+          "summary": "Fuel: 57%"
+        },
+        {
+          "value": 23,
+          "category": "Maintenance",
+          "summary": "Maintenance: 23%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 22,
+          "category": "Maintenance",
+          "summary": "Maintenance: 22%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 30
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 52
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 56
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 16
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 24
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 51
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 13
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 19
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 42
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 45
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 9
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 21
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 46
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 50
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+
+      {
+        "month": "Jan",
+        "cost": 70
+      },
+      {
+        "month": "Feb",
+        "cost": 85
+      },
+      {
+        "month": "Mar",
+        "cost": 140
+      },
+      {
+        "month": "Apr",
+        "cost": 250
+      },
+      {
+        "month": "May",
+        "cost": 270
+      },
+      {
+        "month": "Jun",
+        "cost": 280
+      },
+      {
+        "month": "Jul",
+        "cost": 310
+      },
+      {
+        "month": "Aug",
+        "cost": 240
+      },
+      {
+        "month": "Sep",
+        "cost": 260
+      },
+      {
+        "month": "Oct",
+        "cost": 295
+      },
+      {
+        "month": "Nov",
+        "cost": 320
+      },
+      {
+        "month": "Dec",
+        "cost": 310
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00105",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 62,
+          "category": "Fuel",
+          "summary": "Fuel: 62%"
+        },
+        {
+          "value": 18,
+          "category": "Maintenance",
+          "summary": "Maintenance: 18%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 57,
+          "category": "Fuel",
+          "summary": "Fuel: 57%"
+        },
+        {
+          "value": 23,
+          "category": "Maintenance",
+          "summary": "Maintenance: 23%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 54,
+          "category": "Fuel",
+          "summary": "Fuel: 54%"
+        },
+        {
+          "value": 26,
+          "category": "Maintenance",
+          "summary": "Maintenance: 26%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 56,
+          "category": "Fuel",
+          "summary": "Fuel: 56%"
+        },
+        {
+          "value": 24,
+          "category": "Maintenance",
+          "summary": "Maintenance: 24%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 16
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 29
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 53
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 49
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 58
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 19
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 23
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 44
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 52
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 41
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 48
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 11
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 46
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 51
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 78
+      },
+      {
+        "month": "Feb",
+        "cost": 92
+      },
+      {
+        "month": "Mar",
+        "cost": 155
+      },
+      {
+        "month": "Apr",
+        "cost": 245
+      },
+      {
+        "month": "May",
+        "cost": 268
+      },
+      {
+        "month": "Jun",
+        "cost": 290
+      },
+      {
+        "month": "Jul",
+        "cost": 320
+      },
+      {
+        "month": "Aug",
+        "cost": 260
+      },
+      {
+        "month": "Sep",
+        "cost": 275
+      },
+      {
+        "month": "Oct",
+        "cost": 295
+      },
+      {
+        "month": "Nov",
+        "cost": 330
+      },
+      {
+        "month": "Dec",
+        "cost": 315
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00106",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 27,
+          "category": "Maintenance",
+          "summary": "Maintenance: 27%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 56,
+          "category": "Fuel",
+          "summary": "Fuel: 56%"
+        },
+        {
+          "value": 29,
+          "category": "Maintenance",
+          "summary": "Maintenance: 29%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 30
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 60
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 18
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 55
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 62
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 16
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 45
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 42
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 50
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 65
+      },
+      {
+        "month": "Feb",
+        "cost": 78
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 245
+      },
+      {
+        "month": "May",
+        "cost": 270
+      },
+      {
+        "month": "Jun",
+        "cost": 280
+      },
+      {
+        "month": "Jul",
+        "cost": 310
+      },
+      {
+        "month": "Aug",
+        "cost": 235
+      },
+      {
+        "month": "Sep",
+        "cost": 270
+      },
+      {
+        "month": "Oct",
+        "cost": 290
+      },
+      {
+        "month": "Nov",
+        "cost": 320
+      },
+      {
+        "month": "Dec",
+        "cost": 305
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00107",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 20,
+          "category": "Maintenance",
+          "summary": "Maintenance: 20%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 57,
+          "category": "Fuel",
+          "summary": "Fuel: 57%"
+        },
+        {
+          "value": 23,
+          "category": "Maintenance",
+          "summary": "Maintenance: 23%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 22,
+          "category": "Maintenance",
+          "summary": "Maintenance: 22%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 29
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 57
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 27
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 52
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 58
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 16
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 24
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 47
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 11
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 21
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 43
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 48
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 9
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 23
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 46
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 51
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 65
+      },
+      {
+        "month": "Feb",
+        "cost": 80
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 250
+      },
+      {
+        "month": "May",
+        "cost": 275
+      },
+      {
+        "month": "Jun",
+        "cost": 285
+      },
+      {
+        "month": "Jul",
+        "cost": 310
+      },
+      {
+        "month": "Aug",
+        "cost": 240
+      },
+      {
+        "month": "Sep",
+        "cost": 270
+      },
+      {
+        "month": "Oct",
+        "cost": 295
+      },
+      {
+        "month": "Nov",
+        "cost": 320
+      },
+      {
+        "month": "Dec",
+        "cost": 310
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00108",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 20,
+          "category": "Maintenance",
+          "summary": "Maintenance: 20%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 57,
+          "category": "Fuel",
+          "summary": "Fuel: 57%"
+        },
+        {
+          "value": 23,
+          "category": "Maintenance",
+          "summary": "Maintenance: 23%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 22,
+          "category": "Maintenance",
+          "summary": "Maintenance: 22%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 29
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 57
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 27
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 52
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 58
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 16
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 24
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 47
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 11
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 21
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 43
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 48
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 9
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 23
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 46
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 51
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 65
+      },
+      {
+        "month": "Feb",
+        "cost": 80
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 250
+      },
+      {
+        "month": "May",
+        "cost": 275
+      },
+      {
+        "month": "Jun",
+        "cost": 285
+      },
+      {
+        "month": "Jul",
+        "cost": 310
+      },
+      {
+        "month": "Aug",
+        "cost": 240
+      },
+      {
+        "month": "Sep",
+        "cost": 270
+      },
+      {
+        "month": "Oct",
+        "cost": 295
+      },
+      {
+        "month": "Nov",
+        "cost": 320
+      },
+      {
+        "month": "Dec",
+        "cost": 310
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00109",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 25,
+          "category": "Maintenance",
+          "summary": "Maintenance: 25%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 57,
+          "category": "Fuel",
+          "summary": "Fuel: 57%"
+        },
+        {
+          "value": 28,
+          "category": "Maintenance",
+          "summary": "Maintenance: 28%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 27,
+          "category": "Maintenance",
+          "summary": "Maintenance: 27%"
+        },
+        {
+          "value": 15,
+          "category": "Other",
+          "summary": "Other: 15%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 30
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 55
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 60
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 18
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 44
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 49
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 24
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 47
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 52
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 70
+      },
+      {
+        "month": "Feb",
+        "cost": 75
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 245
+      },
+      {
+        "month": "May",
+        "cost": 270
+      },
+      {
+        "month": "Jun",
+        "cost": 290
+      },
+      {
+        "month": "Jul",
+        "cost": 305
+      },
+      {
+        "month": "Aug",
+        "cost": 250
+      },
+      {
+        "month": "Sep",
+        "cost": 275
+      },
+      {
+        "month": "Oct",
+        "cost": 300
+      },
+      {
+        "month": "Nov",
+        "cost": 315
+      },
+      {
+        "month": "Dec",
+        "cost": 310
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00110",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 32,
+          "category": "Maintenance",
+          "summary": "Maintenance: 32%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 57,
+          "category": "Fuel",
+          "summary": "Fuel: 57%"
+        },
+        {
+          "value": 33,
+          "category": "Maintenance",
+          "summary": "Maintenance: 33%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 35,
+          "category": "Maintenance",
+          "summary": "Maintenance: 35%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 30
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 55
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 60
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 18
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 44
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 49
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 24
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 47
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 52
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 70
+      },
+      {
+        "month": "Feb",
+        "cost": 75
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 245
+      },
+      {
+        "month": "May",
+        "cost": 270
+      },
+      {
+        "month": "Jun",
+        "cost": 290
+      },
+      {
+        "month": "Jul",
+        "cost": 305
+      },
+      {
+        "month": "Aug",
+        "cost": 250
+      },
+      {
+        "month": "Sep",
+        "cost": 275
+      },
+      {
+        "month": "Oct",
+        "cost": 300
+      },
+      {
+        "month": "Nov",
+        "cost": 315
+      },
+      {
+        "month": "Dec",
+        "cost": 310
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00111",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 60,
+          "category": "Fuel",
+          "summary": "Fuel: 60%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 58,
+          "category": "Fuel",
+          "summary": "Fuel: 58%"
+        },
+        {
+          "value": 32,
+          "category": "Maintenance",
+          "summary": "Maintenance: 32%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 56,
+          "category": "Fuel",
+          "summary": "Fuel: 56%"
+        },
+        {
+          "value": 34,
+          "category": "Maintenance",
+          "summary": "Maintenance: 34%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 55,
+          "category": "Fuel",
+          "summary": "Fuel: 55%"
+        },
+        {
+          "value": 35,
+          "category": "Maintenance",
+          "summary": "Maintenance: 35%"
+        },
+        {
+          "value": 10,
+          "category": "Other",
+          "summary": "Other: 10%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 28
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 52
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 58
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 54
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 40
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 45
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 9
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 21
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 47
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 70
+      },
+      {
+        "month": "Feb",
+        "cost": 80
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 250
+      },
+      {
+        "month": "May",
+        "cost": 270
+      },
+      {
+        "month": "Jun",
+        "cost": 290
+      },
+      {
+        "month": "Jul",
+        "cost": 310
+      },
+      {
+        "month": "Aug",
+        "cost": 260
+      },
+      {
+        "month": "Sep",
+        "cost": 280
+      },
+      {
+        "month": "Oct",
+        "cost": 295
+      },
+      {
+        "month": "Nov",
+        "cost": 320
+      },
+      {
+        "month": "Dec",
+        "cost": 305
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00112",
+    "costPerType": {
+      "ytd": [
+        {
+          "value": 48,
+          "category": "Fuel",
+          "summary": "Fuel: 48%"
+        },
+        {
+          "value": 32,
+          "category": "Maintenance",
+          "summary": "Maintenance: 32%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "3months": [
+        {
+          "value": 45,
+          "category": "Fuel",
+          "summary": "Fuel: 45%"
+        },
+        {
+          "value": 35,
+          "category": "Maintenance",
+          "summary": "Maintenance: 35%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "6months": [
+        {
+          "value": 50,
+          "category": "Fuel",
+          "summary": "Fuel: 50%"
+        },
+        {
+          "value": 30,
+          "category": "Maintenance",
+          "summary": "Maintenance: 30%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ],
+      "12months": [
+        {
+          "value": 49,
+          "category": "Fuel",
+          "summary": "Fuel: 49%"
+        },
+        {
+          "value": 31,
+          "category": "Maintenance",
+          "summary": "Maintenance: 31%"
+        },
+        {
+          "value": 20,
+          "category": "Other",
+          "summary": "Other: 20%"
+        }
+      ]
+    },
+    "costsPerMeterPerQuarter": {
+      "ytd": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 15
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 20
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 50
+        }
+      ],
+      "2023": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 14
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 22
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 47
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 55
+        }
+      ],
+      "2022": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 18
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 25
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 44
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 51
+        }
+      ],
+      "2021": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 12
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 19
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 38
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 46
+        }
+      ],
+      "2020": [
+        {
+          "quarter": "Q1",
+          "costPerMeter": 10
+        },
+        {
+          "quarter": "Q2",
+          "costPerMeter": 21
+        },
+        {
+          "quarter": "Q3",
+          "costPerMeter": 42
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 49
+        }
+      ]
+    },
+    "fuelCostsPerMonth": [
+      {
+        "month": "Jan",
+        "cost": 72
+      },
+      {
+        "month": "Feb",
+        "cost": 84
+      },
+      {
+        "month": "Mar",
+        "cost": 150
+      },
+      {
+        "month": "Apr",
+        "cost": 230
+      },
+      {
+        "month": "May",
+        "cost": 245
+      },
+      {
+        "month": "Jun",
+        "cost": 265
+      },
+      {
+        "month": "Jul",
+        "cost": 290
+      },
+      {
+        "month": "Aug",
+        "cost": 240
+      },
+      {
+        "month": "Sep",
+        "cost": 255
+      },
+      {
+        "month": "Oct",
+        "cost": 270
+      },
+      {
+        "month": "Nov",
+        "cost": 290
+      },
+      {
+        "month": "Dec",
+        "cost": 280
+      }
+    ]
+  }
+]

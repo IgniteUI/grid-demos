@@ -10,6 +10,7 @@ import { IgDataTemplate, IgxShapeDataSourceModule } from 'igniteui-angular-core'
 import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps';
 import { useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut } from '@infragistics/igniteui-angular/animations';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-fleet-management-grid',
@@ -79,7 +80,7 @@ export class FleetManagementGridComponent {
   public markerLocations: any[] = [];
 
   //chart periods
-  public initialPeriods = {
+  public periods = {
     costPerTypePeriod: "ytd",
     costPerMeterPeriod: "ytd",
     fuelCostPeriod: "ytd"
@@ -96,27 +97,10 @@ export class FleetManagementGridComponent {
     photo: ""
   }
 
-  private bind: () => void;
-
-  public fleetData = DATA;
-
-
-
   constructor(
     private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-    private viewContainerRef: ViewContainerRef) {
-
-      this.bind = () => {
-        this.fleetData.forEach(vehicle => {
-          (vehicle.utilization as any).__dataIntents = {
-            "'2023'": ["SeriesTitle/2023"],
-            "'2024'": ["SeriesTitle/2024"]
-          };
-        })
-      };
-      this.bind();
-    }
+    public dataService: DataService) {}
 
   public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
@@ -148,23 +132,13 @@ export class FleetManagementGridComponent {
   //handling for chart periods
   public onPeriodChange(event: any, chart: string): void {
     if (chart == "costsPerType") {
-      this.initialPeriods.costPerTypePeriod = event.newSelection.value;
+      this.periods.costPerTypePeriod = event.newSelection.value;
     } else if (chart == "costsPerMeter") {
-      this.initialPeriods.costPerMeterPeriod = event.newSelection.value;
+      this.periods.costPerMeterPeriod = event.newSelection.value;
     } else if (chart == "fuelCosts") {
-      this.initialPeriods.fuelCostPeriod = event.newSelection.value;
+      this.periods.fuelCostPeriod = event.newSelection.value;
     }
 
-  }
-
-  public getPeriodData(dataItem:any, chart: string) {
-    if (chart == "costsPerType") {
-      return dataItem[this.initialPeriods.costPerTypePeriod]
-    } else if (chart == "costsPerMeter") {
-      return dataItem[this.initialPeriods.costPerMeterPeriod]
-    } else if (chart == "fuelCosts") {
-      return dataItem[this.initialPeriods.fuelCostPeriod]
-    }
   }
 
   //getters for image paths
@@ -190,7 +164,7 @@ export class FleetManagementGridComponent {
   }
 
   public getPathToDriverPhoto(cell: any) {
-    return `/people/${cell.row.data.driver.photo}.jpg`;
+    return `/people/${this.dataService.getDriverPhoto(cell.row.data.driverName)}.jpg`;
   }
 
   //overlay logic
@@ -203,7 +177,7 @@ export class FleetManagementGridComponent {
       return;
     }
 
-    const vehicle = this.fleetData.find(v => v.vehicleId === vehicleId)
+    const vehicle = this.dataService.getVehiclesData().find(v => v.vehicleId === vehicleId)
 
     if (!vehicle) {
       console.error(`No vehicle found for ID: ${vehicleId}`);
@@ -254,20 +228,22 @@ export class FleetManagementGridComponent {
 
   public showDriverOverlay(event: MouseEvent, cell: any) {
 
-    const driver = cell.row?.cells?.find((c: any) => c.column.field === 'driver')?.value;
+    const driverName = cell.row?.cells?.find((c: any) => c.column.field === 'driverName')?.value;
 
-    if (driver === undefined) {
+    if (driverName === undefined) {
       console.error('Driver not found in data');
       return;
     }
 
-    this.driverDetails.name = driver.name;
-    this.driverDetails.license = driver.license;
-    this.driverDetails.address = driver.address;
-    this.driverDetails.city = driver.city;
-    this.driverDetails.phone = driver.phone;
-    this.driverDetails.email = driver.email;
-    this.driverDetails.photo = `/people/${driver.photo}.jpg`;
+    const driverDetails = this.dataService.getDriverData(driverName);
+
+    this.driverDetails.name = driverDetails?.name as string;
+    this.driverDetails.license = driverDetails?.license as string;
+    this.driverDetails.address = driverDetails?.address as string;
+    this.driverDetails.city = driverDetails?.city as string;
+    this.driverDetails.phone = driverDetails?.phone as string;
+    this.driverDetails.email = driverDetails?.email as string;
+    this.driverDetails.photo = `/people/${driverDetails?.photo}.jpg`;
 
     const overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
       event.target as HTMLElement,

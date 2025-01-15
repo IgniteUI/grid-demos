@@ -1,0 +1,710 @@
+[
+  {
+    "vehicleId": "A00101",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "John Davidson",
+        "start": "2024-11-17",
+        "end": "N/A",
+        "startLocation": "Boston, MA",
+        "endLocation": "New York, NY",
+        "startMeter": "73,321.0 mi",
+        "endMeter": "N/A",
+        "distance": "N/A",
+        "totalTime": "N/A"
+      },
+      {
+        "id": 2,
+        "driverName": "Peter Jackson",
+        "start": "2024-10-13",
+        "end": "2024-10-23",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "72,801.9 mi",
+        "endMeter": "73,321.0 mi",
+        "distance": "519.1 mi",
+        "totalTime": "23h 15m"
+      },
+      {
+        "id": 3,
+        "driverName": "J.J. Swan",
+        "start": "2024-10-03",
+        "end": "2024-10-12",
+        "startLocation": "Boston, MA",
+        "endLocation": "Cranbury, NJ",
+        "startMeter": "72,475.9 mi",
+        "endMeter": "72,801.9 mi",
+        "distance": "326.0 mi",
+        "totalTime": "18h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "Natalie Simson",
+        "start": "2024-09-23",
+        "end": "2024-09-29",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "71,545.1 mi",
+        "endMeter": "72,475.9 mi",
+        "distance": "930.8 mi",
+        "totalTime": "45h 30m"
+      },
+      {
+        "id": 5,
+        "driverName": "Peter Jackson",
+        "start": "2024-08-23",
+        "end": "2024-09-22",
+        "startLocation": "Boston, MA",
+        "endLocation": "Cranbury, NJ",
+        "startMeter": "70,581.0 mi",
+        "endMeter": "71,545.1 mi",
+        "distance": "964.1 mi",
+        "totalTime": "44h 45m"
+      },
+      {
+        "id": 6,
+        "driverName": "Mike Sousan",
+        "start": "2024-08-15",
+        "end": "2024-08-20",
+        "startLocation": "Buffalo, NY",
+        "endLocation": "Boston, MA",
+        "startMeter": "69,971.9 mi",
+        "endMeter": "70,581.0 mi",
+        "distance": "609.1 mi",
+        "totalTime": "38h 30m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00102",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "John Davidson",
+        "start": "2024-11-17",
+        "end": "N/A",
+        "startLocation": "Boston, MA",
+        "endLocation": "New York, NY",
+        "startMeter": "73,321.0 mi",
+        "endMeter": "N/A",
+        "distance": "N/A",
+        "totalTime": "N/A"
+      },
+      {
+        "id": 2,
+        "driverName": "Peter Jackson",
+        "start": "2024-10-13",
+        "end": "2024-10-23",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "72,801.9 mi",
+        "endMeter": "73,321.0 mi",
+        "distance": "519.1 mi",
+        "totalTime": "23h 15m"
+      },
+      {
+        "id": 3,
+        "driverName": "Natalie Simson",
+        "start": "2024-09-01",
+        "end": "2024-09-10",
+        "startLocation": "Boston, MA",
+        "endLocation": "Providence, RI",
+        "startMeter": "71,900.0 mi",
+        "endMeter": "72,300.0 mi",
+        "distance": "400.0 mi",
+        "totalTime": "15h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "Mike Sousan",
+        "start": "2024-08-15",
+        "end": "2024-08-18",
+        "startLocation": "Boston, MA",
+        "endLocation": "Hartford, CT",
+        "startMeter": "71,500.0 mi",
+        "endMeter": "71,900.0 mi",
+        "distance": "400.0 mi",
+        "totalTime": "18h 00m"
+      },
+      {
+        "id": 5,
+        "driverName": "Sophia Loren",
+        "start": "2024-07-10",
+        "end": "2024-07-15",
+        "startLocation": "Albany, NY",
+        "endLocation": "Boston, MA",
+        "startMeter": "70,800.0 mi",
+        "endMeter": "71,500.0 mi",
+        "distance": "700.0 mi",
+        "totalTime": "22h 45m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00103",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Alex Robinson",
+        "start": "2024-10-01",
+        "end": "2024-10-04",
+        "startLocation": "Newark, NJ",
+        "endLocation": "Trenton, NJ",
+        "startMeter": "73,000.0 mi",
+        "endMeter": "73,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "14h 30m"
+      },
+      {
+        "id": 2,
+        "driverName": "Emily Green",
+        "start": "2024-09-12",
+        "end": "2024-09-15",
+        "startLocation": "Hoboken, NJ",
+        "endLocation": "Albany, NY",
+        "startMeter": "72,700.0 mi",
+        "endMeter": "73,000.0 mi",
+        "distance": "300.0 mi",
+        "totalTime": "10h 15m"
+      },
+      {
+        "id": 3,
+        "driverName": "Liam Carter",
+        "start": "2024-08-20",
+        "end": "2024-08-25",
+        "startLocation": "Camden, NJ",
+        "endLocation": "Buffalo, NY",
+        "startMeter": "72,200.0 mi",
+        "endMeter": "72,700.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "20h 10m"
+      },
+      {
+        "id": 4,
+        "driverName": "Sophia Moore",
+        "start": "2024-07-10",
+        "end": "2024-07-15",
+        "startLocation": "Buffalo, NY",
+        "endLocation": "Newark, NJ",
+        "startMeter": "71,700.0 mi",
+        "endMeter": "72,200.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "18h 45m"
+      },
+      {
+        "id": 5,
+        "driverName": "Noah Adams",
+        "start": "2024-06-18",
+        "end": "2024-06-20",
+        "startLocation": "Trenton, NJ",
+        "endLocation": "Camden, NJ",
+        "startMeter": "71,000.0 mi",
+        "endMeter": "71,700.0 mi",
+        "distance": "700.0 mi",
+        "totalTime": "12h 30m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00104",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Michael Carter",
+        "start": "2024-11-20",
+        "end": "2024-11-22",
+        "startLocation": "Albany, NY",
+        "endLocation": "Syracuse, NY",
+        "startMeter": "34,000.0 mi",
+        "endMeter": "34,400.0 mi",
+        "distance": "400.0 mi",
+        "totalTime": "12h 15m"
+      },
+      {
+        "id": 2,
+        "driverName": "Sarah Taylor",
+        "start": "2024-10-15",
+        "end": "2024-10-17",
+        "startLocation": "Newark, NJ",
+        "endLocation": "Philadelphia, PA",
+        "startMeter": "33,000.0 mi",
+        "endMeter": "33,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "10h 45m"
+      },
+      {
+        "id": 3,
+        "driverName": "Emily Davis",
+        "start": "2024-09-10",
+        "end": "2024-09-12",
+        "startLocation": "Buffalo, NY",
+        "endLocation": "Rochester, NY",
+        "startMeter": "32,000.0 mi",
+        "endMeter": "32,400.0 mi",
+        "distance": "400.0 mi",
+        "totalTime": "11h 00m"
+      },
+      {
+        "id": 4,
+        "driverName": "James Brown",
+        "start": "2024-08-05",
+        "end": "2024-08-07",
+        "startLocation": "Trenton, NJ",
+        "endLocation": "Camden, NJ",
+        "startMeter": "31,000.0 mi",
+        "endMeter": "31,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "8h 45m"
+      },
+      {
+        "id": 5,
+        "driverName": "Olivia Martinez",
+        "start": "2024-07-18",
+        "end": "2024-07-20",
+        "startLocation": "Hoboken, NJ",
+        "endLocation": "Newark, NJ",
+        "startMeter": "30,500.0 mi",
+        "endMeter": "31,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "7h 30m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00105",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Michael Carter",
+        "start": "2024-12-01",
+        "end": "2024-12-02",
+        "startLocation": "Trenton, NJ",
+        "endLocation": "Newark, NJ",
+        "startMeter": "40,000.0 mi",
+        "endMeter": "40,200.0 mi",
+        "distance": "200.0 mi",
+        "totalTime": "5h 15m"
+      },
+      {
+        "id": 2,
+        "driverName": "Emily Taylor",
+        "start": "2024-11-20",
+        "end": "2024-11-21",
+        "startLocation": "Newark, NJ",
+        "endLocation": "Camden, NJ",
+        "startMeter": "39,800.0 mi",
+        "endMeter": "40,000.0 mi",
+        "distance": "200.0 mi",
+        "totalTime": "4h 30m"
+      },
+      {
+        "id": 3,
+        "driverName": "James Brown",
+        "start": "2024-11-01",
+        "end": "2024-11-02",
+        "startLocation": "Camden, NJ",
+        "endLocation": "Philadelphia, PA",
+        "startMeter": "39,500.0 mi",
+        "endMeter": "39,800.0 mi",
+        "distance": "300.0 mi",
+        "totalTime": "6h 10m"
+      },
+      {
+        "id": 4,
+        "driverName": "Olivia Martinez",
+        "start": "2024-10-10",
+        "end": "2024-10-12",
+        "startLocation": "Philadelphia, PA",
+        "endLocation": "Camden, NJ",
+        "startMeter": "39,000.0 mi",
+        "endMeter": "39,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "9h 45m"
+      },
+      {
+        "id": 5,
+        "driverName": "Sophia Wilson",
+        "start": "2024-09-15",
+        "end": "2024-09-17",
+        "startLocation": "Camden, NJ",
+        "endLocation": "New York, NY",
+        "startMeter": "38,500.0 mi",
+        "endMeter": "39,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "10h 30m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00106",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Alice Johnson",
+        "start": "2024-11-25",
+        "end": "2024-11-30",
+        "startLocation": "Seattle, WA",
+        "endLocation": "Portland, OR",
+        "startMeter": "74,500.0 mi",
+        "endMeter": "74,800.0 mi",
+        "distance": "300.0 mi",
+        "totalTime": "14h 50m"
+      },
+      {
+        "id": 2,
+        "driverName": "Ethan Carter",
+        "start": "2024-10-22",
+        "end": "2024-10-28",
+        "startLocation": "Denver, CO",
+        "endLocation": "Salt Lake City, UT",
+        "startMeter": "73,900.0 mi",
+        "endMeter": "74,300.0 mi",
+        "distance": "400.0 mi",
+        "totalTime": "20h 10m"
+      },
+      {
+        "id": 3,
+        "driverName": "Sophia Martinez",
+        "start": "2024-09-15",
+        "end": "2024-09-20",
+        "startLocation": "San Francisco, CA",
+        "endLocation": "Los Angeles, CA",
+        "startMeter": "72,100.0 mi",
+        "endMeter": "72,600.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "23h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "Liam Brown",
+        "start": "2024-08-18",
+        "end": "2024-08-25",
+        "startLocation": "Austin, TX",
+        "endLocation": "Dallas, TX",
+        "startMeter": "71,500.0 mi",
+        "endMeter": "72,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "24h 10m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00107",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Emily Carter",
+        "start": "2024-11-10",
+        "end": "2024-11-15",
+        "startLocation": "New York, NY",
+        "endLocation": "Boston, MA",
+        "startMeter": "74,000.0 mi",
+        "endMeter": "74,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "25h 00m"
+      },
+      {
+        "id": 2,
+        "driverName": "Liam Johnson",
+        "start": "2024-10-25",
+        "end": "2024-10-30",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Philadelphia, PA",
+        "startMeter": "73,500.0 mi",
+        "endMeter": "74,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "24h 45m"
+      },
+      {
+        "id": 3,
+        "driverName": "Sophia Martinez",
+        "start": "2024-09-15",
+        "end": "2024-09-20",
+        "startLocation": "Boston, MA",
+        "endLocation": "Hartford, CT",
+        "startMeter": "73,000.0 mi",
+        "endMeter": "73,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "22h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "James Smith",
+        "start": "2024-08-20",
+        "end": "2024-08-25",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Newark, NJ",
+        "startMeter": "72,500.0 mi",
+        "endMeter": "73,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "24h 15m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00108",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Alex Johnson",
+        "start": "2024-10-01",
+        "end": "2024-10-05",
+        "startLocation": "New York, NY",
+        "endLocation": "Boston, MA",
+        "startMeter": "73,000.0 mi",
+        "endMeter": "73,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "20h 00m"
+      },
+      {
+        "id": 2,
+        "driverName": "Maria Gonzalez",
+        "start": "2024-09-15",
+        "end": "2024-09-20",
+        "startLocation": "Philadelphia, PA",
+        "endLocation": "Cranbury, NJ",
+        "startMeter": "72,500.0 mi",
+        "endMeter": "73,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "25h 00m"
+      },
+      {
+        "id": 3,
+        "driverName": "Ethan Brown",
+        "start": "2024-08-20",
+        "end": "2024-08-25",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Hartford, CT",
+        "startMeter": "72,000.0 mi",
+        "endMeter": "72,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "22h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "Sophia Martinez",
+        "start": "2024-07-10",
+        "end": "2024-07-15",
+        "startLocation": "Hartford, CT",
+        "endLocation": "Buffalo, NY",
+        "startMeter": "71,500.0 mi",
+        "endMeter": "72,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "23h 15m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00109",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Chris Taylor",
+        "start": "2024-11-01",
+        "end": "2024-11-05",
+        "startLocation": "Chicago, IL",
+        "endLocation": "Detroit, MI",
+        "startMeter": "85,100.0 mi",
+        "endMeter": "85,600.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "24h 00m"
+      },
+      {
+        "id": 2,
+        "driverName": "Rachel Adams",
+        "start": "2024-10-15",
+        "end": "2024-10-18",
+        "startLocation": "Detroit, MI",
+        "endLocation": "Cleveland, OH",
+        "startMeter": "84,600.0 mi",
+        "endMeter": "85,100.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "20h 00m"
+      },
+      {
+        "id": 3,
+        "driverName": "Michael Green",
+        "start": "2024-09-25",
+        "end": "2024-09-28",
+        "startLocation": "Cleveland, OH",
+        "endLocation": "Pittsburgh, PA",
+        "startMeter": "84,100.0 mi",
+        "endMeter": "84,600.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "18h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "Sarah Johnson",
+        "start": "2024-09-01",
+        "end": "2024-09-05",
+        "startLocation": "Pittsburgh, PA",
+        "endLocation": "Philadelphia, PA",
+        "startMeter": "83,600.0 mi",
+        "endMeter": "84,100.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "22h 15m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00110",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "David Miller",
+        "start": "2024-11-10",
+        "end": "2024-11-14",
+        "startLocation": "Newark, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "28,000.0 mi",
+        "endMeter": "28,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "25h 00m"
+      },
+      {
+        "id": 2,
+        "driverName": "Sophia Brown",
+        "start": "2024-10-01",
+        "end": "2024-10-05",
+        "startLocation": "Boston, MA",
+        "endLocation": "New York, NY",
+        "startMeter": "27,500.0 mi",
+        "endMeter": "28,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "22h 30m"
+      },
+      {
+        "id": 3,
+        "driverName": "Ethan Johnson",
+        "start": "2024-09-15",
+        "end": "2024-09-20",
+        "startLocation": "New York, NY",
+        "endLocation": "Hartford, CT",
+        "startMeter": "27,000.0 mi",
+        "endMeter": "27,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "20h 45m"
+      },
+      {
+        "id": 4,
+        "driverName": "Emma White",
+        "start": "2024-08-25",
+        "end": "2024-08-30",
+        "startLocation": "Hartford, CT",
+        "endLocation": "Buffalo, NY",
+        "startMeter": "26,500.0 mi",
+        "endMeter": "27,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "21h 15m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00111",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "James Carter",
+        "start": "2024-12-01",
+        "end": "2024-12-05",
+        "startLocation": "New York, NY",
+        "endLocation": "Boston, MA",
+        "startMeter": "39,500.0 mi",
+        "endMeter": "40,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "21h 35m"
+      },
+      {
+        "id": 2,
+        "driverName": "Sarah Miller",
+        "start": "2024-11-15",
+        "end": "2024-11-20",
+        "startLocation": "Hartford, CT",
+        "endLocation": "Newark, NJ",
+        "startMeter": "39,000.0 mi",
+        "endMeter": "39,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "20h 30m"
+      },
+      {
+        "id": 3,
+        "driverName": "Michael Brown",
+        "start": "2024-11-01",
+        "end": "2024-11-05",
+        "startLocation": "Boston, MA",
+        "endLocation": "New York, NY",
+        "startMeter": "38,500.0 mi",
+        "endMeter": "39,000.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "22h 00m"
+      },
+      {
+        "id": 4,
+        "driverName": "Emily White",
+        "start": "2024-10-20",
+        "end": "2024-10-25",
+        "startLocation": "Newark, NJ",
+        "endLocation": "Hartford, CT",
+        "startMeter": "38,000.0 mi",
+        "endMeter": "38,500.0 mi",
+        "distance": "500.0 mi",
+        "totalTime": "21h 45m"
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00112",
+    "tripHistory": [
+      {
+        "id": 1,
+        "driverName": "Michael Grant",
+        "start": "2024-11-01",
+        "end": "2024-11-06",
+        "startLocation": "Buffalo, NY",
+        "endLocation": "Albany, NY",
+        "startMeter": "73,500.0 mi",
+        "endMeter": "74,112.0 mi",
+        "distance": "612 mi",
+        "totalTime": "23h 25m"
+      },
+      {
+        "id": 2,
+        "driverName": "Sarah Williams",
+        "start": "2024-10-15",
+        "end": "2024-10-22",
+        "startLocation": "Cranbury, NJ",
+        "endLocation": "Boston, MA",
+        "startMeter": "72,901.0 mi",
+        "endMeter": "73,500.0 mi",
+        "distance": "599.0 mi",
+        "totalTime": "22h 10m"
+      },
+      {
+        "id": 3,
+        "driverName": "Jonathan Smith",
+        "start": "2024-09-20",
+        "end": "2024-09-25",
+        "startLocation": "Albany, NY",
+        "endLocation": "Cranbury, NJ",
+        "startMeter": "72,300.0 mi",
+        "endMeter": "72,901.0 mi",
+        "distance": "601.0 mi",
+        "totalTime": "20h 30m"
+      },
+      {
+        "id": 4,
+        "driverName": "Emma Clarkson",
+        "start": "2024-08-10",
+        "end": "2024-08-15",
+        "startLocation": "Boston, MA",
+        "endLocation": "Buffalo, NY",
+        "startMeter": "71,700.0 mi",
+        "endMeter": "72,300.0 mi",
+        "distance": "600.0 mi",
+        "totalTime": "18h 45m"
+      }
+    ]
+  }
+]
