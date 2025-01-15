@@ -1,0 +1,93 @@
+trigger:
+  branches:
+    include:
+    - vnext
+    - master
+
+# This pipeline is meant to build specific branches for deployment. It's not meant to be a part of PR validation.
+pr: none
+
+parameters:
+- name: isVerbose
+  displayName: 'Get verbose output from steps - where configurable'
+  type: boolean
+  default: false
+- name: shouldCleanPostExecution
+  displayName: 'Clean all pipeline dirs after the pipeline finishes?'
+  type: boolean
+  default: true
+
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+stages:
+- stage: Build
+  pool:
+    name: BuildAgentOnPrem
+    demands: npm
+  jobs:
+  - job: BuildSamples
+    steps:
+      - checkout: 'self' 
+        clean: true
+
+      - task: NodeTool@0
+        displayName: 'Install Node'
+        inputs:
+          versionSource: 'spec'
+          versionSpec: '18.x'
+
+      - task: Npm@1
+        displayName: 'npm install --legacy-peer-deps'
+        inputs:
+          verbose: ${{ parameters.isVerbose }}
+          command: custom
+          workingDir: '$(Build.SourcesDirectory)'
+          customCommand: 'install --legacy-peer-deps'
+
+      - task: Npm@1
+        displayName: 'Install @angular/cli globally'
+        inputs:
+          verbose: ${{ parameters.isVerbose }}
+          command: custom
+          workingDir: '$(Build.SourcesDirectory)'
+          customCommand: 'install -g @angular/cli'
+
+
+      - task: Npm@1
+        displayName: 'Register licensed npm registry in .npmrc'
+        inputs:
+          verbose: ${{ parameters.isVerbose }}
+          command: 'custom'
+          workingDir: '$(Build.SourcesDirectory)'
+          customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
+
+      - task: npmAuthenticate@0
+        displayName: '[IG Production ProGet] npm authenticate'
+        inputs:
+          workingFile: '$(Build.SourcesDirectory)\.npmrc'
+          customEndpoint: 'public proget'
+
+      - task: PowerShell@2
+        displayName: 'Run Angular Schematics Upgrade Packages'
+        inputs:
+          targetType: 'inline'
+          script: |
+            npx --userconfig=$(Build.SourcesDirectory)/.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
+
+      - task: Npm@1
+        displayName: 'npm run build:ci'
+        inputs:
+          command: custom
+          workingDir: '$(Build.SourcesDirectory)'
+          verbose: ${{ parameters.isVerbose }}
+          customCommand: 'run build:ci'
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish pipeline artifact'
+        inputs:
+          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
+          artifact: 'dist.grid-demos.browser'
+          publishLocation: 'pipeline'
+
+      - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
+        - task: PostBuildCleanup@4
