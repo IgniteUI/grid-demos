@@ -50,7 +50,7 @@ stages:
             
             foreach ($subdirectory in $subdirectories) {
                 # TODO - call npm version - to set the version in the package.json FOR EACH SAMPLE!!!! Use a version name based on the build/run name
-                
+
                 # Get the current directory name
                 $dirName = $subdirectory.Name
                 #Write-Output $dirName
@@ -76,6 +76,9 @@ stages:
             # TODO - we want each sample's zip to be named IgniteUI_Angular_ApplicationSample_<sample name>_Source.zip
           failOnStderr: true
           pwsh: true
+
+      # TODO Publish the source zips as a single artifact ... but before that figure out how to replace them completely on deployment ....
+
       - task: Npm@1
         displayName: 'npm install --legacy-peer-deps'
         inputs:
