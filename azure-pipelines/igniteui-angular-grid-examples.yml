@@ -22,7 +22,7 @@ name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 stages:
 - stage: Build
   pool:
-    vmImage: 'ubuntu-latest'
+    vmImage: 'windows-latest'
 
   jobs:
   - job: BuildSamples
@@ -64,7 +64,7 @@ stages:
       - task: npmAuthenticate@0
         displayName: '[IG Production ProGet] npm authenticate'
         inputs:
-          workingFile: '$(Build.SourcesDirectory)/.npmrc'
+          workingFile: '$(Build.SourcesDirectory)\.npmrc'
           customEndpoint: 'public proget'
 
       - task: PowerShell@2
@@ -72,7 +72,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-            npx --userconfig=$(Build.SourcesDirectory)/.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
+            npx --userconfig=$(Build.SourcesDirectory)\.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
 
       - task: Npm@1
         displayName: 'npm run build:ci'
@@ -85,7 +85,7 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: 'Publish pipeline artifact'
         inputs:
-          targetPath: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
+          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
@@ -94,7 +94,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-            $rootPath = "$(Build.SourcesDirectory)/projects"
+            $rootPath = "$(Build.SourcesDirectory)\projects"
             
             # Get all first-level subdirectories in the specified root path
             $subdirectories = Get-ChildItem -Path $rootPath -Directory
@@ -115,6 +115,16 @@ stages:
                     Write-Output $textInfo.ToTitleCase($dirName).replace("-","")
                 }
             }
+            /*
+              How to compress the zip files:
+                $compress = @{
+                LiteralPath= "/mnt/d/Work/git/grid-demos/projects/finance-grid"
+                DestinationPath = "/mnt/d/Work/git/grid-demos/projects/finance-grid.zip"
+                }
+                Compress-Archive @compress
+            */
+
+            # TODO - we want each sample's zip to be named IgniteUI_Angular_ApplicationSample_<sample name>_Source.zip
           failOnStderr: true
           pwsh: true
 
