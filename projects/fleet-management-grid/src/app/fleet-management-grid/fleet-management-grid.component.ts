@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
-import { AutoPositionStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from '@infragistics/igniteui-angular';
+import { AutoPositionStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from 'igniteui-angular';
 import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule } from 'igniteui-angular-charts';
 import CAR_PHOTO_MANIFEST from '../../assets/car_photo_manifest.json';
 import CAR_IMAGES from '../../assets/car_images.json'
 import { IgDataTemplate, IgxShapeDataSourceModule } from 'igniteui-angular-core';
 import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps';
 import { useAnimation } from '@angular/animations';
-import { fadeIn, fadeOut } from '@infragistics/igniteui-angular/animations';
+import { fadeIn, fadeOut } from 'igniteui-angular/animations';
 import { DataService } from '../services/data.service';
 
 @Component({
