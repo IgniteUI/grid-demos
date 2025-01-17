@@ -22,8 +22,8 @@ name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 stages:
 - stage: Build
   pool:
-    name: BuildAgentOnPrem
-    demands: npm
+    vmImage: 'windows-latest'
+
   jobs:
   - job: BuildSamples
     steps:
@@ -35,6 +35,48 @@ stages:
         inputs:
           versionSource: 'spec'
           versionSpec: '18.x'
+
+      - task: PowerShell@2
+        displayName: 'Create download artifact per sample'
+        inputs:
+          targetType: 'inline'
+          script: |
+            $rootPath = "$(Build.SourcesDirectory)\projects"
+            
+            # Get all first-level subdirectories in the specified root path
+            $subdirectories = Get-ChildItem -Path $rootPath -Directory
+            
+            $textInfo = [System.Globalization.CultureInfo]::CurrentCulture.TextInfo
+            
+            foreach ($subdirectory in $subdirectories) {
+                # TODO - call npm version - to set the version in the package.json FOR EACH SAMPLE!!!! Use a version name based on the build/run name
+
+                # Get the current directory name
+                $dirName = $subdirectory.Name
+                #Write-Output $dirName
+            
+                # Check if the directory name is already in camel-case
+                if ($dirName -cmatch '^[A-Z]+[a-z]+(?:[A-Z][a-z]*)*$') {
+                    # If already camel-case, print it as is
+                    Write-Output $dirName
+                }
+                else {
+                    $dirName = $textInfo.ToTitleCase($dirName).replace("-","")
+                }
+            }
+              Write-Output "IgniteUI_Angular_ApplicationSample_$dirName_Source.zip"
+              #How to compress the zip files:
+                $compress = @{
+                  LiteralPath= "/mnt/d/Work/git/grid-demos/projects/finance-grid"
+                  DestinationPath = "<artifacts dir>/finance-grid.zip"
+                }
+                Compress-Archive @compress
+            
+            # TODO - we want each sample's zip to be named IgniteUI_Angular_ApplicationSample_<sample name>_Source.zip
+          failOnStderr: true
+          pwsh: true
+
+      # TODO Publish the source zips as a single artifact ... but before that figure out how to replace them completely on deployment ....
 
       - task: Npm@1
         displayName: 'npm install --legacy-peer-deps'
@@ -60,6 +102,7 @@ stages:
           command: 'custom'
           workingDir: '$(Build.SourcesDirectory)'
           customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
+
       - task: npmAuthenticate@0
         displayName: '[IG Production ProGet] npm authenticate'
         inputs:
@@ -71,7 +114,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-            npx --userconfig=$(Build.SourcesDirectory)/.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
+            npx --userconfig=$(Build.SourcesDirectory)\.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
 
       - task: Npm@1
         displayName: 'npm run build:ci'
@@ -87,6 +130,7 @@ stages:
           targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
+
 
       - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
         - task: PostBuildCleanup@4
