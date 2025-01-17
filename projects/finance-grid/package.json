@@ -1,13 +1,14 @@
 {
-  "name": "app-finance",
-  "version": "0.0.0",
+  "name": "finance-grid",
+  "homepage": "https://github.com/IgniteUI/grid-demos/tree/master/projects/finance-grid",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:app-finance": "node dist/app-finance/server/server.mjs"
+    "serve:ssr": "node dist/finance-grid-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +22,7 @@
     "@angular/platform-server": "^19.0.0",
     "@angular/router": "^19.0.0",
     "@angular/ssr": "^19.0.2",
-    "express": "^4.18.2",
+    "express": "^4.21.2",
     "igniteui-angular": "^19.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

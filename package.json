@@ -1,6 +1,7 @@
 {
   "name": "grid-demos",
-  "version": "0.0.0",
+  "homepage": "https://github.com/IgniteUI/grid-demos",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,24 +9,27 @@
     "start:fin": "ng serve --project=finance-grid",
     "start:hr": "ng serve --project=hr-portal",
     "start:sales": "ng serve --project=sales-grid",
+    "start:fleet": "ng serve --project=fleet-management",
     "build": "ng build",
     "build:ci": "ng build --base-href /angular-grid-examples/",
     "build:erp": "ng build erp-hgrid",
     "build:fin": "ng build finance-grid",
     "build:hr": "ng build hr-portal",
     "build:sales": "ng build sales-grid",
+    "build:fleet": "ng build fleet-management",
     "watch": "ng build --watch --configuration development",
     "watch:erp": "ng build erp-hgrid --watch --configuration development",
     "watch:fin": "ng build finance-grid --watch --configuration development",
     "watch:hr:": "ng build hr-portal --watch --configuration development",
     "watch:sales": "ng build sales-grid --watch --configuration development",
+    "watch:fleet": "ng build fleet-management --watch --configuration development",
     "test": "ng test",
     "ssr": "node dist/grid-demos/server/server.mjs",
     "ssr:erp": "node dist/erp-hgrid/server/server.mjs",
-    "ssr:erp:watch": "node dist/erp-hgrid/server/server.mjs",
     "ssr:fin": "node dist/finance-grid/server/server.mjs",
     "ssr:hr": "node dist/hr-portal/server/server.mjs",
-    "ssr:sales": "node dist/sales-grid/server/server.mjs"
+    "ssr:sales": "node dist/sales-grid/server/server.mjs",
+    "ssr:fleet": "node dist/fleet-management/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -67,5 +71,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.6.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.26.0"
   }
 }
