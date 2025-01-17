@@ -416,7 +416,8 @@
     </igx-card-header>
     <igx-card-content class="overlay-location-content">
       <igx-geographic-map #map [width]="'100%'" [height]="'100%'"
-
+        zoomable="false"
+        draggable="false"
         [dataSource]="markerLocations"
         latitudeMemberPath="latitude"
         longitudeMemberPath="longitude">
