@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SalesGridApp": {
+    "sales-grid": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "SalesGridApp:build:production"
+              "buildTarget": "sales-grid:build:production"
             },
             "development": {
-              "buildTarget": "SalesGridApp:build:development"
+              "buildTarget": "sales-grid:build:development"
             }
           },
           "defaultConfiguration": "development"

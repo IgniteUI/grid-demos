@@ -1,3 +1,9 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .flex-container {
   display: block;
   margin: 0 auto;
@@ -22,6 +28,8 @@ igx-tree-grid {
 }
 
  .employeeDiv {
+  display: flex;
+  align-items: center;
   --igx-avatar-size: 28px;
   gap: 8px;
  }

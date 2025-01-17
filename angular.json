@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "GridDemos": {
+    "grid-demos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,7 +21,8 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "hammerjs"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -29,6 +30,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "web.config",
+                "input": "./"
               },
               {
                 "glob": "**/*",
@@ -50,11 +55,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "./node_modules/hammerjs/hammer.min.js"
-            ],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "outputMode": "static",
             "ssr": {
               "entry": "src/server.ts"
             },
@@ -92,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "GridDemos:build:production"
+              "buildTarget": "grid-demos:build:production"
             },
             "development": {
-              "buildTarget": "GridDemos:build:development"
+              "buildTarget": "grid-demos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -576,6 +578,120 @@
             ],
             "styles": [
               "projects/sales-grid/src/styles.scss"
+            ],
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fleet-management": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/fleet-management-grid",
+      "sourceRoot": "projects/fleet-management-grid/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/fleet-management",
+            "index": "projects/fleet-management-grid/src/index.html",
+            "browser": "projects/fleet-management-grid/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/fleet-management-grid/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/fleet-management-grid/public"
+              }
+            ],
+            "styles": [
+              "projects/fleet-management-grid/src/styles.scss"
+            ],
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ],
+            "server": "projects/fleet-management-grid/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/fleet-management-grid/src/server.ts"
+            },
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules"
+              ]
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "11MB",
+                  "maximumError": "12MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "fleet-management:build:production"
+            },
+            "development": {
+              "buildTarget": "fleet-management:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/fleet-management-grid/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/fleet-management-grid/public"
+              }
+            ],
+            "styles": [
+              "projects/fleet-management-grid/src/styles.scss"
             ],
             "scripts": [
               "./node_modules/hammerjs/hammer.min.js"
