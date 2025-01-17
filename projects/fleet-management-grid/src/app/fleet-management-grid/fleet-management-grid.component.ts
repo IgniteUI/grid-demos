@@ -296,4 +296,13 @@ export class FleetManagementGridComponent {
         } as IgDataTemplate;
         this.map.series.add(symbolSeries);
   }
+
+  rightAlignedCellStyles = {
+    'justify-content': 'flex-end',
+    'display': 'flex'
+  };
+
+  rightAlignedHeaderStyles = {
+    'text-align': 'right'
+  };
 }

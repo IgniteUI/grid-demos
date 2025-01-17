@@ -365,7 +365,7 @@
 
 <ng-template #tripHistory let-tripHistoryData>
   <igx-grid [data]="tripHistoryData" height="100%" width="100%">
-    <igx-column field="id" header="ID" width="5%" justif></igx-column>
+    <igx-column field="id" header="ID" width="5%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
     <igx-column field="driverName" header="Driver" width="18%">
       <ng-template igxCell let-cell="cell">
         <igx-avatar shape="circle" size="small" [src]="getPathToDriverPhoto(cell)" class="driver-avatar"></igx-avatar>
@@ -379,16 +379,16 @@
     <igx-column field="end" header="End" width="9%"></igx-column>
     <igx-column field="startLocation" header="Start Location" width="10%"></igx-column>
     <igx-column field="endLocation" header="End Location" width="10%"></igx-column>
-    <igx-column field="startMeter" header="Start Meter" width="9.5%"></igx-column>
-    <igx-column field="endMeter" header="End Meter" width="9.5%"></igx-column>
-    <igx-column field="distance" header="Distance" width="9%"></igx-column>
-    <igx-column field="totalTime" header="Total Time" width="9%"></igx-column>
+    <igx-column field="startMeter" header="Start Meter" width="9.5%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
+    <igx-column field="endMeter" header="End Meter" width="9.5%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
+    <igx-column field="distance" header="Distance" width="9%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
+    <igx-column field="totalTime" header="Total Time" width="9%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
   </igx-grid>
 </ng-template>
 
 <ng-template #maintenance let-maintenanceData>
   <igx-grid [data]="maintenanceData" height="100%" width="95%">
-    <igx-column field="id" header="ID" width="5%"></igx-column>
+    <igx-column field="id" header="ID" width="5%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
     <igx-column field="event" header="Event" width="23%"></igx-column>
     <igx-column field="date" header="Date" width="10%"></igx-column>
     <igx-column field="location" header="Location" width="10%"></igx-column>
