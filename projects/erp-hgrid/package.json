@@ -1,6 +1,7 @@
 {
-  "name": "hgrid-erp",
-  "version": "0.0.0",
+  "name": "erp-hgrid",
+  "homepage": "https://github.com/IgniteUI/grid-demos/tree/master/projects/erp-grid",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
@@ -8,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "serve:ssr:hgrid-erp": "node dist/hgrid-erp/server/server.mjs"
+    "serve:ssr": "node dist/erp-hgrid-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
