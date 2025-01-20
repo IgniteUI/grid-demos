@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
 import { AutoPositionStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from 'igniteui-angular';
 import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule } from 'igniteui-angular-charts';
@@ -55,7 +55,7 @@ import { DataService } from '../services/data.service';
   templateUrl: './fleet-management-grid.component.html',
   styleUrl: './fleet-management-grid.component.scss'
 })
-export class FleetManagementGridComponent {
+export class FleetManagementGridComponent implements OnInit {
 
   //view childs
   @ViewChild('grid', { static: true }) public grid!: IgxGridComponent;
@@ -100,21 +100,19 @@ export class FleetManagementGridComponent {
     private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
     public dataService: DataService,
-    public hostRef: ElementRef) {}
+    @Inject(ElementRef) public hostRef: ElementRef) {}
 
   public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
     this.iconService.addSvgIconFromText(wrench.name, wrench.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
     this.iconService.addSvgIconFromText(gitIssue.name, gitIssue.value, 'imx-icons');
-  }
 
-  public ngAfterViewInit(): void {
     this.grid.sortingExpressions = [
-        {
-            dir: SortingDirection.Asc, fieldName: 'vehicleId',
-            ignoreCase: true, strategy: DefaultSortingStrategy.instance()
-        }
+      {
+          dir: SortingDirection.Asc, fieldName: 'vehicleId',
+          ignoreCase: true, strategy: DefaultSortingStrategy.instance()
+      }
     ];
   }
 
