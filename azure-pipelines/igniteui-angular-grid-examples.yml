@@ -37,7 +37,6 @@ stages:
           versionSpec: '18.x'
 
       - task: Npm@1
-        displayName: 'npm install --legacy-peer-deps'
         inputs:
           verbose: ${{ parameters.isVerbose }}
           command: custom
