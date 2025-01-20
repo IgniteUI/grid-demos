@@ -14,18 +14,18 @@
             </igx-grid-toolbar-actions>
   </igx-grid-toolbar>
 
-  <igx-column field="vehicleId" header="Vehicle ID" [sortable]="true"></igx-column>
-  <igx-column field="licensePlate" header="License Plate" [sortable]="true"></igx-column>
-  <igx-column field="make" header="Make" [sortable]="true">
+  <igx-column field="vehicleId" header="Vehicle ID" [sortable]="true" width="9%"></igx-column>
+  <igx-column field="licensePlate" header="License Plate" [sortable]="true" width="9%"></igx-column>
+  <igx-column field="make" header="Make" [sortable]="true" width="11%">
     <ng-template igxCell let-value>
       <igx-avatar class="logo-avatar" shape="rounded" size="small" [src]="getPathToLogoImage(value)"></igx-avatar>
       <span class="status-value">{{ value }}</span>
     </ng-template>
   </igx-column>
-  <igx-column field="model" header="Model" [sortable]="true"></igx-column>
-  <igx-column field="type" header="Type" [sortable]="true"></igx-column>
-  <igx-column field="vin" header="VIN"></igx-column>
-  <igx-column field="status" header="Status" [sortable]="true">
+  <igx-column field="model" header="Model" [sortable]="true" width="7%"></igx-column>
+  <igx-column field="type" header="Type" [sortable]="true" width="10%"></igx-column>
+  <igx-column field="vin" header="VIN" width="15%"></igx-column>
+  <igx-column field="status" header="Status" [sortable]="true" width="14%">
     <ng-template igxCell let-value>
       <igx-badge type="success" *ngIf="value === 'Available'">
         <igx-icon family="imx-icons" name="check" [style.color]="'#000000'"></igx-icon>
@@ -39,10 +39,10 @@
       <span class="status-value">{{ value }}</span>
     </ng-template>
   </igx-column>
-  <igx-column field="locationCity" header="Location (City)" [sortable]="true"></igx-column>
-  <igx-column field="locationGps" header="Location (GPS)">
+  <igx-column field="locationCity" header="Location (City)" [sortable]="true" width="11%"></igx-column>
+  <igx-column field="locationGps" header="Location (GPS)" width="15%">
     <ng-template igxCell let-cell="cell">
-      <a #coordinates href="#" style="color: #f5f5f5;" (click)="showLocationOverlay($event, cell)">{{ cell.value }}</a>
+      <a #coordinates href="#" style="color: #f5f5f5;" (click)="showLocationOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
     </ng-template>
   </igx-column>
 
@@ -369,7 +369,7 @@
     <igx-column field="driverName" header="Driver" width="18%">
       <ng-template igxCell let-cell="cell">
         <igx-avatar shape="circle" size="small" [src]="getPathToDriverPhoto(cell)" class="driver-avatar"></igx-avatar>
-        <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell)">{{ cell.value }}</a>
+        <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
         <igx-badge class="driver-badge" type="success" *ngIf="cell.row.index === 0 && cell.row.data.end === 'N/A'">
           Current
         </igx-badge>

@@ -99,7 +99,8 @@ export class FleetManagementGridComponent {
   constructor(
     private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-    public dataService: DataService) {}
+    public dataService: DataService,
+    public hostRef: ElementRef) {}
 
   public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
@@ -206,6 +207,8 @@ export class FleetManagementGridComponent {
       RelativePositionStrategy.Auto,
     );
 
+    overlaySettings.outlet = this.hostRef;
+
     (overlaySettings.positionStrategy as AutoPositionStrategy).settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
     (overlaySettings.positionStrategy as AutoPositionStrategy).settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
 
@@ -249,6 +252,8 @@ export class FleetManagementGridComponent {
       RelativePosition.After,
       RelativePositionStrategy.Auto,
     );
+
+    overlaySettings.outlet = this.hostRef;
 
     (overlaySettings.positionStrategy as AutoPositionStrategy).settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
     (overlaySettings.positionStrategy as AutoPositionStrategy).settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });

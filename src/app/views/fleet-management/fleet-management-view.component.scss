@@ -11,4 +11,12 @@
   display: block;
   height: 100%;
   width: 100%;
+
+  ::ng-deep {
+    @include typography();
+    @include theme(
+      $palette: $dark-material-palette,
+      $schema: $dark-material-schema
+    );
+  }
 }
