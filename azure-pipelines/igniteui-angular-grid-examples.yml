@@ -101,7 +101,7 @@ stages:
       - task: npmAuthenticate@0
         displayName: '[IG Production ProGet] npm authenticate'
         inputs:
-          workingFile: '$(Build.SourcesDirectory)\.npmrc'
+          workingFile: '$(Build.SourcesDirectory)/.npmrc'
           customEndpoint: 'public proget'
 
       - task: PowerShell@2
