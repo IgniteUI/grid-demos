@@ -141,7 +141,7 @@ export class FleetManagementGridComponent implements OnInit {
 
   //getters for image paths
   public getPathToLogoImage(value: string): string {
-    return `/cars/logos/${value}.png`;
+    return `cars/logos/${value}.png`;
   }
 
   public getPathToCarImage(vehicleId: string): string[] {
@@ -156,13 +156,13 @@ export class FleetManagementGridComponent implements OnInit {
 
     const carPhotoNames = (CAR_IMAGES as Record<string, string[]>)[folderName];
 
-    const carPathsToPhotos = carPhotoNames.map(photo => `/cars/photos/${folderName}/${photo}`);
+    const carPathsToPhotos = carPhotoNames.map(photo => `cars/photos/${folderName}/${photo}`);
 
     return carPathsToPhotos;
   }
 
   public getPathToDriverPhoto(cell: any) {
-    return `/people/${this.dataService.getDriverPhoto(cell.row.data.driverName)}.jpg`;
+    return `people/${this.dataService.getDriverPhoto(cell.row.data.driverName)}.jpg`;
   }
 
   //overlay logic
