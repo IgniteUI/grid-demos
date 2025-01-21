@@ -62,7 +62,8 @@ stages:
                     echo "$dirName"
                 else
                     # Convert to camel-case (capitalize first letters and remove hyphens)
-                    dirName=$(echo "$dirName" | sed -E 's/(^|-)([a-z])/\U\2/g')
+                    dirName=$(echo "$dirName" | sed -E 's/[_-]+([a-zA-Z])/\U\1/g' | sed -E 's/^[a-z]/\u&/')
+
                 fi
                 
                 echo "Processing directory: $dirName"
