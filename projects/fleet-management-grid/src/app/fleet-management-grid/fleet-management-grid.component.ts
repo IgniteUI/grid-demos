@@ -10,6 +10,10 @@ import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolS
 import { useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut } from 'igniteui-angular/animations';
 import { DataService } from '../services/data.service';
+import { PeriodEnum } from '../models/period.enum';
+import { DriverDetails } from '../models/driver-details.interface';
+import { ChartType } from '../models/chart-type.enum';
+import { VehicleDetails } from '../models/vehicle-details.interface';
 
 @Component({
   selector: 'app-fleet-management-grid',
@@ -58,35 +62,38 @@ import { DataService } from '../services/data.service';
 export class FleetManagementGridComponent implements OnInit {
 
   //view childs
-  @ViewChild('grid', { static: true }) public grid!: IgxGridComponent;
+  @ViewChild('grid', { static: true }) protected grid!: IgxGridComponent;
   @ViewChild(`locationOverlay`) private locationOverlay!: ElementRef;
   @ViewChild(`driverOverlay`) private driverOverlay!: ElementRef;
-  @ViewChild("map", { static: true }) public map!: IgxGeographicMapComponent;
+  @ViewChild("map", { static: true }) protected map!: IgxGeographicMapComponent;
 
   //overlay IDs
   private locationOverlayId: string | null = null;
   private driverOverlayId: string | null = null;
 
   //overlay toggle flags
-  public isLocationOverlayActive = false;
-  public isDriverOverlayActive = false;
+  protected isLocationOverlayActive: boolean = false;
+  protected isDriverOverlayActive: boolean = false;
 
   //car details for location overlay
-  public vehiclePhoto: string = '';
-  public make: string = '';
-  public model: string = '';
-  public mileage: string = '';
-  public markerLocations: any[] = [];
+  protected vehicleDetails: VehicleDetails = {
+    vehiclePhoto: '',
+    make: '',
+    model: '',
+    mileage: '',
+    markerLocations: []
+  }
 
   //chart periods
-  public periods = {
-    costPerTypePeriod: "ytd",
-    costPerMeterPeriod: "ytd",
-    fuelCostPeriod: "ytd"
+  protected PeriodEnum = PeriodEnum;
+  protected periods = {
+    costPerTypePeriod: PeriodEnum.YTD,
+    costPerMeterPeriod: PeriodEnum.YTD,
+    fuelCostPeriod: PeriodEnum.YTD
   }
 
   //driver details for detail overlay
-  public driverDetails = {
+  protected driverDetails: DriverDetails = {
     name: "",
     license: "",
     address: "",
@@ -99,8 +106,8 @@ export class FleetManagementGridComponent implements OnInit {
   constructor(
     private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-    public dataService: DataService,
-    @Inject(ElementRef) public hostRef: ElementRef) {}
+    protected dataService: DataService,
+    @Inject(ElementRef) private hostRef: ElementRef) {}
 
   public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
@@ -128,23 +135,23 @@ export class FleetManagementGridComponent implements OnInit {
   }
 
   //handling for chart periods
-  public onPeriodChange(event: any, chart: string): void {
-    if (chart == "costsPerType") {
+  protected onPeriodChange(event: any, chart: string): void {
+    if (chart === ChartType.CostPerType) {
       this.periods.costPerTypePeriod = event.newSelection.value;
-    } else if (chart == "costsPerMeter") {
+    } else if (chart === ChartType.CostPerMeter) {
       this.periods.costPerMeterPeriod = event.newSelection.value;
-    } else if (chart == "fuelCosts") {
+    } else if (chart === ChartType.FuelCosts) {
       this.periods.fuelCostPeriod = event.newSelection.value;
     }
 
   }
 
   //getters for image paths
-  public getPathToLogoImage(value: string): string {
+  protected getPathToLogoImage(value: string): string {
     return `/cars/logos/${value}.png`;
   }
 
-  public getPathToCarImage(vehicleId: string): string[] {
+  protected getPathToCarImage(vehicleId: string): string[] {
     const carEntry = CAR_PHOTO_MANIFEST.find(car => car.id === vehicleId);
 
     if (!carEntry) {
@@ -161,16 +168,16 @@ export class FleetManagementGridComponent implements OnInit {
     return carPathsToPhotos;
   }
 
-  public getPathToDriverPhoto(cell: any) {
+  protected getPathToDriverPhoto(cell: any) {
     return `/people/${this.dataService.getDriverPhoto(cell.row.data.driverName)}.jpg`;
   }
 
   //overlay logic
-  public showLocationOverlay(event: MouseEvent, cell: any) {
+  protected showLocationOverlay(event: MouseEvent, cell: any) {
 
     const vehicleId = cell.row?.cells?.find((c: any) => c.column.field === 'vehicleId')?.value;
 
-    if (vehicleId === undefined) {
+    if (!vehicleId) {
       console.error('Vehicle ID not found in data');
       return;
     }
@@ -181,19 +188,19 @@ export class FleetManagementGridComponent implements OnInit {
       console.error(`No vehicle found for ID: ${vehicleId}`);
       return;
     }
-    this.vehiclePhoto = this.getPathToCarImage(vehicleId)[0];
-    this.make = vehicle.make;
-    this.model = vehicle.model;
-    this.mileage = vehicle.details.mileage;
-    this.markerLocations = [
+    this.vehicleDetails.vehiclePhoto = this.getPathToCarImage(vehicleId)[0];
+    this.vehicleDetails.make = vehicle.make;
+    this.vehicleDetails.model = vehicle.model;
+    this.vehicleDetails.mileage = vehicle.details.mileage;
+    this.vehicleDetails.markerLocations = [
       { latitude: parseFloat(vehicle.locationGps.split(',')[0]), longitude: parseFloat(vehicle.locationGps.split(',')[1]) },
     ];
 
     this.map.series.clear();
-    this.addSeriesWith(this.markerLocations, "Red");
+    this.addSeriesWith(this.vehicleDetails.markerLocations, "Red");
     const centerPoint = {
-      left: this.markerLocations[0].longitude - 0.01,
-      top: this.markerLocations[0].latitude - 0.01,
+      left: this.vehicleDetails.markerLocations[0].longitude - 0.01,
+      top: this.vehicleDetails.markerLocations[0].latitude - 0.01,
       width: 0.01,
       height: 0.01
     };
@@ -219,31 +226,36 @@ export class FleetManagementGridComponent implements OnInit {
     this.overlayService.show(this.locationOverlayId);
   }
 
-  public closeLocationOverlay() {
+  protected closeLocationOverlay() {
     this.isLocationOverlayActive = false;
     if (this.locationOverlayId) {
       this.overlayService.hide(this.locationOverlayId);
     }
   }
 
-  public showDriverOverlay(event: MouseEvent, cell: any) {
+  protected showDriverOverlay(event: MouseEvent, cell: any) {
 
     const driverName = cell.row?.cells?.find((c: any) => c.column.field === 'driverName')?.value;
 
-    if (driverName === undefined) {
+    if (!driverName) {
       console.error('Driver not found in data');
       return;
     }
 
     const driverDetails = this.dataService.getDriverData(driverName);
 
-    this.driverDetails.name = driverDetails?.name as string;
-    this.driverDetails.license = driverDetails?.license as string;
-    this.driverDetails.address = driverDetails?.address as string;
-    this.driverDetails.city = driverDetails?.city as string;
-    this.driverDetails.phone = driverDetails?.phone as string;
-    this.driverDetails.email = driverDetails?.email as string;
-    this.driverDetails.photo = `/people/${driverDetails?.photo}.jpg`;
+    if (!driverDetails) {
+      console.error(`No data found for driver: ${driverName}`);
+      return;
+    }
+
+    this.driverDetails.name = driverDetails.name;
+    this.driverDetails.license = driverDetails.license;
+    this.driverDetails.address = driverDetails.address;
+    this.driverDetails.city = driverDetails.city;
+    this.driverDetails.phone = driverDetails.phone;
+    this.driverDetails.email = driverDetails.email;
+    this.driverDetails.photo = `/people/${driverDetails.photo}.jpg`;
 
     const overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
       event.target as HTMLElement,
@@ -265,7 +277,7 @@ export class FleetManagementGridComponent implements OnInit {
     this.overlayService.show(this.driverOverlayId);
   }
 
-  public closeDriverOverlay() {
+  protected closeDriverOverlay() {
     this.isDriverOverlayActive = false;
     if (this.driverOverlayId) {
       this.overlayService.hide(this.driverOverlayId);
@@ -300,12 +312,12 @@ export class FleetManagementGridComponent implements OnInit {
         this.map.series.add(symbolSeries);
   }
 
-  rightAlignedCellStyles = {
+  protected rightAlignedCellStyles = {
     'justify-content': 'flex-end',
     'display': 'flex'
   };
 
-  rightAlignedHeaderStyles = {
+  protected rightAlignedHeaderStyles = {
     'text-align': 'right'
   };
 }

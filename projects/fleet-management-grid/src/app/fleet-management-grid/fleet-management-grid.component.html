@@ -232,10 +232,10 @@
                 <span class="chart-title">Costs per Type</span>
                 <igx-select #select class="chart-select" [value]="periods.costPerTypePeriod" (selectionChanging)="onPeriodChange($event, 'costsPerType')">
                   <label igxLabel>Period</label>
-                  <igx-select-item value="ytd">YTD</igx-select-item>
-                  <igx-select-item value="3months">Last 3 Months</igx-select-item>
-                  <igx-select-item value="6months">Last 6 Months</igx-select-item>
-                  <igx-select-item value="12months">Last 12 Months</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.YTD">YTD</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.ThreeMonths">Last 3 Months</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.SixMonths">Last 6 Months</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.TwelveMonths">Last 12 Months</igx-select-item>
                 </igx-select>
               </div>
               <div class="chart-content">
@@ -292,10 +292,10 @@
                 <span class="chart-title">Fuel Costs per Month</span>
                 <igx-select #select class="chart-select" [value]="periods.fuelCostPeriod" (selectionChanging)="onPeriodChange($event, 'fuelCosts')">
                   <label igxLabel>Period</label>
-                  <igx-select-item value="ytd">YTD</igx-select-item>
-                  <igx-select-item value="3months">Last 3 Months</igx-select-item>
-                  <igx-select-item value="6months">Last 6 Months</igx-select-item>
-                  <igx-select-item value="12months">Last 12 Months</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.YTD">YTD</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.ThreeMonths">Last 3 Months</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.SixMonths">Last 6 Months</igx-select-item>
+                  <igx-select-item [value]="PeriodEnum.TwelveMonths">Last 12 Months</igx-select-item>
                 </igx-select>
               </div>
               <div class="chart-content">
@@ -410,15 +410,15 @@
 <div class="overlay overlay-location" [hidden]="!isLocationOverlayActive" #locationOverlay>
   <igx-card elevated>
     <igx-card-header class="overlay-location-header">
-      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="vehiclePhoto"></igx-avatar>
-      <h6 class="overlay-title">{{ make }} {{ model }}</h6>
-      <span class="overlay-text">Mileage: {{ mileage }}</span>
+      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="vehicleDetails.vehiclePhoto"></igx-avatar>
+      <h6 class="overlay-title">{{ vehicleDetails.make }} {{ vehicleDetails.model }}</h6>
+      <span class="overlay-text">Mileage: {{ vehicleDetails.mileage }}</span>
     </igx-card-header>
     <igx-card-content class="overlay-location-content">
       <igx-geographic-map #map [width]="'100%'" [height]="'100%'"
         zoomable="false"
         draggable="false"
-        [dataSource]="markerLocations"
+        [dataSource]="vehicleDetails.markerLocations"
         latitudeMemberPath="latitude"
         longitudeMemberPath="longitude">
     </igx-geographic-map>
