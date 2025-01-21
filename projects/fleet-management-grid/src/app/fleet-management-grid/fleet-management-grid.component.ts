@@ -243,7 +243,7 @@ export class FleetManagementGridComponent implements OnInit {
     this.driverDetails.city = driverDetails?.city as string;
     this.driverDetails.phone = driverDetails?.phone as string;
     this.driverDetails.email = driverDetails?.email as string;
-    this.driverDetails.photo = `/people/${driverDetails?.photo}.jpg`;
+    this.driverDetails.photo = `people/${driverDetails?.photo}.jpg`;
 
     const overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
       event.target as HTMLElement,
