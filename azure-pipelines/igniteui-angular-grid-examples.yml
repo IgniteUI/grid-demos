@@ -54,6 +54,7 @@ stages:
                 # Give each sample a version in its package.json file - for traceability
                 cd $rootPath/$dirname
                 npm --no-git-tag-version version $(Build.BuildNumber) --verbose
+                pwd
 
                 # Check if the directory name is already camel-case
                 if [[ "$dirName" =~ ^[A-Z]+[a-z]+([A-Z][a-z]*)*$ ]]; then
@@ -76,7 +77,15 @@ stages:
             
             echo "All sample projects have been compressed and saved to the artifacts directory."
 
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Samples Sources zips'
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)'
+          artifact: 'samplesSourcesZips'
+          publishLocation: 'pipeline'
+
       - task: Npm@1
+        displayName: 'Npm install'
         inputs:
           verbose: ${{ parameters.isVerbose }}
           command: custom
@@ -121,7 +130,7 @@ stages:
           customCommand: 'run build:ci'
 
       - task: PublishPipelineArtifact@1
-        displayName: 'Publish pipeline artifact'
+        displayName: 'Publish app'
         inputs:
           targetPath: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
           artifact: 'dist.grid-demos.browser'
