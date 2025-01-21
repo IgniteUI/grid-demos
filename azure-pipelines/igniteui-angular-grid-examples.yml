@@ -54,9 +54,6 @@ stages:
                 # Give each sample a version in its package.json file - for traceability
                 cd "$subdirectory"
                 pwd
-                echo "checking if we are in git dir"
-                ls -a
-                git status
                 npm version $(Build.BuildNumber) --no-git-tag-version --verbose
 
                 # Check if the directory name is already camel-case
