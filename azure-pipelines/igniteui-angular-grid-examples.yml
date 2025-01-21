@@ -52,7 +52,7 @@ stages:
                 dirName=$(basename "$subdirectory")
 
                 # Give each sample a version in its package.json file - for traceability
-                cd $dirname
+                cd $rootPath/$dirname
                 npm version $(Build.BuildNumber)
 
                 # Check if the directory name is already camel-case
