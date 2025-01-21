@@ -52,7 +52,7 @@ stages:
                 dirName=$(basename "$subdirectory")
 
                 # Give each sample a version in its package.json file - for traceability
-                cd $rootPath/$subdirectory
+                cd "$subdirectory"
                 pwd
                 npm --no-git-tag-version version $(Build.BuildNumber) --verbose
 
