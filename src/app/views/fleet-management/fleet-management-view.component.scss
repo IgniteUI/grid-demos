@@ -1,5 +1,22 @@
+@use "igniteui-angular/theming" as *;
+
+@include core();
+@include typography();
+@include theme(
+  $palette: $dark-material-palette,
+  $schema: $dark-material-schema
+);
+
 :host {
   display: block;
   height: 100%;
   width: 100%;
+
+  ::ng-deep {
+    @include typography();
+    @include theme(
+      $palette: $dark-material-palette,
+      $schema: $dark-material-schema
+    );
+  }
 }
