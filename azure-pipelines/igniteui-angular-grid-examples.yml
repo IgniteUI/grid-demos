@@ -17,7 +17,7 @@ parameters:
   type: boolean
   default: true
 
-name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+name: $(Year:yyyy).$(Month).$(DayOfMonth)-r$(Rev:.r)
 
 stages:
 - stage: Build
@@ -50,7 +50,11 @@ stages:
             for subdirectory in $subdirectories; do
                 # Extract the directory name from the path
                 dirName=$(basename "$subdirectory")
-                
+
+                # Give each sample a version in its package.json file - for traceability
+                cd $dirname
+                npm version $(Build.BuildNumber)
+
                 # Check if the directory name is already camel-case
                 if [[ "$dirName" =~ ^[A-Z]+[a-z]+([A-Z][a-z]*)*$ ]]; then
                     # If already camel-case, print it as is
@@ -63,14 +67,11 @@ stages:
                 echo "Processing directory: $dirName"
                 
                 # Define the name for the zip file
-                zipName="IgniteUI_Angular_ApplicationSample_${dirName}_Source.zip"
+                zipName="$(Build.ArtifactStagingDirectory)/IgniteUI_Angular_ApplicationSample_${dirName}_Source.zip"
                 echo "Creating ZIP: $zipName"
                 
                 # Compress the directory into a ZIP file
                 zip -r "$zipName" "$subdirectory"
-                
-                # Move the zip to artifacts directory
-                mv "$zipName" "<artifacts dir>/$zipName"
             done
             
             echo "All sample projects have been compressed and saved to the artifacts directory."
