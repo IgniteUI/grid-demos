@@ -54,7 +54,7 @@ stages:
                 # Give each sample a version in its package.json file - for traceability
                 cd "$subdirectory"
                 pwd
-                npm version $(Build.BuildNumber) --git-tag-version=false --verbose
+                npm version $(Build.BuildNumber) --no-git-tag-version --no-commit-hooks --verbose
 
                 # Check if the directory name is already camel-case
                 if [[ "$dirName" =~ ^[A-Z]+[a-z]+([A-Z][a-z]*)*$ ]]; then
