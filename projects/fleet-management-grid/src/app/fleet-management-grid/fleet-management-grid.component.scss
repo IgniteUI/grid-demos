@@ -1,5 +1,11 @@
 @use "igniteui-angular/theming" as *;
 
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 igx-tabs {
   flex: 1;
   width: 100%;
