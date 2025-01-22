@@ -73,7 +73,7 @@ stages:
                 echo "Creating ZIP: $zipName"
                 
                 # Compress the directory into a ZIP file
-                zip -r "$zipName" "$subdirectory"
+                (cd "$subdirectory" && zip -r "$zipName" .)
             done
             
             echo "All sample projects have been compressed and saved to the artifacts directory."
