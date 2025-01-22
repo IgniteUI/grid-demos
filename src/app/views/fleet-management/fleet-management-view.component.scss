@@ -18,5 +18,10 @@
       $palette: $dark-material-palette,
       $schema: $dark-material-schema
     );
+
+    igx-card .igx-card-header__thumbnail {
+      align-self: center;
+      margin-inline-end: 0 !important;
+    }
   }
 }

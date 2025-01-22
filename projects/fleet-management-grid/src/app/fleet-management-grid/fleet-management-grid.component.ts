@@ -4,7 +4,9 @@ import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-exte
 import { AutoPositionStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection } from 'igniteui-angular';
 import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule } from 'igniteui-angular-charts';
 import CAR_PHOTO_MANIFEST from '../../assets/car_photo_manifest.json';
-import CAR_IMAGES from '../../assets/car_images.json'
+import CAR_IMAGES from '../../assets/car_images.json';
+import VEHICLE_DETAILS from '../../assets/vehicle_details.json';
+import DRIVER_CATEGORIES from '../../assets/driver_categories.json';
 import { IgDataTemplate, IgxShapeDataSourceModule } from 'igniteui-angular-core';
 import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolSeriesComponent } from 'igniteui-angular-maps';
 import { useAnimation } from '@angular/animations';
@@ -61,7 +63,7 @@ import { VehicleDetails } from '../models/vehicle-details.interface';
 })
 export class FleetManagementGridComponent implements OnInit {
 
-  //view childs
+  //view children
   @ViewChild('grid', { static: true }) protected grid!: IgxGridComponent;
   @ViewChild(`locationOverlay`) private locationOverlay!: ElementRef;
   @ViewChild(`driverOverlay`) private driverOverlay!: ElementRef;
@@ -103,8 +105,11 @@ export class FleetManagementGridComponent implements OnInit {
     photo: ""
   }
 
+  protected VEHICLE_DETAILS = VEHICLE_DETAILS;
+  protected DRIVER_CATEGORIES = DRIVER_CATEGORIES;
+
   constructor(
-    private iconService: IgxIconService,
+    @Inject(IgxIconService) private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
     protected dataService: DataService,
     @Inject(ElementRef) private hostRef: ElementRef) {}
@@ -282,6 +287,28 @@ export class FleetManagementGridComponent implements OnInit {
     if (this.driverOverlayId) {
       this.overlayService.hide(this.driverOverlayId);
     }
+  }
+
+  protected getValueByPath(obj: any, path: string) {
+    return path.split('.').reduce((o, key) => (o && o[key] !== undefined) ? o[key] : 'N/A', obj);
+  }
+
+  protected getStatusType(status: string): string {
+    const types: Record<string, string> = {
+      "Available": "success",
+      "In Maintenance": "error",
+      "Active": "info",
+    };
+    return types[status] || "default";
+  }
+
+  protected getStatusIcon(status: string): string {
+    const icons: Record<string, string> = {
+      "Available": "check",
+      "In Maintenance": "wrench",
+      "Active": "delivery"
+    };
+    return icons[status] || "info";
   }
 
   //util function for adding map series

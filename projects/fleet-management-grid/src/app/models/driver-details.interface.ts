@@ -6,4 +6,6 @@ export interface DriverDetails {
   phone: string;
   email: string;
   photo: string;
+
+  [key: string]: string;
 }
