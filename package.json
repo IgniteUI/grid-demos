@@ -73,9 +73,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.6.2"
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.26.0",
-    "@rollup/rollup-darwin-arm64": "4.26.0"
   }
 }
