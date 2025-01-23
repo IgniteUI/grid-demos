@@ -17,12 +17,14 @@ parameters:
   type: boolean
   default: true
 
-name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+name: $(Year:yyyy).$(Month).$(DayOfMonth)-r$(Rev:.r)
 
 stages:
 - stage: Build
   pool:
-    name: BuildAgentOnPrem
+    vmImage: ubuntu-latest
+
     demands: npm
   jobs:
   - job: BuildSamples
@@ -36,12 +38,59 @@ stages:
           versionSource: 'spec'
           versionSpec: '18.x'
 
-      - task: Npm@1
+      - task: Bash@3
+        displayName: 'Create download artifact per sample (Shell)'
         inputs:
-          verbose: ${{ parameters.isVerbose }}
-          command: custom
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'install --legacy-peer-deps'
+          targetType: 'inline'
+          script: |
+            # Define the root path where projects are located
+            rootPath="$(Build.SourcesDirectory)/projects"
+            
+            # Get all first-level subdirectories in the specified root path
+            subdirectories=$(find "$rootPath" -mindepth 1 -maxdepth 1 -type d)
+            
+            for subdirectory in $subdirectories; do
+                # Extract the directory name from the path
+                dirName=$(basename "$subdirectory")
+
+                # Give each sample a version in its package.json file - for traceability
+                cd "$subdirectory"
+                echo "Calling npm version command"
+                npm version $(Build.BuildNumber) --no-git-tag-version
+
+                # Check if the directory name is already camel-case
+                if [[ "$dirName" =~ ^[A-Z]+[a-z]+([A-Z][a-z]*)*$ ]]; then
+                    # If already camel-case, print it as is
+                    echo "$dirName"
+                else
+                    # Convert to camel-case (capitalize first letters and remove hyphens)
+                    dirName=$(echo "$dirName" | sed -E 's/(^|-)([a-z])/\U\2/g')
+
+                fi
+                
+                echo "Processing directory: $dirName"
+                
+                # Define the name for the zip file
+                zipName="$(Build.ArtifactStagingDirectory)/IgniteUI_Angular_ApplicationSample_${dirName}_Source.zip"
+                echo "Creating ZIP: $zipName"
+                
+                # Compress the directory into a ZIP file
+                (cd "$subdirectory" && zip -r "$zipName" .)
+            done
+            
+            echo "All sample projects have been compressed and saved to the artifacts directory."
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Samples Sources zips'
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)'
+          artifact: 'samplesSourcesZips'
+          publishLocation: 'pipeline'
+
+      - task: Npm@1
+        displayName: 'Npm install'
+        inputs:
+          command: 'install'
 
       - task: Npm@1
         displayName: 'Install @angular/cli globally'
@@ -62,7 +111,7 @@ stages:
       - task: npmAuthenticate@0
         displayName: '[IG Production ProGet] npm authenticate'
         inputs:
-          workingFile: '$(Build.SourcesDirectory)\.npmrc'
+          workingFile: '$(Build.SourcesDirectory)/.npmrc'
           customEndpoint: 'public proget'
 
       - task: PowerShell@2
@@ -81,9 +130,10 @@ stages:
           customCommand: 'run build:ci'
 
       - task: PublishPipelineArtifact@1
-        displayName: 'Publish pipeline artifact'
+
+        displayName: 'Publish app'
         inputs:
-          targetPath: '$(Build.SourcesDirectory)\dist\grid-demos\browser'
+          targetPath: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
           artifact: 'dist.grid-demos.browser'
           publishLocation: 'pipeline'
 
