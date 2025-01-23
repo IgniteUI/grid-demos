@@ -52,10 +52,6 @@ export class HrPortalComponent implements OnInit, AfterViewInit {
   public localData: Employee[] = [];
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
   public treeGrid!: IgxTreeGridComponent;
-  public rowStyles = {
-    background: (row: RowType) =>
-      row.index % 2 === 0 ? 'rgba(255,255,255)' : '',
-  };
 
   constructor(private iconService: IgxIconService) {}
 
