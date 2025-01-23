@@ -153,7 +153,7 @@ export class FleetManagementGridComponent implements OnInit {
 
   //getters for image paths
   protected getPathToLogoImage(value: string): string {
-    return `/cars/logos/${value}.png`;
+    return `cars/logos/${value}.png`;
   }
 
   protected getPathToCarImage(vehicleId: string): string[] {
@@ -168,13 +168,13 @@ export class FleetManagementGridComponent implements OnInit {
 
     const carPhotoNames = (CAR_IMAGES as Record<string, string[]>)[folderName];
 
-    const carPathsToPhotos = carPhotoNames.map(photo => `/cars/photos/${folderName}/${photo}`);
+    const carPathsToPhotos = carPhotoNames.map(photo => `cars/photos/${folderName}/${photo}`);
 
     return carPathsToPhotos;
   }
 
   protected getPathToDriverPhoto(cell: any) {
-    return `/people/${this.dataService.getDriverPhoto(cell.row.data.driverName)}.jpg`;
+    return `people/${this.dataService.getDriverPhoto(cell.row.data.driverName)}.jpg`;
   }
 
   //overlay logic
@@ -260,7 +260,7 @@ export class FleetManagementGridComponent implements OnInit {
     this.driverDetails.city = driverDetails.city;
     this.driverDetails.phone = driverDetails.phone;
     this.driverDetails.email = driverDetails.email;
-    this.driverDetails.photo = `/people/${driverDetails.photo}.jpg`;
+    this.driverDetails.photo = `people/${driverDetails.photo}.jpg`;
 
     const overlaySettings = IgxOverlayService.createRelativeOverlaySettings(
       event.target as HTMLElement,

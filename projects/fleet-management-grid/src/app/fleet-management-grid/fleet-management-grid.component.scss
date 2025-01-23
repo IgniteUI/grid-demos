@@ -9,6 +9,12 @@
   --default-border: 1px solid #8A8A8A;
 }
 
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 igx-tabs {
   flex: 1;
   width: 100%;
