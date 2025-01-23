@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Employee, EMPLOYEE_DATA } from '../data/localData';
 import {
   IgxTreeGridComponent,
@@ -53,7 +53,7 @@ export class HrPortalComponent implements OnInit, AfterViewInit {
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
   public treeGrid!: IgxTreeGridComponent;
 
-  constructor(private iconService: IgxIconService) {}
+  constructor(private iconService: IgxIconService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.localData = EMPLOYEE_DATA;
@@ -129,5 +129,6 @@ export class HrPortalComponent implements OnInit, AfterViewInit {
         strategy: DefaultSortingStrategy.instance(),
       },
     ];
+    this.cdr.detectChanges();
   }
 }
