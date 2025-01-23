@@ -11,7 +11,6 @@
     "start:sales": "ng serve --project=sales-grid",
     "start:fleet": "ng serve --project=fleet-management",
     "test": "ng test",
-    "lint": "ng lint",
     "_": "",
     "ISS Deploy Scripts": "For use only with deployment on IIS. Make sure `base-href` matches the alias of you app",
     "watch": "ng build --watch --configuration development --base-href /angular-grid-examples/",
