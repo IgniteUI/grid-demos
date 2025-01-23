@@ -50,6 +50,10 @@
               {
                 "glob": "**/*",
                 "input": "projects/sales-grid/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/fleet-management-grid/public"
               }
             ],
             "styles": [
@@ -705,5 +709,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

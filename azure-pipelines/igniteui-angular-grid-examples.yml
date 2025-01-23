@@ -17,12 +17,14 @@ parameters:
   type: boolean
   default: true
 
+
 name: $(Year:yyyy).$(Month).$(DayOfMonth)-r$(Rev:.r)
 
 stages:
 - stage: Build
   pool:
     vmImage: ubuntu-latest
+
     demands: npm
   jobs:
   - job: BuildSamples
@@ -88,10 +90,7 @@ stages:
       - task: Npm@1
         displayName: 'Npm install'
         inputs:
-          verbose: ${{ parameters.isVerbose }}
-          command: custom
-          workingDir: '$(Build.SourcesDirectory)'
-          customCommand: 'install --legacy-peer-deps'
+          command: 'install'
 
       - task: Npm@1
         displayName: 'Install @angular/cli globally'
@@ -131,6 +130,7 @@ stages:
           customCommand: 'run build:ci'
 
       - task: PublishPipelineArtifact@1
+
         displayName: 'Publish app'
         inputs:
           targetPath: '$(Build.SourcesDirectory)/dist/grid-demos/browser'

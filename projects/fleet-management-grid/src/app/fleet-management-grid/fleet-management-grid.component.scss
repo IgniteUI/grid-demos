@@ -1,0 +1,273 @@
+@use "igniteui-angular/theming" as *;
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+igx-tabs {
+  flex: 1;
+  width: 100%;
+}
+
+igx-divider {
+  color: var(--ig-gray-200);
+  opacity: 24%;
+}
+
+igx-card {
+  border: 0px;
+  border-radius: 4px;
+}
+.grid-container {
+  padding: 16px;
+}
+
+.details-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  width: 100%;
+}
+
+.carousel-container {
+  width: 420px;
+  height: 240px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.details-table {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% * (2 / 3));
+  height: auto;
+  justify-content: space-around;
+}
+
+.detail-block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.detail-category-container {
+  width: 50%;
+  padding-left: 25px;
+}
+
+.detail-content-container {
+  width: 50%;
+}
+
+.detail-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 0.8125rem;
+
+}
+
+.detail-category {
+  font-weight: bold;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 16px;
+  height: 100%;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-rows: 40px auto;
+  height: 100%;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.chart-select {
+  width: 40%;
+}
+
+.chart-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #8A8A8A;
+}
+
+.content-wrapper {
+  padding: 16px;
+}
+
+.pie-chart {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.area-chart {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.column-chart {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.column-chart-two-series {
+  align-self: center;
+}
+
+.utilization-chart {
+  flex-direction: column;
+  align-items: start;
+}
+
+.status-value {
+  padding-left: 8px;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  width: 360px;
+  height: 396px;
+  box-shadow: var(--ig-elevation-24);
+}
+
+.igx-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  height: 396px;
+}
+
+.overlay-location-header {
+  height: 38%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+}
+
+.overlay-title {
+  padding-top: 8px;
+}
+
+.overlay-text {
+  font-size: 14px;
+}
+
+.overlay-driver {
+  width: 327px;
+  height: 344px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.overlay-driver-header {
+  height: 38%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+}
+
+.overlay-location-content {
+  height: 48%;
+  width: 100%;
+  padding: 0px;
+}
+
+.overlay-driver-content {
+  height: 48%;
+  width: 100%;
+  padding: 0px;
+  justify-content: center;
+}
+
+.overlay-location-actions {
+  height: 13%;
+  width: 100%;
+  justify-content: end;
+  margin: 0px;
+}
+
+.overlay-driver-actions {
+  height: 13%;
+  width: 100%;
+  justify-content: end;
+  margin: 8px;
+}
+
+.driver-block-container {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  width: 85%;
+}
+
+.driver-category-container {
+  width: 50%;
+}
+
+.driver-detail-container {
+  width: 50%;
+}
+
+::ng-deep .igx-card-header__thumbnail {
+  align-self: center;
+  margin-inline-end: 0px;
+}
+
+.driver-avatar {
+  --size: 22px
+}
+
+.overlay-avatar {}
+
+.driver-overlay-avatar {
+  //--size: 64px
+}
+
+.logo-avatar {
+  --size: 22px;
+  border-radius: 0.25rem;
+
+}
+
+.driver-badge {
+  margin-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
