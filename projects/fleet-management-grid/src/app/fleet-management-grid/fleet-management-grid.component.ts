@@ -12,7 +12,7 @@ import { IgxGeographicMapComponent, IgxGeographicMapModule, IgxGeographicSymbolS
 import { useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut } from 'igniteui-angular/animations';
 import { DataService } from '../services/data.service';
-import { PeriodEnum } from '../models/period.enum';
+import { Period } from '../models/period.enum';
 import { DriverDetails } from '../models/driver-details.interface';
 import { ChartType } from '../models/chart-type.enum';
 import { VehicleDetails } from '../models/vehicle-details.interface';
@@ -87,11 +87,11 @@ export class FleetManagementGridComponent implements OnInit {
   }
 
   //chart periods
-  protected PeriodEnum = PeriodEnum;
+  protected Period = Period;
   protected periods = {
-    costPerTypePeriod: PeriodEnum.YTD,
-    costPerMeterPeriod: PeriodEnum.YTD,
-    fuelCostPeriod: PeriodEnum.YTD
+    costPerTypePeriod: Period.YTD,
+    costPerMeterPeriod: Period.YTD,
+    fuelCostPeriod: Period.YTD
   }
 
   //driver details for detail overlay
@@ -219,8 +219,8 @@ export class FleetManagementGridComponent implements OnInit {
 
     overlaySettings.outlet = this.hostRef;
 
-    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
-    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
+    overlaySettings.positionStrategy!.settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
+    overlaySettings.positionStrategy!.settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
 
     if (this.locationOverlayId) {
       this.overlayService.detach(this.locationOverlayId);
@@ -270,8 +270,8 @@ export class FleetManagementGridComponent implements OnInit {
 
     overlaySettings.outlet = this.hostRef;
 
-    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
-    (overlaySettings.positionStrategy as AutoPositionStrategy).settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
+    overlaySettings.positionStrategy!.settings.openAnimation = useAnimation(fadeIn, { params: { duration: '500ms', fromOpacity: 0, toOpacity: 1 } });
+    overlaySettings.positionStrategy!.settings.closeAnimation = useAnimation(fadeOut, { params: { duration: '500ms', fromOpacity: 1, toOpacity: 0 } });
 
     if (this.driverOverlayId) {
       this.overlayService.detach(this.driverOverlayId);

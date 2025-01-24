@@ -116,10 +116,10 @@
                 <span class="chart-title">Costs per Type</span>
                 <igx-select #select class="chart-select" [value]="periods.costPerTypePeriod" (selectionChanging)="onPeriodChange($event, 'costsPerType')">
                   <label igxLabel>Period</label>
-                  <igx-select-item [value]="PeriodEnum.YTD">YTD</igx-select-item>
-                  <igx-select-item [value]="PeriodEnum.ThreeMonths">Last 3 Months</igx-select-item>
-                  <igx-select-item [value]="PeriodEnum.SixMonths">Last 6 Months</igx-select-item>
-                  <igx-select-item [value]="PeriodEnum.TwelveMonths">Last 12 Months</igx-select-item>
+                  <igx-select-item [value]="Period.YTD">YTD</igx-select-item>
+                  <igx-select-item [value]="Period.ThreeMonths">Last 3 Months</igx-select-item>
+                  <igx-select-item [value]="Period.SixMonths">Last 6 Months</igx-select-item>
+                  <igx-select-item [value]="Period.TwelveMonths">Last 12 Months</igx-select-item>
                 </igx-select>
               </div>
               <div class="chart-content">
@@ -176,10 +176,10 @@
                 <span class="chart-title">Fuel Costs per Month</span>
                 <igx-select #select class="chart-select" [value]="periods.fuelCostPeriod" (selectionChanging)="onPeriodChange($event, 'fuelCosts')">
                   <label igxLabel>Period</label>
-                  <igx-select-item [value]="PeriodEnum.YTD">YTD</igx-select-item>
-                  <igx-select-item [value]="PeriodEnum.ThreeMonths">Last 3 Months</igx-select-item>
-                  <igx-select-item [value]="PeriodEnum.SixMonths">Last 6 Months</igx-select-item>
-                  <igx-select-item [value]="PeriodEnum.TwelveMonths">Last 12 Months</igx-select-item>
+                  <igx-select-item [value]="Period.YTD">YTD</igx-select-item>
+                  <igx-select-item [value]="Period.ThreeMonths">Last 3 Months</igx-select-item>
+                  <igx-select-item [value]="Period.SixMonths">Last 6 Months</igx-select-item>
+                  <igx-select-item [value]="Period.TwelveMonths">Last 12 Months</igx-select-item>
                 </igx-select>
               </div>
               <div class="chart-content">

@@ -1,4 +1,4 @@
-export enum PeriodEnum {
+export enum Period {
   YTD = 'ytd',
   ThreeMonths = '3months',
   SixMonths = '6months',
