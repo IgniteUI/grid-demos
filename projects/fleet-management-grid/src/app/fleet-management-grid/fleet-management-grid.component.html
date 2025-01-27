@@ -1,4 +1,4 @@
-<igx-grid [data]="dataService.getVehiclesData()" #grid height="100%" width="100%" style="--ig-size: var(--ig-size-small)">
+<igx-grid class="main-grid" [data]="dataService.getVehiclesData()" #grid height="100%" width="100%">
   <igx-grid-toolbar>
     <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -27,14 +27,8 @@
   <igx-column field="vin" header="VIN" width="15%"></igx-column>
   <igx-column field="status" header="Status" [sortable]="true" width="14%">
     <ng-template igxCell let-value>
-      <igx-badge type="success" *ngIf="value === 'Available'">
-        <igx-icon family="imx-icons" name="check" [style.color]="'#000000'"></igx-icon>
-      </igx-badge>
-      <igx-badge type="error" *ngIf="value === 'In Maintenance'">
-        <igx-icon family="imx-icons" name="wrench" [style.color]="'#000000'"></igx-icon>
-      </igx-badge>
-      <igx-badge type="info" *ngIf="value === 'Active'" [style.background-color]="'var(--ig-primary-500)'">
-        <igx-icon family="imx-icons" name="delivery" [style.color]="'#000000'"></igx-icon>
+      <igx-badge [type]="getStatusType(value)">
+        <igx-icon class="icon-style" family="imx-icons" [name]="getStatusIcon(value)"></igx-icon>
       </igx-badge>
       <span class="status-value">{{ value }}</span>
     </ng-template>
@@ -42,11 +36,11 @@
   <igx-column field="locationCity" header="Location (City)" [sortable]="true" width="11%"></igx-column>
   <igx-column field="locationGps" header="Location (GPS)" width="15%">
     <ng-template igxCell let-cell="cell">
-      <a #coordinates href="#" style="color: #f5f5f5;" (click)="showLocationOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
+      <a class="link-style" #coordinates href="#" (click)="showLocationOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
     </ng-template>
   </igx-column>
 
-  <ng-template igxGridDetail let-dataItem style="width: 100%;">
+  <ng-template igxGridDetail let-dataItem>
     <igx-tabs>
 
       <igx-tab-item>
@@ -67,128 +61,18 @@
             </div>
 
             <div class="details-table">
-              <div class="detail-block-container">
+              <div class="detail-block-container" *ngFor="let categorySet of [VEHICLE_DETAILS.detailsCategories, VEHICLE_DETAILS.engineCategories]">
                 <div class="detail-category-container">
-                  <div class="detail-item">
-                    <span class="detail-category">Make: </span>
+                  <div class="detail-item" *ngFor="let category of categorySet">
+                    <span class="detail-category">{{ category.label }}: </span>
+                    <igx-divider></igx-divider>
                   </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Generation: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Year of Manufacture: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Fuel Type: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Doors: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Seats: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Transmission: </span>
-                  </div>
-                  <igx-divider></igx-divider>
                 </div>
                 <div class="detail-content-container">
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.make }}</span>
+                  <div class="detail-item" *ngFor="let category of categorySet">
+                    <span class="detail-value">{{ getValueByPath(dataItem, category.key) }}</span>
+                    <igx-divider></igx-divider>
                   </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.generation }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.yearOfManufacture }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.fuelType }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.doors }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.seats }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.transmission }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                </div>
-              </div>
-              <div class="detail-block-container">
-                <div class="detail-category-container">
-                  <div class="detail-item">
-                    <span class="detail-category">Engine: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Power: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Mileage: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Cubature: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Color: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">MSRP: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-category">Toll Pass ID: </span>
-                  </div>
-                  <igx-divider></igx-divider>
-                </div>
-                <div class="detail-content-container">
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.engine }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.power }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.mileage }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.cubature }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.color }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.msrp }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
-                  <div class="detail-item">
-                    <span class="detail-value">{{ dataItem.details.tollPassId }}</span>
-                  </div>
-                  <igx-divider></igx-divider>
                 </div>
               </div>
             </div>
@@ -213,7 +97,7 @@
           <span igxTabHeaderLabel>Maintenance</span>
         </igx-tab-header>
 
-        <igx-tab-content style="width: 100%;">
+        <igx-tab-content>
           <div class="grid-container">
             <ng-container *ngTemplateOutlet="maintenance; context: { $implicit: dataService.getMaintenanceData(dataItem.vehicleId)}"></ng-container>
           </div>
@@ -227,20 +111,21 @@
 
         <igx-tab-content>
           <div class="dashboard">
-            <div class="chart-container pie-chart">
+            <div class="chart-container pie-chart-container">
               <div class="chart-header">
                 <span class="chart-title">Costs per Type</span>
                 <igx-select #select class="chart-select" [value]="periods.costPerTypePeriod" (selectionChanging)="onPeriodChange($event, 'costsPerType')">
                   <label igxLabel>Period</label>
-                  <igx-select-item value="ytd">YTD</igx-select-item>
-                  <igx-select-item value="3months">Last 3 Months</igx-select-item>
-                  <igx-select-item value="6months">Last 6 Months</igx-select-item>
-                  <igx-select-item value="12months">Last 12 Months</igx-select-item>
+                  <igx-select-item [value]="Period.YTD">YTD</igx-select-item>
+                  <igx-select-item [value]="Period.ThreeMonths">Last 3 Months</igx-select-item>
+                  <igx-select-item [value]="Period.SixMonths">Last 6 Months</igx-select-item>
+                  <igx-select-item [value]="Period.TwelveMonths">Last 12 Months</igx-select-item>
                 </igx-select>
               </div>
               <div class="chart-content">
                 <igx-pie-chart
                   name="chart"
+                  class="chart-canvas"
                   #chart
                   legendLabelMemberPath="category"
                   labelMemberPath="summary"
@@ -248,14 +133,13 @@
                   labelsPosition="OutsideEnd"
                   radiusFactor="0.7"
                   [dataSource]="dataService.getCostsPerTypeData(dataItem.vehicleId, periods.costPerTypePeriod)"
-                  style="width: 100%; height: 100%;"
                   actualLabelOuterColor="#ededed"
                   >
                 </igx-pie-chart>
               </div>
             </div>
 
-            <div class="chart-container area-chart">
+            <div class="chart-container area-chart-container">
               <div class="chart-header">
                 <span class="chart-title">Costs per Meter, per Quarter</span>
                 <igx-select #select class="chart-select" [value]="periods.costPerMeterPeriod" (selectionChanging)="onPeriodChange($event, 'costsPerMeter')">
@@ -270,12 +154,12 @@
               <div class="chart-content">
                 <igx-category-chart
                   name="chart"
+                  class="chart-canvas"
                   [dataSource]="dataService.getCostsPerMeterData(dataItem.vehicleId, periods.costPerMeterPeriod)"
                   chartType="Area"
                   isHorizontalZoomEnabled="false"
                   isVerticalZoomEnabled="false"
                   computedPlotAreaMarginMode="Series"
-                  style="width: 100%; height: 100%;"
                   xAxisLabelTextColor="#ededed"
                   yAxisLabelTextColor="#ededed"
                   yAxisInterval="20"
@@ -287,20 +171,21 @@
               </div>
             </div>
 
-            <div class="chart-container column-chart">
+            <div class="chart-container column-chart-container">
               <div class="chart-header">
                 <span class="chart-title">Fuel Costs per Month</span>
                 <igx-select #select class="chart-select" [value]="periods.fuelCostPeriod" (selectionChanging)="onPeriodChange($event, 'fuelCosts')">
                   <label igxLabel>Period</label>
-                  <igx-select-item value="ytd">YTD</igx-select-item>
-                  <igx-select-item value="3months">Last 3 Months</igx-select-item>
-                  <igx-select-item value="6months">Last 6 Months</igx-select-item>
-                  <igx-select-item value="12months">Last 12 Months</igx-select-item>
+                  <igx-select-item [value]="Period.YTD">YTD</igx-select-item>
+                  <igx-select-item [value]="Period.ThreeMonths">Last 3 Months</igx-select-item>
+                  <igx-select-item [value]="Period.SixMonths">Last 6 Months</igx-select-item>
+                  <igx-select-item [value]="Period.TwelveMonths">Last 12 Months</igx-select-item>
                 </igx-select>
               </div>
               <div class="chart-content">
                 <igx-category-chart
                   name="chart"
+                  class="column-chart"
                   #chart
                   chartType="Column"
                   [dataSource]="dataService.getFuelCostsData(dataItem.vehicleId, periods.fuelCostPeriod)"
@@ -313,7 +198,7 @@
                   yAxisMinimumValue="0"
                   xAxisMinimumGapSize="30"
                   yAxisLabelRightMargin="7.5"
-                  style="width: 95%; height: 420px;">
+                  >
                 </igx-category-chart>
               </div>
             </div>
@@ -329,7 +214,7 @@
 
         <igx-tab-content>
           <div class="content-wrapper">
-            <div class="chart-content utilization-chart">
+            <div class="chart-content utilization-chart-container">
               <h6>Utilization per Month</h6>
               <igx-legend
                 name="Legend"
@@ -353,7 +238,7 @@
                 yAxisInterval="200"
                 xAxisMinimumGapSize="20"
                 yAxisLabelRightMargin="7.5"
-                style="width: 95%; height: 390px;">
+                >
               </igx-category-chart>
             </div>
           </div>
@@ -369,7 +254,7 @@
     <igx-column field="driverName" header="Driver" width="18%">
       <ng-template igxCell let-cell="cell">
         <igx-avatar shape="circle" size="small" [src]="getPathToDriverPhoto(cell)" class="driver-avatar"></igx-avatar>
-        <a class="status-value" #coordinates href="#" style="color:#f5f5f5;" (click)="showDriverOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
+        <a class="status-value" #coordinates href="#" (click)="showDriverOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
         <igx-badge class="driver-badge" type="success" *ngIf="cell.row.index === 0 && cell.row.data.end === 'N/A'">
           Current
         </igx-badge>
@@ -395,10 +280,10 @@
     <igx-column field="type" header="Type" width="12%">
       <ng-template igxCell let-value>
         <igx-badge type="success" *ngIf="value === 'Regular'">
-          <igx-icon family="imx-icons" name="check" [style.color]="'#000000'"></igx-icon>
+          <igx-icon class="icon-style" family="imx-icons" name="check"></igx-icon>
         </igx-badge>
         <igx-badge type="warning" *ngIf="value === 'Incident'">
-          <igx-icon family="imx-icons" name="git-issue" [style.color]="'#000000'"></igx-icon>
+          <igx-icon class="icon-style" family="imx-icons" name="git-issue"></igx-icon>
         </igx-badge>
         <span class="status-value">{{ value }}</span>
       </ng-template>
@@ -410,15 +295,15 @@
 <div class="overlay overlay-location" [hidden]="!isLocationOverlayActive" #locationOverlay>
   <igx-card elevated>
     <igx-card-header class="overlay-location-header">
-      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="vehiclePhoto"></igx-avatar>
-      <h6 class="overlay-title">{{ make }} {{ model }}</h6>
-      <span class="overlay-text">Mileage: {{ mileage }}</span>
+      <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="vehicleDetails.vehiclePhoto"></igx-avatar>
+      <h6 class="overlay-title">{{ vehicleDetails.make }} {{ vehicleDetails.model }}</h6>
+      <span class="overlay-text">Mileage: {{ vehicleDetails.mileage }}</span>
     </igx-card-header>
     <igx-card-content class="overlay-location-content">
       <igx-geographic-map #map [width]="'100%'" [height]="'100%'"
         zoomable="false"
         draggable="false"
-        [dataSource]="markerLocations"
+        [dataSource]="vehicleDetails.markerLocations"
         latitudeMemberPath="latitude"
         longitudeMemberPath="longitude">
     </igx-geographic-map>
@@ -438,48 +323,16 @@
     <igx-card-content class="overlay-driver-content">
       <div class="driver-block-container">
         <div class="driver-category-container">
-          <div class="detail-item">
-            <span class="detail-category">Driver's License: </span>
+          <div class="detail-item" *ngFor="let category of DRIVER_CATEGORIES.driverCategories">
+            <span class="detail-category">{{ category.label }}: </span>
+            <igx-divider></igx-divider>
           </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-category">Address: </span>
-          </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-category">City: </span>
-          </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-category">Phone: </span>
-          </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-category">Email: </span>
-          </div>
-          <igx-divider></igx-divider>
         </div>
         <div class="driver-content-container">
-          <div class="detail-item">
-            <span class="detail-value">{{ driverDetails.license }}</span>
+          <div class="detail-item" *ngFor="let category of DRIVER_CATEGORIES.driverCategories">
+            <span class="detail-value">{{ driverDetails[category.key] }}</span>
+            <igx-divider></igx-divider>
           </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-value">{{ driverDetails.address }}</span>
-          </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-value">{{ driverDetails.city }}</span>
-          </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-value">{{ driverDetails.phone }}</span>
-          </div>
-          <igx-divider></igx-divider>
-          <div class="detail-item">
-            <span class="detail-value">{{ driverDetails.email }}</span>
-          </div>
-          <igx-divider></igx-divider>
         </div>
       </div>
     </igx-card-content>
