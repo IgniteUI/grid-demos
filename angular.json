@@ -629,11 +629,7 @@
             "scripts": [
               "./node_modules/hammerjs/hammer.min.js"
             ],
-            "server": "projects/fleet-management-grid/src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "projects/fleet-management-grid/src/server.ts"
-            },
+            "outputMode": "static",
             "stylePreprocessorOptions": {
               "includePaths": [
                 "node_modules"
