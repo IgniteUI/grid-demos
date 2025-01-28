@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Employee, EMPLOYEE_DATA } from '../data/localData';
 import {
   IgxTreeGridComponent,
@@ -48,12 +48,17 @@ import { CommonModule } from '@angular/common';
     CommonModule,
   ],
 })
-export class HrPortalComponent implements OnInit, AfterViewInit {
+export class HrPortalComponent implements OnInit {
   public localData: Employee[] = [];
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
   public treeGrid!: IgxTreeGridComponent;
 
-  constructor(private iconService: IgxIconService, private cdr: ChangeDetectorRef) {}
+  public rowStyles = {
+    background: (row: RowType) =>
+      row.index % 2 === 0 ? 'rgba(255,255,255)' : '',
+  };
+
+  constructor(private iconService: IgxIconService) {}
 
   ngOnInit() {
     this.localData = EMPLOYEE_DATA;
@@ -118,9 +123,7 @@ export class HrPortalComponent implements OnInit, AfterViewInit {
     icons.forEach((icon) => {
       this.iconService.addSvgIcon(icon.name, icon.path, icon.category);
     });
-  }
 
-  ngAfterViewInit(): void {
     this.treeGrid.sortingExpressions = [
       {
         dir: SortingDirection.Asc,
@@ -129,6 +132,5 @@ export class HrPortalComponent implements OnInit, AfterViewInit {
         strategy: DefaultSortingStrategy.instance(),
       },
     ];
-    this.cdr.detectChanges();
   }
 }
