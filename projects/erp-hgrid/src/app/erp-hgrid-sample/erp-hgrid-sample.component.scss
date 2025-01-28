@@ -1,5 +1,12 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .wrapper {
   --ig-size: var(--ig-size-small);
+  height: 100%;
 
   igx-badge[type="primary"]{
     background-color: var(--ig-primary-50);
