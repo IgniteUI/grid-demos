@@ -20,5 +20,12 @@
       $palette: $light-bootstrap-palette,
       $schema: $light-bootstrap-schema
     );
+    .profitCondition {
+      color: var(--ig-success-500);
+    }
+
+    .lossCondition {
+      color: var(--ig-error-500);
+    }
   }
 }
