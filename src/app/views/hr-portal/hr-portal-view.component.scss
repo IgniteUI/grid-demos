@@ -25,4 +25,8 @@
       $schema: $light-fluent-schema
     );
   }
+
+  ::ng-deep .igx-grid__tr--even{
+    background-color: #FFFFFF;
+  }
 }

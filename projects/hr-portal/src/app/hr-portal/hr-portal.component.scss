@@ -15,7 +15,6 @@
 
 igx-tree-grid {
   --ig-size: var(--ig-size-medium);
-
 }
 
 .center-content {
@@ -27,14 +26,14 @@ igx-tree-grid {
   width: 100%;
 }
 
- .employeeDiv {
+.employeeDiv {
   display: flex;
   align-items: center;
   --igx-avatar-size: 28px;
   gap: 8px;
- }
+}
 
- .flagDiv {
+.flagDiv {
   gap: 8px;
   align-items: center;
   display: flex;
@@ -46,6 +45,8 @@ igx-tree-grid {
     display: block;
     overflow: hidden;
   }
+
+  ::ng-deep .igx-grid__tr--even{
+    background-color: #FFFFFF;
+  }
 }
-
-
