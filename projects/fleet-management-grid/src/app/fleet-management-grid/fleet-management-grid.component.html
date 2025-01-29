@@ -22,9 +22,9 @@
       <span class="status-value">{{ value }}</span>
     </ng-template>
   </igx-column>
-  <igx-column field="model" header="Model" [sortable]="true" width="7%"></igx-column>
+  <igx-column field="model" header="Model" [sortable]="true" width="8.15%"></igx-column>
   <igx-column field="type" header="Type" [sortable]="true" width="10%"></igx-column>
-  <igx-column field="vin" header="VIN" width="15%"></igx-column>
+  <igx-column field="vin" header="VIN" width="14%"></igx-column>
   <igx-column field="status" header="Status" [sortable]="true" width="14%">
     <ng-template igxCell let-value>
       <igx-badge [type]="getStatusType(value)">
@@ -34,7 +34,7 @@
     </ng-template>
   </igx-column>
   <igx-column field="locationCity" header="Location (City)" [sortable]="true" width="11%"></igx-column>
-  <igx-column field="locationGps" header="Location (GPS)" width="15%">
+  <igx-column field="locationGps" header="Location (GPS)" width="14%">
     <ng-template igxCell let-cell="cell">
       <a class="link-style" #coordinates href="#" (click)="showLocationOverlay($event, cell); $event.preventDefault();">{{ cell.value }}</a>
     </ng-template>
@@ -272,7 +272,7 @@
 </ng-template>
 
 <ng-template #maintenance let-maintenanceData>
-  <igx-grid [data]="maintenanceData" height="100%" width="95%">
+  <igx-grid [data]="maintenanceData" height="100%" width="%">
     <igx-column field="id" header="ID" width="5%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
     <igx-column field="event" header="Event" width="23%"></igx-column>
     <igx-column field="date" header="Date" width="10%"></igx-column>
