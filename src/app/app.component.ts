@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLinkActive, RouterModule } from '@angular/router';
-import { IgxCardModule, IgxChipComponent, IgxIconButtonDirective, IgxIconComponent, IgxRippleDirective, IgxTabsModule } from 'igniteui-angular';
+import { IgxCardModule, IgxChipComponent, IgxIconButtonDirective, IgxIconComponent, IgxRippleDirective, IgxTabsModule, IgxTooltipDirective, IgxTooltipModule } from 'igniteui-angular';
 
 interface TabInfo {
   title: string;
@@ -12,7 +12,8 @@ interface TabInfo {
 }
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterModule, IgxChipComponent, IgxIconComponent, IgxRippleDirective, IgxIconButtonDirective, IgxTabsModule, IgxCardModule,RouterLinkActive],
+  imports: [CommonModule, RouterModule, IgxChipComponent, IgxIconComponent, IgxRippleDirective,
+    IgxIconButtonDirective, IgxTabsModule, IgxCardModule,RouterLinkActive, IgxTooltipModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -57,9 +58,19 @@ export class AppComponent {
   ]);
 
   public onLinkClick(event: MouseEvent) {
-    const targetHTML = event.target as HTMLAnchorElement;
+    const targetHTML = event.currentTarget as HTMLAnchorElement;
     if (!targetHTML.className.includes("--disabled")) {
       window.open(targetHTML.href, '_blank')?.focus();
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  public onDownloadClick(event: MouseEvent, tabName: string) {
+    const targetHTML = event.currentTarget as HTMLAnchorElement;
+    if (!targetHTML.className.includes("--disabled")) {
+      console.log("Downloading app source!");
     }
 
     event.preventDefault();

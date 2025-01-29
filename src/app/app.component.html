@@ -22,7 +22,7 @@
 </div>
 
 <ng-template #tabItemTemplate let-enabled="enabled" let-tabName="tabName">
-  <div class="tab-item" [ngClass]="{'tab-item--selected': enabled}">
+  <div #tabItem class="tab-item" [ngClass]="{'tab-item--selected': enabled}">
     <div class="tab-header" [ngClass]="{'tab-header--disabled': !enabled}">
       {{ tabInfo.get(tabName)?.title }}
       <igx-chip [disabled]="!enabled">{{ tabInfo.get(tabName)?.theme }}</igx-chip>
@@ -32,7 +32,11 @@
     </div>
     <div class="tab-actions">
       <a class="learn-text" href="{{ tabInfo.get(tabName)?.moreLink }}" (click)="onLinkClick($event)" [ngClass]="{'link--disabled': !enabled}">View on GitHub</a>
-      <button igxRipple [igxIconButton]="'contained'" [disabled]="!enabled"><igx-icon>download</igx-icon></button>
+      <button igxRipple [igxIconButton]="'contained'" [disabled]="!enabled" (click)="onDownloadClick($event, tabName)" [igxTooltipTarget]="tooltipRef"><igx-icon name="file_download" family="internal_indigo"></igx-icon></button>
     </div>
   </div>
 </ng-template>
+
+<div #tooltipRef="tooltip" igxTooltip>
+  Download app source.
+</div>
