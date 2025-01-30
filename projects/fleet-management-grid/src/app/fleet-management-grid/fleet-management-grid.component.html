@@ -1,6 +1,6 @@
 <igx-grid class="main-grid" [data]="dataService.getVehiclesData()" #grid height="100%" width="100%">
   <igx-grid-toolbar>
-    <igx-grid-toolbar-title>Actions</igx-grid-toolbar-title>
+    <igx-grid-toolbar-title>Fleet Management</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <button igxButton="flat" *ngIf="grid.sortingExpressions.length > 0"
                   (buttonClick)="grid.sortingExpressions=[]">

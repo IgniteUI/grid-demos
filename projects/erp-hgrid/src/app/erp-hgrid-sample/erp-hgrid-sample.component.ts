@@ -177,7 +177,6 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   }
 
   private calculateTotalNetProfit(product: TemplateDataModel): number {
-    const itemsSold: number = product.orders.length;
-    return itemsSold * (product.netPrice);
+    return product.unitsSold * (product.netPrice);
   }
 }
