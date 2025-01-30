@@ -1,57 +1,42 @@
 <div class="demo-container">
   <div class="tab-container ">
-    <div class="tab-item" routerLink="inventory" routerLinkActive="tab-item--selected">
-      <div class="tab-header">
-        <igx-chip>Material Light</igx-chip>
-        ERP/Inventory
-      </div>
-      <div class="tab-content">
-        <span>Inventory grid for tracking and managing the quantity, location, and details of products in stock, which also displays orders of each item.</span>
-        <div class="learn-text">Learn more</div>
-      </div>
+    <div class="tab-item-container" routerLink="inventory" routerLinkActive #tab1="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab1.isActive, tabName: 'inventory' }"></ng-container>
     </div>
-    <div class="tab-item" routerLink="hr-portal" routerLinkActive="tab-item--selected">
-      <div class="tab-header">
-        <igx-chip>Fluent Light</igx-chip>
-        HR Portal
-      </div>
-      <div class="tab-content">
-        <span>An organizational chart outlining the company’s hierarchical structure, showing employees, their job titles, and direct reporting relationships.</span>
-        <div class="learn-text">Learn more</div>
-      </div>
+    <div class="tab-item-container" routerLink="hr-portal" routerLinkActive #tab2="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab2.isActive, tabName: 'hr-portal' }"></ng-container>
     </div>
-    <div class="tab-item" routerLink="finance" routerLinkActive="tab-item--selected">
-      <div class="tab-header">
-        <igx-chip>Bootstrap Light</igx-chip>
-        Finance
-      </div>
-      <div class="tab-content">
-        <span>A real-time portfolio management system featuring asset tracking, profit and loss analyses, and interactive, dynamic charts.</span>
-        <div class="learn-text">Learn more</div>
-      </div>
+    <div class="tab-item-container" routerLink="finance" routerLinkActive #tab3="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab3.isActive, tabName: 'finance' }"></ng-container>
     </div>
-    <div class="tab-item" routerLink="sales" routerLinkActive="tab-item--selected">
-      <div class="tab-header">
-        <igx-chip>Indigo Light</igx-chip>
-        Sales
-      </div>
-      <div class="tab-content">
-        <span>A sales summary by region, product, and time period, offering detailed trend analyses and key performance indicators (KPIs).</span>
-        <div class="learn-text">Learn more</div>
-      </div>
+    <div class="tab-item-container" routerLink="sales" routerLinkActive #tab4="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab4.isActive, tabName: 'sales' }"></ng-container>
     </div>
-    <div class="tab-item" routerLink="fleet" routerLinkActive="tab-item--selected">
-      <div class="tab-header">
-        <igx-chip>Material Dark</igx-chip>
-        Fleet Management
-      </div>
-      <div class="tab-content">
-        <span>A master-detail grid for managing vehicle acquisition, operations, and maintenance, offering detailed tracking and performance insights.</span>
-        <div class="learn-text">Learn more</div>
-      </div>
+    <div class="tab-item-container" routerLink="fleet" routerLinkActive #tab5="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab5.isActive, tabName: 'fleet' }"></ng-container>
     </div>
   </div>
+  <div class="router-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<div class="router-container">
-  <router-outlet></router-outlet>
+
+<ng-template #tabItemTemplate let-enabled="enabled" let-tabName="tabName">
+  <div #tabItem class="tab-item" [ngClass]="{'tab-item--selected': enabled}">
+    <div class="tab-header" [ngClass]="{'tab-header--disabled': !enabled}">
+      {{ tabInfo.get(tabName)?.title }}
+      <igx-chip [disabled]="!enabled">{{ tabInfo.get(tabName)?.theme }}</igx-chip>
+    </div>
+    <div class="tab-content" [ngClass]="{'tab-content--disabled': !enabled}">
+      <span>{{ tabInfo.get(tabName)?.content }}</span>
+    </div>
+    <div class="tab-actions">
+      <a class="learn-text" href="{{ tabInfo.get(tabName)?.moreLink }}" (click)="onLinkClick($event)" [ngClass]="{'link--disabled': !enabled}">Learn more</a>
+      <button igxRipple [igxIconButton]="'contained'" [disabled]="!enabled" (click)="onDownloadClick($event, tabName)" [igxTooltipTarget]="tooltipRef"><igx-icon name="file_download" family="internal_indigo"></igx-icon></button>
+    </div>
+  </div>
+</ng-template>
+
+<div #tooltipRef="tooltip" igxTooltip>
+  Download app source.
 </div>
