@@ -1,14 +1,21 @@
-
 @use "igniteui-angular/theming" as *;
 
-@include core();
-@include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
-@include theme($default-palette);
+.demo-container {
+  @include core();
+  @include typography(
+    $font-family: $material-typeface,
+    $type-scale: $material-type-scale
+  );
+  @include theme($default-palette);
+}
 
 html {
-  height: 99%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
