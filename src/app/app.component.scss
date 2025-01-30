@@ -1,8 +1,24 @@
+@use "igniteui-angular/theming" as *;
+
+$custom-icon-button-theme: icon-button-theme(
+  $background: #212121,
+  $foreground: #ffffff,
+  $disabled-background: #9e9e9e,
+  $disabled-foreground: #ffffff
+);
+
+// Pass the css-vars to the `css-vars` mixin
+@include css-vars($custom-icon-button-theme);
+
 :host {
   display: block;
   width: 100%;
   height: 100%;
   margin: auto;
+
+  ::ng-deep {
+    @include css-vars($custom-icon-button-theme);
+  }
 }
 
 igx-chip {

@@ -31,7 +31,7 @@
       <span>{{ tabInfo.get(tabName)?.content }}</span>
     </div>
     <div class="tab-actions">
-      <a class="learn-text" href="{{ tabInfo.get(tabName)?.moreLink }}" (click)="onLinkClick($event)" [ngClass]="{'link--disabled': !enabled}">View on GitHub</a>
+      <a class="learn-text" href="{{ tabInfo.get(tabName)?.moreLink }}" (click)="onLinkClick($event)" [ngClass]="{'link--disabled': !enabled}">Learn more</a>
       <button igxRipple [igxIconButton]="'contained'" [disabled]="!enabled" (click)="onDownloadClick($event, tabName)" [igxTooltipTarget]="tooltipRef"><igx-icon name="file_download" family="internal_indigo"></igx-icon></button>
     </div>
   </div>
