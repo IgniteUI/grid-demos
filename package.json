@@ -23,12 +23,10 @@
     "build:fin": "ng build finance-grid",
     "build:hr": "ng build hr-portal",
     "build:sales": "ng build sales-grid",
-    "ssr": "node dist/grid-demos/server/server.mjs",
     "ssr:erp": "node dist/erp-hgrid/server/server.mjs",
     "ssr:fin": "node dist/finance-grid/server/server.mjs",
     "ssr:hr": "node dist/hr-portal/server/server.mjs",
-    "ssr:sales": "node dist/sales-grid/server/server.mjs",
-    "ssr:fleet": "node dist/fleet-management/server/server.mjs"
+    "ssr:sales": "node dist/sales-grid/server/server.mjs"
   },
   "private": true,
   "dependencies": {
