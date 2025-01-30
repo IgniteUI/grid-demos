@@ -21,7 +21,7 @@ export class AppComponent {
   title = 'GridDemos';
   public tabInfo = new Map<string, TabInfo>([
     ['inventory', {
-      title: "ERP/Inventory",
+      title: "ERP/ Inventory",
       theme: "Material Light",
       content: "Tracking and managing quantity, location and details of products in stock.",
       moreLink: "https://github.com/IgniteUI/grid-demos/tree/vnext/projects/erp-hgrid",

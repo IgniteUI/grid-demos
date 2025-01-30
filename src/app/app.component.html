@@ -1,18 +1,18 @@
 <div class="demo-container">
   <div class="tab-container ">
-    <div routerLink="inventory" routerLinkActive #tab1="routerLinkActive"  >
+    <div class="tab-item-container" routerLink="inventory" routerLinkActive #tab1="routerLinkActive"  >
       <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab1.isActive, tabName: 'inventory' }"></ng-container>
     </div>
-    <div routerLink="hr-portal" routerLinkActive #tab2="routerLinkActive"  >
+    <div class="tab-item-container" routerLink="hr-portal" routerLinkActive #tab2="routerLinkActive"  >
       <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab2.isActive, tabName: 'hr-portal' }"></ng-container>
     </div>
-    <div routerLink="finance" routerLinkActive #tab3="routerLinkActive"  >
+    <div class="tab-item-container" routerLink="finance" routerLinkActive #tab3="routerLinkActive"  >
       <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab3.isActive, tabName: 'finance' }"></ng-container>
     </div>
-    <div routerLink="sales" routerLinkActive #tab4="routerLinkActive"  >
+    <div class="tab-item-container" routerLink="sales" routerLinkActive #tab4="routerLinkActive"  >
       <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab4.isActive, tabName: 'sales' }"></ng-container>
     </div>
-    <div routerLink="fleet" routerLinkActive #tab5="routerLinkActive"  >
+    <div class="tab-item-container" routerLink="fleet" routerLinkActive #tab5="routerLinkActive"  >
       <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab5.isActive, tabName: 'fleet' }"></ng-container>
     </div>
   </div>
