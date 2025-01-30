@@ -28,7 +28,7 @@ export class AppComponent {
       downloadLink: ""
     }],
     ['hr-portal', {
-      title: "HR Portal",
+      title: "Org Chart/HR Portal",
       theme: "Fluent Light",
       content: "Displaying company's hierarchical structure and showing employees data.",
       moreLink: "https://github.com/IgniteUI/grid-demos/tree/vnext/projects/hr-portal",
