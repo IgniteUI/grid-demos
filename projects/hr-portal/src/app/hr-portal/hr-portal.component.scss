@@ -15,6 +15,7 @@
 
 igx-tree-grid {
   --ig-size: var(--ig-size-medium);
+  --row-even-background: #ffffff;
 }
 
 .center-content {
@@ -44,9 +45,5 @@ igx-tree-grid {
     box-shadow: var(--ig-elevation-1);
     display: block;
     overflow: hidden;
-  }
-
-  ::ng-deep .igx-grid__tr--even{
-    background-color: #FFFFFF;
   }
 }

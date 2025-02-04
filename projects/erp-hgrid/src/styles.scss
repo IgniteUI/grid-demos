@@ -1,13 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-// Standard CSS normalize, comment out if not required or using a different module
-@use "minireset.css/minireset";
-@use 'igniteui-angular/theming' as *;
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
-@include core();
-@include typography();
-@include theme($light-material-palette);
-
-html, body {
-  height: 100%;
-  max-height: 1000px;
+body {
+    margin: 0;
+    padding: 8px;
+    height: 100%;
 }

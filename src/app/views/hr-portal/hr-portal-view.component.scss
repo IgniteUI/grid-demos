@@ -1,32 +1,5 @@
-@use "igniteui-angular/theming" as *;
-
-@include core();
-@include typography(
-  $font-family: $fluent-typeface,
-  $type-scale: $fluent-type-scale
-);
-@include theme(
-  $palette: $light-fluent-palette,
-  $schema: $light-fluent-schema
-);
-
 :host {
   display: block;
   height: 100%;
   width: 100%;
-
-  ::ng-deep {
-    @include typography(
-      $font-family: $fluent-typeface,
-      $type-scale: $fluent-type-scale
-    );
-    @include theme(
-      $palette: $light-fluent-palette,
-      $schema: $light-fluent-schema
-    );
-  }
-
-  ::ng-deep .igx-grid__tr--even{
-    background-color: #FFFFFF;
-  }
 }

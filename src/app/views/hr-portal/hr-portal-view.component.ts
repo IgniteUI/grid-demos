@@ -1,13 +1,12 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HrPortalComponent } from 'projects/hr-portal/src/app/hr-portal/hr-portal.component';
+import { Component } from '@angular/core';
+import { AppComponent } from 'projects/hr-portal/src/app/app.component';
 
 @Component({
   standalone: true,
   selector: 'hr-portal-view',
   templateUrl: './hr-portal-view.component.html',
   styleUrl: './hr-portal-view.component.scss',
-  imports: [HrPortalComponent],
-  encapsulation: ViewEncapsulation.Emulated
+  imports: [AppComponent],
 })
 export class HrPortalViewComponent {
 }
