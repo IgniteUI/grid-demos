@@ -1,6 +1,6 @@
 @use "igniteui-angular/theming" as *;
 
-.demo-container {
+.tab-container {
   @include core();
   @include typography(
     $font-family: $material-typeface,
