@@ -20,7 +20,6 @@ $custom-icon-button-theme: icon-button-theme(
   flex-direction: column;
   align-items: center;
   gap: 24px;
-
   igx-chip {
     --igx-chip-hover-background: var(--ig-gray-300);
     --igx-chip-focus-background: var(--ig-gray-300);
@@ -38,6 +37,7 @@ $custom-icon-button-theme: icon-button-theme(
   width: 100%;
   min-height: 132px;
   flex-shrink: 0;
+  padding: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -60,6 +60,7 @@ $custom-icon-button-theme: icon-button-theme(
   cursor: pointer;
   user-select: none;
   border-bottom: 1px solid var(--ig-gray-300);
+  background-color: var(--ig-surface-500);
 
   &--selected {
     border-bottom: 3px solid var(--ig-primary-500);
