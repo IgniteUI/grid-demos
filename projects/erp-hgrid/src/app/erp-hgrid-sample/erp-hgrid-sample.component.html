@@ -48,30 +48,21 @@
             </ng-template>
         </igx-column>
         <igx-column field="productName" header="Product Name" dataType="string" [sortable]="true" width="320px"></igx-column>
-        <igx-column field="category" header="Category" dataType="string" [sortable]="true" width="155px"></igx-column>
+        <igx-column field="category" header="Category" dataType="string" [sortable]="true"></igx-column>
         <igx-column
             field="rating"
             header="Rating"
-            width="167px"
+            width="200px"
             [sortable]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <igc-rating [value]="val" readonly="true" min="0" max="5"></igc-rating>
             </ng-template>
         </igx-column>
         <igx-column field="unitsSold" header="Sold Units" dataType="number" width="130px" [sortable]="true"></igx-column>
-        <igx-column field="salesTrendData" header="Performance" filterable="false">
+        <igx-column field="salesTrendData" header="Sales Trends" filterable="false" width="270px">
             <ng-template igxCell let-cell="cell" let-val>
                 @defer {
-                <igx-sparkline #sparkline
-                    class="sales-sparkline"
-                    [dataSource]="cell.value"
-                    valueMemberPath="value"
-                    width="100%"
-                    height="100%"
-                    lineThickness="1"
-                    brush="#424242"
-                    displayType="Line">
-                </igx-sparkline>
+                  <sales-trends-chart [dataSource]="cell.value"></sales-trends-chart>
                 }
             </ng-template>
         </igx-column>

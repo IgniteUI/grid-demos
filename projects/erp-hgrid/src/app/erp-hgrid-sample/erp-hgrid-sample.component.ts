@@ -43,6 +43,7 @@ import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
 import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
 import { InventoryList } from '../data/erpData';
+import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
 
 defineComponents(IgcRatingComponent);
 
@@ -82,7 +83,8 @@ defineComponents(IgcRatingComponent);
       IgxButtonModule,
 	    IgxDialogModule,
 	    IgxRippleModule,
-      IgxTooltipModule
+      IgxTooltipModule,
+      SalesTrendsChartComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',

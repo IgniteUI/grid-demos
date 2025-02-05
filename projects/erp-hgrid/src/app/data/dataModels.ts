@@ -32,9 +32,10 @@ interface Order {
 }
 
 export interface DataPoint {
-  label: number | string;
-  value: number | string;
+  unitsSold: number | string;
+  month: string;
 }
+
 
 export interface TemplateDataModel {
   sku: string;
