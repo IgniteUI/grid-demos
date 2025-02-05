@@ -41,6 +41,7 @@ $custom-icon-button-theme: icon-button-theme(
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: var(--ig-surface-500);
 }
 
 .tab-item-container {
@@ -60,7 +61,6 @@ $custom-icon-button-theme: icon-button-theme(
   cursor: pointer;
   user-select: none;
   border-bottom: 1px solid var(--ig-gray-300);
-  background-color: var(--ig-surface-500);
 
   &--selected {
     border-bottom: 3px solid var(--ig-primary-500);
