@@ -1,0 +1,42 @@
+<div class="demo-container">
+  <div class="tab-container ">
+    <div class="tab-item-container" routerLink="inventory" routerLinkActive #tab1="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab1.isActive, tabName: 'inventory' }"></ng-container>
+    </div>
+    <div class="tab-item-container" routerLink="hr-portal" routerLinkActive #tab2="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab2.isActive, tabName: 'hr-portal' }"></ng-container>
+    </div>
+    <div class="tab-item-container" routerLink="finance" routerLinkActive #tab3="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab3.isActive, tabName: 'finance' }"></ng-container>
+    </div>
+    <div class="tab-item-container" routerLink="sales" routerLinkActive #tab4="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab4.isActive, tabName: 'sales' }"></ng-container>
+    </div>
+    <div class="tab-item-container" routerLink="fleet" routerLinkActive #tab5="routerLinkActive"  >
+      <ng-container [ngTemplateOutlet]="tabItemTemplate" [ngTemplateOutletContext]="{ enabled: tab5.isActive, tabName: 'fleet' }"></ng-container>
+    </div>
+  </div>
+  <div class="router-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<ng-template #tabItemTemplate let-enabled="enabled" let-tabName="tabName">
+  <div #tabItem class="tab-item" [ngClass]="{'tab-item--selected': enabled}">
+    <div class="tab-header" [ngClass]="{'tab-header--disabled': !enabled}">
+      {{ tabInfo.get(tabName)?.title }}
+      <igx-chip [disabled]="!enabled">{{ tabInfo.get(tabName)?.theme }}</igx-chip>
+    </div>
+    <div class="tab-content" [ngClass]="{'tab-content--disabled': !enabled}">
+      <span>{{ tabInfo.get(tabName)?.content }}</span>
+    </div>
+    <div class="tab-actions">
+      <a class="learn-text" href="{{ tabInfo.get(tabName)?.moreLink }}" (click)="onLinkClick($event)" [ngClass]="{'link--disabled': !enabled}">Learn more</a>
+      <button igxRipple [igxIconButton]="'contained'" [disabled]="!enabled" (click)="onDownloadClick($event, tabName)" [igxTooltipTarget]="tooltipRef"><igx-icon name="file_download" family="internal_indigo"></igx-icon></button>
+    </div>
+  </div>
+</ng-template>
+
+<div #tooltipRef="tooltip" igxTooltip>
+  Download sample.
+</div>

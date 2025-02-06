@@ -1,31 +1,5 @@
-@use "igniteui-angular/theming" as *;
-
-@include core();
-@include typography(
-  $font-family: $bootstrap-typeface,
-  $type-scale: $bootstrap-type-scale
-);
-
 :host {
   display: block;
   height: 100%;
   width: 100%;
-
-  ::ng-deep {
-    @include typography(
-      $font-family: $bootstrap-typeface,
-      $type-scale: $bootstrap-type-scale
-    );
-    @include theme(
-      $palette: $light-bootstrap-palette,
-      $schema: $light-bootstrap-schema
-    );
-    .profitCondition {
-      color: var(--ig-success-500);
-    }
-
-    .lossCondition {
-      color: var(--ig-error-500);
-    }
-  }
 }

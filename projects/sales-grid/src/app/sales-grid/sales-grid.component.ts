@@ -23,7 +23,9 @@ import {
   IgxStringFilteringOperand,
   FilteringExpressionsTree,
   FilteringLogic,
-  IPivotValue
+  IPivotValue,
+  THEME_TOKEN,
+  ThemeToken
 } from 'igniteui-angular';
 import FLAGS from './data/flags.json'
 import SALES_DATA from './data/SalesData.json';
@@ -71,6 +73,14 @@ export class IgxSaleProfitAggregate {
   selector: 'app-sales-grid',
   imports: [CommonModule, IgxPivotGridComponent, IgxPivotDataSelectorComponent, IgxButtonDirective, IgxIconComponent, IgxToggleActionDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxCellHeaderTemplateDirective],
   templateUrl: './sales-grid.component.html',
+  providers: [
+    {
+      provide: THEME_TOKEN,
+      useFactory: () => {
+        return new ThemeToken('indigo');
+      },
+    },
+  ],
   styleUrl: './sales-grid.component.scss'
 })
 export class SalesGridComponent {

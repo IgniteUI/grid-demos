@@ -1,13 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { SalesGridComponent } from 'projects/sales-grid/src/app/sales-grid/sales-grid.component';
+import { Component } from '@angular/core';
+import { AppComponent } from 'projects/sales-grid/src/app/app.component';
 
 @Component({
   standalone: true,
   selector: 'sales-view',
-  imports: [SalesGridComponent],
+  imports: [AppComponent],
   templateUrl: './sales-view.component.html',
   styleUrl: './sales-view.component.scss',
-  encapsulation: ViewEncapsulation.Emulated
 })
-export class SalesViewComponent {
-}
+export class SalesViewComponent {}
