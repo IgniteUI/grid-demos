@@ -30,6 +30,7 @@ $custom-icon-button-theme: icon-button-theme(
   width: 100%;
   overflow: hidden;
   display: flex;
+  position: relative;
   flex: 1;
 }
 
