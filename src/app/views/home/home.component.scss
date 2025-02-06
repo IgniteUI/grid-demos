@@ -19,7 +19,6 @@ $custom-icon-button-theme: icon-button-theme(
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
   igx-chip {
     --igx-chip-hover-background: var(--ig-gray-300);
     --igx-chip-focus-background: var(--ig-gray-300);
