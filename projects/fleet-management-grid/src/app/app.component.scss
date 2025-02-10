@@ -7,13 +7,8 @@
   $schema: $dark-material-schema
 );
 
-igx-card .igx-card-header__thumbnail {
-    align-self: center;
-    margin-inline-end: 0;
-  }
-
-  .overlay igx-card {
-    border: 0px;
-    border-radius: 4px;
-    box-shadow: var(--ig-elevation-24);
-  }
+.overlay igx-card {
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: var(--ig-elevation-24);
+}

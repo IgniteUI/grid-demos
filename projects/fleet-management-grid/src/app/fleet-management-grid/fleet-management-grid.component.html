@@ -249,7 +249,7 @@
 </igx-grid>
 
 <ng-template #tripHistory let-tripHistoryData>
-  <igx-grid [data]="tripHistoryData" height="auto" width="100%">
+  <igx-grid [data]="tripHistoryData" height="null" width="100%">
     <igx-column field="id" header="ID" width="5%" [cellStyles]="rightAlignedCellStyles" [headerStyles]="rightAlignedHeaderStyles"></igx-column>
     <igx-column field="driverName" header="Driver" width="18%">
       <ng-template igxCell let-cell="cell">
@@ -294,7 +294,7 @@
 
 <div class="overlay overlay-location" [hidden]="!isLocationOverlayActive" #locationOverlay>
   <igx-card elevated>
-    <igx-card-header class="overlay-location-header">
+    <igx-card-header class="overlay-location-header" vertical="true">
       <igx-avatar class="overlay-avatar" shape="circle" size="medium" [src]="vehicleDetails.vehiclePhoto"></igx-avatar>
       <h6 class="overlay-title">{{ vehicleDetails.make }} {{ vehicleDetails.model }}</h6>
       <span class="overlay-text">Mileage: {{ vehicleDetails.mileage }}</span>
@@ -316,7 +316,7 @@
 
 <div class="overlay overlay-driver" [hidden]="!isDriverOverlayActive" #driverOverlay>
   <igx-card elevated>
-    <igx-card-header class="overlay-driver-header">
+    <igx-card-header class="overlay-driver-header" vertical="true">
       <igx-avatar class="driver-overlay-avatar" shape="circle" size="medium" [src]="driverDetails.photo"></igx-avatar>
       <h6 class="overlay-title">{{ driverDetails.name }}</h6>
     </igx-card-header>

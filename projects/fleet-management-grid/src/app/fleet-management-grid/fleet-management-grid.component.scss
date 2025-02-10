@@ -30,13 +30,6 @@ igx-card {
   border-radius: 4px;
 }
 
-::ng-deep {
-  igx-card .igx-card-header__thumbnail {
-    align-self: center;
-    margin-inline-end: 0;
-  }
-}
-
 /* Global Grid Styles */
 .main-grid {
   --ig-size: var(--ig-size-small)
@@ -220,10 +213,6 @@ igx-card {
 }
 
 /*Overlay Sections*/
-.overlay-title {
-  padding-top: 8px;
-}
-
 .overlay-text {
   font-size: 14px;
 }
