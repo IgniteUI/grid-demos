@@ -36,7 +36,8 @@ import {
   HorizontalAlignment,
   VerticalAlignment,
   THEME_TOKEN,
-  ThemeToken
+  ThemeToken,
+  IgxGridToolbarDirective
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
@@ -73,6 +74,7 @@ defineComponents(IgcRatingComponent);
       IgxGridToolbarHidingComponent,
       IgxGridToolbarPinningComponent,
       IgxGridToolbarExporterComponent,
+      IgxGridToolbarDirective,
       IgxGridToolbarAdvancedFilteringComponent,
       IgxGridToolbarTitleComponent,
       IgxIconModule,
@@ -179,6 +181,7 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   }
 
   private calculateTotalNetProfit(product: TemplateDataModel): number {
-    return product.unitsSold * (product.netPrice);
+    const unitsSold: number = product.unitsSold || 0;
+    return unitsSold * (product.netPrice);
   }
 }
