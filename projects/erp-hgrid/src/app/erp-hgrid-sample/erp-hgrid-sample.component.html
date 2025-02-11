@@ -52,7 +52,7 @@
         <igx-column
             field="rating"
             header="Rating"
-            width="11%"
+            minWidth="165px"
             [sortable]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <igc-rating [value]="val" readonly="true" min="0" max="5"></igc-rating>
