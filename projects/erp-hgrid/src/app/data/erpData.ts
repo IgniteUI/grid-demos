@@ -2034,9 +2034,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 9070,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-24",
-					dateShipped: "2024-12-27",
-					dateDelivered: "2024-12-23"
+					dateOrdered: "2024-12-10",
+					dateShipped: "2024-12-14",
+					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
 					country: "UK",
@@ -2102,7 +2102,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-23",
 					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-25"
+					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
 					country: "UK",
@@ -2268,7 +2268,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-21",
 					dateShipped: "2024-12-24",
-					dateDelivered: "2024-12-10"
+					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
 					country: "USA",
@@ -2850,9 +2850,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 7830,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-23",
-					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-24"
+					dateOrdered: "2024-12-12",
+					dateShipped: "2024-12-13",
+					dateDelivered: "2024-12-16"
 				},
 				orderInformation: {
 					country: "UK",
@@ -3060,9 +3060,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 7125,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-24",
-					dateShipped: "2024-12-27",
-					dateDelivered: "2024-12-14"
+					dateOrdered: "2024-12-21",
+					dateShipped: "2024-12-22",
+					dateDelivered: "2024-12-23"
 				},
 				orderInformation: {
 					country: "UK",
@@ -3758,7 +3758,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-18",
 					dateShipped: "2024-12-21",
-					dateDelivered: "2024-12-14"
+					dateDelivered: "2024-12-24"
 				},
 				orderInformation: {
 					country: "Germany",
@@ -5258,7 +5258,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-21",
 					dateShipped: "2024-12-24",
-					dateDelivered: "2024-12-21"
+					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
 					country: "USA",
@@ -6206,7 +6206,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-23",
 					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-23"
+					dateDelivered: "2024-12-28"
 				},
 				orderInformation: {
 					country: "Australia",
@@ -6854,9 +6854,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 7830,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-23",
-					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-24"
+					dateOrdered: "2024-12-12",
+					dateShipped: "2024-12-13",
+					dateDelivered: "2024-12-16"
 				},
 				orderInformation: {
 					country: "UK",
@@ -9446,9 +9446,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 9494,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-23",
+          dateOrdered: "2024-12-23",
 					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-23"
+					dateDelivered: "2024-12-28"
 				},
 				orderInformation: {
 					country: "Australia",
@@ -10034,7 +10034,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-18",
 					dateShipped: "2024-12-21",
-					dateDelivered: "2024-12-14"
+					dateDelivered: "2024-12-24"
 				},
 				orderInformation: {
 					country: "Germany",
@@ -10840,7 +10840,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-21",
 					dateShipped: "2024-12-24",
-					dateDelivered: "2024-12-10"
+					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
 					country: "USA",
@@ -12648,7 +12648,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-21",
 					dateShipped: "2024-12-24",
-					dateDelivered: "2024-12-21"
+					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
 					country: "USA",
@@ -12856,9 +12856,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 9070,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-24",
-					dateShipped: "2024-12-27",
-					dateDelivered: "2024-12-23"
+          dateOrdered: "2024-12-10",
+					dateShipped: "2024-12-14",
+					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
 					country: "UK",
@@ -12924,7 +12924,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-23",
 					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-25"
+					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
 					country: "UK",
@@ -13574,9 +13574,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 7125,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-24",
-					dateShipped: "2024-12-27",
-					dateDelivered: "2024-12-14"
+          dateOrdered: "2024-12-21",
+					dateShipped: "2024-12-22",
+					dateDelivered: "2024-12-23"
 				},
 				orderInformation: {
 					country: "UK",
@@ -14824,7 +14824,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-18",
 					dateShipped: "2024-12-21",
-					dateDelivered: "2024-12-14"
+					dateDelivered: "2024-12-24"
 				},
 				orderInformation: {
 					country: "Germany",
@@ -15626,9 +15626,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 7830,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-23",
-					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-24"
+					dateOrdered: "2024-12-12",
+					dateShipped: "2024-12-13",
+					dateDelivered: "2024-12-16"
 				},
 				orderInformation: {
 					country: "UK",
@@ -15924,9 +15924,9 @@ export const InventoryList: TemplateDataModel[] = [
 				orderId: 9070,
 				status: OrderStatus.DELIVERED,
 				delivery: {
-					dateOrdered: "2024-12-24",
-					dateShipped: "2024-12-27",
-					dateDelivered: "2024-12-23"
+          dateOrdered: "2024-12-10",
+					dateShipped: "2024-12-14",
+					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
 					country: "UK",
@@ -15992,7 +15992,7 @@ export const InventoryList: TemplateDataModel[] = [
 				delivery: {
 					dateOrdered: "2024-12-23",
 					dateShipped: "2024-12-26",
-					dateDelivered: "2024-12-25"
+					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
 					country: "UK",
