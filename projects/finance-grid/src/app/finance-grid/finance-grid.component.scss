@@ -17,6 +17,10 @@
   }
 }
 
+.grid-sizing {
+  --ig-size: var(--ig-size-small);
+}
+
 .assets-container {
   display: flex;
   align-items: center;
@@ -28,7 +32,7 @@
 
 .progress-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
   width: 100%;
   gap: 0.5rem;
 }
