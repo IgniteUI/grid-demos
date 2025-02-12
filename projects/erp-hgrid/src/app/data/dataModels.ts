@@ -32,8 +32,8 @@ interface Order {
 }
 
 export interface DataPoint {
-  label: number | string;
-  value: number | string;
+  unitsSold: number;
+  month: string;
 }
 
 export interface TemplateDataModel {
@@ -42,7 +42,7 @@ export interface TemplateDataModel {
   productName: string;
   category: string;
   rating: number;
-  unitsSold: number;
+  unitsSold?: number;
   grossPrice: number;
   netPrice: number;
   totalNetProfit?: number;

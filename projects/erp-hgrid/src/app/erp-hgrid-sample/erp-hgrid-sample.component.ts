@@ -36,13 +36,15 @@ import {
   HorizontalAlignment,
   VerticalAlignment,
   THEME_TOKEN,
-  ThemeToken
+  ThemeToken,
+  IgxGridToolbarDirective
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
 import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
 import { InventoryList } from '../data/erpData';
+import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
 
 defineComponents(IgcRatingComponent);
 
@@ -72,6 +74,7 @@ defineComponents(IgcRatingComponent);
       IgxGridToolbarHidingComponent,
       IgxGridToolbarPinningComponent,
       IgxGridToolbarExporterComponent,
+      IgxGridToolbarDirective,
       IgxGridToolbarAdvancedFilteringComponent,
       IgxGridToolbarTitleComponent,
       IgxIconModule,
@@ -82,7 +85,8 @@ defineComponents(IgcRatingComponent);
       IgxButtonModule,
 	    IgxDialogModule,
 	    IgxRippleModule,
-      IgxTooltipModule
+      IgxTooltipModule,
+      SalesTrendsChartComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',
@@ -177,6 +181,7 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   }
 
   private calculateTotalNetProfit(product: TemplateDataModel): number {
-    return product.unitsSold * (product.netPrice);
+    const unitsSold: number = product.unitsSold || 0;
+    return unitsSold * (product.netPrice);
   }
 }
