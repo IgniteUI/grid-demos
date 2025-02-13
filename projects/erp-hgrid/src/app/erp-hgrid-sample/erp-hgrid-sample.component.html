@@ -53,6 +53,7 @@
             field="rating"
             header="Rating"
             minWidth="165px"
+            [dataType]="'number'"
             [sortable]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <igc-rating [value]="val" readonly="true" min="0" max="5"></igc-rating>
@@ -195,7 +196,7 @@
                     <ng-template igxCell let-cell="cell">
                         <div class="country-cell">
                             <span class="cup">
-                                <img [src]="cell.row.data.orderInformation.countryFlag" alt="Country Flag"/>
+                                <img [src]="'country-flags/' + cell.row.data.orderInformation.country + '.svg'" alt="Country Flag"/>
                             </span>
                             <span>{{cell.value}}</span>
                         </div>

@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import {
   IgxHierarchicalGridComponent,
@@ -43,8 +43,8 @@ import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
 import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
-import { InventoryList } from '../data/erpData';
 import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
+import { ErpDataService } from '../services/erp-data.service';
 
 defineComponents(IgcRatingComponent);
 
@@ -92,7 +92,7 @@ defineComponents(IgcRatingComponent);
     templateUrl: './erp-hgrid-sample.component.html',
     styleUrl: './erp-hgrid-sample.component.scss'
 })
-export class ErpHGridSampleComponent implements AfterViewInit {
+export class ErpHGridSampleComponent implements OnInit, AfterViewInit {
   @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
   public hierarchicalGrid!: IgxHierarchicalGridComponent;
   @ViewChild('rowisland', { read: IgxRowIslandComponent, static: true })
@@ -104,15 +104,23 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   public selectionMode: GridSelectionMode = 'multiple';
   public orderStatus = OrderStatus;
 
-  constructor(private iconService: IgxIconService) {
+  constructor(
+    private iconService: IgxIconService,
+    private erpDataService: ErpDataService
+  ) {
     // data
-    this.hgridData = InventoryList;
-    this.hgridData.forEach(product => product.totalNetProfit = this.calculateTotalNetProfit(product));
+    this.hgridData = this.erpDataService.getProducts();
+    const x = this.erpDataService.getProductsJson();
+
     // Icons used
     this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
     this.iconService.addSvgIconFromText(billPaid.name, billPaid.value, 'imx-icons');
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
+  }
+
+  public ngOnInit(): void {
+
   }
 
   public ngAfterViewInit(): void {
@@ -178,10 +186,5 @@ export class ErpHGridSampleComponent implements AfterViewInit {
     if(dialog) {
       dialog.close();
     }
-  }
-
-  private calculateTotalNetProfit(product: TemplateDataModel): number {
-    const unitsSold: number = product.unitsSold || 0;
-    return unitsSold * (product.netPrice);
   }
 }

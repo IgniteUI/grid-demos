@@ -96,11 +96,10 @@ const PeriodLabels: string[] = [
 
 const addMonthLabels = (dataPoints: any[][]): DataPoint[][] => {
   return dataPoints.map((subArray: any[]) =>
-    subArray.map((item: any, index: number) => ({
-      ...item,
-      month: `${PeriodLabels[index]} ${periodYear}`,
-    }))
-  );
+    subArray.map((item: any, index: number) => {
+      item['month'] = `${PeriodLabels[index]} ${periodYear}`;
+      return item;
+    }));
 };
 
 export const TREND_DATA: DataPoint[][] = addMonthLabels(trendDataPoints);
