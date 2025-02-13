@@ -35,6 +35,14 @@ igx-card {
   --ig-size: var(--ig-size-small)
 }
 
+//I.M. temporary fix, waiting for this issue to be resolved: https://github.com/IgniteUI/igniteui-angular/issues/15362
+::ng-deep {
+  .child-grid igx-grid-header {
+    border-inline-end-color: rgba(97, 97, 97, 0.24) !important;
+  }
+}
+
+
 /* --------------------------------------------- */
 /* COMMON ELEMENT STYLES */
 /* --------------------------------------------- */
