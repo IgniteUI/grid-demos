@@ -102,6 +102,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 59
         }
       ],
       "'2022'": [
@@ -116,6 +120,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 45
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 50
         }
       ],
       "'2021'": [
@@ -130,6 +138,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 40
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 43
         }
       ],
       "'2020'": [
@@ -144,6 +156,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 35
         }
       ]
     },
@@ -2668,6 +2684,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 55
         }
       ],
       "'2022'": [
@@ -2682,6 +2702,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 45
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 37
         }
       ],
       "'2021'": [
@@ -2696,6 +2720,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 40
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 44
         }
       ],
       "'2020'": [
@@ -2710,6 +2738,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 53
         }
       ]
     },
@@ -5234,6 +5266,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 50
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 55
         }
       ],
       "'2022'": [
@@ -5248,6 +5284,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 45
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 40
         }
       ],
       "'2021'": [
@@ -5262,6 +5302,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 40
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 44
         }
       ],
       "'2020'": [
@@ -5276,6 +5320,10 @@
         {
           "quarter": "Q3",
           "costPerMeter": 48
+        },
+        {
+          "quarter": "Q4",
+          "costPerMeter": 55
         }
       ]
     },
