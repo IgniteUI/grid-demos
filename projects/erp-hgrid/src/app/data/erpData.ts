@@ -369,7 +369,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-06"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 80946,
 					streetName: "Broadway",
@@ -1145,7 +1145,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 13264,
 					streetName: "Street 5",
@@ -1177,7 +1177,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 23659,
 					streetName: "Street 31",
@@ -1289,7 +1289,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 28725,
 					streetName: "Street 5",
@@ -1333,7 +1333,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 90688,
 					streetName: "Street 33",
@@ -1441,7 +1441,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 62471,
 					streetName: "Street 18",
@@ -1473,7 +1473,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 57877,
 					streetName: "Street 40",
@@ -1505,7 +1505,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 39952,
 					streetName: "Street 15",
@@ -1521,7 +1521,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 89167,
 					streetName: "Street 24",
@@ -1553,7 +1553,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 57993,
 					streetName: "Street 25",
@@ -1585,7 +1585,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 61583,
 					streetName: "Street 24",
@@ -1677,7 +1677,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 80912,
 					streetName: "Street 36",
@@ -1801,7 +1801,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 64564,
 					streetName: "Street 1",
@@ -1865,7 +1865,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 44788,
 					streetName: "Street 10",
@@ -1913,7 +1913,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 24178,
 					streetName: "Street 36",
@@ -1929,7 +1929,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 61522,
 					streetName: "Street 10",
@@ -1961,7 +1961,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 13065,
 					streetName: "Street 6",
@@ -1977,7 +1977,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 29470,
 					streetName: "Street 29",
@@ -2025,7 +2025,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 24916,
 					streetName: "Street 18",
@@ -2073,7 +2073,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 72475,
 					streetName: "Street 40",
@@ -2089,7 +2089,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 32513,
 					streetName: "Street 25",
@@ -2105,7 +2105,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-16"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 69174,
 					streetName: "Street 24",
@@ -2153,7 +2153,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 15521,
 					streetName: "Street 30",
@@ -2185,7 +2185,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 72193,
 					streetName: "Street 11",
@@ -2245,7 +2245,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-22"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 21662,
 					streetName: "Street 47",
@@ -2261,7 +2261,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-23"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 90760,
 					streetName: "Street 22",
@@ -2325,7 +2325,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 14988,
 					streetName: "Street 37",
@@ -2497,7 +2497,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 62595,
 					streetName: "Street 45",
@@ -2545,7 +2545,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 70091,
 					streetName: "Street 38",
@@ -2561,7 +2561,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 28881,
 					streetName: "Street 31",
@@ -2589,7 +2589,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 22399,
 					streetName: "Street 37",
@@ -2605,7 +2605,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 69481,
 					streetName: "Street 28",
@@ -2637,7 +2637,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 47952,
 					streetName: "Street 34",
@@ -2669,7 +2669,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 92086,
 					streetName: "Street 46",
@@ -2685,7 +2685,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 18884,
 					streetName: "Street 18",
@@ -2857,7 +2857,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 90045,
 					streetName: "Street 23",
@@ -2921,7 +2921,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 42093,
 					streetName: "Street 4",
@@ -2937,7 +2937,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 30378,
 					streetName: "Street 47",
@@ -2953,7 +2953,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 59151,
 					streetName: "Street 30",
@@ -2969,7 +2969,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 95591,
 					streetName: "Street 41",
@@ -3001,7 +3001,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-21"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 66758,
 					streetName: "Street 17",
@@ -3045,7 +3045,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 91387,
 					streetName: "Street 28",
@@ -3157,7 +3157,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 32182,
 					streetName: "Street 17",
@@ -3285,7 +3285,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 21401,
 					streetName: "Street 20",
@@ -3301,7 +3301,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 67334,
 					streetName: "Street 40",
@@ -3317,7 +3317,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 61914,
 					streetName: "Street 33",
@@ -3441,7 +3441,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 40163,
 					streetName: "Street 4",
@@ -3489,7 +3489,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 97615,
 					streetName: "Street 18",
@@ -3505,7 +3505,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 22032,
 					streetName: "Street 30",
@@ -3549,7 +3549,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-30"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 36767,
 					streetName: "Street 7",
@@ -3597,7 +3597,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 93388,
 					streetName: "Street 28",
@@ -3661,7 +3661,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 50312,
 					streetName: "Street 11",
@@ -3785,7 +3785,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 88056,
 					streetName: "Street 31",
@@ -3817,7 +3817,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 51789,
 					streetName: "Street 21",
@@ -3833,7 +3833,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 75943,
 					streetName: "Street 10",
@@ -3881,7 +3881,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 59822,
 					streetName: "Street 5",
@@ -3913,7 +3913,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 67887,
 					streetName: "Street 16",
@@ -4149,7 +4149,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-06"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 80946,
 					streetName: "Broadway",
@@ -4593,7 +4593,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 97901,
 					streetName: "Street 18",
@@ -4657,7 +4657,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-17"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 99385,
 					streetName: "Street 36",
@@ -4673,7 +4673,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 79567,
 					streetName: "Street 23",
@@ -4749,7 +4749,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 64564,
 					streetName: "Street 1",
@@ -4813,7 +4813,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 44788,
 					streetName: "Street 10",
@@ -4861,7 +4861,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 24178,
 					streetName: "Street 36",
@@ -4877,7 +4877,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 61522,
 					streetName: "Street 10",
@@ -4909,7 +4909,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 13065,
 					streetName: "Street 6",
@@ -4925,7 +4925,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 29470,
 					streetName: "Street 29",
@@ -4973,7 +4973,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 24916,
 					streetName: "Street 18",
@@ -5021,7 +5021,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 72475,
 					streetName: "Street 40",
@@ -5037,7 +5037,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 32513,
 					streetName: "Street 25",
@@ -5053,7 +5053,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-16"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 69174,
 					streetName: "Street 24",
@@ -5101,7 +5101,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 15521,
 					streetName: "Street 30",
@@ -5133,7 +5133,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 72193,
 					streetName: "Street 11",
@@ -5337,7 +5337,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 13264,
 					streetName: "Street 5",
@@ -5369,7 +5369,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 23659,
 					streetName: "Street 31",
@@ -5481,7 +5481,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 28725,
 					streetName: "Street 5",
@@ -6105,7 +6105,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-30"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 36767,
 					streetName: "Street 7",
@@ -6153,7 +6153,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 93388,
 					streetName: "Street 28",
@@ -6217,7 +6217,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 50312,
 					streetName: "Street 11",
@@ -6533,7 +6533,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-06"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 80946,
 					streetName: "Broadway",
@@ -6977,7 +6977,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 97901,
 					streetName: "Street 18",
@@ -7041,7 +7041,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-17"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 99385,
 					streetName: "Street 36",
@@ -7057,7 +7057,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 79567,
 					streetName: "Street 23",
@@ -7117,7 +7117,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 90688,
 					streetName: "Street 33",
@@ -7477,7 +7477,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 90045,
 					streetName: "Street 23",
@@ -7541,7 +7541,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 42093,
 					streetName: "Street 4",
@@ -7557,7 +7557,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 30378,
 					streetName: "Street 47",
@@ -7573,7 +7573,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 59151,
 					streetName: "Street 30",
@@ -7589,7 +7589,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 95591,
 					streetName: "Street 41",
@@ -7621,7 +7621,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-21"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 66758,
 					streetName: "Street 17",
@@ -7681,7 +7681,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 40163,
 					streetName: "Street 4",
@@ -7729,7 +7729,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 97615,
 					streetName: "Street 18",
@@ -7745,7 +7745,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 22032,
 					streetName: "Street 30",
@@ -7993,7 +7993,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 80912,
 					streetName: "Street 36",
@@ -8117,7 +8117,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-30"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 36767,
 					streetName: "Street 7",
@@ -8165,7 +8165,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 93388,
 					streetName: "Street 28",
@@ -8229,7 +8229,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 50312,
 					streetName: "Street 11",
@@ -8545,7 +8545,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-06"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 80946,
 					streetName: "Broadway",
@@ -8989,7 +8989,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-30"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 36767,
 					streetName: "Street 7",
@@ -9037,7 +9037,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 93388,
 					streetName: "Street 28",
@@ -9101,7 +9101,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 50312,
 					streetName: "Street 11",
@@ -9225,7 +9225,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 88056,
 					streetName: "Street 31",
@@ -9257,7 +9257,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 51789,
 					streetName: "Street 21",
@@ -9273,7 +9273,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 75943,
 					streetName: "Street 10",
@@ -9321,7 +9321,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 59822,
 					streetName: "Street 5",
@@ -9353,7 +9353,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 67887,
 					streetName: "Street 16",
@@ -9413,7 +9413,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 62471,
 					streetName: "Street 18",
@@ -9445,7 +9445,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 57877,
 					streetName: "Street 40",
@@ -9477,7 +9477,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 39952,
 					streetName: "Street 15",
@@ -9493,7 +9493,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 89167,
 					streetName: "Street 24",
@@ -9525,7 +9525,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 57993,
 					streetName: "Street 25",
@@ -9557,7 +9557,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 61583,
 					streetName: "Street 24",
@@ -9837,7 +9837,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 22399,
 					streetName: "Street 37",
@@ -9853,7 +9853,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 69481,
 					streetName: "Street 28",
@@ -9885,7 +9885,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 47952,
 					streetName: "Street 34",
@@ -9917,7 +9917,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 92086,
 					streetName: "Street 46",
@@ -9933,7 +9933,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 18884,
 					streetName: "Street 18",
@@ -9993,7 +9993,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-22"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 21662,
 					streetName: "Street 47",
@@ -10009,7 +10009,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-23"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 90760,
 					streetName: "Street 22",
@@ -10073,7 +10073,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 14988,
 					streetName: "Street 37",
@@ -10165,7 +10165,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 91387,
 					streetName: "Street 28",
@@ -10277,7 +10277,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 32182,
 					streetName: "Street 17",
@@ -10405,7 +10405,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 21401,
 					streetName: "Street 20",
@@ -10421,7 +10421,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 67334,
 					streetName: "Street 40",
@@ -10437,7 +10437,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 61914,
 					streetName: "Street 33",
@@ -10545,7 +10545,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 90688,
 					streetName: "Street 33",
@@ -10637,7 +10637,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 22399,
 					streetName: "Street 37",
@@ -10653,7 +10653,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 69481,
 					streetName: "Street 28",
@@ -10685,7 +10685,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 47952,
 					streetName: "Street 34",
@@ -10717,7 +10717,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 92086,
 					streetName: "Street 46",
@@ -10733,7 +10733,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 18884,
 					streetName: "Street 18",
@@ -10809,7 +10809,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 76342,
 					streetName: "Street 3",
@@ -10841,7 +10841,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-21"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 77913,
 					streetName: "Street 33",
@@ -10857,7 +10857,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-28"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 64938,
 					streetName: "Street 17",
@@ -11013,7 +11013,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 90045,
 					streetName: "Street 23",
@@ -11077,7 +11077,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 42093,
 					streetName: "Street 4",
@@ -11093,7 +11093,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 30378,
 					streetName: "Street 47",
@@ -11109,7 +11109,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 59151,
 					streetName: "Street 30",
@@ -11125,7 +11125,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 95591,
 					streetName: "Street 41",
@@ -11157,7 +11157,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-21"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 66758,
 					streetName: "Street 17",
@@ -11217,7 +11217,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 64564,
 					streetName: "Street 1",
@@ -11281,7 +11281,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 44788,
 					streetName: "Street 10",
@@ -11329,7 +11329,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 24178,
 					streetName: "Street 36",
@@ -11345,7 +11345,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 61522,
 					streetName: "Street 10",
@@ -11377,7 +11377,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 13065,
 					streetName: "Street 6",
@@ -11393,7 +11393,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-25"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 29470,
 					streetName: "Street 29",
@@ -11441,7 +11441,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 24916,
 					streetName: "Street 18",
@@ -11489,7 +11489,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 72475,
 					streetName: "Street 40",
@@ -11505,7 +11505,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "New York",
 					zipCode: 32513,
 					streetName: "Street 25",
@@ -11521,7 +11521,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-16"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 69174,
 					streetName: "Street 24",
@@ -11569,7 +11569,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 15521,
 					streetName: "Street 30",
@@ -11601,7 +11601,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 72193,
 					streetName: "Street 11",
@@ -11677,7 +11677,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 62471,
 					streetName: "Street 18",
@@ -11709,7 +11709,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 57877,
 					streetName: "Street 40",
@@ -11741,7 +11741,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-20"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 39952,
 					streetName: "Street 15",
@@ -11757,7 +11757,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 89167,
 					streetName: "Street 24",
@@ -11789,7 +11789,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-27"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 57993,
 					streetName: "Street 25",
@@ -11821,7 +11821,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 61583,
 					streetName: "Street 24",
@@ -11977,7 +11977,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 62595,
 					streetName: "Street 45",
@@ -12025,7 +12025,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Los Angeles",
 					zipCode: 70091,
 					streetName: "Street 38",
@@ -12041,7 +12041,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 28881,
 					streetName: "Street 31",
@@ -12305,7 +12305,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "USA",
+					country: "United States",
 					city: "Chicago",
 					zipCode: 47082,
 					streetName: "Street 21",
@@ -12321,7 +12321,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Birmingham",
 					zipCode: 19592,
 					streetName: "Street 14",
@@ -12337,7 +12337,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: "2024-12-26"
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "Manchester",
 					zipCode: 40094,
 					streetName: "Street 47",
@@ -12353,7 +12353,7 @@ export const InventoryList: TemplateDataModel[] = [
 					dateDelivered: ""
 				},
 				orderInformation: {
-					country: "UK",
+					country: "United Kingdom",
 					city: "London",
 					zipCode: 11622,
 					streetName: "Street 25",
