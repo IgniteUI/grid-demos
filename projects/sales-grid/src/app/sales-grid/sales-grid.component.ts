@@ -1,5 +1,5 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import {
   IgxButtonDirective,
   IgxDropDownComponent,
@@ -28,18 +28,19 @@ import {
   ThemeToken
 } from 'igniteui-angular';
 import FLAGS from './data/flags.json'
-import SALES_DATA from './data/SalesData.json';
+import { DataService } from '../services/data.service';
+import { BehaviorSubject } from 'rxjs';
 
 export class IgxSaleProfitAggregate {
   public static totalProfit = (_, data: any[] | undefined) =>
-    data?.reduce((accumulator, value) => accumulator + (value.Sale - value.Cost), 0) || 0;
+    data?.reduce((accumulator, value) => accumulator + (value.sale - value.cost), 0) || 0;
 
   public static averageProfit = (_, data: any[] | undefined) => {
     let average = 0;
     if (data?.length === 1) {
-      average = data[0].Sale - data[0].Cost;
+      average = data[0].sale - data[0].cost;
     } else if (data && data.length > 1) {
-        const mappedData = data.map(x => x.Sale - x.Cost);
+        const mappedData = data.map(x => x.sale - x.cost);
         average = mappedData.reduce((a, b) => a + b) / mappedData.length;
     }
     return average;
@@ -48,9 +49,9 @@ export class IgxSaleProfitAggregate {
   public static minProfit = (_, data: any[] | undefined) => {
       let min = 0;
       if (data?.length === 1) {
-          min = data[0].Sale - data[0].Cost;
+          min = data[0].sale - data[0].cost;
       } else if (data && data.length > 1) {
-          const mappedData = data.map(x => x.Sale - x.Cost);
+          const mappedData = data.map(x => x.sale - x.cost);
           min = mappedData.reduce((a, b) => Math.min(a, b));
       }
       return min;
@@ -59,9 +60,9 @@ export class IgxSaleProfitAggregate {
   public static maxProfit = (_, data: any[] | undefined) => {
       let max = 0;
       if (data?.length === 1) {
-          max = data[0].Sale - data[0].Cost;
+          max = data[0].sale - data[0].cost;
       } else if (data && data.length > 1) {
-          const mappedData = data.map(x => x.Sale - x.Cost);
+          const mappedData = data.map(x => x.sale - x.cost);
           max = mappedData.reduce((a, b) => Math.max(a, b));
       }
       return max;
@@ -83,7 +84,7 @@ export class IgxSaleProfitAggregate {
   ],
   styleUrl: './sales-grid.component.scss'
 })
-export class SalesGridComponent {
+export class SalesGridComponent implements OnInit{
   @ViewChild(IgxPivotGridComponent, { static: true })
   public pivotGrid!: IgxPivotGridComponent;
 
@@ -91,13 +92,13 @@ export class SalesGridComponent {
   public countryColumnTemplate!: TemplateRef<any>;
 
   public currencyPipe = new CurrencyPipe('en-US');
-  public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
+  public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'brand');
   public bulgariaCountryFilter = new FilteringExpressionsTree(FilteringLogic.And);
 
   public fileName = 'SalesGridApp';
   public saleValue: IPivotValue = {
     enabled: true,
-    member: 'Sale',
+    member: 'sale',
     displayName: 'Sales',
     aggregate: {
       key: 'SUM',
@@ -132,12 +133,12 @@ export class SalesGridComponent {
       },
     ],
     formatter: (value, _, __) => {
-      return this.currencyFormatter(value, 'Sale');
+      return this.currencyFormatter(value, 'sale');
     }
   };
   public profitValue: IPivotValue = {
     enabled: true,
-    member: 'Cost',
+    member: 'cost',
     displayName: 'Profit',
     aggregate: {
       key: 'SUM',
@@ -172,31 +173,31 @@ export class SalesGridComponent {
       },
     ],
     formatter: (value, _, __) => {
-      return this.currencyFormatter(value, 'Cost');
+      return this.currencyFormatter(value, 'cost');
     }
   };
   public pivotConfigBrands: IPivotConfiguration = {
     columns: [
       {
         enabled: true,
-        memberName: 'Country',
+        memberName: 'country',
         displayName: 'Country'
       },
       {
         enabled: true,
-        memberName: 'Brand',
+        memberName: 'brand',
         displayName: 'Brand',
         filter: this.brandFilter
       },
       {
         enabled: false,
-        memberName: 'Store',
+        memberName: 'store',
         displayName: 'Store'
       },
     ],
     rows: [
       new IgxPivotDateDimension({
-        memberName: 'Date',
+        memberName: 'saleDate',
         displayName: 'All Periods',
         enabled: true
       },
@@ -214,7 +215,7 @@ export class SalesGridComponent {
   public pivotConfigStores: IPivotConfiguration = {
     columns: [
       new IgxPivotDateDimension({
-        memberName: 'Date',
+        memberName: 'saleDate',
         displayName: 'All Periods',
         enabled: true
       },
@@ -226,13 +227,13 @@ export class SalesGridComponent {
     ],
     rows: [
       {
-        memberName: 'Store',
+        memberName: 'store',
         displayName: 'Store',
         enabled: true,
         width: "140px"
       },
       {
-        memberName: 'Brand',
+        memberName: 'brand',
         displayName: 'Brand',
         enabled: true,
         width: "140px"
@@ -244,7 +245,7 @@ export class SalesGridComponent {
     ],
     filters: [
       {
-        memberName: "Country",
+        memberName: "country",
         displayName: 'Country',
         filter: this.bulgariaCountryFilter,
         enabled: true
@@ -253,19 +254,21 @@ export class SalesGridComponent {
   };
 
   public flagsData = FLAGS;
-  public data: any = SALES_DATA;
+  // public data: any = SALES_DATA;
+  public data$: BehaviorSubject<any> = new BehaviorSubject([]);
+  public isLoading = true;
 
-  constructor(public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
-    var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
+  constructor(private dataService: DataService, public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
+    var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'brand');
     multipleFilters.filteringOperands = [
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
-        fieldName: 'Brand',
+        fieldName: 'brand',
         searchVal: 'HM'
       },
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
-        fieldName: 'Brand',
+        fieldName: 'brand',
         searchVal: 'HM Home'
       },
     ];
@@ -273,10 +276,20 @@ export class SalesGridComponent {
     this.bulgariaCountryFilter.filteringOperands = [
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
-        fieldName: 'Country',
+        fieldName: 'country',
         searchVal: 'Bulgaria'
       },
     ]
+  }
+
+  public ngOnInit(): void {
+    this.dataService.getData();
+    this.data$ = this.dataService.records;
+    this.data$.subscribe((data) => {
+      if (data.length !== 0) {
+        this.isLoading = false;
+      }
+    });
   }
 
   public onViewSelection(event: ISelectionEventArgs) {
