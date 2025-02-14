@@ -1,196 +1,105 @@
 import { DataPoint } from "./dataModels";
 
-export const TREND_DATA: DataPoint[][] = [
+const trendDataPoints: any[][] = [
   [
-    { label: 4, value: 4 },
-    { label: 5, value: 5 },
-    { label: 2, value: 2 },
-    { label: 7, value: 7 },
-    { label: -1,value: -1 },
-    { label: 3, value: 3 },
-    { label: -2,value: -2 },
-    { label: 5, value: 5 },
-    { label: 2, value: 2 },
-    { label: 6, value: 6 }
+    { unitsSold: 12 }, { unitsSold: 95 }, { unitsSold: 33 }, { unitsSold: 110 },
+    { unitsSold: 5 }, { unitsSold: 150 }, { unitsSold: 48 }, { unitsSold: 77 },
+    { unitsSold: 25 }, { unitsSold: 140 }, { unitsSold: 66 }, { unitsSold: 9 }
   ],
   [
-    { label: 9, value: 9 },
-    { label: 3, value: 3 },
-    { label: 6, value: 6 },
-    { label: -4, value: -4 },
-    { label: 7, value: 7 },
-    { label: -2, value: -2 },
-    { label: 5, value: 5 },
-    { label: -6, value: -6 },
-    { label: 4, value: 4 },
-    { label: 0, value: 0 }
+    { unitsSold: 50 }, { unitsSold: 25 }, { unitsSold: 90 }, { unitsSold: 130 },
+    { unitsSold: 22 }, { unitsSold: 5 }, { unitsSold: 110 }, { unitsSold: 67 },
+    { unitsSold: 80 }, { unitsSold: 15 }, { unitsSold: 145 }, { unitsSold: 38 }
   ],
   [
-    { label: 10, value: 10 },
-    { label: -1, value: -1 },
-    { label: 8, value: 8 },
-    { label: 3, value: 3 },
-    { label: 2, value: 2 },
-    { label: 1, value: 1 },
-    { label: -3, value: -3 },
-    { label: 5, value: 5 },
-    { label: 7, value: 7 },
-    { label: 4, value: 4 }
+    { unitsSold: 140 }, { unitsSold: 60 }, { unitsSold: 75 }, { unitsSold: 28 },
+    { unitsSold: 135 }, { unitsSold: 15 }, { unitsSold: 40 }, { unitsSold: 95 },
+    { unitsSold: 12 }, { unitsSold: 110 }, { unitsSold: 55 }, { unitsSold: 12 }
   ],
   [
-    { label: 11, value: 11 },
-    { label: 6, value: 6 },
-    { label: -5, value: -5 },
-    { label: 9, value: 9 },
-    { label: 0, value: 0 },
-    { label: -1, value: -1 },
-    { label: 4, value: 4 },
-    { label: 8, value: 8 },
-    { label: -2, value: -2 },
-    { label: 3, value: 3 }
+    { unitsSold: 90 }, { unitsSold: 7 }, { unitsSold: 115 }, { unitsSold: 20 },
+    { unitsSold: 98 }, { unitsSold: 33 }, { unitsSold: 150 }, { unitsSold: 78 },
+    { unitsSold: 55 }, { unitsSold: 35 }, { unitsSold: 140 }, { unitsSold: 20 }
   ],
   [
-    { label: -3, value: -3 },
-    { label: 7, value: 7 },
-    { label: 10, value: 10 },
-    { label: 4, value: 4 },
-    { label: 9, value: 9 },
-    { label: 1, value: 1 },
-    { label: -4, value: -4 },
-    { label: 5, value: 5 },
-    { label: 2, value: 2 },
-    { label: -6, value: -6 }
+    { unitsSold: 15 }, { unitsSold: 130 }, { unitsSold: 110 }, { unitsSold: 48 },
+    { unitsSold: 140 }, { unitsSold: 10 }, { unitsSold: 25 }, { unitsSold: 95 },
+    { unitsSold: 70 }, { unitsSold: 135 }, { unitsSold: 8 }, { unitsSold: 5 }
   ],
   [
-    { label: 6, value: 6 },
-    { label: 11, value: 11 },
-    { label: 3, value: 3 },
-    { label: -2, value: -2 },
-    { label: 8, value: 8 },
-    { label: 7, value: 7 },
-    { label: 0, value: 0 },
-    { label: 4, value: 4 },
-    { label: -1, value: -1 },
-    { label: 5, value: 5 }
+    { unitsSold: 130 }, { unitsSold: 55 }, { unitsSold: 20 }, { unitsSold: 99 },
+    { unitsSold: 65 }, { unitsSold: 120 }, { unitsSold: 10 }, { unitsSold: 138 },
+    { unitsSold: 75 }, { unitsSold: 30 }, { unitsSold: 150 }, { unitsSold: 14 }
   ],
   [
-    { label: 12, value: 12 },
-    { label: -6, value: -6 },
-    { label: 8, value: 8 },
-    { label: 0, value: 0 },
-    { label: 7, value: 7 },
-    { label: 10, value: 10 },
-    { label: 2, value: 2 },
-    { label: 4, value: 4 },
-    { label: -5, value: -5 },
-    { label: 6, value: 6 }
+    { unitsSold: 18 }, { unitsSold: 110 }, { unitsSold: 145 }, { unitsSold: 22 },
+    { unitsSold: 77 }, { unitsSold: 38 }, { unitsSold: 135 }, { unitsSold: 9 },
+    { unitsSold: 50 }, { unitsSold: 150 }, { unitsSold: 120 }, { unitsSold: 7 }
   ],
   [
-    { label: 9, value: 9 },
-    { label: 1, value: 1 },
-    { label: -4, value: -4 },
-    { label: 5, value: 5 },
-    { label: -3, value: -3 },
-    { label: 7, value: 7 },
-    { label: 6, value: 6 },
-    { label: 8, value: 8 },
-    { label: 4, value: 4 },
-    { label: -2, value: -2 }
+    { unitsSold: 150 }, { unitsSold: 42 }, { unitsSold: 9 }, { unitsSold: 100 },
+    { unitsSold: 40 }, { unitsSold: 125 }, { unitsSold: 130 }, { unitsSold: 5 },
+    { unitsSold: 90 }, { unitsSold: 75 }, { unitsSold: 18 }, { unitsSold: 28 }
   ],
   [
-    { label: 10, value: 10 },
-    { label: -1, value: -1 },
-    { label: 4, value: 4 },
-    { label: 9, value: 9 },
-    { label: 0, value: 0 },
-    { label: 6, value: 6 },
-    { label: 2, value: 2 },
-    { label: 8, value: 8 },
-    { label: -5, value: -5 },
-    { label: 3, value: 3 }
+    { unitsSold: 45 }, { unitsSold: 75 }, { unitsSold: 140 }, { unitsSold: 15 },
+    { unitsSold: 55 }, { unitsSold: 120 }, { unitsSold: 135 }, { unitsSold: 33 },
+    { unitsSold: 5 }, { unitsSold: 110 }, { unitsSold: 22 }, { unitsSold: 10 }
   ],
   [
-    { label: 11, value: 11 },
-    { label: 0, value: 0 },
-    { label: 9, value: 9 },
-    { label: 6, value: 6 },
-    { label: -1, value: -1 },
-    { label: 5, value: 5 },
-    { label: 7, value: 7 },
-    { label: 2, value: 2 },
-    { label: 4, value: 4 },
-    { label: -2, value: -2 }
+    { unitsSold: 100 }, { unitsSold: 8 }, { unitsSold: 130 }, { unitsSold: 75 },
+    { unitsSold: 35 }, { unitsSold: 55 }, { unitsSold: 145 }, { unitsSold: 20 },
+    { unitsSold: 115 }, { unitsSold: 40 }, { unitsSold: 140 }, { unitsSold: 10 }
   ],
   [
-    { label: 8, value: 8 },
-    { label: 3, value: 3 },
-    { label: -6, value: -6 },
-    { label: 7, value: 7 },
-    { label: 4, value: 4 },
-    { label: 10, value: 10 },
-    { label: 1, value: 1 },
-    { label: 0, value: 0 },
-    { label: 5, value: 5 },
-    { label: -3, value: -3 }
+    { unitsSold: 20 }, { unitsSold: 145 }, { unitsSold: 8 }, { unitsSold: 70 },
+    { unitsSold: 12 }, { unitsSold: 150 }, { unitsSold: 48 }, { unitsSold: 33 },
+    { unitsSold: 130 }, { unitsSold: 22 }, { unitsSold: 115 }, { unitsSold: 9 }
   ],
   [
-    { label: 12, value: 12 },
-    { label: 5, value: 5 },
-    { label: 3, value: 3 },
-    { label: 8, value: 8 },
-    { label: -4, value: -4 },
-    { label: 6, value: 6 },
-    { label: 2, value: 2 },
-    { label: 1, value: 1 },
-    { label: -2, value: -2 },
-    { label: 4, value: 4 }
+    { unitsSold: 150 }, { unitsSold: 60 }, { unitsSold: 22 }, { unitsSold: 5 },
+    { unitsSold: 98 }, { unitsSold: 75 }, { unitsSold: 35 }, { unitsSold: 135 },
+    { unitsSold: 80 }, { unitsSold: 25 }, { unitsSold: 140 }, { unitsSold: 18 }
   ],
   [
-    { label: 10, value: 10 },
-    { label: 7, value: 7 },
-    { label: -3, value: -3 },
-    { label: 5, value: 5 },
-    { label: 1, value: 1 },
-    { label: 4, value: 4 },
-    { label: 0, value: 0 },
-    { label: -6, value: -6 },
-    { label: 3, value: 3 },
-    { label: 8, value: 8 }
+    { unitsSold: 85 }, { unitsSold: 130 }, { unitsSold: 55 }, { unitsSold: 12 },
+    { unitsSold: 150 }, { unitsSold: 90 }, { unitsSold: 30 }, { unitsSold: 60 },
+    { unitsSold: 5 }, { unitsSold: 140 }, { unitsSold: 48 }, { unitsSold: 23 }
   ],
   [
-    { label: 11, value: 11 },
-    { label: 2, value: 2 },
-    { label: 4, value: 4 },
-    { label: 9, value: 9 },
-    { label: -1, value: -1 },
-    { label: 8, value: 8 },
-    { label: 3, value: 3 },
-    { label: -5, value: -5 },
-    { label: 5, value: 5 },
-    { label: 7, value: 7 }
+    { unitsSold: 25 }, { unitsSold: 100 }, { unitsSold: 150 }, { unitsSold: 15 },
+    { unitsSold: 80 }, { unitsSold: 120 }, { unitsSold: 55 }, { unitsSold: 5 },
+    { unitsSold: 110 }, { unitsSold: 130 }, { unitsSold: 22 }, { unitsSold: 6 }
   ],
   [
-    { label: 7, value: 7 },
-    { label: 9, value: 9 },
-    { label: 1, value: 1 },
-    { label: 6, value: 6 },
-    { label: 10, value: 10 },
-    { label: 0, value: 0 },
-    { label: 2, value: 2 },
-    { label: 8, value: 8 },
-    { label: -6, value: -6 },
-    { label: 5, value: 5 }
+    { unitsSold: 10 }, { unitsSold: 140 }, { unitsSold: 50 }, { unitsSold: 60 },
+    { unitsSold: 120 }, { unitsSold: 20 }, { unitsSold: 130 }, { unitsSold: 150 },
+    { unitsSold: 35 }, { unitsSold: 5 }, { unitsSold: 100 }, { unitsSold: 15 }
   ],
   [
-    { label: 6, value: 6 },
-    { label: 10, value: 10 },
-    { label: 4, value: 4 },
-    { label: 1, value: 1 },
-    { label: 7, value: 7 },
-    { label: 8, value: 8 },
-    { label: 3, value: 3 },
-    { label: -2, value: -2 },
-    { label: -5, value: -5 },
-    { label: 9, value: 9 }
+    { unitsSold: 55 }, { unitsSold: 150 }, { unitsSold: 12 }, { unitsSold: 110 },
+    { unitsSold: 22 }, { unitsSold: 140 }, { unitsSold: 5 }, { unitsSold: 100 },
+    { unitsSold: 48 }, { unitsSold: 135 }, { unitsSold: 20 }, { unitsSold: 22 }
+  ],
+  [
+    { unitsSold: 150 }, { unitsSold: 12 }, { unitsSold: 140 }, { unitsSold: 5 },
+    { unitsSold: 95 }, { unitsSold: 25 }, { unitsSold: 130 }, { unitsSold: 35 },
+    { unitsSold: 80 }, { unitsSold: 110 }, { unitsSold: 75 }, { unitsSold: 14 }
   ]
 ];
+
+const periodYear: string = '2024';
+const PeriodLabels: string[] = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+const addMonthLabels = (dataPoints: any[][]): DataPoint[][] => {
+  return dataPoints.map((subArray: any[]) =>
+    subArray.map((item: any, index: number) => {
+      item['month'] = `${PeriodLabels[index]} ${periodYear}`;
+      return item;
+    }));
+};
+
+export const TREND_DATA: DataPoint[][] = addMonthLabels(trendDataPoints);
