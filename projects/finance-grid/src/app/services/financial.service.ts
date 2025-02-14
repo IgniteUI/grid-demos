@@ -1,43 +1,47 @@
 import { Injectable } from "@angular/core";
 import DATA from "../data/data.json";
 import { BehaviorSubject } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 
+const DATA_URL = 'https://localhost:7244/Assets';
 @Injectable({
   providedIn: "root",
 })
 export class FinancialService {
   public records: BehaviorSubject<any>;
-  constructor() {
+  constructor(private _http: HttpClient) {
     this.records = new BehaviorSubject([]);
   }
 
   public getData() {
-    const currData = DATA;
-    const totalPortfolioInvestment = currData.reduce((acc: any, x: any) => {
-      acc += x.value.boughtPrice * x.positions;
-      return acc;
-    }, 0);
-    currData.forEach((record: any) => {
-      record["profitLossValue"] = this.calculateProfitLossValue(record.value.currentPrice, record.value.boughtPrice, record.positions);
-
-      record["profitLossPercentage"] = this.calculateProfitLossPercentage(record.profitLossValue, record.value.boughtPrice, record.positions);
-
-      const totalInitialInvestment = record.value.boughtPrice * record.positions;
-      record["allocation"] = parseFloat((totalInitialInvestment / totalPortfolioInvestment).toFixed(4));
-
-      record["marketValue"] = record.value.currentPrice * record.positions;
-
-      record["initialPrice"] = record.value.currentPrice;
-
-      record["dailyPercentageChange"] = 0;
-    });
-    this.records.next(currData);
+    this._http.get(DATA_URL).subscribe((data: any) => {
+      const currData = data;
+      const totalPortfolioInvestment = currData.reduce((acc: any, x: any) => {
+        acc += x.boughtPrice * x.positions;
+        return acc;
+      }, 0);
+      currData.forEach((record: any) => {
+        record["profitLossValue"] = this.calculateProfitLossValue(record.currentPrice, record.boughtPrice, record.positions);
+  
+        record["profitLossPercentage"] = this.calculateProfitLossPercentage(record.profitLossValue, record.boughtPrice, record.positions);
+  
+        const totalInitialInvestment = record.boughtPrice * record.positions;
+        record["allocation"] = parseFloat((totalInitialInvestment / totalPortfolioInvestment).toFixed(4));
+  
+        record["marketValue"] = record.currentPrice * record.positions;
+  
+        record["initialPrice"] = record.currentPrice;
+  
+        record["dailyPercentageChange"] = 0;
+      });
+      this.records.next(currData);
+    })
   }
 
   public updateAllPrices(data: any) {
     for (const dataRow of data) {
       const randomizedData = this.randomizeData(dataRow);
-      dataRow.value.currentPrice = randomizedData.newPrice;
+      dataRow.currentPrice = randomizedData.newPrice;
       dataRow.profitLossValue = randomizedData.profitLossValue;
       dataRow.profitLossPercentage = randomizedData.profitLossPercentage;
       dataRow.marketValue = randomizedData.marketValue;
@@ -78,10 +82,10 @@ export class FinancialService {
       // if exceeds then make the change percentage negative
       changePercent -= 2 * volatility;
     }
-    const changeAmount = dataRow.value.currentPrice * (changePercent / 100);
-    const newPrice = parseFloat((dataRow.value.currentPrice + changeAmount).toFixed(2));
-    const newProfitLossValue = this.calculateProfitLossValue(newPrice, dataRow.value.boughtPrice, dataRow.positions);
-    const newProfitLossPercentage = this.calculateProfitLossPercentage(newProfitLossValue, dataRow.value.boughtPrice, dataRow.positions);
+    const changeAmount = dataRow.currentPrice * (changePercent / 100);
+    const newPrice = parseFloat((dataRow.currentPrice + changeAmount).toFixed(2));
+    const newProfitLossValue = this.calculateProfitLossValue(newPrice, dataRow.boughtPrice, dataRow.positions);
+    const newProfitLossPercentage = this.calculateProfitLossPercentage(newProfitLossValue, dataRow.boughtPrice, dataRow.positions);
     const newMarketValue = newPrice * dataRow.positions;
     const newDailyPercentage = this.calculateDailyPercentageChange(dataRow.initialPrice, newPrice);
     return {
