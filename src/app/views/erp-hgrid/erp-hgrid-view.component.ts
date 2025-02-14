@@ -1,13 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ErpHGridSampleComponent } from 'projects/erp-hgrid/src/app/erp-hgrid-sample/erp-hgrid-sample.component';
+import { Component } from '@angular/core';
+import { AppComponent } from 'projects/erp-hgrid/src/app/app.component';
 
 @Component({
   standalone: true,
   selector: 'erp-hgrid-view',
   templateUrl: './erp-hgrid-view.component.html',
   styleUrl: './erp-hgrid-view.component.scss',
-  imports: [ErpHGridSampleComponent],
-  encapsulation: ViewEncapsulation.Emulated
+  imports: [AppComponent],
 })
-export class ErpHGridViewComponent {
-}
+export class ErpHGridViewComponent {}

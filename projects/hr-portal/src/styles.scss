@@ -1,18 +1,11 @@
-// Standard CSS normalize, comment out if not required or using a different module
-@use "minireset.css/minireset";
-@use "igniteui-angular/theming" as *;
-
-@include core();
-@include typography(
-  $font-family: $fluent-typeface,
-  $type-scale: $fluent-type-scale
-);
-@include theme(
-  $palette: $light-fluent-palette,
-  $schema: $light-fluent-schema
-);
-
-html, body {
+html {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  max-height: 1000px;
+}
+
+body {
+  margin: 0;
+  padding: 8px;
+  height: 100%;
 }

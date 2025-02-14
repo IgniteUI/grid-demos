@@ -20,6 +20,8 @@ import {
   IgxButtonModule,
   SortingDirection,
   DefaultSortingStrategy,
+  THEME_TOKEN,
+  ThemeToken,
 } from 'igniteui-angular';
 import { CommonModule } from '@angular/common';
 @Component({
@@ -27,6 +29,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './hr-portal.component.html',
   styleUrls: ['./hr-portal.component.scss'],
   standalone: true,
+  providers: [
+    {
+      provide: THEME_TOKEN,
+      useFactory: () => {
+        return new ThemeToken('fluent');
+      },
+    },
+  ],
   imports: [
     IgxTreeGridComponent,
     IgxColumnComponent,

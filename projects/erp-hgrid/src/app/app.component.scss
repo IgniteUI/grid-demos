@@ -1,4 +1,14 @@
+@use "igniteui-angular/theming" as *;
+
+@include core();
+@include typography();
+@include theme($light-material-palette);
+
+html,
+body {
+  max-height: 1000px;
+}
+
 .outer-wrapper {
-  margin: 40px;
-  height: calc(98% - 40px);
+  height: 100%;
 }

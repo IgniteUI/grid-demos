@@ -34,7 +34,9 @@ import {
   IgxTooltipModule,
   PositionSettings,
   HorizontalAlignment,
-  VerticalAlignment
+  VerticalAlignment,
+  THEME_TOKEN,
+  ThemeToken
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
@@ -47,6 +49,14 @@ defineComponents(IgcRatingComponent);
 @Component({
     selector: 'app-erp-hgrid-sample',
     standalone: true,
+    providers: [
+      {
+        provide: THEME_TOKEN,
+        useFactory: () => {
+          return new ThemeToken('material');
+        },
+      },
+    ],
     imports: [
       IgxHierarchicalGridComponent,
       IgxColumnComponent,

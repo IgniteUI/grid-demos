@@ -1,13 +1,12 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { FinanceGridComponent } from 'projects/finance-grid/src/app/finance-grid/finance-grid.component';
+import { Component } from '@angular/core';
+import { AppComponent } from 'projects/finance-grid/src/app/app.component';
 
 @Component({
   standalone: true,
   selector: 'finance-view',
-  imports: [FinanceGridComponent],
+  imports: [AppComponent],
   templateUrl: './finance-view.component.html',
-  styleUrl: './finance-view.component.scss',
-  encapsulation: ViewEncapsulation.Emulated
+  styleUrl: './finance-view.component.scss'
 })
 export class FinanceViewComponent {
 }

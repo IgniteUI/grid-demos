@@ -212,10 +212,6 @@ igx-card {
 }
 
 /*Overlay Sections*/
-.overlay-title {
-  padding-top: 8px;
-}
-
 .overlay-text {
   font-size: 14px;
 }
@@ -285,10 +281,9 @@ igx-card {
 /* MISC STYLES */
 /* --------------------------------------------- */
 
-.image-container img {
+.image-container {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
 }
 
 .status-value {
