@@ -114,7 +114,8 @@
             <div class="chart-container pie-chart-container">
               <div class="chart-header">
                 <span class="chart-title">Costs per Type</span>
-                <igx-select #select class="chart-select" [value]="periods.costPerTypePeriod" (selectionChanging)="onPeriodChange($event, 'costsPerType')">
+                <igx-select #select class="chart-select" [value]="periods[dataItem.vehicleId]?.costPerTypePeriod || Period.YTD"
+                (selectionChanging)="onPeriodChange($event, 'costsPerType', dataItem.vehicleId)">
                   <label igxLabel>Period</label>
                   <igx-select-item [value]="Period.YTD">YTD</igx-select-item>
                   <igx-select-item [value]="Period.ThreeMonths">Last 3 Months</igx-select-item>
@@ -132,7 +133,7 @@
                   valueMemberPath="value"
                   labelsPosition="OutsideEnd"
                   radiusFactor="0.7"
-                  [dataSource]="dataService.getCostsPerTypeData(dataItem.vehicleId, periods.costPerTypePeriod)"
+                  [dataSource]="dataService.getCostsPerTypeData(dataItem.vehicleId, periods[dataItem.vehicleId]?.costPerTypePeriod || Period.YTD)"
                   actualLabelOuterColor="#ededed"
                   >
                 </igx-pie-chart>
@@ -142,7 +143,8 @@
             <div class="chart-container area-chart-container">
               <div class="chart-header">
                 <span class="chart-title">Costs per Meter, per Quarter</span>
-                <igx-select #select class="chart-select" [value]="periods.costPerMeterPeriod" (selectionChanging)="onPeriodChange($event, 'costsPerMeter')">
+                <igx-select #select class="chart-select" [value]="periods[dataItem.vehicleId]?.costPerMeterPeriod || Period.YTD"
+                (selectionChanging)="onPeriodChange($event, 'costsPerMeter', dataItem.vehicleId)">
                   <label igxLabel>Period</label>
                   <igx-select-item value="ytd">YTD</igx-select-item>
                   <igx-select-item value="'2023'">2023</igx-select-item>
@@ -155,7 +157,7 @@
                 <igx-category-chart
                   name="chart"
                   class="chart-canvas"
-                  [dataSource]="dataService.getCostsPerMeterData(dataItem.vehicleId, periods.costPerMeterPeriod)"
+                  [dataSource]="dataService.getCostsPerMeterData(dataItem.vehicleId, periods[dataItem.vehicleId]?.costPerMeterPeriod || Period.YTD)"
                   chartType="Area"
                   isHorizontalZoomEnabled="false"
                   isVerticalZoomEnabled="false"
@@ -175,7 +177,8 @@
             <div class="chart-container column-chart-container">
               <div class="chart-header">
                 <span class="chart-title">Fuel Costs per Month</span>
-                <igx-select #select class="chart-select" [value]="periods.fuelCostPeriod" (selectionChanging)="onPeriodChange($event, 'fuelCosts')">
+                <igx-select #select class="chart-select" [value]="periods[dataItem.vehicleId]?.fuelCostPeriod || Period.YTD"
+                (selectionChanging)="onPeriodChange($event, 'fuelCosts', dataItem.vehicleId)">
                   <label igxLabel>Period</label>
                   <igx-select-item [value]="Period.YTD">YTD</igx-select-item>
                   <igx-select-item [value]="Period.ThreeMonths">Last 3 Months</igx-select-item>
@@ -189,7 +192,7 @@
                   class="column-chart"
                   #chart
                   chartType="Column"
-                  [dataSource]="dataService.getFuelCostsData(dataItem.vehicleId, periods.fuelCostPeriod)"
+                  [dataSource]="dataService.getFuelCostsData(dataItem.vehicleId, periods[dataItem.vehicleId]?.fuelCostPeriod || Period.YTD)"
                   yAxisTitle="Costs in USD"
                   isHorizontalZoomEnabled="false"
                   isVerticalZoomEnabled="false"

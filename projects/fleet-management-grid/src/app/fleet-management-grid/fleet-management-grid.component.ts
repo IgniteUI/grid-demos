@@ -96,11 +96,12 @@ export class FleetManagementGridComponent implements OnInit {
 
   //chart periods
   protected Period = Period;
-  protected periods = {
+  /* protected periods = {
     costPerTypePeriod: Period.YTD,
     costPerMeterPeriod: Period.YTD,
     fuelCostPeriod: Period.YTD
-  }
+  } */
+  protected periods: { [vehicleId: string]: { costPerTypePeriod: Period, costPerMeterPeriod: Period, fuelCostPeriod: Period } } = {};
 
   //driver details for detail overlay
   protected driverDetails: DriverDetails = {
@@ -148,13 +149,21 @@ export class FleetManagementGridComponent implements OnInit {
   }
 
   //handling for chart periods
-  protected onPeriodChange(event: any, chart: string): void {
+  protected onPeriodChange(event: any, chart: string, vehicleId: string): void {
+    if (!this.periods[vehicleId]) {
+      this.periods[vehicleId] = {
+        costPerTypePeriod: Period.YTD,
+        costPerMeterPeriod: Period.YTD,
+        fuelCostPeriod: Period.YTD
+      };
+    }
+
     if (chart === ChartType.CostPerType) {
-      this.periods.costPerTypePeriod = event.newSelection.value;
+      this.periods[vehicleId].costPerTypePeriod = event.newSelection.value;
     } else if (chart === ChartType.CostPerMeter) {
-      this.periods.costPerMeterPeriod = event.newSelection.value;
+      this.periods[vehicleId].costPerMeterPeriod = event.newSelection.value;
     } else if (chart === ChartType.FuelCosts) {
-      this.periods.fuelCostPeriod = event.newSelection.value;
+      this.periods[vehicleId].fuelCostPeriod = event.newSelection.value;
     }
 
   }
