@@ -104,6 +104,8 @@ $custom-icon-button-theme: icon-button-theme(
 }
 
 .tab-actions {
+  @include css-vars($custom-icon-button-theme);
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -113,27 +115,39 @@ $custom-icon-button-theme: icon-button-theme(
 
   a {
     padding-bottom: 2px;
+    transition: background-size 350ms;
     background: linear-gradient(
         0deg,
-        var(--ig-primary-500),
-        var(--ig-primary-500)
+        var(--bg-color),
+        var(--bg-color)
       )
       no-repeat right bottom / 0 var(--bg-h);
-    transition: background-size 350ms;
     --bg-h: 2px;
+    --bg-color: var(--ig-primary-500);
 
     &:where(:hover, :focus-visible) {
       background-size: 100% var(--bg-h);
       background-position-x: left;
     }
+
+    &.link--disabled {
+      color: var(--ig-primary-200);
+      --bg-color: var(--ig-primary-200);
+    }
   }
 
-  .link--disabled {
-    color: var(--ig-primary-200);
-    background: none !important;
-    background-size: 0% var(--bg-h) !important;
+
+
+  button {
+    --igx-icon-button-focus-background: var(--ig-gray-600);
+    --igx-icon-button-hover-background: var(--ig-gray-600);
   }
-  @include css-vars($custom-icon-button-theme);
+
+  .button--disabled {
+    --igx-icon-button-background: var(--ig-gray-500);
+    --igx-icon-button-focus-background: var(--ig-gray-800);
+    --igx-icon-button-hover-background: var(--ig-gray-800);
+  }
 }
 
 .learn-text {
