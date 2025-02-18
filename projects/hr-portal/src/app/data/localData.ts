@@ -89,7 +89,7 @@ export const EMPLOYEE_DATA: Employee[] = [
               },
               {
                 "ID": 151592,
-                "Name": "Daniel Harris",
+                "Name": "Rodger Everett",
                 "JobTitle": "Logistics Specialist",
                 "Department": "Operations",
                 "Location": "New York",
@@ -100,36 +100,6 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "Picture": "images/men/82.jpg",
                 "Age": 44,
                 "HireDate": new Date(2024, 4, 1),
-                "Employees": []
-              },
-              {
-                "ID": 151593,
-                "Name": "Ava Robinson",
-                "JobTitle": "Logistics Specialist",
-                "Department": "Operations",
-                "Location": "New York",
-                "Country": "USA",
-                "GrossSalary": 312500,
-                "Phone": "555-151593",
-                "Contacts": "ava.robinson@company.com",
-                "Picture": "images/men/46.jpg",
-                "Age": 34,
-                "HireDate": new Date(2024, 5, 16),
-                "Employees": []
-              },
-              {
-                "ID": 151594,
-                "Name": "William Turner",
-                "JobTitle": "Logistics Specialist",
-                "Department": "Operations",
-                "Location": "New York",
-                "Country": "USA",
-                "GrossSalary": 312500,
-                "Phone": "555-151594",
-                "Contacts": "william.turner@company.com",
-                "Picture": "images/men/2.jpg",
-                "Age": 44,
-                "HireDate": new Date(2024, 3, 23),
                 "Employees": []
               },
               {
@@ -157,7 +127,7 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "GrossSalary": 312500,
                 "Phone": "555-151596",
                 "Contacts": "ava.robinson@company.com",
-                "Picture": "images/men/16.jpg",
+                "Picture": "images/men/8.jpg",
                 "Age": 33,
                 "HireDate": new Date(2024, 6, 8),
                 "Employees": []
@@ -226,7 +196,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 10,
-            "Name": "Sophia Martinez",
+            "Name": "Letty Sonia",
             "JobTitle": "Office Administration Lead",
             "Department": "Operations",
             "Location": "New York",
@@ -254,36 +224,6 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "Employees": []
               },
               {
-                "ID": 151597,
-                "Name": "Olivia Walker",
-                "JobTitle": "Office Administrator",
-                "Department": "Operations",
-                "Location": "New York",
-                "Country": "USA",
-                "GrossSalary": 6900,
-                "Phone": "555-151597",
-                "Contacts": "olivia.walker@company.com",
-                "Picture": "images/men/17.jpg",
-                "Age": 32,
-                "HireDate": new Date(2024, 10, 2),
-                "Employees": []
-              },
-              {
-                "ID": 151598,
-                "Name": "William Turner",
-                "JobTitle": "Office Administrator",
-                "Department": "Operations",
-                "Location": "New York",
-                "Country": "USA",
-                "GrossSalary": 6900,
-                "Phone": "555-151598",
-                "Contacts": "william.turner@company.com",
-                "Picture": "images/men/49.jpg",
-                "Age": 29,
-                "HireDate": new Date(2024, 0, 7),
-                "Employees": []
-              },
-              {
                 "ID": 151599,
                 "Name": "Emma Scott",
                 "JobTitle": "Office Administrator",
@@ -300,7 +240,7 @@ export const EMPLOYEE_DATA: Employee[] = [
               },
               {
                 "ID": 151600,
-                "Name": "Jack Thompson",
+                "Name": "Westley Clifford",
                 "JobTitle": "Office Administrator",
                 "Department": "Operations",
                 "Location": "New York",
@@ -338,7 +278,7 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "GrossSalary": 8000,
                 "Phone": "555-1018",
                 "Contacts": "benjamin.carter@company.com",
-                "Picture": "images/men/18.jpg",
+                "Picture": "images/men/12.jpg",
                 "Age": 31,
                 "HireDate": new Date(2021, 1, 11),
                 "Employees": []
@@ -437,38 +377,8 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "Employees": []
               },
               {
-                "ID": 151602,
-                "Name": "Olivia Walker",
-                "JobTitle": "Backend Engineer",
-                "Department": "Technology",
-                "Location": "Berlin",
-                "Country": "DEU",
-                "GrossSalary": 10000,
-                "Phone": "555-151602",
-                "Contacts": "olivia.walker@company.com",
-                "Picture": "images/men/92.jpg",
-                "Age": 45,
-                "HireDate": new Date(2024, 9, 25),
-                "Employees": []
-              },
-              {
-                "ID": 151603,
-                "Name": "Olivia Walker",
-                "JobTitle": "Backend Engineer",
-                "Department": "Technology",
-                "Location": "Berlin",
-                "Country": "DEU",
-                "GrossSalary": 10000,
-                "Phone": "555-151603",
-                "Contacts": "olivia.walker@company.com",
-                "Picture": "images/men/85.jpg",
-                "Age": 43,
-                "HireDate": new Date(2024, 6, 14),
-                "Employees": []
-              },
-              {
                 "ID": 151604,
-                "Name": "Jack Thompson",
+                "Name": "Russ Chuckie",
                 "JobTitle": "Backend Engineer",
                 "Department": "Technology",
                 "Location": "Berlin",
@@ -619,7 +529,7 @@ export const EMPLOYEE_DATA: Employee[] = [
               },
               {
                 "ID": 151607,
-                "Name": "Samuel Morris",
+                "Name": "Bryce Wilf",
                 "JobTitle": "Frontend Engineer",
                 "Department": "Technology",
                 "Location": "Berlin",
@@ -634,7 +544,7 @@ export const EMPLOYEE_DATA: Employee[] = [
               },
               {
                 "ID": 151608,
-                "Name": "Emma Scott",
+                "Name": "Magnolia Onyx",
                 "JobTitle": "Frontend Engineer",
                 "Department": "Technology",
                 "Location": "Berlin",
@@ -642,14 +552,14 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "GrossSalary": 10800,
                 "Phone": "555-151608",
                 "Contacts": "emma.scott@company.com",
-                "Picture": "images/men/82.jpg",
+                "Picture": "images/men/35.jpg",
                 "Age": 26,
                 "HireDate": new Date(2024, 9, 27),
                 "Employees": []
               },
               {
                 "ID": 151609,
-                "Name": "Mia Adams",
+                "Name": "Parris Earline",
                 "JobTitle": "Frontend Engineer",
                 "Department": "Technology",
                 "Location": "Berlin",
@@ -663,36 +573,6 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "Employees": []
               },
               {
-                "ID": 151610,
-                "Name": "William Turner",
-                "JobTitle": "Frontend Engineer",
-                "Department": "Technology",
-                "Location": "Berlin",
-                "Country": "DEU",
-                "GrossSalary": 10800,
-                "Phone": "555-151610",
-                "Contacts": "william.turner@company.com",
-                "Picture": "images/men/78.jpg",
-                "Age": 39,
-                "HireDate": new Date(2024, 6, 26),
-                "Employees": []
-              },
-              {
-                "ID": 151611,
-                "Name": "Ava Robinson",
-                "JobTitle": "Frontend Engineer",
-                "Department": "Technology",
-                "Location": "Berlin",
-                "Country": "DEU",
-                "GrossSalary": 10800,
-                "Phone": "555-151611",
-                "Contacts": "ava.robinson@company.com",
-                "Picture": "images/men/47.jpg",
-                "Age": 34,
-                "HireDate": new Date(2024, 5, 27),
-                "Employees": []
-              },
-              {
                 "ID": 34,
                 "Name": "Ethan Brooks",
                 "JobTitle": "Frontend Engineer",
@@ -702,7 +582,7 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "GrossSalary": 11300,
                 "Phone": "555-1034",
                 "Contacts": "ethan.brooks@company.com",
-                "Picture": "images/men/34.jpg",
+                "Picture": "images/men/19.jpg",
                 "Age": 28,
                 "HireDate": new Date(2022, 0, 25),
                 "Employees": []
@@ -838,7 +718,7 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "GrossSalary": 11600,
                 "Phone": "555-1042",
                 "Contacts": "liam.mitchell@company.com",
-                "Picture": "images/men/42.jpg",
+                "Picture": "images/men/41.jpg",
                 "Age": 27,
                 "HireDate": new Date(2023, 0, 20),
                 "Employees": []
@@ -869,7 +749,7 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "GrossSalary": 11300,
                 "Phone": "555-1043",
                 "Contacts": "nathan.clark@company.com",
-                "Picture": "images/men/43.jpg",
+                "Picture": "images/men/23.jpg",
                 "Age": 31,
                 "HireDate": new Date(2019, 8, 10),
                 "Employees": []
@@ -1031,7 +911,7 @@ export const EMPLOYEE_DATA: Employee[] = [
         "Employees": [
           {
             "ID": 54,
-            "Name": "Jack Thompson",
+            "Name": "Steven Osbourne",
             "JobTitle": "UX/UI Designer",
             "Department": "Product",
             "Location": "London",
@@ -1103,7 +983,7 @@ export const EMPLOYEE_DATA: Employee[] = [
     "GrossSalary": 16500,
     "Phone": "555-4004",
     "Contacts": "james.cox@company.com",
-    "Picture": "images/men/5.jpg",
+    "Picture": "images/men/4.jpg",
     "Age": 47,
     "HireDate": new Date(2013, 8, 10),
     "Employees": [
@@ -1193,7 +1073,7 @@ export const EMPLOYEE_DATA: Employee[] = [
         "GrossSalary": 15000,
         "Phone": "555-1059",
         "Contacts": "henry.foster@company.com",
-        "Picture": "images/men/59.jpg",
+        "Picture": "images/men/25.jpg",
         "Age": 42,
         "HireDate": new Date(2016, 2, 20),
         "Employees": [
@@ -1229,7 +1109,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151628,
-            "Name": "Samuel Morris",
+            "Name": "Emmerson Hollis",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1244,7 +1124,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151629,
-            "Name": "Mia Adams",
+            "Name": "Cori Grey",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1252,24 +1132,9 @@ export const EMPLOYEE_DATA: Employee[] = [
             "GrossSalary": 11000,
             "Phone": "555-151629",
             "Contacts": "mia.adams@company.com",
-            "Picture": "images/men/6.jpg",
+            "Picture": "images/men/39.jpg",
             "Age": 37,
             "HireDate": new Date(2024, 11, 4),
-            "Employees": []
-          },
-          {
-            "ID": 151630,
-            "Name": "Olivia Walker",
-            "JobTitle": "Sales Executive",
-            "Department": "Sales",
-            "Location": "Paris",
-            "Country": "FRA",
-            "GrossSalary": 11000,
-            "Phone": "555-151630",
-            "Contacts": "olivia.walker@company.com",
-            "Picture": "images/men/54.jpg",
-            "Age": 38,
-            "HireDate": new Date(2024, 5, 6),
             "Employees": []
           },
           {
@@ -1289,7 +1154,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151632,
-            "Name": "Samuel Morris",
+            "Name": "Quinn Elwyn",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1303,23 +1168,8 @@ export const EMPLOYEE_DATA: Employee[] = [
             "Employees": []
           },
           {
-            "ID": 151633,
-            "Name": "Ava Robinson",
-            "JobTitle": "Sales Executive",
-            "Department": "Sales",
-            "Location": "Paris",
-            "Country": "FRA",
-            "GrossSalary": 11000,
-            "Phone": "555-151633",
-            "Contacts": "ava.robinson@company.com",
-            "Picture": "images/men/19.jpg",
-            "Age": 41,
-            "HireDate": new Date(2024, 10, 27),
-            "Employees": []
-          },
-          {
             "ID": 151634,
-            "Name": "Daniel Harris",
+            "Name": "Arnold Colbert",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1334,7 +1184,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151635,
-            "Name": "Daniel Harris",
+            "Name": "Ellington Shaye",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1349,7 +1199,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151636,
-            "Name": "Daniel Harris",
+            "Name": "Leighton Isidore",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1394,7 +1244,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 67,
-            "Name": "Ava Mitchell",
+            "Name": "Codie Esme",
             "JobTitle": "Sales Executive",
             "Department": "Sales",
             "Location": "Paris",
@@ -1451,7 +1301,7 @@ export const EMPLOYEE_DATA: Employee[] = [
     "GrossSalary": 18500,
     "Phone": "555-5005",
     "Contacts": "lucas.cook@company.com",
-    "Picture": "images/men/6.jpg",
+    "Picture": "images/men/99.jpg",
     "Age": 50,
     "HireDate": new Date(2009, 5, 25),
     "Employees": [
@@ -1486,7 +1336,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 72,
-            "Name": "Olivia Parker",
+            "Name": "Reanna Joleen",
             "JobTitle": "Financial Analyst",
             "Department": "Finance",
             "Location": "Chicago",
@@ -1531,7 +1381,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 75,
-            "Name": "Liam Adams",
+            "Name": "Kai Kacey",
             "JobTitle": "Accountant",
             "Department": "Finance",
             "Location": "Chicago",
@@ -1586,7 +1436,7 @@ export const EMPLOYEE_DATA: Employee[] = [
             "GrossSalary": 11000,
             "Phone": "555-1077",
             "Contacts": "james.carter@company.com",
-            "Picture": "images/men/77.jpg",
+            "Picture": "images/men/28.jpg",
             "Age": 38,
             "HireDate": new Date(2018, 4, 15),
             "Employees": []
@@ -1616,7 +1466,7 @@ export const EMPLOYEE_DATA: Employee[] = [
             "GrossSalary": 10600,
             "Phone": "555-1079",
             "Contacts": "daniel.robinson@company.com",
-            "Picture": "images/men/79.jpg",
+            "Picture": "images/men/30.jpg",
             "Age": 35,
             "HireDate": new Date(2020, 5, 25),
             "Employees": []
@@ -1665,7 +1515,7 @@ export const EMPLOYEE_DATA: Employee[] = [
     "GrossSalary": 14000,
     "Phone": "555-1082",
     "Contacts": "jack.scott@company.com",
-    "Picture": "images/men/82.jpg",
+    "Picture": "images/men/33.jpg",
     "Age": 45,
     "HireDate": new Date(2015, 2, 10),
     "Employees": [
@@ -1714,21 +1564,6 @@ export const EMPLOYEE_DATA: Employee[] = [
             "Employees": []
           },
           {
-            "ID": 151649,
-            "Name": "Olivia Walker",
-            "JobTitle": "Support Engineer",
-            "Department": "Support",
-            "Location": "New York",
-            "Country": "USA",
-            "GrossSalary": 9800,
-            "Phone": "555-151649",
-            "Contacts": "olivia.walker@company.com",
-            "Picture": "images/men/69.jpg",
-            "Age": 28,
-            "HireDate": new Date(2024, 11, 20),
-            "Employees": []
-          },
-          {
             "ID": 151650,
             "Name": "Samuel Morris",
             "JobTitle": "Support Engineer",
@@ -1744,23 +1579,8 @@ export const EMPLOYEE_DATA: Employee[] = [
             "Employees": []
           },
           {
-            "ID": 151651,
-            "Name": "Ava Robinson",
-            "JobTitle": "Support Engineer",
-            "Department": "Support",
-            "Location": "New York",
-            "Country": "USA",
-            "GrossSalary": 9800,
-            "Phone": "555-151651",
-            "Contacts": "ava.robinson@company.com",
-            "Picture": "images/men/95.jpg",
-            "Age": 40,
-            "HireDate": new Date(2024, 4, 10),
-            "Employees": []
-          },
-          {
             "ID": 151652,
-            "Name": "Daniel Harris",
+            "Name": "Chris Tylor",
             "JobTitle": "Customer Service Representative",
             "Department": "Support",
             "Location": "New York",
@@ -1783,7 +1603,7 @@ export const EMPLOYEE_DATA: Employee[] = [
             "GrossSalary": 10800,
             "Phone": "555-1085",
             "Contacts": "daniel.turner@company.com",
-            "Picture": "images/men/85.jpg",
+            "Picture": "images/men/44.jpg",
             "Age": 37,
             "HireDate": new Date(2019, 8, 20),
             "Employees": []
@@ -1845,7 +1665,7 @@ export const EMPLOYEE_DATA: Employee[] = [
         "GrossSalary": 12200,
         "Phone": "555-1092",
         "Contacts": "benjamin.hughes@company.com",
-        "Picture": "images/men/92.jpg",
+        "Picture": "images/men/46.jpg",
         "Age": 39,
         "HireDate": new Date(2018, 4, 10),
         "Employees": [
@@ -1926,7 +1746,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151655,
-            "Name": "Jack Thompson",
+            "Name": "Dharma Chobin",
             "JobTitle": "Customer Service Representative",
             "Department": "Support",
             "Location": "New York",
@@ -1941,7 +1761,7 @@ export const EMPLOYEE_DATA: Employee[] = [
           },
           {
             "ID": 151656,
-            "Name": "Emma Scott",
+            "Name": "Ainslee Renae",
             "JobTitle": "Customer Service Representative",
             "Department": "Support",
             "Location": "New York",
