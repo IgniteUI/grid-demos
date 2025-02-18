@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { NgIf } from '@angular/common';
 import {
   IgxHierarchicalGridComponent,
@@ -92,7 +92,7 @@ defineComponents(IgcRatingComponent);
     templateUrl: './erp-hgrid-sample.component.html',
     styleUrl: './erp-hgrid-sample.component.scss'
 })
-export class ErpHGridSampleComponent implements OnInit, AfterViewInit {
+export class ErpHGridSampleComponent implements AfterViewInit {
   @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
   public hierarchicalGrid!: IgxHierarchicalGridComponent;
   @ViewChild('rowisland', { read: IgxRowIslandComponent, static: true })
@@ -117,10 +117,6 @@ export class ErpHGridSampleComponent implements OnInit, AfterViewInit {
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
     this.iconService.addSvgIconFromText(billPaid.name, billPaid.value, 'imx-icons');
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
-  }
-
-  public ngOnInit(): void {
-
   }
 
   public ngAfterViewInit(): void {
