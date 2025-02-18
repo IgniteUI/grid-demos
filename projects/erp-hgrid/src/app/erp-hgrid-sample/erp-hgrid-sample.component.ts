@@ -36,13 +36,15 @@ import {
   HorizontalAlignment,
   VerticalAlignment,
   THEME_TOKEN,
-  ThemeToken
+  ThemeToken,
+  IgxGridToolbarDirective
 } from 'igniteui-angular';
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
 import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
-import { InventoryList } from '../data/erpData';
+import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
+import { ErpDataService } from '../services/erp-data.service';
 
 defineComponents(IgcRatingComponent);
 
@@ -72,6 +74,7 @@ defineComponents(IgcRatingComponent);
       IgxGridToolbarHidingComponent,
       IgxGridToolbarPinningComponent,
       IgxGridToolbarExporterComponent,
+      IgxGridToolbarDirective,
       IgxGridToolbarAdvancedFilteringComponent,
       IgxGridToolbarTitleComponent,
       IgxIconModule,
@@ -82,7 +85,8 @@ defineComponents(IgcRatingComponent);
       IgxButtonModule,
 	    IgxDialogModule,
 	    IgxRippleModule,
-      IgxTooltipModule
+      IgxTooltipModule,
+      SalesTrendsChartComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     templateUrl: './erp-hgrid-sample.component.html',
@@ -100,10 +104,14 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   public selectionMode: GridSelectionMode = 'multiple';
   public orderStatus = OrderStatus;
 
-  constructor(private iconService: IgxIconService) {
+  constructor(
+    private iconService: IgxIconService,
+    private erpDataService: ErpDataService
+  ) {
     // data
-    this.hgridData = InventoryList;
-    this.hgridData.forEach(product => product.totalNetProfit = this.calculateTotalNetProfit(product));
+    this.hgridData = this.erpDataService.getProducts();
+    const x = this.erpDataService.getProductsJson();
+
     // Icons used
     this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
@@ -174,9 +182,5 @@ export class ErpHGridSampleComponent implements AfterViewInit {
     if(dialog) {
       dialog.close();
     }
-  }
-
-  private calculateTotalNetProfit(product: TemplateDataModel): number {
-    return product.unitsSold * (product.netPrice);
   }
 }
