@@ -2,9 +2,9 @@
     <div class="pivotToolbar igx-grid__tr-pivot">
         <span class="igx-grid-toolbar__title">Sales Dashboard</span>
         <div>
-            <button igxButton="contained" style="margin-right: 10px;" [igxToggleAction]="viewDropdown" [igxDropDownItemNavigation]="viewDropdown" [igxTooltipTarget]="tooltipRef">
+            <button igxButton="contained" style="margin-right: 10px;" [igxToggleAction]="viewDropdown" [igxDropDownItemNavigation]="viewDropdown" [igxTooltipTarget]="configTooltipRef">
                 <igx-icon [name]="'visibility'" [family]="'material'"></igx-icon>
-                {{dropdownValues.get(selectedDropdown)?.title}}
+                {{availableConfigs.get(selectedConfig)?.title}}
                 <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
             </button>
             <button igxButton="outlined" [igxToggleAction]="exportDropdown" [igxDropDownItemNavigation]="exportDropdown">
@@ -13,9 +13,9 @@
                 <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
             </button>
             <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
-                <igx-drop-down-item [id]="PivotViews.BrandsSeparate" [selected]="selectedDropdown === PivotViews.BrandsSeparate"><span>{{dropdownValues.get(PivotViews.BrandsSeparate)?.title}}</span></igx-drop-down-item>
-                <igx-drop-down-item [id]="PivotViews.BrandsCombined" [selected]="selectedDropdown === PivotViews.BrandsCombined"><span>{{dropdownValues.get(PivotViews.BrandsCombined)?.title}}</span></igx-drop-down-item>
-                <igx-drop-down-item [id]="PivotViews.Stores" [selected]="selectedDropdown === PivotViews.Stores"><span>{{dropdownValues.get(PivotViews.Stores)?.title}}</span></igx-drop-down-item>
+              @for (configInfo of availableConfigs; track configInfo[0]) {
+                <igx-drop-down-item [id]="configInfo[0]" [selected]="selectedConfig === configInfo[0]"><span>{{availableConfigs.get(configInfo[0])?.title}}</span></igx-drop-down-item>
+              }
             </igx-drop-down>
             <igx-drop-down #exportDropdown (selectionChanging)="onExportSelection($event)">
                 <igx-drop-down-item [id]="'excel'"><span>Export to Excel</span></igx-drop-down-item>
@@ -44,6 +44,6 @@
     </div>
 </div>
 
-<div #tooltipRef="tooltip" igxTooltip>
+<div #configTooltipRef="tooltip" igxTooltip>
   Change pivot configuration.
 </div>

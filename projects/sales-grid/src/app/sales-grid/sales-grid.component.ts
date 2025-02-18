@@ -304,8 +304,8 @@ export class SalesGridComponent {
   // #endregion
 
   public PivotViews = PivotViews;
-  public selectedDropdown = PivotViews.BrandsSeparate;
-  public dropdownValues = new Map<PivotViews, { title: string, config: IPivotConfiguration}>([
+  public selectedConfig = PivotViews.BrandsSeparate;
+  public availableConfigs = new Map<PivotViews, { title: string, config: IPivotConfiguration}>([
     [ PivotViews.BrandsSeparate, { title: 'Brands: HM and HM Home', config: this.pivotConfigBrands} ],
     [ PivotViews.BrandsCombined, { title: 'Brands: HM + HM Home', config: this.pivotConfigBrandsCombined} ],
     [ PivotViews.Stores, { title: 'Stores: Bulgaria', config: this.pivotConfigStores} ]
@@ -339,17 +339,8 @@ export class SalesGridComponent {
   }
 
   public onViewSelection(event: ISelectionEventArgs) {
-    const newId = event.newSelection.id;
-    if (newId === PivotViews.BrandsSeparate) {
-      this.selectedDropdown = PivotViews.BrandsSeparate;
-      this.pivotGrid.pivotConfiguration = this.pivotConfigBrands;
-    } else if (newId === PivotViews.BrandsCombined) {
-      this.selectedDropdown = PivotViews.BrandsCombined;
-      this.pivotGrid.pivotConfiguration = this.pivotConfigBrandsCombined;
-    } else if (newId === PivotViews.Stores) {
-      this.selectedDropdown = PivotViews.Stores;
-      this.pivotGrid.pivotConfiguration = this.pivotConfigStores;
-    }
+    this.selectedConfig = <PivotViews>event.newSelection.id;
+    this.pivotGrid.pivotConfiguration = this.availableConfigs.get(this.selectedConfig)?.config || this.pivotConfigBrands;
   }
 
   public onExportSelection(event: ISelectionEventArgs) {
