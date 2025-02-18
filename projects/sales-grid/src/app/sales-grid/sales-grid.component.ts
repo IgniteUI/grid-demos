@@ -25,11 +25,21 @@ import {
   FilteringLogic,
   IPivotValue,
   THEME_TOKEN,
-  ThemeToken
+  ThemeToken,
+  IgxDropDownItemNavigationDirective,
+  IgxTooltipDirective,
+  IgxTooltipTargetDirective
 } from 'igniteui-angular';
 import FLAGS from './data/flags.json'
 import SALES_DATA from './data/SalesData.json';
 
+enum PivotViews {
+  BrandsSeparate = 'brandsOr',
+  BrandsCombined = 'jeansAnd',
+  Stores = 'stores'
+}
+
+// Custom aggregator to calculate profit value
 export class IgxSaleProfitAggregate {
   public static totalProfit = (_, data: any[] | undefined) =>
     data?.reduce((accumulator, value) => accumulator + (value.Sale - value.Cost), 0) || 0;
@@ -71,7 +81,8 @@ export class IgxSaleProfitAggregate {
 @Component({
   standalone: true,
   selector: 'app-sales-grid',
-  imports: [CommonModule, IgxPivotGridComponent, IgxPivotDataSelectorComponent, IgxButtonDirective, IgxIconComponent, IgxToggleActionDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxCellHeaderTemplateDirective],
+  imports: [CommonModule, IgxPivotGridComponent, IgxPivotDataSelectorComponent, IgxButtonDirective, IgxIconComponent, IgxTooltipDirective, IgxTooltipTargetDirective,
+    IgxToggleActionDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxCellHeaderTemplateDirective, IgxDropDownItemNavigationDirective],
   templateUrl: './sales-grid.component.html',
   providers: [
     {
@@ -93,8 +104,9 @@ export class SalesGridComponent {
   public currencyPipe = new CurrencyPipe('en-US');
   public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
   public bulgariaCountryFilter = new FilteringExpressionsTree(FilteringLogic.And);
-
   public fileName = 'SalesGridApp';
+
+  // #region Various configurations for the grid that can be toggled
   public saleValue: IPivotValue = {
     enabled: true,
     member: 'Sale',
@@ -211,6 +223,44 @@ export class SalesGridComponent {
       this.profitValue
     ]
   };
+  public pivotConfigBrandsCombined: IPivotConfiguration = {
+    columns: [
+      {
+        enabled: true,
+        memberName: 'Country',
+        displayName: 'Country'
+      },
+      {
+        enabled: false,
+        memberName: 'Store',
+        displayName: 'Store'
+      },
+    ],
+    rows: [
+      new IgxPivotDateDimension({
+        memberName: 'Date',
+        displayName: 'All Periods',
+        enabled: true
+      },
+        {
+          fullDate: true,
+          quarters: true,
+          months: false,
+        })
+    ],
+    values: [
+      this.saleValue,
+      this.profitValue
+    ],
+    filters: [
+      {
+        enabled: true,
+        memberName: 'Brand',
+        displayName: 'Brand',
+        filter: this.brandFilter
+      },
+    ]
+  };
   public pivotConfigStores: IPivotConfiguration = {
     columns: [
       new IgxPivotDateDimension({
@@ -251,6 +301,15 @@ export class SalesGridComponent {
       }
     ]
   };
+  // #endregion
+
+  public PivotViews = PivotViews;
+  public selectedDropdown = PivotViews.BrandsSeparate;
+  public dropdownValues = new Map<PivotViews, { title: string, config: IPivotConfiguration}>([
+    [ PivotViews.BrandsSeparate, { title: 'Brands: HM and HM Home', config: this.pivotConfigBrands} ],
+    [ PivotViews.BrandsCombined, { title: 'Brands: HM + HM Home', config: this.pivotConfigBrandsCombined} ],
+    [ PivotViews.Stores, { title: 'Stores: Bulgaria', config: this.pivotConfigStores} ]
+  ]);
 
   public flagsData = FLAGS;
   public data: any = SALES_DATA;
@@ -281,9 +340,14 @@ export class SalesGridComponent {
 
   public onViewSelection(event: ISelectionEventArgs) {
     const newId = event.newSelection.id;
-    if (newId === 'brands') {
+    if (newId === PivotViews.BrandsSeparate) {
+      this.selectedDropdown = PivotViews.BrandsSeparate;
       this.pivotGrid.pivotConfiguration = this.pivotConfigBrands;
-    } else if (newId === 'stores') {
+    } else if (newId === PivotViews.BrandsCombined) {
+      this.selectedDropdown = PivotViews.BrandsCombined;
+      this.pivotGrid.pivotConfiguration = this.pivotConfigBrandsCombined;
+    } else if (newId === PivotViews.Stores) {
+      this.selectedDropdown = PivotViews.Stores;
       this.pivotGrid.pivotConfiguration = this.pivotConfigStores;
     }
   }

@@ -2,19 +2,20 @@
     <div class="pivotToolbar igx-grid__tr-pivot">
         <span class="igx-grid-toolbar__title">Sales Dashboard</span>
         <div>
-            <button igxButton="outlined" style="margin-right: 10px;" [igxToggleAction]="viewDropdown">
+            <button igxButton="contained" style="margin-right: 10px;" [igxToggleAction]="viewDropdown" [igxDropDownItemNavigation]="viewDropdown" [igxTooltipTarget]="tooltipRef">
                 <igx-icon [name]="'visibility'" [family]="'material'"></igx-icon>
-                Change View
+                {{dropdownValues.get(selectedDropdown)?.title}}
                 <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
             </button>
-            <button igxButton="outlined" [igxToggleAction]="exportDropdown">
+            <button igxButton="outlined" [igxToggleAction]="exportDropdown" [igxDropDownItemNavigation]="exportDropdown">
                 <igx-icon [name]="'file_download'" [family]="'internal_indigo'"></igx-icon>
                 Export
                 <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
             </button>
             <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
-                <igx-drop-down-item [id]="'brands'"><span>Brands: HM and HM Home</span></igx-drop-down-item>
-                <igx-drop-down-item [id]="'stores'"><span>Stores: Bulgaria</span></igx-drop-down-item>
+                <igx-drop-down-item [id]="PivotViews.BrandsSeparate" [selected]="selectedDropdown === PivotViews.BrandsSeparate"><span>{{dropdownValues.get(PivotViews.BrandsSeparate)?.title}}</span></igx-drop-down-item>
+                <igx-drop-down-item [id]="PivotViews.BrandsCombined" [selected]="selectedDropdown === PivotViews.BrandsCombined"><span>{{dropdownValues.get(PivotViews.BrandsCombined)?.title}}</span></igx-drop-down-item>
+                <igx-drop-down-item [id]="PivotViews.Stores" [selected]="selectedDropdown === PivotViews.Stores"><span>{{dropdownValues.get(PivotViews.Stores)?.title}}</span></igx-drop-down-item>
             </igx-drop-down>
             <igx-drop-down #exportDropdown (selectionChanging)="onExportSelection($event)">
                 <igx-drop-down-item [id]="'excel'"><span>Export to Excel</span></igx-drop-down-item>
@@ -41,4 +42,8 @@
             </div>
         </ng-template>
     </div>
+</div>
+
+<div #tooltipRef="tooltip" igxTooltip>
+  Change pivot configuration.
 </div>
