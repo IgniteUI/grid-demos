@@ -314,21 +314,6 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "Employees": []
               },
               {
-                "ID": 151601,
-                "Name": "Henry Carter",
-                "JobTitle": "Office Administrator",
-                "Department": "Operations",
-                "Location": "New York",
-                "Country": "USA",
-                "GrossSalary": 6900,
-                "Phone": "555-151601",
-                "Contacts": "henry.carter@company.com",
-                "Picture": "images/men/77.jpg",
-                "Age": 28,
-                "HireDate": new Date(2024, 8, 7),
-                "Employees": []
-              },
-              {
                 "ID": 17,
                 "Name": "Emily Davis",
                 "JobTitle": "Office Administrator",
@@ -494,21 +479,6 @@ export const EMPLOYEE_DATA: Employee[] = [
                 "Picture": "images/men/77.jpg",
                 "Age": 42,
                 "HireDate": new Date(2024, 8, 7),
-                "Employees": []
-              },
-              {
-                "ID": 151605,
-                "Name": "Henry Carter",
-                "JobTitle": "Backend Engineer",
-                "Department": "Technology",
-                "Location": "Berlin",
-                "Country": "DEU",
-                "GrossSalary": 10000,
-                "Phone": "555-151605",
-                "Contacts": "henry.carter@company.com",
-                "Picture": "images/men/77.jpg",
-                "Age": 25,
-                "HireDate": new Date(2024, 3, 6),
                 "Employees": []
               },
               {
@@ -1741,21 +1711,6 @@ export const EMPLOYEE_DATA: Employee[] = [
             "Picture": "images/men/92.jpg",
             "Age": 31,
             "HireDate": new Date(2024, 11, 11),
-            "Employees": []
-          },
-          {
-            "ID": 151648,
-            "Name": "Henry Carter",
-            "JobTitle": "Support Engineer",
-            "Department": "Support",
-            "Location": "New York",
-            "Country": "USA",
-            "GrossSalary": 9800,
-            "Phone": "555-151648",
-            "Contacts": "henry.carter@company.com",
-            "Picture": "images/men/71.jpg",
-            "Age": 44,
-            "HireDate": new Date(2024, 5, 6),
             "Employees": []
           },
           {
