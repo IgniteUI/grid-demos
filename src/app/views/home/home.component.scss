@@ -104,14 +104,14 @@ $custom-icon-button-theme: icon-button-theme(
 }
 
 .tab-actions {
-  @include css-vars($custom-icon-button-theme);
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   --ig-size: var(--ig-size-small);
   --disabled-icon-color: #ffffff;
+
+  @include css-vars($custom-icon-button-theme);
 
   a {
     padding-bottom: 2px;
@@ -133,10 +133,13 @@ $custom-icon-button-theme: icon-button-theme(
     &.link--disabled {
       color: var(--ig-primary-200);
       --bg-color: var(--ig-primary-200);
+
+      &:hover {
+        color: var(--ig-primary-500);
+        --bg-color: var(--ig-primary-500);
+      }
     }
   }
-
-
 
   button {
     --igx-icon-button-focus-background: var(--ig-gray-600);
