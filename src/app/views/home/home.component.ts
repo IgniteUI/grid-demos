@@ -27,35 +27,35 @@ export class HomeComponent {
       theme: "Material Light",
       content: "Tracking and managing quantity, location and details of products in stock.",
       moreLink: "https://www.infragistics.com/products/ignite-ui-angular/angular/components/hierarchicalgrid/hierarchical-grid",
-      downloadLink: ""
+      downloadLink: "https://www.infragistics.com/resources/sample-applications/erp-inventory-sample-app"
     }],
     ['hr-portal', {
       title: "Org Chart/HR Portal",
       theme: "Fluent Light",
       content: "Displaying company's hierarchical structure and showing employees data.",
       moreLink: "https://www.infragistics.com/products/ignite-ui-angular/angular/components/treegrid/tree-grid",
-      downloadLink: ""
+      downloadLink: "https://www.infragistics.com/resources/sample-applications/org-charthr-portal-sample-app"
     }],
     ['finance', {
       title: "Financial Portfolio",
       theme: "Bootstrap Light",
       content: "Asset tracking, profit and loss analysis, featuring interactive dynamic charts.",
       moreLink: "https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid",
-      downloadLink: ""
+      downloadLink: "https://www.infragistics.com/resources/sample-applications/financial-portfolio-sample-app"
     }],
     ['sales', {
       title: "Sales Dashboard",
       theme: "Indigo Light",
       content: "For trend analysis, KPIs and viewing sales summaries by region, product, etc.",
       moreLink: "https://www.infragistics.com/products/ignite-ui-angular/angular/components/pivotGrid/pivot-grid",
-      downloadLink: ""
+      downloadLink: "https://www.infragistics.com/resources/sample-applications/sales-grid-sample-app"
     }],
     ['fleet', {
       title: "Fleet Management",
       theme: "Material Dark",
       content: "A master-detail grid for managing vehicle acquisition, operations, and maintenance.",
       moreLink: "https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/master-detail",
-      downloadLink: ""
+      downloadLink: "https://www.infragistics.com/resources/sample-applications/fleet-management-sample-app"
     }],
   ]);
 
@@ -68,7 +68,8 @@ export class HomeComponent {
   }
 
   public onDownloadClick(event: MouseEvent, tabName: string) {
-    console.log("Downloading app source!");
+    const downloadLink = this.tabInfo.get(tabName)?.downloadLink;
+    window.open(downloadLink, '_blank')?.focus();
 
     event.preventDefault();
     event.stopPropagation();
