@@ -18,9 +18,10 @@ import {
   IgxIconService,
   IgxIconButtonDirective,
   IgxButtonModule,
-  RowType,
   SortingDirection,
   DefaultSortingStrategy,
+  THEME_TOKEN,
+  ThemeToken,
 } from 'igniteui-angular';
 import { CommonModule } from '@angular/common';
 @Component({
@@ -28,6 +29,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './hr-portal.component.html',
   styleUrls: ['./hr-portal.component.scss'],
   standalone: true,
+  providers: [
+    {
+      provide: THEME_TOKEN,
+      useFactory: () => {
+        return new ThemeToken('fluent');
+      },
+    },
+  ],
   imports: [
     IgxTreeGridComponent,
     IgxColumnComponent,
@@ -52,11 +61,6 @@ export class HrPortalComponent implements OnInit {
   public localData: Employee[] = [];
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
   public treeGrid!: IgxTreeGridComponent;
-
-  public rowStyles = {
-    background: (row: RowType) =>
-      row.index % 2 === 0 ? 'rgba(255,255,255)' : '',
-  };
 
   constructor(private iconService: IgxIconService) {}
 
@@ -123,14 +127,5 @@ export class HrPortalComponent implements OnInit {
     icons.forEach((icon) => {
       this.iconService.addSvgIcon(icon.name, icon.path, icon.category);
     });
-
-    this.treeGrid.sortingExpressions = [
-      {
-        dir: SortingDirection.Asc,
-        fieldName: 'Name',
-        ignoreCase: false,
-        strategy: DefaultSortingStrategy.instance(),
-      },
-    ];
   }
 }

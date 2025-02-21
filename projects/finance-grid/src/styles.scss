@@ -1,11 +1,10 @@
-@use "igniteui-angular/theming" as *;
-
-@include core();
-@include typography(
-  $font-family: $bootstrap-typeface,
-  $type-scale: $bootstrap-type-scale
-);
-@include theme(
-  $palette: $light-bootstrap-palette,
-  $schema: $light-bootstrap-schema
-);
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 8px;
+    height: 100%;
+}

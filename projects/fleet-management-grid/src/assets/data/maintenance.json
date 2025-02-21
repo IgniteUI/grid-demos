@@ -1,0 +1,1127 @@
+[
+  {
+    "vehicleId": "A00101",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Oil Change",
+        "date": "2024-10-31",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented oil change with 5W-20."
+      },
+      {
+        "id": 2,
+        "event": "Tire Replacement",
+        "date": "2024-10-30",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Installed new front left tire, including brand and mileage."
+      },
+      {
+        "id": 3,
+        "event": "Brake Inspection",
+        "date": "2024-10-01",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Checked and serviced brake system."
+      },
+      {
+        "id": 4,
+        "event": "General Maintenance",
+        "date": "2024-08-20",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Comprehensive vehicle checkup, including fluids and filters."
+      },
+      {
+        "id": 5,
+        "event": "Alignment and Suspension",
+        "date": "2024-08-19",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented wheel alignment and suspension service."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00102",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Oil Change",
+        "date": "2024-10-31",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented oil change with 5W-20."
+      },
+      {
+        "id": 2,
+        "event": "Tire Replacement",
+        "date": "2024-10-30",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Installed new front left tire, including brand and mileage."
+      },
+      {
+        "id": 3,
+        "event": "Brake Fluid Refill",
+        "date": "2024-09-15",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Brake fluid replaced and system flushed."
+      },
+      {
+        "id": 4,
+        "event": "Battery Check",
+        "date": "2024-08-20",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Battery tested and terminals cleaned."
+      },
+      {
+        "id": 5,
+        "event": "Air Filter Replacement",
+        "date": "2024-07-10",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Engine air filter replaced with new OEM part."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00103",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-10-01",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Replaced car battery with a new one."
+      },
+      {
+        "id": 2,
+        "event": "Engine Tuning",
+        "date": "2024-09-15",
+        "location": "Hoboken, NJ",
+        "type": "Regular",
+        "remarks": "Engine performance tuning and diagnostics."
+      },
+      {
+        "id": 3,
+        "event": "Tire Rotation",
+        "date": "2024-08-05",
+        "location": "Buffalo, NY",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      },
+      {
+        "id": 4,
+        "event": "AC System Check",
+        "date": "2024-07-12",
+        "location": "Trenton, NJ",
+        "type": "Incident",
+        "remarks": "Inspected and refilled AC refrigerant."
+      },
+      {
+        "id": 5,
+        "event": "Brake Pad Replacement",
+        "date": "2024-06-20",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Replaced front and rear brake pads."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00104",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Engine Diagnostics",
+        "date": "2024-09-10",
+        "location": "Buffalo, NY",
+        "type": "Incident",
+        "remarks": "Performed diagnostics on the engine due to irregular performance."
+      },
+      {
+        "id": 2,
+        "event": "Transmission Check",
+        "date": "2024-08-22",
+        "location": "Albany, NY",
+        "type": "Regular",
+        "remarks": "Routine transmission fluid level check and refill."
+      },
+      {
+        "id": 3,
+        "event": "Battery Replacement",
+        "date": "2024-07-30",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Installed a new battery to replace the old one."
+      },
+      {
+        "id": 4,
+        "event": "AC Repair",
+        "date": "2024-07-15",
+        "location": "Trenton, NJ",
+        "type": "Incident",
+        "remarks": "Fixed an issue with the air conditioning system cooling capacity."
+      },
+      {
+        "id": 5,
+        "event": "Tire Rotation",
+        "date": "2024-06-10",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00105",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Engine Tune-Up",
+        "date": "2024-11-15",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Engine performance optimization and diagnostics."
+      },
+      {
+        "id": 2,
+        "event": "Tire Balancing",
+        "date": "2024-10-22",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Adjusted tire balancing to improve stability."
+      },
+      {
+        "id": 3,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-30",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Installed new front brake pads."
+      },
+      {
+        "id": 4,
+        "event": "Oil Change",
+        "date": "2024-09-10",
+        "location": "Trenton, NJ",
+        "type": "Regular",
+        "remarks": "Replaced engine oil with 5W-30 grade."
+      },
+      {
+        "id": 5,
+        "event": "Battery Replacement",
+        "date": "2024-08-25",
+        "location": "Camden, NJ",
+        "type": "Incident",
+        "remarks": "Replaced old battery due to starting issues."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00106",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-12-01",
+        "location": "Seattle, WA",
+        "type": "Incident",
+        "remarks": "Replaced battery with high-performance model."
+      },
+      {
+        "id": 2,
+        "event": "Coolant Refill",
+        "date": "2024-11-15",
+        "location": "Denver, CO",
+        "type": "Regular",
+        "remarks": "Performed coolant system flush and refill."
+      },
+      {
+        "id": 3,
+        "event": "Windshield Repair",
+        "date": "2024-10-30",
+        "location": "San Francisco, CA",
+        "type": "Incident",
+        "remarks": "Repaired small crack on the windshield."
+      },
+      {
+        "id": 4,
+        "event": "Air Filter Replacement",
+        "date": "2024-09-25",
+        "location": "Austin, TX",
+        "type": "Regular",
+        "remarks": "Replaced cabin and engine air filters."
+      },
+      {
+        "id": 5,
+        "event": "Transmission Service",
+        "date": "2024-08-15",
+        "location": "Dallas, TX",
+        "type": "Regular",
+        "remarks": "Serviced transmission and replaced fluid."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00107",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-01",
+        "location": "Newark, NJ",
+        "type": "Incident",
+        "remarks": "Replaced the car battery with a high-capacity model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-15",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Rotated all four tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-20",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Replaced front brake pads due to wear."
+      },
+      {
+        "id": 4,
+        "event": "Oil and Filter Change",
+        "date": "2024-08-10",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced oil filter."
+      },
+      {
+        "id": 5,
+        "event": "Coolant Flush",
+        "date": "2024-07-25",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Performed a coolant flush and replaced with fresh fluid."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00108",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-01",
+        "location": "Newark, NJ",
+        "type": "Incident",
+        "remarks": "Replaced the car battery with a high-capacity model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-15",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Rotated all four tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-20",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Replaced front brake pads due to wear."
+      },
+      {
+        "id": 4,
+        "event": "Oil and Filter Change",
+        "date": "2024-08-10",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced oil filter."
+      },
+      {
+        "id": 5,
+        "event": "Coolant Flush",
+        "date": "2024-07-25",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Performed a coolant flush and replaced with fresh fluid."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00109",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-03",
+        "location": "Detroit, MI",
+        "type": "Incident",
+        "remarks": "Replaced old battery with a high-performance model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-20",
+        "location": "Cleveland, OH",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Fluid Replacement",
+        "date": "2024-09-30",
+        "location": "Pittsburgh, PA",
+        "type": "Regular",
+        "remarks": "Replaced brake fluid as part of regular maintenance."
+      },
+      {
+        "id": 4,
+        "event": "Coolant System Flush",
+        "date": "2024-08-15",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Flushed coolant system and replaced with fresh coolant."
+      },
+      {
+        "id": 5,
+        "event": "Engine Oil and Filter Change",
+        "date": "2024-07-20",
+        "location": "Chicago, IL",
+        "type": "Regular",
+        "remarks": "Performed oil change and replaced engine oil filter."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00110",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-12",
+        "location": "Boston, MA",
+        "type": "Incident",
+        "remarks": "Replaced the car battery with a high-performance model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-20",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Fluid Replacement",
+        "date": "2024-09-25",
+        "location": "Hartford, CT",
+        "type": "Regular",
+        "remarks": "Replaced brake fluid as part of scheduled maintenance."
+      },
+      {
+        "id": 4,
+        "event": "Coolant System Flush",
+        "date": "2024-08-28",
+        "location": "Buffalo, NY",
+        "type": "Regular",
+        "remarks": "Flushed and replaced coolant for optimal engine performance."
+      },
+      {
+        "id": 5,
+        "event": "Oil and Filter Change",
+        "date": "2024-08-15",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced the oil filter."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00111",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Engine Tune-Up",
+        "date": "2024-12-10",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Performed routine engine tune-up and replaced spark plugs."
+      },
+      {
+        "id": 2,
+        "event": "Tire Balancing",
+        "date": "2024-11-25",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Balanced all four tires to improve driving stability."
+      },
+      {
+        "id": 3,
+        "event": "Battery Replacement",
+        "date": "2024-11-05",
+        "location": "Hartford, CT",
+        "type": "Incident",
+        "remarks": "Replaced car battery due to failure."
+      },
+      {
+        "id": 4,
+        "event": "Brake Pad Replacement",
+        "date": "2024-10-30",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Replaced front brake pads and inspected rotors."
+      },
+      {
+        "id": 5,
+        "event": "Oil Change",
+        "date": "2024-10-15",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced oil filter."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00112",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-15",
+        "location": "Buffalo, NY",
+        "type": "Incident",
+        "remarks": "Replaced worn brake pads and inspected rotors."
+      },
+      {
+        "id": 2,
+        "event": "Oil Change",
+        "date": "2024-08-20",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Performed oil change using synthetic 5W-30."
+      },
+      {
+        "id": 3,
+        "event": "Tire Alignment",
+        "date": "2024-07-30",
+        "location": "Albany, NY",
+        "type": "Regular",
+        "remarks": "Adjusted tire alignment and rotated tires."
+      },
+      {
+        "id": 4,
+        "event": "Battery Replacement",
+        "date": "2024-07-01",
+        "location": "Boston, MA",
+        "type": "Incident",
+        "remarks": "Installed a new battery and checked charging system."
+      },
+      {
+        "id": 5,
+        "event": "Air Filter Replacement",
+        "date": "2024-06-15",
+        "location": "Albany, NY",
+        "type": "Regular",
+        "remarks": "Replaced air filter and inspected intake system."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00113",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Oil Change",
+        "date": "2024-10-31",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented oil change with 5W-20."
+      },
+      {
+        "id": 2,
+        "event": "Tire Replacement",
+        "date": "2024-10-30",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Installed new front left tire, including brand and mileage."
+      },
+      {
+        "id": 3,
+        "event": "Brake Inspection",
+        "date": "2024-10-01",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Checked and serviced brake system."
+      },
+      {
+        "id": 4,
+        "event": "General Maintenance",
+        "date": "2024-08-20",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Comprehensive vehicle checkup, including fluids and filters."
+      },
+      {
+        "id": 5,
+        "event": "Alignment and Suspension",
+        "date": "2024-08-19",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented wheel alignment and suspension service."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00114",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Oil Change",
+        "date": "2024-10-31",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented oil change with 5W-20."
+      },
+      {
+        "id": 2,
+        "event": "Tire Replacement",
+        "date": "2024-10-30",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Installed new front left tire, including brand and mileage."
+      },
+      {
+        "id": 3,
+        "event": "Brake Fluid Refill",
+        "date": "2024-09-15",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Brake fluid replaced and system flushed."
+      },
+      {
+        "id": 4,
+        "event": "Battery Check",
+        "date": "2024-08-20",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Battery tested and terminals cleaned."
+      },
+      {
+        "id": 5,
+        "event": "Air Filter Replacement",
+        "date": "2024-07-10",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Engine air filter replaced with new OEM part."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00115",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-10-01",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Replaced car battery with a new one."
+      },
+      {
+        "id": 2,
+        "event": "Engine Tuning",
+        "date": "2024-09-15",
+        "location": "Hoboken, NJ",
+        "type": "Regular",
+        "remarks": "Engine performance tuning and diagnostics."
+      },
+      {
+        "id": 3,
+        "event": "Tire Rotation",
+        "date": "2024-08-05",
+        "location": "Buffalo, NY",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      },
+      {
+        "id": 4,
+        "event": "AC System Check",
+        "date": "2024-07-12",
+        "location": "Trenton, NJ",
+        "type": "Incident",
+        "remarks": "Inspected and refilled AC refrigerant."
+      },
+      {
+        "id": 5,
+        "event": "Brake Pad Replacement",
+        "date": "2024-06-20",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Replaced front and rear brake pads."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00116",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Engine Diagnostics",
+        "date": "2024-09-10",
+        "location": "Buffalo, NY",
+        "type": "Incident",
+        "remarks": "Performed diagnostics on the engine due to irregular performance."
+      },
+      {
+        "id": 2,
+        "event": "Transmission Check",
+        "date": "2024-08-22",
+        "location": "Albany, NY",
+        "type": "Regular",
+        "remarks": "Routine transmission fluid level check and refill."
+      },
+      {
+        "id": 3,
+        "event": "Battery Replacement",
+        "date": "2024-07-30",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Installed a new battery to replace the old one."
+      },
+      {
+        "id": 4,
+        "event": "AC Repair",
+        "date": "2024-07-15",
+        "location": "Trenton, NJ",
+        "type": "Incident",
+        "remarks": "Fixed an issue with the air conditioning system cooling capacity."
+      },
+      {
+        "id": 5,
+        "event": "Tire Rotation",
+        "date": "2024-06-10",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00117",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Engine Tune-Up",
+        "date": "2024-11-15",
+        "location": "Camden, NJ",
+        "type": "Regular",
+        "remarks": "Engine performance optimization and diagnostics."
+      },
+      {
+        "id": 2,
+        "event": "Tire Balancing",
+        "date": "2024-10-22",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Adjusted tire balancing to improve stability."
+      },
+      {
+        "id": 3,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-30",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Installed new front brake pads."
+      },
+      {
+        "id": 4,
+        "event": "Oil Change",
+        "date": "2024-09-10",
+        "location": "Trenton, NJ",
+        "type": "Regular",
+        "remarks": "Replaced engine oil with 5W-30 grade."
+      },
+      {
+        "id": 5,
+        "event": "Battery Replacement",
+        "date": "2024-08-25",
+        "location": "Camden, NJ",
+        "type": "Incident",
+        "remarks": "Replaced old battery due to starting issues."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00118",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-12-01",
+        "location": "Seattle, WA",
+        "type": "Incident",
+        "remarks": "Replaced battery with high-performance model."
+      },
+      {
+        "id": 2,
+        "event": "Coolant Refill",
+        "date": "2024-11-15",
+        "location": "Denver, CO",
+        "type": "Regular",
+        "remarks": "Performed coolant system flush and refill."
+      },
+      {
+        "id": 3,
+        "event": "Windshield Repair",
+        "date": "2024-10-30",
+        "location": "San Francisco, CA",
+        "type": "Incident",
+        "remarks": "Repaired small crack on the windshield."
+      },
+      {
+        "id": 4,
+        "event": "Air Filter Replacement",
+        "date": "2024-09-25",
+        "location": "Austin, TX",
+        "type": "Regular",
+        "remarks": "Replaced cabin and engine air filters."
+      },
+      {
+        "id": 5,
+        "event": "Transmission Service",
+        "date": "2024-08-15",
+        "location": "Dallas, TX",
+        "type": "Regular",
+        "remarks": "Serviced transmission and replaced fluid."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00119",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-01",
+        "location": "Newark, NJ",
+        "type": "Incident",
+        "remarks": "Replaced the car battery with a high-capacity model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-15",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Rotated all four tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-20",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Replaced front brake pads due to wear."
+      },
+      {
+        "id": 4,
+        "event": "Oil and Filter Change",
+        "date": "2024-08-10",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced oil filter."
+      },
+      {
+        "id": 5,
+        "event": "Coolant Flush",
+        "date": "2024-07-25",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Performed a coolant flush and replaced with fresh fluid."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00120",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-01",
+        "location": "Newark, NJ",
+        "type": "Incident",
+        "remarks": "Replaced the car battery with a high-capacity model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-15",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Rotated all four tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-20",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Replaced front brake pads due to wear."
+      },
+      {
+        "id": 4,
+        "event": "Oil and Filter Change",
+        "date": "2024-08-10",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced oil filter."
+      },
+      {
+        "id": 5,
+        "event": "Coolant Flush",
+        "date": "2024-07-25",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Performed a coolant flush and replaced with fresh fluid."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00121",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-03",
+        "location": "Detroit, MI",
+        "type": "Incident",
+        "remarks": "Replaced old battery with a high-performance model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-20",
+        "location": "Cleveland, OH",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Fluid Replacement",
+        "date": "2024-09-30",
+        "location": "Pittsburgh, PA",
+        "type": "Regular",
+        "remarks": "Replaced brake fluid as part of regular maintenance."
+      },
+      {
+        "id": 4,
+        "event": "Coolant System Flush",
+        "date": "2024-08-15",
+        "location": "Philadelphia, PA",
+        "type": "Regular",
+        "remarks": "Flushed coolant system and replaced with fresh coolant."
+      },
+      {
+        "id": 5,
+        "event": "Engine Oil and Filter Change",
+        "date": "2024-07-20",
+        "location": "Chicago, IL",
+        "type": "Regular",
+        "remarks": "Performed oil change and replaced engine oil filter."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00122",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Battery Replacement",
+        "date": "2024-11-12",
+        "location": "Boston, MA",
+        "type": "Incident",
+        "remarks": "Replaced the car battery with a high-performance model."
+      },
+      {
+        "id": 2,
+        "event": "Tire Rotation",
+        "date": "2024-10-20",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Rotated all tires to ensure even wear."
+      },
+      {
+        "id": 3,
+        "event": "Brake Fluid Replacement",
+        "date": "2024-09-25",
+        "location": "Hartford, CT",
+        "type": "Regular",
+        "remarks": "Replaced brake fluid as part of scheduled maintenance."
+      },
+      {
+        "id": 4,
+        "event": "Coolant System Flush",
+        "date": "2024-08-28",
+        "location": "Buffalo, NY",
+        "type": "Regular",
+        "remarks": "Flushed and replaced coolant for optimal engine performance."
+      },
+      {
+        "id": 5,
+        "event": "Oil and Filter Change",
+        "date": "2024-08-15",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced the oil filter."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00123",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Engine Tune-Up",
+        "date": "2024-12-10",
+        "location": "Boston, MA",
+        "type": "Regular",
+        "remarks": "Performed routine engine tune-up and replaced spark plugs."
+      },
+      {
+        "id": 2,
+        "event": "Tire Balancing",
+        "date": "2024-11-25",
+        "location": "New York, NY",
+        "type": "Regular",
+        "remarks": "Balanced all four tires to improve driving stability."
+      },
+      {
+        "id": 3,
+        "event": "Battery Replacement",
+        "date": "2024-11-05",
+        "location": "Hartford, CT",
+        "type": "Incident",
+        "remarks": "Replaced car battery due to failure."
+      },
+      {
+        "id": 4,
+        "event": "Brake Pad Replacement",
+        "date": "2024-10-30",
+        "location": "Newark, NJ",
+        "type": "Regular",
+        "remarks": "Replaced front brake pads and inspected rotors."
+      },
+      {
+        "id": 5,
+        "event": "Oil Change",
+        "date": "2024-10-15",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Changed engine oil and replaced oil filter."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00124",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Brake Pad Replacement",
+        "date": "2024-09-15",
+        "location": "Buffalo, NY",
+        "type": "Incident",
+        "remarks": "Replaced worn brake pads and inspected rotors."
+      },
+      {
+        "id": 2,
+        "event": "Oil Change",
+        "date": "2024-08-20",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Performed oil change using synthetic 5W-30."
+      },
+      {
+        "id": 3,
+        "event": "Tire Alignment",
+        "date": "2024-07-30",
+        "location": "Albany, NY",
+        "type": "Regular",
+        "remarks": "Adjusted tire alignment and rotated tires."
+      },
+      {
+        "id": 4,
+        "event": "Battery Replacement",
+        "date": "2024-07-01",
+        "location": "Boston, MA",
+        "type": "Incident",
+        "remarks": "Installed a new battery and checked charging system."
+      },
+      {
+        "id": 5,
+        "event": "Air Filter Replacement",
+        "date": "2024-06-15",
+        "location": "Albany, NY",
+        "type": "Regular",
+        "remarks": "Replaced air filter and inspected intake system."
+      }
+    ]
+  },
+  {
+    "vehicleId": "A00125",
+    "maintenance": [
+      {
+        "id": 1,
+        "event": "Oil Change",
+        "date": "2024-10-31",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented oil change with 5W-20."
+      },
+      {
+        "id": 2,
+        "event": "Tire Replacement",
+        "date": "2024-10-30",
+        "location": "Cranbury, NJ",
+        "type": "Incident",
+        "remarks": "Installed new front left tire, including brand and mileage."
+      },
+      {
+        "id": 3,
+        "event": "Brake Inspection",
+        "date": "2024-10-01",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Checked and serviced brake system."
+      },
+      {
+        "id": 4,
+        "event": "General Maintenance",
+        "date": "2024-08-20",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Comprehensive vehicle checkup, including fluids and filters."
+      },
+      {
+        "id": 5,
+        "event": "Alignment and Suspension",
+        "date": "2024-08-19",
+        "location": "Cranbury, NJ",
+        "type": "Regular",
+        "remarks": "Documented wheel alignment and suspension service."
+      }
+    ]
+  }
+]

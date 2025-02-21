@@ -1,14 +1,14 @@
 {
   "name": "hr-portal",
-  "version": "0.0.0",
+  "homepage": "https://github.com/IgniteUI/grid-demos/tree/master/projects/hr-portal",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
-    "serve:ssr:hr-portal": "node dist/hr-portal/server/server.mjs"
+    "serve:ssr": "node dist/hr-portal/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "@angular/ssr": "^19.0.2",
     "minireset.css": "~0.0.7",
     "express": "^4.21.2",
-    "igniteui-angular": "^19.0.0",
+    "igniteui-angular": "^19.0.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

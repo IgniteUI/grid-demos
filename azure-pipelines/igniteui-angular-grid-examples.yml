@@ -1,0 +1,141 @@
+trigger:
+  branches:
+    include:
+    - vnext
+    - master
+
+# This pipeline is meant to build specific branches for deployment. It's not meant to be a part of PR validation.
+pr: none
+
+parameters:
+- name: isVerbose
+  displayName: 'Get verbose output from steps - where configurable'
+  type: boolean
+  default: false
+- name: shouldCleanPostExecution
+  displayName: 'Clean all pipeline dirs after the pipeline finishes?'
+  type: boolean
+  default: true
+
+
+name: $(Year:yyyy).$(Month).$(DayOfMonth)-r$(Rev:.r)
+
+stages:
+- stage: Build
+  pool:
+    vmImage: ubuntu-latest
+
+    demands: npm
+  jobs:
+  - job: BuildSamples
+    steps:
+      - checkout: 'self' 
+        clean: true
+
+      - task: NodeTool@0
+        displayName: 'Install Node'
+        inputs:
+          versionSource: 'spec'
+          versionSpec: '18.x'
+
+      - task: Bash@3
+        displayName: 'Create download artifact per sample (Shell)'
+        inputs:
+          targetType: 'inline'
+          script: |
+            # Define the root path where projects are located
+            rootPath="$(Build.SourcesDirectory)/projects"
+            
+            # Get all first-level subdirectories in the specified root path
+            subdirectories=$(find "$rootPath" -mindepth 1 -maxdepth 1 -type d)
+            
+            for subdirectory in $subdirectories; do
+                # Extract the directory name from the path
+                dirName=$(basename "$subdirectory")
+
+                # Give each sample a version in its package.json file - for traceability
+                cd "$subdirectory"
+                echo "Calling npm version command"
+                npm version $(Build.BuildNumber) --no-git-tag-version
+
+                # Check if the directory name is already camel-case
+                if [[ "$dirName" =~ ^[A-Z]+[a-z]+([A-Z][a-z]*)*$ ]]; then
+                    # If already camel-case, print it as is
+                    echo "$dirName"
+                else
+                    # Convert to camel-case (capitalize first letters and remove hyphens)
+                    dirName=$(echo "$dirName" | sed -E 's/(^|-)([a-z])/\U\2/g')
+
+                fi
+                
+                echo "Processing directory: $dirName"
+                
+                # Define the name for the zip file
+                zipName="$(Build.ArtifactStagingDirectory)/IgniteUI_Angular_ApplicationSample_${dirName}_Source.zip"
+                echo "Creating ZIP: $zipName"
+                
+                # Compress the directory into a ZIP file
+                (cd "$subdirectory" && zip -r "$zipName" .)
+            done
+            
+            echo "All sample projects have been compressed and saved to the artifacts directory."
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Samples Sources zips'
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)'
+          artifact: 'samplesSourcesZips'
+          publishLocation: 'pipeline'
+
+      - task: Npm@1
+        displayName: 'Npm install'
+        inputs:
+          command: 'install'
+
+      - task: Npm@1
+        displayName: 'Install @angular/cli globally'
+        inputs:
+          verbose: ${{ parameters.isVerbose }}
+          command: custom
+          workingDir: '$(Build.SourcesDirectory)'
+          customCommand: 'install -g @angular/cli'
+
+
+      - task: Npm@1
+        displayName: 'Register licensed npm registry in .npmrc'
+        inputs:
+          verbose: ${{ parameters.isVerbose }}
+          command: 'custom'
+          workingDir: '$(Build.SourcesDirectory)'
+          customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
+      - task: npmAuthenticate@0
+        displayName: '[IG Production ProGet] npm authenticate'
+        inputs:
+          workingFile: '$(Build.SourcesDirectory)/.npmrc'
+          customEndpoint: 'public proget'
+
+      - task: PowerShell@2
+        displayName: 'Run Angular Schematics Upgrade Packages'
+        inputs:
+          targetType: 'inline'
+          script: |
+            npx --userconfig=$(Build.SourcesDirectory)/.npmrc --legacy-peer-deps ng g @igniteui/angular-schematics:upgrade-packages
+
+      - task: Npm@1
+        displayName: 'npm run build:ci'
+        inputs:
+          command: custom
+          workingDir: '$(Build.SourcesDirectory)'
+          verbose: ${{ parameters.isVerbose }}
+          customCommand: 'run build:ci'
+
+      - task: PublishPipelineArtifact@1
+
+        displayName: 'Publish app'
+        inputs:
+          targetPath: '$(Build.SourcesDirectory)/dist/grid-demos/browser'
+          artifact: 'dist.grid-demos.browser'
+          publishLocation: 'pipeline'
+
+      - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
+        - task: PostBuildCleanup@4
