@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Employee, EMPLOYEE_DATA } from '../data/localData';
 import {
   IgxTreeGridComponent,
