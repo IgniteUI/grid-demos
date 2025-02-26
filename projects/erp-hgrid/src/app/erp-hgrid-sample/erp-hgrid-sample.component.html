@@ -22,11 +22,11 @@
             </igx-grid-toolbar-actions>
         </igx-grid-toolbar>
 
-        <igx-column field="sku" header="SKU" [sortable]="true" dataType="string" width="110px"></igx-column>
+        <igx-column field="sku" header="SKU" [sortable]="true" dataType="string"></igx-column>
         <igx-column
             field="imageUrl"
             header="Image"
-            width="90px"
+            width="5%"
             [filterable]="false"
             [dataType]="'image'"
             [cellClasses]="{'product-img': true}">
@@ -47,37 +47,29 @@
                 </igx-dialog>
             </ng-template>
         </igx-column>
-        <igx-column field="productName" header="Product Name" dataType="string" [sortable]="true" width="320px"></igx-column>
-        <igx-column field="category" header="Category" dataType="string" [sortable]="true" width="155px"></igx-column>
+        <igx-column field="productName" header="Product Name" dataType="string" [sortable]="true" width="12%"></igx-column>
+        <igx-column field="category" header="Category" dataType="string" [sortable]="true"></igx-column>
         <igx-column
             field="rating"
             header="Rating"
-            width="167px"
+            minWidth="165px"
+            [dataType]="'number'"
             [sortable]="true">
             <ng-template igxCell let-cell="cell" let-val>
                 <igc-rating [value]="val" readonly="true" min="0" max="5"></igc-rating>
             </ng-template>
         </igx-column>
-        <igx-column field="unitsSold" header="Sold Units" dataType="number" width="130px" [sortable]="true"></igx-column>
-        <igx-column field="salesTrendData" header="Performance" filterable="false">
+        <igx-column field="unitsSold" header="Sold Units Last Month" dataType="number" width="10%" [sortable]="true"></igx-column>
+        <igx-column field="salesTrendData" header="Mothly Sales Trends" filterable="false" width="15%">
             <ng-template igxCell let-cell="cell" let-val>
                 @defer {
-                <igx-sparkline #sparkline
-                    class="sales-sparkline"
-                    [dataSource]="cell.value"
-                    valueMemberPath="value"
-                    width="100%"
-                    height="100%"
-                    lineThickness="1"
-                    brush="#424242"
-                    displayType="Line">
-                </igx-sparkline>
+                  <sales-trends-chart [dataSource]="cell.value"></sales-trends-chart>
                 }
             </ng-template>
         </igx-column>
-        <igx-column field="grossPrice" header="Gross Price" dataType="currency" width="130px" [sortable]="true"></igx-column>
-        <igx-column field="netPrice" header="Net Price" dataType="currency" width="130px" [sortable]="true"></igx-column>
-        <igx-column field="totalNetProfit" header="Net Profit" dataType="currency" width="130px" [sortable]="true"></igx-column>
+        <igx-column field="grossPrice" header="Gross Price" dataType="currency" width="7%" [sortable]="true"></igx-column>
+        <igx-column field="netPrice" header="Net Price" dataType="currency" width="7%" [sortable]="true"></igx-column>
+        <igx-column field="totalNetProfit" header="Net Profit" dataType="currency" width="7%" [sortable]="true"></igx-column>
 
         <igx-row-island
             #rowisland
@@ -85,14 +77,19 @@
             [autoGenerate]="false"
             [allowFiltering]="true"
             [rowSelection]="selectionMode">
+
+            <igx-grid-toolbar *igxGridToolbar>
+              <igx-grid-toolbar-title>Sales data for the last month</igx-grid-toolbar-title>
+            </igx-grid-toolbar>
+
             <igx-column
                 field="orderId"
                 header="Order ID"
                 dataType="number"
-                width="110px"
+                width="7%"
                 [formatter]="formatNumberAsIs">
             </igx-column>
-            <igx-column field="status" header="Status" width="165px">
+            <igx-column field="status" header="Status" width="11%">
                 <ng-template igxCell let-cell="cell">
                     <div class="status-cell">
                         <span>
@@ -134,7 +131,7 @@
                     field="delivery.dateOrdered"
                     header="Date Ordered"
                     dataType="string"
-                    width="180px"
+                    width="12%"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="true"
@@ -146,7 +143,7 @@
                     field="delivery.dateOrdered"
                     header="Date Ordered"
                     dataType="string"
-                    width="180px"
+                    width="12%"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false"
@@ -156,7 +153,7 @@
                     field="delivery.dateShipped"
                     header="Date Shipped"
                     dataType="string"
-                    width="180px"
+                    width="12%"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false"
@@ -166,7 +163,7 @@
                     field="delivery.dateDelivered"
                     header="Date Delivered"
                     dataType="string"
-                    width="180px"
+                    width="12%"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false"
@@ -193,13 +190,13 @@
                 <igx-column
                     [field]="'orderInformation.country'"
                     header="Country"
-                    width="180px"
+                    width="12%"
                     [sortable]="true"
                     [visibleWhenCollapsed]="false">
                     <ng-template igxCell let-cell="cell">
                         <div class="country-cell">
                             <span class="cup">
-                                <img [src]="cell.row.data.orderInformation.countryFlag" alt="Country Flag"/>
+                                <img [src]="'country-flags/' + cell.row.data.orderInformation.country + '.svg'" alt="Country Flag"/>
                             </span>
                             <span>{{cell.value}}</span>
                         </div>
@@ -210,7 +207,7 @@
                     field="orderInformation.city"
                     header="City"
                     dataType="string"
-                    width="200px"
+                    width="13%"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false">
@@ -219,7 +216,7 @@
                     field="orderInformation.zipCode"
                     header="Zip Code"
                     dataType="string"
-                    width="130px"
+                    width="9%"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false">
@@ -228,7 +225,6 @@
                     field="orderInformation"
                     header="Address"
                     dataType="string"
-                    width="200px"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false"
@@ -240,7 +236,6 @@
                     field="orderInformation"
                     header="Address"
                     dataType="string"
-                    width="200px"
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="true"

@@ -127,14 +127,5 @@ export class HrPortalComponent implements OnInit {
     icons.forEach((icon) => {
       this.iconService.addSvgIcon(icon.name, icon.path, icon.category);
     });
-
-    this.treeGrid.sortingExpressions = [
-      {
-        dir: SortingDirection.Asc,
-        fieldName: 'Name',
-        ignoreCase: false,
-        strategy: DefaultSortingStrategy.instance(),
-      },
-    ];
   }
 }
