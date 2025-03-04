@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import DATA from "../data/data.json";
 import { BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
@@ -28,7 +27,7 @@ export class FinancialService {
         const totalInitialInvestment = record.value.boughtPrice * record.positions;
         record["allocation"] = parseFloat((totalInitialInvestment / totalPortfolioInvestment).toFixed(4));
   
-        record["marketValue"] = record.value.currentPrice * record.positions;
+        record["marketValue"] = parseFloat((record.value.currentPrice * record.positions).toFixed(2));
   
         record["initialPrice"] = record.value.currentPrice;
   
@@ -86,7 +85,7 @@ export class FinancialService {
     const newPrice = parseFloat((dataRow.value.currentPrice + changeAmount).toFixed(2));
     const newProfitLossValue = this.calculateProfitLossValue(newPrice, dataRow.value.boughtPrice, dataRow.positions);
     const newProfitLossPercentage = this.calculateProfitLossPercentage(newProfitLossValue, dataRow.value.boughtPrice, dataRow.positions);
-    const newMarketValue = newPrice * dataRow.positions;
+    const newMarketValue = parseFloat((newPrice * dataRow.positions).toFixed(2));
     const newDailyPercentage = this.calculateDailyPercentageChange(dataRow.initialPrice, newPrice);
     return {
       newPrice,
