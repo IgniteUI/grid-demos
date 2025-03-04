@@ -101,7 +101,7 @@ export class FleetManagementGridComponent implements OnInit {
     costPerMeterPeriod: Period.YTD,
     fuelCostPeriod: Period.YTD
   } */
-  protected periods: { [vehicleId: string]: { costPerTypePeriod: Period, costPerMeterPeriod: Period, fuelCostPeriod: Period } } = {};
+  protected periods: { [vehicleId: string]: { costPerTypePeriod: Period, costPerMeterPeriod: Period, fuelCostPeriod: Period } | null } = {};
 
   //driver details for detail overlay
   protected driverDetails: DriverDetails = {
