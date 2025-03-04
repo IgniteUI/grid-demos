@@ -43,14 +43,14 @@ enum PivotViews {
 // Custom aggregator to calculate profit value
 export class IgxSaleProfitAggregate {
   public static totalProfit = (_, data: any[] | undefined) =>
-    data?.reduce((accumulator, value) => accumulator + (value.sale - value.cost), 0) || 0;
+    data?.reduce((accumulator, value) => accumulator + (value.Sale - value.Cost), 0) || 0;
 
   public static averageProfit = (_, data: any[] | undefined) => {
     let average = 0;
     if (data?.length === 1) {
-      average = data[0].sale - data[0].cost;
+      average = data[0].Sale - data[0].Cost;
     } else if (data && data.length > 1) {
-        const mappedData = data.map(x => x.sale - x.cost);
+        const mappedData = data.map(x => x.Sale - x.Cost);
         average = mappedData.reduce((a, b) => a + b) / mappedData.length;
     }
     return average;
@@ -59,9 +59,9 @@ export class IgxSaleProfitAggregate {
   public static minProfit = (_, data: any[] | undefined) => {
       let min = 0;
       if (data?.length === 1) {
-          min = data[0].sale - data[0].cost;
+          min = data[0].Sale - data[0].Cost;
       } else if (data && data.length > 1) {
-          const mappedData = data.map(x => x.sale - x.cost);
+          const mappedData = data.map(x => x.Sale - x.Cost);
           min = mappedData.reduce((a, b) => Math.min(a, b));
       }
       return min;
@@ -70,9 +70,9 @@ export class IgxSaleProfitAggregate {
   public static maxProfit = (_, data: any[] | undefined) => {
       let max = 0;
       if (data?.length === 1) {
-          max = data[0].sale - data[0].cost;
+          max = data[0].Sale - data[0].Cost;
       } else if (data && data.length > 1) {
-          const mappedData = data.map(x => x.sale - x.cost);
+          const mappedData = data.map(x => x.Sale - x.Cost);
           max = mappedData.reduce((a, b) => Math.max(a, b));
       }
       return max;
@@ -103,14 +103,14 @@ export class SalesGridComponent implements OnInit{
   public countryColumnTemplate!: TemplateRef<any>;
 
   public currencyPipe = new CurrencyPipe('en-US');
-  public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'brand');
+  public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
   public bulgariaCountryFilter = new FilteringExpressionsTree(FilteringLogic.And);
   public fileName = 'SalesGridApp';
 
   // #region Various configurations for the grid that can be toggled
   public saleValue: IPivotValue = {
     enabled: true,
-    member: 'sale',
+    member: 'Sale',
     displayName: 'Sales',
     aggregate: {
       key: 'SUM',
@@ -145,12 +145,12 @@ export class SalesGridComponent implements OnInit{
       },
     ],
     formatter: (value, _, __) => {
-      return this.currencyFormatter(value, 'sale');
+      return this.currencyFormatter(value, 'Sale');
     }
   };
   public profitValue: IPivotValue = {
     enabled: true,
-    member: 'cost',
+    member: 'Cost',
     displayName: 'Profit',
     aggregate: {
       key: 'SUM',
@@ -185,31 +185,31 @@ export class SalesGridComponent implements OnInit{
       },
     ],
     formatter: (value, _, __) => {
-      return this.currencyFormatter(value, 'cost');
+      return this.currencyFormatter(value, 'Cost');
     }
   };
   public pivotConfigBrands: IPivotConfiguration = {
     columns: [
       {
         enabled: true,
-        memberName: 'country',
+        memberName: 'Country',
         displayName: 'Country'
       },
       {
         enabled: true,
-        memberName: 'brand',
+        memberName: 'Brand',
         displayName: 'Brand',
         filter: this.brandFilter
       },
       {
         enabled: false,
-        memberName: 'store',
+        memberName: 'Store',
         displayName: 'Store'
       },
     ],
     rows: [
       new IgxPivotDateDimension({
-        memberName: 'saleDate',
+        memberName: 'Date',
         displayName: 'All Periods',
         enabled: true
       },
@@ -265,7 +265,7 @@ export class SalesGridComponent implements OnInit{
   public pivotConfigStores: IPivotConfiguration = {
     columns: [
       new IgxPivotDateDimension({
-        memberName: 'saleDate',
+        memberName: 'Date',
         displayName: 'All Periods',
         enabled: true
       },
@@ -277,13 +277,13 @@ export class SalesGridComponent implements OnInit{
     ],
     rows: [
       {
-        memberName: 'store',
+        memberName: 'Store',
         displayName: 'Store',
         enabled: true,
         width: "140px"
       },
       {
-        memberName: 'brand',
+        memberName: 'Brand',
         displayName: 'Brand',
         enabled: true,
         width: "140px"
@@ -295,7 +295,7 @@ export class SalesGridComponent implements OnInit{
     ],
     filters: [
       {
-        memberName: "country",
+        memberName: "Country",
         displayName: 'Country',
         filter: this.bulgariaCountryFilter,
         enabled: true
@@ -313,21 +313,20 @@ export class SalesGridComponent implements OnInit{
   ]);
 
   public flagsData = FLAGS;
-  // public data: any = SALES_DATA;
   public data$: BehaviorSubject<any> = new BehaviorSubject([]);
   public isLoading = true;
 
   constructor(private dataService: DataService, public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
-    var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'brand');
+    var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
     multipleFilters.filteringOperands = [
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
-        fieldName: 'brand',
+        fieldName: 'Brand',
         searchVal: 'HM'
       },
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
-        fieldName: 'brand',
+        fieldName: 'Brand',
         searchVal: 'HM Home'
       },
     ];
@@ -335,7 +334,7 @@ export class SalesGridComponent implements OnInit{
     this.bulgariaCountryFilter.filteringOperands = [
       {
         condition: IgxStringFilteringOperand.instance().condition('equals'),
-        fieldName: 'country',
+        fieldName: 'Country',
         searchVal: 'Bulgaria'
       },
     ]
