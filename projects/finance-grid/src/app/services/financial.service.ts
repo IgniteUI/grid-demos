@@ -34,7 +34,7 @@ export class FinancialService {
         record["dailyPercentageChange"] = 0;
       });
       this.records.next(currData);
-    })
+    });
   }
 
   public updateAllPrices(data: any) {

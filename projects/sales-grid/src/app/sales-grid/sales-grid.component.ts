@@ -95,7 +95,7 @@ export class IgxSaleProfitAggregate {
   ],
   styleUrl: './sales-grid.component.scss'
 })
-export class SalesGridComponent implements OnInit{
+export class SalesGridComponent implements OnInit {
   @ViewChild(IgxPivotGridComponent, { static: true })
   public pivotGrid!: IgxPivotGridComponent;
 
