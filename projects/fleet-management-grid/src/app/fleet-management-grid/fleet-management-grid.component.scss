@@ -236,6 +236,7 @@ igx-card {
 
 .overlay-location-content,
 .overlay-driver-content {
+  display: flex;
   height: 48%;
   width: 100%;
   padding: 0px;
@@ -260,8 +261,6 @@ igx-card {
 
 .driver-block-container {
   display: flex;
-  flex-direction: row;
-  justify-self: center;
   width: 85%;
 }
 
