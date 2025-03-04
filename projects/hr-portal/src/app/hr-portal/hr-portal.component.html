@@ -1,6 +1,7 @@
 <igx-tree-grid
   #treeGrid
-  [data]="localData"
+  [data]="data$ | async"
+  [isLoading]="isLoading"
   primaryKey="ID"
   childDataKey="Employees"
   rowSelection="multipleCascade"
