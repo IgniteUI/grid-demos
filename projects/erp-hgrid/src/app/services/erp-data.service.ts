@@ -1,28 +1,31 @@
-import { Injectable } from "@angular/core";
-import { InventoryList } from "../data/erpData";
-import { TemplateDataModel } from "../data/dataModels";
+import { Injectable } from '@angular/core';
+import { TemplateDataModel } from '../data/dataModels';
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+const DATA_URL =
+  'https://staging.infragistics.com/grid-examples-data/data/erp/products.json';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ErpDataService {
-  private products = InventoryList;
-
-  public getProducts(): TemplateDataModel[] {
-    this.setItemsSold();
-    this.setTotalNetProfit();
-    return this.products;
+  public records: BehaviorSubject<TemplateDataModel[]>;
+  constructor(private _http: HttpClient) {
+    this.records = new BehaviorSubject<TemplateDataModel[]>([]);
   }
 
-  public getProductsJson() {
-    const products = this.products.map(({ unitsSold, totalNetProfit, salesTrendData, ...rest }) => rest);
-    const productsJSON = JSON.stringify(products);
-    return productsJSON;
+  public getProducts() {
+    this._http.get<TemplateDataModel[]>(DATA_URL).subscribe((data: TemplateDataModel[]) => {
+      this.setItemsSold(data);
+      this.setTotalNetProfit(data);
+      this.records.next(data);
+    });
   }
 
-  private setItemsSold(): void {
+  private setItemsSold(data: TemplateDataModel[]): void {
     // add itemsSold property to each record based on the data in the chart
-    this.products.forEach((item: TemplateDataModel) => {
+    data.forEach((item: TemplateDataModel) => {
       const lastItemIndex = item.salesTrendData.length - 1;
       item.unitsSold = item.salesTrendData[lastItemIndex].unitsSold;
     });
@@ -30,10 +33,12 @@ export class ErpDataService {
 
   private calculateTotalNetProfit(product: TemplateDataModel): number {
     const unitsSold: number = product.unitsSold || 0;
-    return unitsSold * (product.netPrice);
+    return unitsSold * product.netPrice;
   }
 
-  private setTotalNetProfit(): void {
-    this.products.forEach(product => product.totalNetProfit = this.calculateTotalNetProfit(product));
+  private setTotalNetProfit(data: TemplateDataModel[]): void {
+    data.forEach((product: TemplateDataModel) => {
+      product.totalNetProfit = this.calculateTotalNetProfit(product);
+    });
   }
 }

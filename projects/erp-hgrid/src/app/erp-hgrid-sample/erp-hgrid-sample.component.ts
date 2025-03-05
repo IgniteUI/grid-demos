@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import {
   IgxHierarchicalGridComponent,
   IgxColumnGroupComponent,
@@ -45,6 +45,7 @@ import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-ext
 import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
 import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
 import { ErpDataService } from '../services/erp-data.service';
+import { BehaviorSubject } from 'rxjs';
 
 defineComponents(IgcRatingComponent);
 
@@ -60,6 +61,7 @@ defineComponents(IgcRatingComponent);
       },
     ],
     imports: [
+      CommonModule,
       IgxHierarchicalGridComponent,
       IgxColumnComponent,
       IgxCellTemplateDirective,
@@ -100,18 +102,24 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   @ViewChild('imageElement', { static: true }) imageElement!: ElementRef;
   @ViewChild('imageDialog', { static: true }) imageDialog!: IgxDialogComponent;
 
-  public hgridData: TemplateDataModel[];
+
   public selectionMode: GridSelectionMode = 'multiple';
   public orderStatus = OrderStatus;
+  public data$: BehaviorSubject<TemplateDataModel[]> = new BehaviorSubject<TemplateDataModel[]>([]);
+  public isLoading = true;
 
   constructor(
     private iconService: IgxIconService,
     private erpDataService: ErpDataService
   ) {
     // data
-    this.hgridData = this.erpDataService.getProducts();
-    const x = this.erpDataService.getProductsJson();
-
+    this.erpDataService.getProducts();
+    this.data$ = this.erpDataService.records;
+    this.data$.subscribe((data) => {
+      if (data.length !== 0) {
+        this.isLoading = false;
+      }
+    });
     // Icons used
     this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
