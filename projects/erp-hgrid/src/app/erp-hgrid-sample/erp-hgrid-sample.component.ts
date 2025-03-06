@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import {
   IgxHierarchicalGridComponent,
@@ -94,7 +94,7 @@ defineComponents(IgcRatingComponent);
     templateUrl: './erp-hgrid-sample.component.html',
     styleUrl: './erp-hgrid-sample.component.scss'
 })
-export class ErpHGridSampleComponent implements AfterViewInit {
+export class ErpHGridSampleComponent implements OnInit, AfterViewInit {
   @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
   public hierarchicalGrid!: IgxHierarchicalGridComponent;
   @ViewChild('rowisland', { read: IgxRowIslandComponent, static: true })
@@ -112,6 +112,14 @@ export class ErpHGridSampleComponent implements AfterViewInit {
     private iconService: IgxIconService,
     private erpDataService: ErpDataService
   ) {
+    // Icons used
+    this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
+    this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
+    this.iconService.addSvgIconFromText(billPaid.name, billPaid.value, 'imx-icons');
+    this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
+  }
+
+  public ngOnInit(): void {
     // data
     this.erpDataService.getProducts();
     this.data$ = this.erpDataService.records;
@@ -120,11 +128,6 @@ export class ErpHGridSampleComponent implements AfterViewInit {
         this.isLoading = false;
       }
     });
-    // Icons used
-    this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
-    this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
-    this.iconService.addSvgIconFromText(billPaid.name, billPaid.value, 'imx-icons');
-    this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
   }
 
   public ngAfterViewInit(): void {
