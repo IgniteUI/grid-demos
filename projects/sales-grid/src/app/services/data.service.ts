@@ -14,7 +14,7 @@ export class DataService {
   }
 
   public getData() {
-    this._http.get(DATA_URL).subscribe((data: any) => {
+    this._http.get(DATA_URL, { responseType: 'json' }).subscribe((data: any) => {
       this.records.next(data);
     });
   }
