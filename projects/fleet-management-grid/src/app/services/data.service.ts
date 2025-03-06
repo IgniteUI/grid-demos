@@ -3,17 +3,17 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 const VEHICLE_DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/fleet/vehicles.json';
+  'https://www.infragistics.com/grid-examples-data/data/fleet/vehicles.json';
 const DRIVERS_DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/fleet/drivers.json';
+  'https://www.infragistics.com/grid-examples-data/data/fleet/drivers.json';
 const COST_DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/fleet/cost.json';
+  'https://www.infragistics.com/grid-examples-data/data/fleet/cost.json';
 const MAINTENANCE_DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/fleet/maintenance.json';
+  'https://www.infragistics.com/grid-examples-data/data/fleet/maintenance.json';
 const UTILIZATION_DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/fleet/utilization.json';
+  'https://www.infragistics.com/grid-examples-data/data/fleet/utilization.json';
 const TRIP_HISTORY_DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/fleet/trip_history.json';
+  'https://www.infragistics.com/grid-examples-data/data/fleet/trip_history.json';
 
 @Injectable({
   providedIn: 'root',

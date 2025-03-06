@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 const DATA_URL =
-  'https://staging.infragistics.com/grid-examples-data/data/erp/products.json';
+  'https://www.infragistics.com/grid-examples-data/data/erp/products.json';
 
 @Injectable({
   providedIn: 'root',

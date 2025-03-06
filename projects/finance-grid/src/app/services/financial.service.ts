@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
-const DATA_URL = 'https://staging.infragistics.com/grid-examples-data/data/finance/finance.json';
+const DATA_URL = 'https://www.infragistics.com/grid-examples-data/data/finance/finance.json';
 @Injectable({
   providedIn: "root",
 })
