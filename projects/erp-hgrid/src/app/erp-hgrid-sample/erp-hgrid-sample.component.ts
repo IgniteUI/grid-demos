@@ -37,14 +37,17 @@ import {
   VerticalAlignment,
   THEME_TOKEN,
   ThemeToken,
-  IgxGridToolbarDirective
+  IgxGridToolbarDirective,
+  OverlaySettings
 } from 'igniteui-angular';
+import { fadeIn } from 'igniteui-angular/animations'
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
 import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
 import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
 import { ErpDataService } from '../services/erp-data.service';
+import { useAnimation } from '@angular/animations';
 
 defineComponents(IgcRatingComponent);
 
@@ -162,19 +165,25 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   }
 
   public onImageHover(event: MouseEvent, dialog: IgxDialogComponent) {
-    if(dialog) {
+    if (dialog) {
       const targetEl = event.target as HTMLElement;
 
       const positionSettings: PositionSettings = {
+        openAnimation: useAnimation(fadeIn, { 
+          params: {
+            delay: '400ms'
+          }
+        }),
         horizontalStartPoint: HorizontalAlignment.Right,
         verticalStartPoint: VerticalAlignment.Top
       };
 
-      dialog.open({
+      const overlaySettings: OverlaySettings = {
         target: targetEl,
         modal: false,
         positionStrategy: new AutoPositionStrategy(positionSettings)
-      });
+      }
+      dialog.open(overlaySettings);
     }
   }
 
