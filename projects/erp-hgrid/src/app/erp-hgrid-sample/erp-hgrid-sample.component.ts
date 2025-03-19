@@ -38,7 +38,8 @@ import {
   THEME_TOKEN,
   ThemeToken,
   IgxGridToolbarDirective,
-  OverlaySettings
+  OverlaySettings,
+  IgxStringFilteringOperand
 } from 'igniteui-angular';
 import { fadeIn } from 'igniteui-angular/animations'
 import { IgxSparklineModule } from 'igniteui-angular-charts';
@@ -102,6 +103,8 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   public rowisland!: IgxRowIslandComponent;
   @ViewChild('imageElement', { static: true }) imageElement!: ElementRef;
   @ViewChild('imageDialog', { static: true }) imageDialog!: IgxDialogComponent;
+  public fullAddressFilteringOperand = FullAddressFilteringOperand.instance();
+  public shortAddressFilteringOperand = new FullAddressFilteringOperand(true);
 
   public hgridData: TemplateDataModel[];
   public selectionMode: GridSelectionMode = 'multiple';
@@ -113,7 +116,6 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   ) {
     // data
     this.hgridData = this.erpDataService.getProducts();
-    const x = this.erpDataService.getProductsJson();
 
     // Icons used
     this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
@@ -148,7 +150,11 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   }
 
   public formatAddress(value: OrderDetails): string {
-    return `${value.streetName} ${value.streetNumber}`;
+    return `${value.streetNumber} ${value.streetName}`;
+  }
+
+  public formatFullAddress(value: OrderDetails): string {
+    return `${value.streetNumber} ${value.streetName}, ${value.zipCode} ${value.city}, ${value.country}`;
   }
 
   public formatNumberAsIs(value: number): number {
@@ -191,5 +197,104 @@ export class ErpHGridSampleComponent implements AfterViewInit {
     if(dialog) {
       dialog.close();
     }
+  }
+}
+
+export class FullAddressFilteringOperand extends IgxStringFilteringOperand {
+  public constructor(isAddressShort: boolean = false) {
+    super();
+    const getShortAddress = (target: any) => `${target.streetNumber} ${target.streetName}`;
+    const getFullAddress = (target: any) => `${target.streetNumber} ${target.streetName}, ${target.zipCode} ${target.city}, ${target.country}`;
+
+    // Rewriting filtering operations to work on the address field
+    // as it is an object with properties
+    // and we can't filter it like a normal string field
+    const customOperations = [
+      {
+        iconName: 'filter_contains',
+        isUnary: false,
+        logic: (target: any, searchVal: string, ignoreCase?: boolean) => {
+          const address = isAddressShort ? getShortAddress(target) : getFullAddress(target);
+          ignoreCase = true;
+          const search = IgxStringFilteringOperand.applyIgnoreCase(searchVal, ignoreCase);
+          target = IgxStringFilteringOperand.applyIgnoreCase(address, ignoreCase);
+          return target.indexOf(search) !== -1;
+        },
+        name: 'Contains'
+      },
+      {
+        iconName: 'filter_does_not_contain',
+        isUnary: false,
+        logic: (target: any, searchVal: string, ignoreCase?: boolean) => {
+          const address = isAddressShort ? getShortAddress(target) : getFullAddress(target);
+          ignoreCase = true;
+          const search = IgxStringFilteringOperand.applyIgnoreCase(searchVal, ignoreCase);
+          target = IgxStringFilteringOperand.applyIgnoreCase(address, ignoreCase);
+          return target.indexOf(search) === -1;
+        },
+        name: 'Does Not Contain'
+      },
+      {
+        iconName: 'filter_starts_with',
+        isUnary: false,
+        logic: (target: any, searchVal: string, ignoreCase?: boolean) => {
+          const address = isAddressShort ? getShortAddress(target) : getFullAddress(target);
+          ignoreCase = true;
+          const search = IgxStringFilteringOperand.applyIgnoreCase(searchVal, ignoreCase);
+          target = IgxStringFilteringOperand.applyIgnoreCase(address, ignoreCase);
+          return target.startsWith(search);
+        },
+        name: 'Starts With'
+      },
+      {
+        iconName: 'filter_ends_with',
+        isUnary: false,
+        logic: (target: any, searchVal: string, ignoreCase?: boolean) => {
+          const address = isAddressShort ? getShortAddress(target) : getFullAddress(target);
+          ignoreCase = true;
+          const search = IgxStringFilteringOperand.applyIgnoreCase(searchVal, ignoreCase);
+          target = IgxStringFilteringOperand.applyIgnoreCase(address, ignoreCase);
+          return target.endsWith(search);
+        },
+        name: 'Ends With'
+      },
+      {
+        iconName: 'filter_equal',
+        isUnary: false,
+        logic: (target: any, searchVal: string, ignoreCase?: boolean) => {
+          const address = isAddressShort ? getShortAddress(target) : getFullAddress(target);
+          ignoreCase = true;
+          const search = IgxStringFilteringOperand.applyIgnoreCase(searchVal, ignoreCase);
+          target = IgxStringFilteringOperand.applyIgnoreCase(address, ignoreCase);
+          return target === search;
+        },
+        name: 'Equals'
+      },
+      {
+        iconName: 'filter_not_equal',
+        isUnary: false,
+        logic: (target: any, searchVal: string, ignoreCase?: boolean) => {
+          const address = isAddressShort ? getShortAddress(target) : getFullAddress(target);
+          ignoreCase = true;
+          const search = IgxStringFilteringOperand.applyIgnoreCase(searchVal, ignoreCase);
+          target = IgxStringFilteringOperand.applyIgnoreCase(address, ignoreCase);
+          return target !== search;
+        },
+        name: 'Does Not Equal'
+      },
+    ];
+
+    const emptyOperators = [
+        // 'Empty'
+        this.operations[6],
+        // 'Not Empty'
+        this.operations[7],
+        // 'Null'
+        this.operations[8],
+        // 'Not Null'
+        this.operations[9],
+    ];
+
+    this.operations = customOperations.concat(emptyOperators);
   }
 }
