@@ -39,7 +39,8 @@ import {
   ThemeToken,
   IgxGridToolbarDirective,
   OverlaySettings,
-  IgxStringFilteringOperand
+  IgxStringFilteringOperand,
+  IFilteringOperation
 } from 'igniteui-angular';
 import { fadeIn } from 'igniteui-angular/animations'
 import { IgxSparklineModule } from 'igniteui-angular-charts';
@@ -175,7 +176,7 @@ export class ErpHGridSampleComponent implements AfterViewInit {
       const targetEl = event.target as HTMLElement;
 
       const positionSettings: PositionSettings = {
-        openAnimation: useAnimation(fadeIn, { 
+        openAnimation: useAnimation(fadeIn, {
           params: {
             delay: '400ms'
           }
@@ -209,7 +210,7 @@ export class FullAddressFilteringOperand extends IgxStringFilteringOperand {
     // Rewriting filtering operations to work on the address field
     // as it is an object with properties
     // and we can't filter it like a normal string field
-    const customOperations = [
+    const customOperations: IFilteringOperation[] = [
       {
         iconName: 'filter_contains',
         isUnary: false,
