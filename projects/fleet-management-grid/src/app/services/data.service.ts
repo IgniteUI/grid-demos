@@ -17,20 +17,15 @@ export class DataService {
   private costData = COST_DATA;
   private utilizationData = UTILIZATION_DATA;
 
-  private bind: () => void;
-
   private fuelCostsCache: { [key: string]: any[] } = {};
 
   constructor() {
-    this.bind = () => {
-      this.utilizationData.forEach(vehicle => {
-        (vehicle.utilization as any).__dataIntents = {
-          "'2023'": ["SeriesTitle/2023"],
-          "'2024'": ["SeriesTitle/2024"]
-        };
-      })
-    };
-    this.bind();
+    this.utilizationData.forEach(vehicle => {
+      (vehicle.utilization as any).__dataIntents = {
+        "'2023'": ["SeriesTitle/2023"],
+        "'2024'": ["SeriesTitle/2024"]
+      };
+    })
   }
 
   public getVehiclesData() {
