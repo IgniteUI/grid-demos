@@ -131,7 +131,7 @@
                 <igx-column
                     field="delivery.dateOrdered"
                     header="Date Ordered"
-                    dataType="string"
+                    dataType="date"
                     width="12%"
                     [sortable]="true"
                     [resizable]="true"
@@ -143,7 +143,7 @@
                 <igx-column
                     field="delivery.dateOrdered"
                     header="Date Ordered"
-                    dataType="string"
+                    dataType="date"
                     width="12%"
                     [sortable]="true"
                     [resizable]="true"
@@ -153,7 +153,7 @@
                 <igx-column
                     field="delivery.dateShipped"
                     header="Date Shipped"
-                    dataType="string"
+                    dataType="date"
                     width="12%"
                     [sortable]="true"
                     [resizable]="true"
@@ -163,7 +163,7 @@
                 <igx-column
                     field="delivery.dateDelivered"
                     header="Date Delivered"
-                    dataType="string"
+                    dataType="date"
                     width="12%"
                     [sortable]="true"
                     [resizable]="true"
@@ -216,11 +216,12 @@
                 <igx-column
                     field="orderInformation.zipCode"
                     header="Zip Code"
-                    dataType="string"
+                    dataType="number"
                     width="9%"
                     [sortable]="true"
                     [resizable]="true"
-                    [visibleWhenCollapsed]="false">
+                    [visibleWhenCollapsed]="false"
+                    [formatter]="formatNumberAsIs">
                 </igx-column>
                 <igx-column
                     field="orderInformation"
@@ -229,7 +230,8 @@
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="false"
-                    [formatter]="formatAddress">
+                    [formatter]="formatAddress"
+                    [filters]="shortAddressFilteringOperand">
                 </igx-column>
 
                 <!-- Show this column when collapsed -->
@@ -240,7 +242,8 @@
                     [sortable]="true"
                     [resizable]="true"
                     [visibleWhenCollapsed]="true"
-                    [formatter]="formatAddress">
+                    [formatter]="formatFullAddress"
+                    [filters]="fullAddressFilteringOperand">
                 </igx-column>
 
             </igx-column-group>
