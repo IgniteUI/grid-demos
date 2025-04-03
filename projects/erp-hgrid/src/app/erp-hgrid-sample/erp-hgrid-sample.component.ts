@@ -167,7 +167,7 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   public exportStarted(args: IgxExporterEvent): void {
     args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
       // Don't export Performance column
-      columnArgs.cancel = columnArgs.header === 'Performance';
+      columnArgs.cancel = columnArgs.field === 'salesTrendData';
     });
   }
 

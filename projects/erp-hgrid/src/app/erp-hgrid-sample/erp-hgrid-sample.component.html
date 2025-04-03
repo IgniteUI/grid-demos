@@ -3,7 +3,6 @@
         #hierarchicalGrid
         width="100%"
         height="100%"
-        rowHeight="32px"
         [data]="hgridData"
         [autoGenerate]="false"
         [allowFiltering]="true"
@@ -60,7 +59,7 @@
             </ng-template>
         </igx-column>
         <igx-column field="unitsSold" header="Sold Units Last Month" dataType="number" width="10%" [sortable]="true"></igx-column>
-        <igx-column field="salesTrendData" header="Mothly Sales Trends" filterable="false" width="15%">
+        <igx-column field="salesTrendData" header="Monthly Sales Trends" filterable="false" width="15%">
             <ng-template igxCell let-cell="cell" let-val>
                 @defer {
                   <sales-trends-chart [dataSource]="cell.value"></sales-trends-chart>
