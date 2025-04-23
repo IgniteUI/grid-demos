@@ -11,12 +11,7 @@ import {
   IPivotConfiguration,
   ISelectionEventArgs,
   IgxExcelExporterService,
-  IgxCsvExporterService,
-  IgxCsvExporterOptions,
   IgxExcelExporterOptions,
-  IgxBaseExporter,
-  IgxExporterOptionsBase,
-  CsvFileTypes,
   IgxPivotDateDimension,
   IgxColumnComponent,
   IgxCellHeaderTemplateDirective,
@@ -97,6 +92,9 @@ export class IgxSaleProfitAggregate {
 export class SalesGridComponent {
   @ViewChild(IgxPivotGridComponent, { static: true })
   public pivotGrid!: IgxPivotGridComponent;
+
+  @ViewChild(IgxDropDownComponent, { static: true })
+  public viewDropdown!: IgxDropDownComponent;
 
   @ViewChild('countryColumn')
   public countryColumnTemplate!: TemplateRef<any>;
@@ -314,7 +312,7 @@ export class SalesGridComponent {
   public flagsData = FLAGS;
   public data: any = SALES_DATA;
 
-  constructor(public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
+  constructor(public excelExporter: IgxExcelExporterService) {
     var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
     multipleFilters.filteringOperands = [
       {
@@ -343,19 +341,9 @@ export class SalesGridComponent {
     this.pivotGrid.pivotConfiguration = this.availableConfigs.get(this.selectedConfig)?.config || this.pivotConfigBrands;
   }
 
-  public onExportSelection(event: ISelectionEventArgs) {
-    let options!: IgxExporterOptionsBase;
-    let exporter!: IgxBaseExporter;
-    const newId = event.newSelection.id;
-    if (newId === 'csv') {
-      options = new IgxCsvExporterOptions(this.fileName, CsvFileTypes.CSV);
-      exporter = this.csvExporter;
-    } else if (newId === 'excel') {
-      options = new IgxExcelExporterOptions(this.fileName);
-      exporter = this.excelExporter;
-    }
-
-    exporter.export(this.pivotGrid, options);
+  public onExport(event: any) {
+    const options = new IgxExcelExporterOptions(this.fileName);
+    this.excelExporter.export(this.pivotGrid, options);
     event.cancel = true;
   }
 
