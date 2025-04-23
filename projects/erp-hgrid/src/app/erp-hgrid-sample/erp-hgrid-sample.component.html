@@ -36,14 +36,8 @@
                     [src]="cell.value"
                     alt="Product"
                     igxRipple="white"
-                    (mouseenter)="onImageHover($event, imageDialog)"
+                    (mouseenter)="onImageHover($event, cell.row.data.productName, imageDialog)"
                     (mouseleave)="onImageLeave($event, imageDialog)"/>
-                <igx-dialog
-                    #imageDialog
-                    isModal="false"
-                    [title]="cell.row.data.productName">
-                    <img [src]="cell.value" width="312px" alt="Product View"/>
-                </igx-dialog>
             </ng-template>
         </igx-column>
         <igx-column field="productName" header="Product Name" dataType="string" [sortable]="true" width="12%"></igx-column>
@@ -92,18 +86,12 @@
                 <ng-template igxCell let-cell="cell">
                     <div class="status-cell">
                         <span>
-                            <igx-badge  *ngIf="cell.value === orderStatus.PACKED" type="primary" shape="rounded" elevated>
-                                <igx-icon family="imx-icons" name="dropbox" class="custom-icon"></igx-icon>
-                            </igx-badge>
-                            <igx-badge  *ngIf="cell.value === orderStatus.IN_TRANSIT" type="warning" shape="rounded">
-                                <igx-icon family="imx-icons" name="delivery" class="custom-icon"></igx-icon>
-                            </igx-badge>
-                            <igx-badge  *ngIf="cell.value === orderStatus.CUSTOMS" type="error" shape="rounded">
-                                <igx-icon family="imx-icons" name="bill-paid" class="custom-icon"></igx-icon>
-                            </igx-badge>
-                            <igx-badge  *ngIf="cell.value === orderStatus.DELIVERED" type="success" shape="rounded">
-                                <igx-icon family="imx-icons" name="check" class="custom-icon"></igx-icon>
-                            </igx-badge>
+                          <igx-badge
+                            type={{getOrderStatusBadgeVariant(cell.value)}}
+                            shape="rounded"
+                            elevated>
+                            <igx-icon family="imx-icons" name={{getOrderStatusIconName(cell.value)}} class="custom-icon"></igx-icon>
+                          </igx-badge>
                         </span>
                         <span>{{cell.value}}</span>
                     </div>
@@ -247,4 +235,12 @@
             </igx-column-group>
         </igx-row-island>
     </igx-hierarchical-grid>
+
+    <!-- Overay shown when hovering on product image -->
+    <igx-dialog
+      #imageDialog
+      isModal="false"
+      [title]="this.hoveredImageProductName">
+      <img [src]="this.hoveredImageUrl" width="312px" alt="Product View"/>
+    </igx-dialog>
 </div>
