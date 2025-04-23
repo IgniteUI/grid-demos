@@ -341,10 +341,9 @@ export class SalesGridComponent {
     this.pivotGrid.pivotConfiguration = this.availableConfigs.get(this.selectedConfig)?.config || this.pivotConfigBrands;
   }
 
-  public onExport(event: any) {
+  public onExportClick() {
     const options = new IgxExcelExporterOptions(this.fileName);
     this.excelExporter.export(this.pivotGrid, options);
-    event.cancel = true;
   }
 
   public onColumnInit(col: IgxColumnComponent) {

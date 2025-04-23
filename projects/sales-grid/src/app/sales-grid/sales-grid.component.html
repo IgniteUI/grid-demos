@@ -7,7 +7,7 @@
                 {{availableConfigs.get(selectedConfig)?.title}}
                 <igx-icon [name]="viewDropdown.collapsed ? 'expand' : 'collapse'" [family]="'default'"></igx-icon>
             </button>
-            <button igxButton="outlined" (click)="onExport($event)">
+            <button igxButton="outlined" (click)="onExportClick()">
                 <igx-icon [name]="'file_download'" [family]="'internal_indigo'"></igx-icon>
                 Export to Excel
             </button>
