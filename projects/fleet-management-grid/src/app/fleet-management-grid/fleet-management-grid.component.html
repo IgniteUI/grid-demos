@@ -1,4 +1,4 @@
-<igx-grid class="main-grid" [data]="dataService.getVehiclesData()" #grid height="100%" width="100%">
+<igx-grid class="main-grid" [data]="vehicleData$ | async" [isLoading]="isLoading" #grid height="100%" width="100%">
   <igx-grid-toolbar>
     <igx-grid-toolbar-title>Fleet Management</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
@@ -87,7 +87,7 @@
 
         <igx-tab-content>
           <div class="grid-container">
-            <ng-container *ngTemplateOutlet="tripHistory; context: { $implicit: dataService.getTripHistoryData(dataItem.vehicleId) }"></ng-container>
+            <ng-container *ngTemplateOutlet="tripHistory; context: { $implicit: dataService.findTripHistoryById(dataItem.vehicleId) }"></ng-container>
           </div>
         </igx-tab-content>
       </igx-tab-item>
@@ -99,7 +99,7 @@
 
         <igx-tab-content>
           <div class="grid-container">
-            <ng-container *ngTemplateOutlet="maintenance; context: { $implicit: dataService.getMaintenanceData(dataItem.vehicleId)}"></ng-container>
+            <ng-container *ngTemplateOutlet="maintenance; context: { $implicit: dataService.findMaintenanceDataById(dataItem.vehicleId)}"></ng-container>
           </div>
         </igx-tab-content>
       </igx-tab-item>
@@ -133,7 +133,7 @@
                   valueMemberPath="value"
                   labelsPosition="OutsideEnd"
                   radiusFactor="0.7"
-                  [dataSource]="dataService.getCostsPerTypeData(dataItem.vehicleId, periods[dataItem.vehicleId]?.costPerTypePeriod || Period.YTD)"
+                  [dataSource]="dataService.findCostsPerTypeData(dataItem.vehicleId, periods[dataItem.vehicleId]?.costPerTypePeriod || Period.YTD)"
                   actualLabelOuterColor="#ededed"
                   >
                 </igx-pie-chart>
@@ -157,7 +157,7 @@
                 <igx-category-chart
                   name="chart"
                   class="chart-canvas"
-                  [dataSource]="dataService.getCostsPerMeterData(dataItem.vehicleId, periods[dataItem.vehicleId]?.costPerMeterPeriod || Period.YTD)"
+                  [dataSource]="dataService.findCostsPerMeterData(dataItem.vehicleId, periods[dataItem.vehicleId]?.costPerMeterPeriod || Period.YTD)"
                   chartType="Area"
                   isHorizontalZoomEnabled="false"
                   isVerticalZoomEnabled="false"
@@ -230,7 +230,7 @@
                 class="column-chart-two-series"
                 #chart
                 chartType="Column"
-                [dataSource]="dataService.getUtilizationData(dataItem.vehicleId)"
+                [dataSource]="dataService.findUtilizationDataById(dataItem.vehicleId)"
                 [legend]="legend"
                 yAxisTitle="Miles"
                 isHorizontalZoomEnabled="false"

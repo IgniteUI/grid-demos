@@ -16,6 +16,7 @@ import { Period } from '../models/period.enum';
 import { DriverDetails } from '../models/driver-details.interface';
 import { ChartType } from '../models/chart-type.enum';
 import { VehicleDetails } from '../models/vehicle-details.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-fleet-management-grid',
@@ -117,6 +118,9 @@ export class FleetManagementGridComponent implements OnInit {
   protected VEHICLE_DETAILS = VEHICLE_DETAILS;
   protected DRIVER_CATEGORIES = DRIVER_CATEGORIES;
 
+  protected isLoading = true;
+  protected vehicleData$ = new BehaviorSubject<any>([]);
+
   constructor(
     @Inject(IgxIconService) private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
@@ -128,6 +132,15 @@ export class FleetManagementGridComponent implements OnInit {
     this.iconService.addSvgIconFromText(wrench.name, wrench.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
     this.iconService.addSvgIconFromText(gitIssue.name, gitIssue.value, 'imx-icons');
+
+    this.dataService.getVehiclesData();
+    this.vehicleData$ = this.dataService.vehiclesRecords;
+    this.vehicleData$.subscribe((data: any) => {
+      if (data.length > 0) {
+        this.isLoading = false;
+      }
+    });
+    this.dataService.loadOptionalData();
 
     this.grid.sortingExpressions = [
       {
@@ -203,8 +216,7 @@ export class FleetManagementGridComponent implements OnInit {
       console.error('Vehicle ID not found in data');
       return;
     }
-
-    const vehicle = this.dataService.getVehiclesData().find(v => v.vehicleId === vehicleId)
+    const vehicle = this.vehicleData$.value?.find((v: any) => v.vehicleId === vehicleId);
 
     if (!vehicle) {
       console.error(`No vehicle found for ID: ${vehicleId}`);
@@ -266,7 +278,7 @@ export class FleetManagementGridComponent implements OnInit {
       return;
     }
 
-    const driverDetails = this.dataService.getDriverData(driverName);
+    const driverDetails = this.dataService.findDriverByName(driverName);
 
     if (!driverDetails) {
       console.error(`No data found for driver: ${driverName}`);
