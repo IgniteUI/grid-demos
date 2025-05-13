@@ -26,9 +26,10 @@
     <div class="pivotRow">
         <div class="pivotContainer">
             <igx-pivot-grid #salesGrid
-                [data]="data"
+                [data]="data$ | async"
                 [superCompactMode]="true"
                 [defaultExpandState]="true"
+                [isLoading]="isLoading"
                 [pivotConfiguration]="pivotConfigBrands"
                 (columnInit)="onColumnInit($event)">
             </igx-pivot-grid>

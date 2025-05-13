@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Employee, EMPLOYEE_DATA } from '../data/localData';
 import {
   IgxTreeGridComponent,
   IgxColumnComponent,
@@ -18,12 +17,12 @@ import {
   IgxIconService,
   IgxIconButtonDirective,
   IgxButtonModule,
-  SortingDirection,
-  DefaultSortingStrategy,
   THEME_TOKEN,
   ThemeToken,
 } from 'igniteui-angular';
 import { CommonModule } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
+import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-hr-portal',
   templateUrl: './hr-portal.component.html',
@@ -58,14 +57,21 @@ import { CommonModule } from '@angular/common';
   ],
 })
 export class HrPortalComponent implements OnInit {
-  public localData: Employee[] = [];
+  public data$: BehaviorSubject<any> = new BehaviorSubject([]);
+  public isLoading = true;
   @ViewChild('treeGrid', { read: IgxTreeGridComponent, static: true })
   public treeGrid!: IgxTreeGridComponent;
 
-  constructor(private iconService: IgxIconService) {}
+  constructor(private iconService: IgxIconService, private dataService: DataService) {}
 
   ngOnInit() {
-    this.localData = EMPLOYEE_DATA;
+    this.dataService.getData();
+    this.data$ = this.dataService.records;
+    this.data$.subscribe((data) => {
+      if (data.length !== 0) {
+        this.isLoading = false;
+      }
+    });
     const icons = [
       {
         name: 'linkedIn',
