@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   IgxHierarchicalGridComponent,
   IgxColumnGroupComponent,
@@ -87,7 +87,6 @@ defineComponents(IgcRatingComponent);
       IgxIconModule,
       IgxBadgeModule,
       IgxBadgeComponent,
-      NgIf,
       IgxSparklineModule,
       IgxButtonModule,
 	    IgxDialogModule,
