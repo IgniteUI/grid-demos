@@ -69,7 +69,7 @@
   <igx-column field="allocation" header="Allocation" dataType="percent" [width]="'10%'" [minWidth]="'100px'">
     <ng-template igxCell let-val>
       <div class="progress-container">
-        <div>
+        <div style="width: 42px;">
           {{ val | percent : "1.0-2" }}
         </div>
         <igx-linear-bar [value]="val * 100" [animate]="false" textVisibility="false"></igx-linear-bar>
