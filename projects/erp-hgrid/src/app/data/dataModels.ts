@@ -47,3 +47,5 @@ export enum OrderStatus  {
   CUSTOMS = "Customs",
   DELIVERED = "Delivered"
 }
+
+export type BadgeVariant = "primary" | "info" | "success" | "warning" | "error";
