@@ -93,9 +93,6 @@ export class SalesGridComponent {
   @ViewChild(IgxPivotGridComponent, { static: true })
   public pivotGrid!: IgxPivotGridComponent;
 
-  @ViewChild(IgxDropDownComponent, { static: true })
-  public viewDropdown!: IgxDropDownComponent;
-
   @ViewChild('countryColumn')
   public countryColumnTemplate!: TemplateRef<any>;
 
