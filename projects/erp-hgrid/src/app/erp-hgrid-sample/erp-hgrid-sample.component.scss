@@ -8,19 +8,19 @@
   --ig-size: var(--ig-size-medium);
   height: 100%;
 
-  igx-badge[type="primary"]{
+  .igx-badge {
     background-color: var(--ig-primary-50);
   }
 
-  igx-badge[type="warning"]{
+  .igx-badge--warning {
     background-color: var(--ig-warn-100);
   }
 
-  igx-badge[type="error"]{
+  .igx-badge--error {
     background-color: var(--ig-error-50);
   }
 
-  igx-badge[type="success"]{
+  .igx-badge--success {
     background-color: var(--ig-success-100);
   }
 }
@@ -53,11 +53,6 @@
   width: fit-content;
   padding: 0px 4px;
   gap: 8px;
-}
-
-.sales-sparkline {
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 // Overridden styles for design purposes

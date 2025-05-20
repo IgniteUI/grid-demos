@@ -1,5 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
   IgxHierarchicalGridComponent,
   IgxColumnGroupComponent,
@@ -46,9 +46,10 @@ import { fadeIn } from 'igniteui-angular/animations'
 import { IgxSparklineModule } from 'igniteui-angular-charts';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { dropbox, delivery, billPaid, check } from '@igniteui/material-icons-extended';
-import { OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
+import { BadgeVariant, OrderDetails, OrderStatus, TemplateDataModel } from '../data/dataModels';
 import { SalesTrendsChartComponent } from '../sales-trends-chart/sales-trends-chart.component';
 import { ErpDataService } from '../services/erp-data.service';
+import { BehaviorSubject } from 'rxjs';
 import { useAnimation } from '@angular/animations';
 
 defineComponents(IgcRatingComponent);
@@ -65,6 +66,7 @@ defineComponents(IgcRatingComponent);
       },
     ],
     imports: [
+      CommonModule,
       IgxHierarchicalGridComponent,
       IgxColumnComponent,
       IgxCellTemplateDirective,
@@ -85,7 +87,6 @@ defineComponents(IgcRatingComponent);
       IgxIconModule,
       IgxBadgeModule,
       IgxBadgeComponent,
-      NgIf,
       IgxSparklineModule,
       IgxButtonModule,
 	    IgxDialogModule,
@@ -97,27 +98,29 @@ defineComponents(IgcRatingComponent);
     templateUrl: './erp-hgrid-sample.component.html',
     styleUrl: './erp-hgrid-sample.component.scss'
 })
-export class ErpHGridSampleComponent implements AfterViewInit {
+export class ErpHGridSampleComponent implements OnInit, AfterViewInit {
   @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
   public hierarchicalGrid!: IgxHierarchicalGridComponent;
   @ViewChild('rowisland', { read: IgxRowIslandComponent, static: true })
   public rowisland!: IgxRowIslandComponent;
-  @ViewChild('imageElement', { static: true }) imageElement!: ElementRef;
   @ViewChild('imageDialog', { static: true }) imageDialog!: IgxDialogComponent;
   public fullAddressFilteringOperand = FullAddressFilteringOperand.instance();
   public shortAddressFilteringOperand = new FullAddressFilteringOperand(true);
 
-  public hgridData: TemplateDataModel[];
+
   public selectionMode: GridSelectionMode = 'multiple';
   public orderStatus = OrderStatus;
+  public data$: BehaviorSubject<TemplateDataModel[]> = new BehaviorSubject<TemplateDataModel[]>([]);
+  public isLoading = true;
+
+    // Image tooltip for each product fields
+  public hoveredImageUrl: string = '';
+  public hoveredImageProductName: string = '';
 
   constructor(
     private iconService: IgxIconService,
     private erpDataService: ErpDataService
   ) {
-    // data
-    this.hgridData = this.erpDataService.getProducts();
-
     // Icons used
     this.iconService.addSvgIconFromText(dropbox.name, dropbox.value, 'imx-icons');
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
@@ -125,14 +128,19 @@ export class ErpHGridSampleComponent implements AfterViewInit {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
   }
 
+  public ngOnInit(): void {
+    // data
+    this.erpDataService.getProducts();
+    this.data$ = this.erpDataService.records;
+    this.data$.subscribe((data) => {
+      if (data.length !== 0) {
+        this.isLoading = false;
+      }
+    });
+  }
+
   public ngAfterViewInit(): void {
     // Default sortings
-    this.hierarchicalGrid.sortingExpressions = [
-        {
-            dir: SortingDirection.Asc, fieldName: 'sku',
-            ignoreCase: true, strategy: DefaultSortingStrategy.instance()
-        }
-    ];
     this.rowisland.sortingExpressions = [
       {
           dir: SortingDirection.Desc, fieldName: 'delivery.dateOrdered',
@@ -145,6 +153,36 @@ export class ErpHGridSampleComponent implements AfterViewInit {
     return expanded ?
       'The column is expanded! Click here to collapse.' : 'The column is collapsed! Click here to expand';
   }
+
+  public getOrderStatusBadgeVariant = (status: string): BadgeVariant => {
+    switch (status) {
+      case OrderStatus.PACKED:
+        return "primary";
+      case OrderStatus.IN_TRANSIT:
+        return "warning";
+      case OrderStatus.CUSTOMS:
+        return "error";
+      case OrderStatus.DELIVERED:
+        return "success";
+      default:
+        return "primary";
+    }
+  };
+
+  public getOrderStatusIconName = (status: string): string => {
+    switch (status) {
+      case OrderStatus.PACKED:
+        return "dropbox";
+      case OrderStatus.IN_TRANSIT:
+        return "delivery";
+      case OrderStatus.CUSTOMS:
+        return "bill-paid";
+      case OrderStatus.DELIVERED:
+        return "check";
+      default:
+        return "dropbox";
+    }
+  };
 
   public formatDate(value: string): string {
     return value || 'N/A';
@@ -167,13 +205,18 @@ export class ErpHGridSampleComponent implements AfterViewInit {
   public exportStarted(args: IgxExporterEvent): void {
     args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
       // Don't export Performance column
-      columnArgs.cancel = columnArgs.header === 'Performance';
+      columnArgs.cancel = columnArgs.field === 'salesTrendData';
     });
   }
 
-  public onImageHover(event: MouseEvent, dialog: IgxDialogComponent) {
+  public onImageHover(event: MouseEvent, productName: string, dialog: IgxDialogComponent) {
     if (dialog) {
       const targetEl = event.target as HTMLElement;
+      const imageUrl = targetEl.getAttribute("src") || '';
+
+      // Set current hovered image properties
+      this.hoveredImageUrl = imageUrl;
+      this.hoveredImageProductName = productName;
 
       const positionSettings: PositionSettings = {
         openAnimation: useAnimation(fadeIn, {
@@ -299,3 +342,4 @@ export class FullAddressFilteringOperand extends IgxStringFilteringOperand {
     this.operations = customOperations.concat(emptyOperators);
   }
 }
+
