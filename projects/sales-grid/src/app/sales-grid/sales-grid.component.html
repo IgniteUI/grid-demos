@@ -5,12 +5,12 @@
             <button igxButton="contained" style="margin-right: 10px;" [igxToggleAction]="viewDropdown" [igxDropDownItemNavigation]="viewDropdown" [igxTooltipTarget]="configTooltipRef">
                 <igx-icon [name]="'visibility'" [family]="'material'"></igx-icon>
                 {{availableConfigs.get(selectedConfig)?.title}}
-                <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
+                <igx-icon [name]="viewDropdown.collapsed ? 'expand' : 'collapse'" [family]="'default'"></igx-icon>
             </button>
             <button igxButton="outlined" [igxToggleAction]="exportDropdown" [igxDropDownItemNavigation]="exportDropdown">
                 <igx-icon [name]="'file_download'" [family]="'internal_indigo'"></igx-icon>
                 Export
-                <igx-icon [name]="'arrow_drop_down'" [family]="'default'"></igx-icon>
+                <igx-icon [name]="exportDropdown.collapsed ? 'expand' : 'collapse'" [family]="'default'"></igx-icon>
             </button>
             <igx-drop-down #viewDropdown (selectionChanging)="onViewSelection($event)">
               @for (configInfo of availableConfigs; track configInfo[0]) {
