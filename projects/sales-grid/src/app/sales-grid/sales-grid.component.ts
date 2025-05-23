@@ -1,5 +1,5 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import {
   IgxButtonDirective,
   IgxDropDownComponent,
@@ -31,7 +31,8 @@ import {
   IgxTooltipTargetDirective
 } from 'igniteui-angular';
 import FLAGS from './data/flags.json'
-import SALES_DATA from './data/SalesData.json';
+import { DataService } from '../services/data.service';
+import { BehaviorSubject } from 'rxjs';
 
 enum PivotViews {
   BrandsSeparate = 'brandsOr',
@@ -94,7 +95,7 @@ export class IgxSaleProfitAggregate {
   ],
   styleUrl: './sales-grid.component.scss'
 })
-export class SalesGridComponent {
+export class SalesGridComponent implements OnInit {
   @ViewChild(IgxPivotGridComponent, { static: true })
   public pivotGrid!: IgxPivotGridComponent;
 
@@ -312,9 +313,10 @@ export class SalesGridComponent {
   ]);
 
   public flagsData = FLAGS;
-  public data: any = SALES_DATA;
+  public data$: BehaviorSubject<any> = new BehaviorSubject([]);
+  public isLoading = true;
 
-  constructor(public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
+  constructor(private dataService: DataService, public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
     var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
     multipleFilters.filteringOperands = [
       {
@@ -336,6 +338,16 @@ export class SalesGridComponent {
         searchVal: 'Bulgaria'
       },
     ]
+  }
+
+  public ngOnInit(): void {
+    this.dataService.getData();
+    this.data$ = this.dataService.records;
+    this.data$.subscribe((data) => {
+      if (data.length !== 0) {
+        this.isLoading = false;
+      }
+    });
   }
 
   public onViewSelection(event: ISelectionEventArgs) {

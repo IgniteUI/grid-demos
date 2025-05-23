@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
-import { CloseScrollStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection, THEME_TOKEN, ThemeToken } from 'igniteui-angular';
+import { CloseScrollStrategy, DefaultSortingStrategy, IgxAvatarComponent, IgxBadgeComponent, IgxButtonDirective, IgxButtonModule, IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCarouselComponent, IgxCellTemplateDirective, IgxColumnComponent, IgxDividerDirective, IgxGridComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxIconComponent, IgxIconService, IgxLabelDirective, IgxOverlayService, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent, RelativePosition, RelativePositionStrategy, SortingDirection, THEME_TOKEN, ThemeToken } from 'igniteui-angular';
 import { IgxCategoryChartModule, IgxDataChartInteractivityModule, IgxLegendDynamicModule, IgxPieChartModule } from 'igniteui-angular-charts';
 import CAR_PHOTO_MANIFEST from '../../assets/car_photo_manifest.json';
 import CAR_IMAGES from '../../assets/car_images.json';
@@ -16,6 +16,7 @@ import { Period } from '../models/period.enum';
 import { DriverDetails } from '../models/driver-details.interface';
 import { ChartType } from '../models/chart-type.enum';
 import { VehicleDetails } from '../models/vehicle-details.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-fleet-management-grid',
@@ -38,7 +39,6 @@ import { VehicleDetails } from '../models/vehicle-details.interface';
     IgxGridToolbarActionsComponent,
     IgxGridToolbarHidingComponent,
     IgxGridToolbarPinningComponent,
-    IgxGridToolbarExporterComponent,
     IgxGridToolbarAdvancedFilteringComponent,
     IgxTabsComponent,
     IgxTabItemComponent,
@@ -117,11 +117,14 @@ export class FleetManagementGridComponent implements OnInit {
   protected VEHICLE_DETAILS = VEHICLE_DETAILS;
   protected DRIVER_CATEGORIES = DRIVER_CATEGORIES;
 
+  protected isLoading = true;
+  protected vehicleData$ = new BehaviorSubject<any>([]);
+
   constructor(
     @Inject(IgxIconService) private iconService: IgxIconService,
     @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
     protected dataService: DataService,
-    @Inject(ElementRef) private hostRef: ElementRef) {}
+    @Inject(ElementRef) private hostRef: ElementRef) { }
 
   public ngOnInit(): void {
     this.iconService.addSvgIconFromText(check.name, check.value, 'imx-icons');
@@ -129,23 +132,32 @@ export class FleetManagementGridComponent implements OnInit {
     this.iconService.addSvgIconFromText(delivery.name, delivery.value, 'imx-icons');
     this.iconService.addSvgIconFromText(gitIssue.name, gitIssue.value, 'imx-icons');
 
+    this.dataService.getVehiclesData();
+    this.vehicleData$ = this.dataService.vehiclesRecords;
+    this.vehicleData$.subscribe((data: any) => {
+      if (data.length > 0) {
+        this.isLoading = false;
+      }
+    });
+    this.dataService.loadOptionalData();
+
     this.grid.sortingExpressions = [
       {
-          dir: SortingDirection.Asc, fieldName: 'vehicleId',
-          ignoreCase: true, strategy: DefaultSortingStrategy.instance()
+        dir: SortingDirection.Asc, fieldName: 'vehicleId',
+        ignoreCase: true, strategy: DefaultSortingStrategy.instance()
       }
     ];
   }
 
   public ngOnDestroy(): void {
     if (this.locationOverlayId) {
-        this.overlayService.detach(this.locationOverlayId);
-        this.locationOverlayId = null;
+      this.overlayService.detach(this.locationOverlayId);
+      this.locationOverlayId = null;
     }
     if (this.driverOverlayId) {
       this.overlayService.detach(this.driverOverlayId);
       this.driverOverlayId = null;
-  }
+    }
   }
 
   //handling for chart periods
@@ -203,8 +215,7 @@ export class FleetManagementGridComponent implements OnInit {
       console.error('Vehicle ID not found in data');
       return;
     }
-
-    const vehicle = this.dataService.getVehiclesData().find(v => v.vehicleId === vehicleId)
+    const vehicle = this.vehicleData$.value?.find((v: any) => v.vehicleId === vehicleId);
 
     if (!vehicle) {
       console.error(`No vehicle found for ID: ${vehicleId}`);
@@ -266,7 +277,7 @@ export class FleetManagementGridComponent implements OnInit {
       return;
     }
 
-    const driverDetails = this.dataService.getDriverData(driverName);
+    const driverDetails = this.dataService.findDriverByName(driverName);
 
     if (!driverDetails) {
       console.error(`No data found for driver: ${driverName}`);
@@ -333,31 +344,31 @@ export class FleetManagementGridComponent implements OnInit {
   }
 
   //util function for adding map series
-  private addSeriesWith(locations:any[], brush: string) {
+  private addSeriesWith(locations: any[], brush: string) {
     const symbolSeries = new IgxGeographicSymbolSeriesComponent();
     symbolSeries.dataSource = locations;
-        symbolSeries.latitudeMemberPath = "latitude";
-        symbolSeries.longitudeMemberPath = "longitude";
-        symbolSeries.markerBrush  = "White";
-        symbolSeries.markerOutline = brush;
-        symbolSeries.markerTemplate = {
-          measure: (measureInfo) => {
-            measureInfo.width = 24;
-            measureInfo.height = 24;
-          },
-          render: (renderInfo) => {
-            const ctx = renderInfo.context;
-            const x = renderInfo.xPosition;
-            const y = renderInfo.yPosition;
+    symbolSeries.latitudeMemberPath = "latitude";
+    symbolSeries.longitudeMemberPath = "longitude";
+    symbolSeries.markerBrush = "White";
+    symbolSeries.markerOutline = brush;
+    symbolSeries.markerTemplate = {
+      measure: (measureInfo) => {
+        measureInfo.width = 24;
+        measureInfo.height = 24;
+      },
+      render: (renderInfo) => {
+        const ctx = renderInfo.context;
+        const x = renderInfo.xPosition;
+        const y = renderInfo.yPosition;
 
-            const img = new Image();
-            img.src = 'location_pin.svg';
-            img.onload = () => {
-              ctx.drawImage(img, x - 12, y - 12, 32, 32);
-            };
-          }
-        } as IgDataTemplate;
-        this.map.series.add(symbolSeries);
+        const img = new Image();
+        img.src = 'location_pin.svg';
+        img.onload = () => {
+          ctx.drawImage(img, x - 12, y - 12, 32, 32);
+        };
+      }
+    } as IgDataTemplate;
+    this.map.series.add(symbolSeries);
   }
 
   protected rightAlignedCellStyles = {
