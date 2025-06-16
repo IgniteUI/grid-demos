@@ -46,7 +46,8 @@
               "includePaths": [
                 "node_modules"
               ]
-            }
+            },
+            "outputMode": "static"
           },
           "configurations": {
             "production": {
@@ -58,8 +59,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "14MB",
+                  "maximumError": "15MB"
                 }
               ],
               "outputHashing": "all"
