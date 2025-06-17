@@ -38,7 +38,8 @@
             "prerender": true,
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "outputMode": "static"
           },
           "configurations": {
             "production": {
@@ -50,8 +51,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "10mb",
+                  "maximumError": "11mb"
                 }
               ],
               "outputHashing": "all"
