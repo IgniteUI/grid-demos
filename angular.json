@@ -63,6 +63,11 @@
               "includePaths": [
                 "node_modules"
               ]
+            },
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "ssr": {
+              "entry": "src/server.ts"
             }
           },
           "configurations": {
