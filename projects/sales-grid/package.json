@@ -35,7 +35,7 @@
     "@angular/build": "^21.0.4",
     "@angular/cli": "^21.0.4",
     "@angular/compiler-cli": "^21.0.6",
-    "@igniteui/angular-schematics": "~20.0.1450",
+    "@igniteui/angular-schematics": "~21.0.1481",
     "@types/express": "^5.0.1",
     "@types/hammerjs": "^2.0.40",
     "@types/jasmine": "~5.1.0",
