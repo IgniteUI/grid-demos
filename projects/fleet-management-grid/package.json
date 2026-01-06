@@ -23,7 +23,7 @@
     "@angular/ssr": "^21.0.4",
     "@igniteui/material-icons-extended": "^3.1.0",
     "express": "^5.1.0",
-    "igniteui-angular": "^21.0.0",
+    "igniteui-angular": "^21.1.0-alpha.1",
     "igniteui-angular-charts": "^20.0.0",
     "igniteui-angular-core": "^20.0.0",
     "igniteui-angular-maps": "^20.0.0",
