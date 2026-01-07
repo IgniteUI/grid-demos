@@ -1,35 +1,24 @@
 import { CommonModule, CurrencyPipe, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '@angular/core';
+import { IgxButtonDirective, IgxToggleActionDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
+import { ISelectionEventArgs, IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxPivotDataSelectorComponent, IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import {
-  IgxButtonDirective,
-  IgxDropDownComponent,
-  IgxDropDownItemComponent,
-  IgxIconComponent,
-  IgxPivotDataSelectorComponent,
-  IgxPivotGridComponent,
-  IgxToggleActionDirective,
-  IPivotConfiguration,
-  ISelectionEventArgs,
-  IgxExcelExporterService,
-  IgxCsvExporterService,
-  IgxCsvExporterOptions,
-  IgxExcelExporterOptions,
-  IgxBaseExporter,
-  IgxExporterOptionsBase,
   CsvFileTypes,
-  IgxPivotDateDimension,
-  IgxColumnComponent,
-  IgxCellHeaderTemplateDirective,
-  IgxStringFilteringOperand,
-  FilteringExpressionsTree,
-  FilteringLogic,
+  IPivotConfiguration,
   IPivotValue,
-  THEME_TOKEN,
-  ThemeToken,
-  IgxDropDownItemNavigationDirective,
-  IgxTooltipDirective,
-  IgxTooltipTargetDirective
-} from 'igniteui-angular';
+  IgxBaseExporter,
+  IgxCellHeaderTemplateDirective,
+  IgxColumnComponent,
+  IgxCsvExporterOptions,
+  IgxCsvExporterService,
+  IgxExcelExporterOptions,
+  IgxExcelExporterService,
+  IgxExporterOptionsBase,
+  IgxPivotDateDimension
+} from 'igniteui-angular/grids/core';
+import { FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 import FLAGS from './data/flags.json'
 import { DataService } from '../services/data.service';
 import { BehaviorSubject } from 'rxjs';
@@ -321,12 +310,12 @@ export class SalesGridComponent implements OnInit {
   public isBrowser = false;
 
   constructor(
-    private dataService: DataService, 
-    public excelExporter: IgxExcelExporterService, 
+    private dataService: DataService,
+    public excelExporter: IgxExcelExporterService,
     public csvExporter: IgxCsvExporterService,
     @Inject(PLATFORM_ID) private platformId: Object,
     ) {
-    
+
     this.isBrowser = isPlatformBrowser(this.platformId);
     var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
     multipleFilters.filteringOperands = [
