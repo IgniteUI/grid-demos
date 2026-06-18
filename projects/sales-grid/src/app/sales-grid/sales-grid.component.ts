@@ -1,10 +1,23 @@
-import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { CommonModule, CurrencyPipe, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '@angular/core';
 import { IgxButtonDirective, IgxToggleActionDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { ISelectionEventArgs, IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxPivotDataSelectorComponent, IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
-import { CsvFileTypes, IPivotConfiguration, IPivotValue, IgxBaseExporter, IgxCellHeaderTemplateDirective, IgxColumnComponent, IgxCsvExporterOptions, IgxCsvExporterService, IgxExcelExporterOptions, IgxExcelExporterService, IgxExporterOptionsBase, IgxPivotDateDimension } from 'igniteui-angular/grids/core';
+import {
+  CsvFileTypes,
+  IPivotConfiguration,
+  IPivotValue,
+  IgxBaseExporter,
+  IgxCellHeaderTemplateDirective,
+  IgxColumnComponent,
+  IgxCsvExporterOptions,
+  IgxCsvExporterService,
+  IgxExcelExporterOptions,
+  IgxExcelExporterService,
+  IgxExporterOptionsBase,
+  IgxPivotDateDimension
+} from 'igniteui-angular/grids/core';
 import { FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 import FLAGS from './data/flags.json'
 import { DataService } from '../services/data.service';
@@ -77,6 +90,9 @@ export class SalesGridComponent implements OnInit {
 
   @ViewChild('countryColumn')
   public countryColumnTemplate!: TemplateRef<any>;
+
+  @ViewChild('configTooltipRef', { static: false })
+  public configTooltipRef?: IgxTooltipDirective;
 
   public currencyPipe = new CurrencyPipe('en-US');
   public brandFilter = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
@@ -291,8 +307,16 @@ export class SalesGridComponent implements OnInit {
   public flagsData = FLAGS;
   public data$: BehaviorSubject<any> = new BehaviorSubject([]);
   public isLoading = true;
+  public isBrowser = false;
 
-  constructor(private dataService: DataService, public excelExporter: IgxExcelExporterService, public csvExporter: IgxCsvExporterService) {
+  constructor(
+    private dataService: DataService,
+    public excelExporter: IgxExcelExporterService,
+    public csvExporter: IgxCsvExporterService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    ) {
+
+    this.isBrowser = isPlatformBrowser(this.platformId);
     var multipleFilters = new FilteringExpressionsTree(FilteringLogic.Or, 'Brand');
     multipleFilters.filteringOperands = [
       {
