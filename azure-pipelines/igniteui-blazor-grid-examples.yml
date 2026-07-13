@@ -1,0 +1,134 @@
+trigger:
+  branches:
+    include:
+    - vnext
+    - master
+
+# This pipeline is meant to build specific branches for deployment. It's not meant to be a part of PR validation.
+pr: none
+
+parameters:
+- name: isVerbose
+  displayName: 'Get verbose output from steps - where configurable'
+  type: boolean
+  default: false
+- name: shouldCleanPostExecution
+  displayName: 'Clean all pipeline dirs after the pipeline finishes?'
+  type: boolean
+  default: true
+
+
+name: $(Year:yyyy).$(Month).$(DayOfMonth)-r$(Rev:.r)
+
+stages:
+- stage: Build
+  pool:
+    vmImage: ubuntu-latest
+
+  jobs:
+  - job: BuildSamples
+    steps:
+      - checkout: 'self'
+        clean: true
+
+      - task: UseDotNet@2
+        displayName: 'Install .NET SDK'
+        inputs:
+          packageType: 'sdk'
+          version: '10.x'
+
+      - task: Bash@3
+        displayName: 'Create download artifact per sample (Shell)'
+        inputs:
+          targetType: 'inline'
+          script: |
+            create_zips() {
+              local rootPath="$1"
+              if [ -d "$rootPath" ]; then
+                # Get all first-level subdirectories in the specified root path
+                subdirectories=$(find "$rootPath" -mindepth 1 -maxdepth 1 -type d)
+                for subdirectory in $subdirectories; do
+                  # Extract the directory name from the path
+                  dirName=$(basename "$subdirectory")
+
+                  echo "Processing directory: $dirName"
+                  # Define the name for the zip file
+                  zipName="$(Build.ArtifactStagingDirectory)/IgniteUI_Blazor_ApplicationSample_${dirName}_Source.zip"
+                  echo "Creating ZIP: $zipName"
+
+                  # Compress the directory into a ZIP file
+                  (cd "$subdirectory" && zip -r "$zipName" .)
+                done
+              fi
+            }
+
+            # Create zips for all samples in samples/
+            create_zips "$(Build.SourcesDirectory)/samples"
+
+            echo "All sample projects have been compressed and saved to the artifacts directory."
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Samples Sources zips'
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)'
+          artifact: 'samplesSourcesZips'
+          publishLocation: 'pipeline'
+
+      - task: Bash@3
+        displayName: 'Register licensed NuGet feed'
+        inputs:
+          targetType: 'inline'
+          script: |
+            dotnet nuget add source "https://packages.infragistics.com/nuget/licensed/" \
+              --name "infragistics-licensed" \
+              --configfile "$(Build.SourcesDirectory)/NuGet.config"
+
+      - task: NuGetAuthenticate@1
+        displayName: '[IG Production ProGet] NuGet authenticate'
+        inputs:
+          nuGetServiceConnections: 'infragistics licensed nuget'
+
+      - task: Bash@3
+        displayName: 'Replace IgniteUI.Blazor.Trial with IgniteUI.Blazor'
+        inputs:
+          targetType: 'inline'
+          script: |
+            find "$(Build.SourcesDirectory)" -name "*.csproj" | while read csproj; do
+              echo "Processing $csproj"
+              sed -i 's/IgniteUI\.Blazor\.Trial/IgniteUI.Blazor/g' "$csproj"
+            done
+            echo "Package replacement completed."
+
+      - task: DotNetCoreCLI@2
+        displayName: 'dotnet restore'
+        inputs:
+          command: 'restore'
+          projects: '**/*.csproj'
+          feedsToUse: 'config'
+          nugetConfigPath: '$(Build.SourcesDirectory)/NuGet.config'
+
+      - task: DotNetCoreCLI@2
+        displayName: 'dotnet build'
+        inputs:
+          command: 'build'
+          projects: 'BlazorGridExamples/BlazorGridExamples.csproj'
+          arguments: '--configuration Release --no-restore'
+
+      - task: DotNetCoreCLI@2
+        displayName: 'dotnet publish'
+        inputs:
+          command: 'publish'
+          publishWebProjects: false
+          projects: 'BlazorGridExamples/BlazorGridExamples.csproj'
+          arguments: '--configuration Release --no-restore --output $(Build.ArtifactStagingDirectory)/publish'
+          zipAfterPublish: false
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish app'
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)/publish'
+          artifact: 'dist.blazor-grid-examples'
+          publishLocation: 'pipeline'
+
+      - ${{ if eq(parameters.shouldCleanPostExecution, true) }}:
+        - task: PostBuildCleanup@4
