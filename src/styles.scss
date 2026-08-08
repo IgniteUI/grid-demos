@@ -1,14 +1,11 @@
 @use "igniteui-angular/theming" as *;
 
-.tabs-info-wrapper-element {
-  width: 100%;
-  @include core();
-  @include typography(
-    $font-family: $material-typeface,
-    $type-scale: $material-type-scale
-  );
-  @include theme($default-palette);
-}
+@include core();
+@include typography(
+  $font-family: $material-typeface,
+  $type-scale: $material-type-scale
+);
+@include theme($default-palette);
 
 html {
   height: 100%;

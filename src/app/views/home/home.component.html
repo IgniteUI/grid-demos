@@ -1,4 +1,4 @@
-<div class="demo-container" #fullscreenElement>
+<div class="demo-container" #fullscreenElement [class.compact-header]="router.url.includes('/fleet')">
   <div class="tabs-info-wrapper-element">
     <div class="tab-container" [class.hidden]="isFullscreen">
       @for (tab of activeTabs; track tab) {

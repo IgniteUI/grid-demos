@@ -1,84 +1,75 @@
-<igx-grid [data]="data$ | async" [isLoading]="isLoading" class="grid-sizing">
-  <igx-grid-toolbar>
-    <igx-grid-toolbar-title>Financial Portfolio</igx-grid-toolbar-title>
-      <igx-input-group type="search">
-        <input #search igxInput placeholder="Filter by Asset" (input)="filter($event)"/>
-      </igx-input-group>
-    <igx-grid-toolbar-actions>
-      <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-      <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-      <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
-    </igx-grid-toolbar-actions>
-  </igx-grid-toolbar>
-  <igx-column field="id" header="Symbol" [width]="'7%'" [minWidth]="'68px'"></igx-column>
-  <igx-column field="holdingName" header="Asset" sortable="true" [width]="'15%'" [minWidth]="'100px'">
-    <ng-template igxCell let-cell="cell" let-val>
-      <div class="assets-container">
-        <igx-avatar [src]="getPathToImage(val)" [shape]="'rounded'"></igx-avatar>
-        <span>{{ val }}</span>
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column field="value.currentPrice" header="Last Price" [dataType]="'currency'" [width]="'7%'" [minWidth]="'80px'" [pipeArgs]="currencyDigitsFormat"></igx-column>
-  <igx-column field="dailyPercentageChange" header="Change %" dataType="percent" [cellClasses]="profitLossValueClasses" [width]="'10%'" [minWidth]="'85px'">
-    <ng-template igxCell let-val>
-      <div class="assets-container">
-        <div>
-          {{ val | percent : "1.2-2" }}
-        </div>
+<section class="finance-shell" aria-label="Finance grid page">
+  <header class="finance-header">
+    <div>
+      <h1>IG Financial Sample</h1>
+      <p class="subtle">A grid showcasing Ignite UI Grid.</p>
+    </div>
+  </header>
 
-        @if (val >= 0) {
-        <igx-icon>trending_up</igx-icon>
-        } @else {
-        <igx-icon>trending_down</igx-icon>
-        }
+  <igx-grid class="finance-grid" [data]="vm.filteredFinanceRows()" [autoGenerate]="false" [showGroupArea]="true" [rowSelection]="'none'">
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-title>Financial Portfolio</igx-grid-toolbar-title>
+      <div class="finance-toolbar-search">
+        <input type="search" class="finance-search-input" placeholder="Filter by Asset" [value]="vm.financeAssetFilter()" (input)="vm.onFinanceAssetSearch($event)" />
       </div>
-    </ng-template>
-  </igx-column>
-  <igx-column field="marketValue" header="Market Value" [dataType]="'currency'" [width]="'5%'" [minWidth]="'100px'" [pipeArgs]="currencyDigitsFormat"></igx-column>
-  <igx-column field="profitLossValue" header="NET Profit" [dataType]="'currency'" [width]="'10%'" [minWidth]="'90px'" [cellClasses]="profitLossValueClasses">
-    <ng-template igxCell let-val>
-      <div class="assets-container">
-        <div>
-          {{ val | currency : 'USD' : 'symbol' : '1.2-2' }}
-        </div>
+      <igx-grid-toolbar-actions>
+        <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+        <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+        <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
-        @if (val >= 0) {
-        <igx-icon>trending_up</igx-icon>
-        } @else {
-        <igx-icon>trending_down</igx-icon>
-        }
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column field="profitLossPercentage" header="NET Profit %" dataType="percent" [width]="'10%'" [minWidth]="'98px'" [cellClasses]="profitLossValueClasses">
-    <ng-template igxCell let-val>
-      <div class="assets-container">
-        <div>
-          {{ val | percent : "1.2-2" }}
+    <igx-column field="ticker" header="Asset" [sortable]="true" [filterable]="false" minWidth="260px">
+      <ng-template igxCell let-cell="cell">
+        <div class="ticker-cell">
+          <igx-avatar class="ticker-logo" [size]="'small'" [shape]="'circle'" [initials]="vm.financeAvatarInitials(cell.row.data.ticker)" [style.--ig-avatar-size]="'42px'" [style.--ig-avatar-background]="vm.financeAvatarColor(cell.row.data.tone)" [style.--ig-avatar-color]="'#ffffff'"></igx-avatar>
+          <div class="ticker-meta">
+            <span class="ticker-symbol">{{ cell.row.data.ticker }}</span>
+            <span class="ticker-name">{{ cell.row.data.company }}</span>
+          </div>
         </div>
+      </ng-template>
+    </igx-column>
 
-        @if (val >= 0) {
-        <igx-icon>trending_up</igx-icon>
-        } @else {
-        <igx-icon>trending_down</igx-icon>
-        }
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column field="allocation" header="Allocation" dataType="percent" [width]="'10%'" [minWidth]="'100px'">
-    <ng-template igxCell let-val>
-      <div class="progress-container">
-        <div style="width: 42px;">
-          {{ val | percent : "1.2-2" }}
+    <igx-column field="priceTrend" header="Price Trend" [sortable]="false" [filterable]="false" minWidth="100px" [hidden]="vm.hideMostColumns()">
+      <ng-template igxCell let-cell="cell">
+        <igx-sparkline class="price-trend-spark" width="100%" height="24px" [dataSource]="cell.value" valueMemberPath="value" displayType="line" [lineThickness]="2" [brush]="vm.sparklineBrush(cell.row.data.changePct)" [negativeBrush]="vm.sparklineNegativeBrush(cell.row.data.changePct)"></igx-sparkline>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="lastPrice" header="Price (Change)" [sortable]="true" [filterable]="false" minWidth="200px" headerClasses="finance-col-sep" cellClasses="finance-col-sep" [dataType]="'number'">
+      <ng-template igxCell let-cell="cell">
+        <div class="price-combined-cell">
+          <span class="numeric-cell price-combined-price">{{ vm.formatCurrency(cell.row.data.lastPrice) }}</span>
+          <igx-badge class="finance-delta-badge" [type]="vm.badgeType(cell.row.data.changePct)" [value]="vm.badgeLabel(cell.row.data.changePct)"></igx-badge>
         </div>
-        <igx-linear-bar [value]="val * 100" [animate]="false" textVisibility="false"></igx-linear-bar>
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column field="value.boughtPrice" header="Average Cost" dataType="currency" [width]="'10%'" [minWidth]="'100px'" [pipeArgs]="currencyDigitsFormat"></igx-column>
-  <igx-column field="positions" header="Position" [dataType]="'number'" [width]="'6%'" [minWidth]="'80px'"></igx-column>
-  <igx-column field="holdingPeriod" header="Holding Period" [minWidth]="'50px'">
-    <ng-template igxCell let-val> {{ val }} days </ng-template>
-  </igx-column>
-</igx-grid>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="marketValue" header="Market Value" [sortable]="true" [filterable]="false" minWidth="140px" [hidden]="vm.hideMostColumns()" [dataType]="'number'">
+      <ng-template igxCell let-cell="cell">
+        <span>{{ vm.formatCurrency(cell.value) }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="netProfit" header="Total Revenue" [sortable]="true" [filterable]="false" minWidth="240px" [dataType]="'number'">
+      <ng-template igxCell let-cell="cell">
+        <div class="net-profit-combined-cell">
+          <igx-badge class="finance-value-badge" [type]="vm.badgeType(cell.row.data.netProfit)" [value]="vm.badgeLabel(cell.row.data.netProfit)"></igx-badge>
+          <igx-badge class="finance-delta-badge" [type]="vm.badgeType(cell.row.data.netProfitPct)" [value]="vm.badgeLabel(cell.row.data.netProfitPct)"></igx-badge>
+        </div>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="allocationPct" header="Allocation" [sortable]="true" [filterable]="false" minWidth="170px">
+      <ng-template igxCell let-cell="cell">
+        <div class="allocation-cell">
+          <span class="allocation-value">{{ vm.formatPercent(cell.value) }}</span>
+          <span class="allocation-track">
+            <span class="allocation-fill" [style.width]="vm.allocationWidth(cell.value)"></span>
+          </span>
+        </div>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
+</section>

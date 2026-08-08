@@ -1,111 +1,19 @@
-<igx-tree-grid
-  #treeGrid
-  [data]="data$ | async"
-  [isLoading]="isLoading"
-  primaryKey="ID"
-  childDataKey="Employees"
-  rowSelection="multipleCascade"
-  [allowFiltering]="true"
-  [filterMode]="'excelStyleFilter'"
-  >
-  <igx-paginator [perPage]="20"></igx-paginator>
-  <igx-grid-toolbar>
-    <igx-grid-toolbar-title>HR Portal</igx-grid-toolbar-title>
-    <igx-grid-toolbar-actions>
-      @if (treeGrid.sortingExpressions.length > 0) {
-        <button
-          igxButton="flat"
-          (buttonClick)="treeGrid.sortingExpressions = []"
-          >
-          <igx-icon>clear</igx-icon>
-          <label>Clear Sort</label>
-        </button>
-      }
-      <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-      <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-      <igx-grid-toolbar-exporter>
-        <span excelText>Export to Excel</span>
-        <span csvText>Export to CSV</span>
-      </igx-grid-toolbar-exporter>
-      <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
-    </igx-grid-toolbar-actions>
-  </igx-grid-toolbar>
-  <igx-column field="Name" width="300px" sortable="true" [pinned]="true">
-    <ng-template igxCell let-cell="cell">
-      <div class="employeeDiv">
-        <igx-avatar [src]="cell.row.data.Picture" shape="rounded"></igx-avatar>
-        {{ cell.row.data.Name }}
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column
-    field="JobTitle"
-    header="Job Title"
-    dataType="string"
-    minWidth="200px"
-    sortable="true"
-  ></igx-column>
-  <igx-column
-    field="Department"
-    dataType="string"
-    minWidth="200px"
-    sortable="true"
-  ></igx-column>
-  <igx-column field="Location" dataType="string" sortable="true">
-    <ng-template igxCell let-cell="cell">
-      <div class="flagDiv">
-        <igx-icon
-          family="country-icons"
-          name="{{ cell.row.data.Country }}"
-        ></igx-icon>
-        {{ cell.row.data.Location }}, {{ cell.row.data.Country }}
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column
-    field="Contacts"
-    dataType="string"
-    minWidth="200px"
-    [filterable]="false"
-    >
-    <ng-template igxCell let-cell="cell">
-      <div class="center-content">
-        <a href="mailto:{{ cell.value }}">
-          <button igxIconButton="flat">
-            <igx-icon>mail</igx-icon>
-          </button>
-        </a>
-        <a href="tel:{{ cell.row.data.Phone.value }}">
-          <button igxIconButton="flat">
-            <igx-icon>phone</igx-icon>
-          </button>
-        </a>
-        <a href="https://www.linkedin.com" target="_blank">
-          <button igxIconButton="flat">
-            <igx-icon family="hr-icons" name="linkedIn"></igx-icon>
-          </button>
-        </a>
-      </div>
-    </ng-template>
-  </igx-column>
-  <igx-column
-    field="HireDate"
-    header="Hire Date"
-    dataType="date"
-    minWidth="100px"
-    sortable="true"
-    sortable="true"
-    >
-    <ng-template igxCell let-cell="cell">
-      {{ cell.value | date : "yyyy-MM-dd" }}
-    </ng-template>
-  </igx-column>
-  <igx-column
-    field="GrossSalary"
-    header="Gross Salary"
-    dataType="currency"
-    minWidth="100px"
-    sortable="true"
-    >
-  </igx-column>
-</igx-tree-grid>
+<section class="operations-shell" aria-label="Employee directory page">
+  <header class="finance-header">
+    <div>
+      <h1>Employee Directory</h1>
+      <p class="subtle">Filter by employee profile, rating, and department with Grid Lite.</p>
+    </div>
+  </header>
+
+  <igc-grid-lite class="employee-lite-grid" [data]="vm.employees">
+    <igc-grid-lite-column field="avatarUrl" header="Avatar" width="7%" [cellTemplate]="vm.employeeAvatarCellTemplate"></igc-grid-lite-column>
+    <igc-grid-lite-column field="firstName" header="First Name" width="10%" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="lastName" header="Last Name" width="10%" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="satisfactionRating" header="Satisfaction Rating" width="15%" sortable filterable [cellTemplate]="vm.employeeRatingCellTemplate"></igc-grid-lite-column>
+    <igc-grid-lite-column field="employmentType" header="Employment Type" width="12%" sortable filterable [cellTemplate]="vm.employeeEmploymentCellTemplate"></igc-grid-lite-column>
+    <igc-grid-lite-column field="emailAddress" header="Email Address" width="17%" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="department" header="Department" width="11%" sortable filterable [cellTemplate]="vm.employeeDepartmentCellTemplate"></igc-grid-lite-column>
+    <igc-grid-lite-column field="registeredOn" header="Registered On" width="18%" sortable filterable [cellTemplate]="vm.employeeRegisteredOnCellTemplate"></igc-grid-lite-column>
+  </igc-grid-lite>
+</section>

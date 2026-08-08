@@ -1,305 +1,666 @@
-@use "igniteui-angular/theming" as *;
+app-fleet-management-grid,
+app-fleet-management {
+  --white: #ffffff;
+  --font-family-base: 'Barlow', 'Segoe UI', sans-serif;
+  --font-family-condensed: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --fleet-bg: #15171c;
+  --fleet-fg: #d4d7dd;
+  --fleet-accent: #ed3c79;
+  --fleet-border: #252830;
+  --fleet-header-bg: #1a1d24;
+  --fleet-header-text: #979da9;
+  --fleet-hover-bg: #1b1e25;
+  --fleet-selected-bg: #261a23;
 
-/* --------------------------------------------- */
-/* GLOBAL STYLES */
-/* --------------------------------------------- */
-
-:root {
-  --primary-text-color: #f5f5f5;
-}
-
-:host {
   display: block;
   height: 100%;
-  width: 100%;
-  min-width: 1100px;
+  min-height: 0;
 }
 
-igx-tabs {
-  flex: 1;
-  width: 100%;
-}
-
-igx-divider {
-  color: var(--ig-gray-200);
-  opacity: 24%;
-}
-
-igx-card {
-  border: 0px;
-  border-radius: 4px;
-}
-
-/* Global Grid Styles */
-.main-grid {
-  --ig-size: var(--ig-size-small)
-}
-
-//I.M. temporary fix, waiting for this issue to be resolved: https://github.com/IgniteUI/igniteui-angular/issues/15362
-::ng-deep {
-  .child-grid igx-grid-header {
-    border-inline-end-color: rgba(97, 97, 97, 0.24) !important;
-  }
-}
-
-
-/* --------------------------------------------- */
-/* COMMON ELEMENT STYLES */
-/* --------------------------------------------- */
-
-.icon-style {
-  color: #000000;
-}
-
-.link-style {
-  color: var(--primary-text-color);
-}
-
-.grid-container {
-  padding: 16px;
-}
-
-.chart-canvas {
-  width: 100%;
-  height: 100%;
-}
-
-/* --------------------------------------------- */
-/* CHART STYLES */
-/* --------------------------------------------- */
-
-.dashboard {
+.fleet-shell {
+  padding: 1.25rem;
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  grid-template-rows: 1fr 1fr;
-  padding: 16px;
+  grid-template-rows: auto auto minmax(0, 1fr);
   height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 1rem;
+  background: #171a21;
+  font-family: var(--font-family-base);
 }
 
-.chart-container {
-  display: grid;
-  grid-template-rows: 40px auto;
-  height: 100%;
-  padding: 10px;
-  padding-top: 20px;
-}
-
-.chart-header {
+.fleet-topbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
 }
 
-.chart-select {
-  width: 40%;
-}
-
-.chart-content {
+.fleet-title-wrap {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 0.55rem;
+}
+
+.fleet-title-wrap h1 {
+  color: #eceff8;
+  font-size: 1.5rem;
+  font-family: var(--font-family-condensed);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.fleet-title-icon {
+  color: #ff3b87;
+  font-size: 1.3rem;
+}
+
+.fleet-chip-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.fleet-chip {
+  --ig-size: 3;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  --background: #1a1d24;
+  --border-color: #3b3d42;
+  --text-color: #d0d2d8;
+  --hover-background: #2a2e38;
+  --hover-border-color: #52555c;
+  --hover-text-color: #fff;
+  --focus-background: #391e29;
+  --focus-border-color: #ff4d92;
+  --focus-text-color: #fff;
+}
+
+.fleet-chip-default {
+  --focus-background: #2a2e38;
+  --focus-border-color: #52555c;
+  --focus-text-color: #fff;
+}
+
+.fleet-chip-active {
+  --focus-background: #1d2839;
+  --focus-border-color: #5099f9;
+  --focus-text-color: #fff;
+}
+
+.fleet-chip-available {
+  --focus-background: #1b2d24;
+  --focus-border-color: #47b85b;
+  --focus-text-color: #fff;
+}
+
+.fleet-chip-maintenance {
+  --focus-background: #391e29;
+  --focus-border-color: #ff4d92;
+  --focus-text-color: #fff;
+}
+
+.fleet-master-grid {
+  border: 1px solid var(--fleet-border);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  --background: var(--fleet-bg);
+  --foreground: var(--fleet-fg);
+  --accent-color: var(--fleet-accent);
+  --grid-border-color: var(--fleet-border);
+  --content-background: var(--fleet-bg);
+  --content-text-color: var(--fleet-fg);
+  --header-background: var(--fleet-header-bg);
+  --header-border-color: var(--fleet-border);
+  --header-text-color: var(--fleet-header-text);
+  --header-selected-text-color: var(--white);
+  --row-odd-background: var(--fleet-bg);
+  --row-even-background: var(--fleet-bg);
+  --row-odd-text-color: var(--fleet-fg);
+  --row-even-text-color: var(--fleet-fg);
+  --row-hover-background: var(--fleet-hover-bg);
+  --row-hover-text-color: var(--white);
+  --row-border-color: var(--fleet-border);
+  --row-selected-background: var(--fleet-selected-bg);
+  --row-selected-hover-background: var(--fleet-selected-bg);
+  --row-selected-text-color: var(--white);
+  --row-selected-hover-text-color: var(--white);
+  --cell-selected-background: var(--fleet-selected-bg);
+  --cell-selected-text-color: var(--white);
+  --cell-selected-within-background: var(--fleet-selected-bg);
+  --cell-selected-within-text-color: var(--white);
+  --cell-active-border-color: var(--fleet-accent);
+  --filtering-row-background: var(--fleet-bg);
+  --filtering-row-text-color: var(--fleet-fg);
+  --toolbar-background: var(--fleet-header-bg);
+  --toolbar-text-color: var(--fleet-fg);
+  --ig-surface-500: var(--fleet-header-bg);
+  --ig-surface-500-contrast: var(--fleet-fg);
+  --ig-secondary-500: #ff4d92;
+  --ig-secondary-500-contrast: #ffffff;
+  --ig-secondary-600: #ff4d92;
+  --ig-secondary-600-contrast: #ffffff;
+  --ig-info-500: #ff4d92;
+  --ig-info-500-contrast: #ffffff;
+  --ig-info-600: #ff4d92;
+  --ig-info-600-contrast: #ffffff;
+  --sorted-header-icon-color: var(--fleet-fg);
+  --sortable-header-icon-hover-color: var(--white);
+  --drop-indicator-color: var(--fleet-fg);
+  --resize-line-color: var(--fleet-accent);
+  --expand-icon-color: var(--fleet-fg);
+  --expand-icon-hover-color: var(--white);
   height: 100%;
-  padding: 15px;
-  border-radius: 6px;
-  border: 1px solid #8A8A8A;
+  min-height: 0;
 }
 
-.content-wrapper {
-  padding: 16px;
+.fleet-master-grid ::ng-deep .igx-grid__th,
+.fleet-master-grid ::ng-deep .igx-grid-th__title,
+.fleet-master-grid ::ng-deep .igx-grid__td,
+.fleet-master-grid ::ng-deep .igx-grid__td-inner,
+.fleet-master-grid ::ng-deep .igx-grid__drop-area,
+.fleet-master-grid .numeric-cell,
+.fleet-master-grid .text-cell,
+.fleet-master-grid .allocation-value {
+  font-size: var(--font-size-sm) !important;
 }
 
-/*Specfic Chart Types*/
-.pie-chart-container {
-  grid-column: 1;
-  grid-row: 1;
+.fleet-master-grid ::ng-deep .igx-grid__hierarchical-indent {
+  margin: 1rem 1.5rem !important;
 }
 
-.area-chart-container {
-  grid-column: 1;
-  grid-row: 2;
+.fleet-master-grid igx-grid-toolbar {
+  background: var(--fleet-header-bg) !important;
+  border-bottom: 1px solid var(--fleet-border) !important;
 }
 
-.column-chart-container {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__hiding,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__pinning,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__advanced-filtering,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__hiding > button,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__pinning > button,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__advanced-filtering > button {
+  background: transparent !important;
+  color: var(--fleet-accent) !important;
+  border-color: var(--fleet-accent) !important;
 }
 
-.column-chart {
-  width: 95%;
-  height: 420px;
+.fleet-master-grid ::ng-deep .igx-grid-toolbar button,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar .igx-button,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__adv-filter,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__hiding > button,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__pinning > button,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__advanced-filtering > button {
+  color: #ff4d92 !important;
 }
 
-.column-chart-two-series {
-  align-self: center;
-  width: 95%;
-  height: 390px;
+.fleet-master-grid ::ng-deep .igx-grid-toolbar .igx-button--outlined,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__adv-filter {
+  border-color: rgba(255, 77, 146, 0.8) !important;
 }
 
-.utilization-chart-container {
-  flex-direction: column;
+.fleet-master-grid ::ng-deep .igx-grid-toolbar .igx-button--outlined:hover,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar .igx-button--outlined:focus-visible,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__adv-filter:hover,
+.fleet-master-grid ::ng-deep .igx-grid-toolbar__adv-filter:focus-visible {
+  background: rgba(255, 77, 146, 0.08) !important;
+  border-color: #ff4d92 !important;
+  color: #ff4d92 !important;
+}
+
+.fleet-master-grid ::ng-deep .igx-drop-down__item--selected,
+.fleet-master-grid ::ng-deep .igx-drop-down__item:hover {
+  color: #ff4d92;
+}
+
+.fleet-detail-wrap {
+  background: var(--fleet-bg);
+  border: none;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fleet-detail-tabs {
+  --indicator-color: #ff4d92;
+  --border-color: transparent;
+  --border-color--hover: transparent;
+  --item-color: #8f98ac;
+  --item-background: transparent;
+  --item-hover-background: #232833;
+  --item-hover-color: #dce3f7;
+  --item-active-color: #ff4d92;
+  --item-active-border-color: transparent;
+  --item-active-background: transparent;
+  --item-active-hover-background: transparent;
+  --item-active-border-hover-color: transparent;
+  --item-active-hover-color: #ff4d92;
+  --button-color: #8f98ac;
+  --button-hover-color: #dce3f7;
+  --button-background: #1a1d24;
+  --button-hover-background: #232833;
+  --item-text-color: white;
+  width: 100%;
+}
+
+.fleet-detail-content {
+  display: grid;
+  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.5rem 0;
   align-items: start;
 }
 
-/* --------------------------------------------- */
-/* DETAILS & TABLE STYLES */
-/* --------------------------------------------- */
+.fleet-vehicle-card {
+  margin: 0;
+  background: none;
+  border: 0;
+}
 
-.details-container {
-  display: flex;
-  align-items: flex-start;
-  padding: 16px;
+.fleet-vehicle-card .igx-card-content {
+  padding: 0;
+}
+
+.fleet-vehicle-photo {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  border: 1px solid #31384a;
+  background: #1a1d24;
+  display: block;
 }
 
-.details-table {
-  display: flex;
-  flex-direction: row;
-  width: calc(100% * (2 / 3));
-  height: auto;
-  justify-content: space-around;
+.fleet-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.detail-block-container {
+.fleet-spec-item {
+  border-bottom: 1px solid #2a3040;
+  padding-bottom: 0.35rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.fleet-spec-item span {
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.03em;
+  color: #8791aa;
+}
+
+.fleet-spec-item strong {
+  font-size: var(--font-size-sm);
+  color: #dce2f4;
+  font-weight: 500;
+}
+
+.fleet-tab-panel {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  color: var(--fleet-fg);
+}
+
+.fleet-tab-kpis {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.fleet-tab-kpis-3up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fleet-tab-kpis-4up {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fleet-tab-kpi {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.fleet-tab-kpi span,
+.fleet-utilization-title,
+.fleet-detail-table th {
+  color: #6f7687;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fleet-tab-kpi strong {
+  color: #edf1f8;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.fleet-accent-value {
+  color: #ff4d92;
+}
+
+.fleet-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fleet-detail-table th,
+.fleet-detail-table td {
+  padding: 0.7rem 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(61, 67, 82, 0.45);
+}
+
+.fleet-detail-table td {
+  color: #d0d4dc;
+  font-size: var(--font-size-sm);
+}
+
+.fleet-maintenance-alert {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  width: 50%;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(196, 149, 59, 0.45);
+  border-radius: 0.55rem;
+  background: rgba(73, 57, 28, 0.34);
+  color: #f0b24f;
 }
 
-.detail-category-container,
-.detail-content-container {
-  width: 50%;
-}
-
-.detail-category-container {
-  padding-left: 25px;
-}
-
-.detail-item {
-  padding: 5px 0;
-  font-size: 0.8125rem;
-}
-
-.detail-category {
-  font-weight: bold;
-}
-
-/* --------------------------------------------- */
-/* OVERLAYS & CARDS */
-/* --------------------------------------------- */
-
-.overlay {
-  display: flex;
-  flex-direction: column;
+.fleet-detail-pill {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  width: 360px;
-  height: 396px;
-  box-shadow: var(--ig-elevation-24);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.overlay-driver {
-  width: 327px;
-  height: 360px;
-  padding: 0px;
-  margin: 0px;
+.fleet-detail-pill-success {
+  color: #47c266;
+  background: rgba(48, 110, 60, 0.35);
 }
 
-.igx-card {
-  display: flex;
-  flex-direction: column;
+.fleet-detail-pill-warn {
+  color: #e4b34f;
+  background: rgba(103, 79, 31, 0.35);
+}
+
+.fleet-cost-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.fleet-cost-tone-fuel {
+  background: #4c8be7;
+}
+
+.fleet-cost-tone-maintenance {
+  background: #ef3f81;
+}
+
+.fleet-cost-tone-insurance {
+  background: #48bc5e;
+}
+
+.fleet-cost-tone-tolls {
+  background: #e2b04f;
+}
+
+.fleet-cost-charts {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.35fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.fleet-cost-panel {
+  padding: 1.5rem 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.fleet-cost-panel-title {
+  color: #dce3f7;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.fleet-cost-donut-layout {
+  display: grid;
+  grid-template-columns: minmax(160px, 200px) minmax(0, 1fr);
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  width: 100%;
-  height: 396px;
 }
 
-/*Overlay Sections*/
-.overlay-text {
-  font-size: 14px;
+.fleet-cost-donut-legend {
+  display: grid;
+  gap: 0.85rem;
 }
 
-.overlay-location-header,
-.overlay-driver-header {
-  height: 38%;
-  width: 100%;
-  flex-direction: column;
-  justify-content: space-around;
+.fleet-cost-donut-legend-item {
+  display: flex;
   align-items: center;
-  align-content: space-around;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #d0d4dc;
+  font-size: var(--font-size-sm);
 }
 
-.overlay-location-content,
-.overlay-driver-content {
+.fleet-cost-donut-legend-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.fleet-cost-donut-legend-item strong {
+  color: #edf1f8;
+  font-weight: 700;
+}
+
+.fleet-cost-donut,
+.fleet-cost-column-chart {
+  display: block;
+  width: 100%;
+  min-height: 280px;
+  background: transparent;
+  border: 0;
+}
+
+.fleet-utilization-wrap {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fleet-utilization-legend {
   display: flex;
-  height: 48%;
+  align-items: center;
+  gap: 1rem;
+  color: #d0d4dc;
+  font-size: var(--font-size-sm);
+}
+
+.fleet-utilization-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fleet-utilization-legend-swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.15rem;
+  display: inline-block;
+}
+
+.fleet-utilization-legend-swatch-2025 {
+  background: #ef3f81;
+}
+
+.fleet-utilization-legend-swatch-2024 {
+  background: #48bc5e;
+}
+
+.fleet-utilization-comparison-chart {
+  display: block;
   width: 100%;
-  padding: 0px;
-  justify-content: center;
+  min-height: 320px;
+  background: transparent;
 }
 
-.overlay-location-actions,
-.overlay-driver-actions {
-  height: 13%;
-  width: 100%;
-  justify-content: end;
-  margin: 8px;
+.status-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
 }
 
-.overlay-location-actions {
-  margin: 0px;
+.badge-text {
+  color: var(--fleet-fg);
 }
 
-/* --------------------------------------------- */
-/* DRIVER STYLES */
-/* --------------------------------------------- */
-
-.driver-block-container {
-  display: flex;
-  width: 85%;
+.status-dot {
+  --ig-size: 2;
+  color: inherit !important;
+  background: currentColor !important;
+  outline: 4px solid color-mix(in srgb, currentColor 25%, transparent);
 }
 
-.driver-category-container,
-.driver-detail-container {
-  width: 50%;
+.status-active {
+  color: #5099f9;
 }
 
-.driver-avatar {
-  --size: 22px
+.status-available {
+  color: #47b85b;
 }
 
-.logo-avatar {
-  --size: 22px;
-  border-radius: 0.25rem;
-
+.status-maintenance {
+  color: #ed546f;
 }
 
-.driver-badge {
-  margin-left: 10px;
-  padding: 0 8px;
+app-fleet-management-grid ::ng-deep igx-advanced-filtering-dialog,
+app-fleet-management ::ng-deep igx-advanced-filtering-dialog {
+  background: var(--fleet-header-bg);
+  border: 1px solid #3b3d42;
+  border-radius: 0.5rem;
 }
 
-/* --------------------------------------------- */
-/* MISC STYLES */
-/* --------------------------------------------- */
-
-.image-container {
-  width: 100%;
-  height: 100%;
+app-fleet-management-grid ::ng-deep igx-advanced-filtering-dialog .igx-advanced-filter,
+app-fleet-management ::ng-deep igx-advanced-filtering-dialog .igx-advanced-filter {
+  background: #1a1d24;
+  border-radius: inherit;
+  overflow: hidden;
 }
 
-.status-value {
-  padding-left: 8px;
-  color: var(--primary-text-color);
+app-fleet-management-grid ::ng-deep igx-advanced-filtering-dialog igx-query-builder,
+app-fleet-management ::ng-deep igx-advanced-filtering-dialog igx-query-builder {
+  --background: #1a1d24;
+  --header-background: #1a1d24;
+  --header-foreground: white;
+  color: #d4d7dd;
+  --color-expression-group-and: #c55fd4;
+  --color-expression-group-or: #28a380;
 }
 
-.carousel-container {
-  width: 420px;
-  height: 240px;
+.fleet-master-grid .igx-filter-tree__inputs,
+.fleet-master-grid .igx-filter-tree__subquery,
+.fleet-master-grid .igx-filter-tree__expression-section {
+  background: #1a1d24 !important;
+}
+
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group {
+  --ig-gray-300: #2a2e38;
+  --ig-gray-600: #8f98ac;
+  --ig-gray-700: #b0b8c8;
+  --ig-gray-900: #d4d7dd;
+  color: #d4d7dd;
+}
+
+.fleet-master-grid .igx-filter-tree__inputs igx-select,
+.fleet-master-grid .igx-filter-tree__inputs igx-input-group {
+  --ig-gray-100: #1f222a;
+  --ig-gray-300: #2a2e38;
+  --ig-gray-400: #333844;
+  --ig-gray-500: #7f8798;
+  --ig-gray-700: #b0b8c8;
+  --ig-gray-900: #d4d7dd;
+}
+
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__wrapper,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__bundle,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__bundle-main,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__filler,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__bundle-end,
+.fleet-master-grid .igx-filter-tree__inputs .igx-select__toggle-button {
+  background: #1f222a !important;
+}
+
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__input,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__input::placeholder,
+.fleet-master-grid .igx-filter-tree__inputs .igx-select__toggle-button,
+.fleet-master-grid .igx-filter-tree__inputs .igx-select__toggle-button .igx-icon {
+  color: #d4d7dd !important;
+}
+
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group--disabled .igx-input-group__input,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group--disabled .igx-select__toggle-button,
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group--disabled .igx-select__toggle-button .igx-icon {
+  color: #8f98ac !important;
+}
+
+.fleet-master-grid .igx-filter-tree__inputs .igx-input-group__line {
+  border-color: #2a2e38 !important;
+}
+
+/* Keep dropdown list in the same dark palette as the dialog */
+igx-advanced-filtering-dialog .igx-drop-down__list,
+igx-advanced-filtering-dialog .igx-drop-down__list-scroll {
+  background: #1a1d24;
+}
+
+igx-advanced-filtering-dialog .igx-drop-down__item,
+igx-advanced-filtering-dialog .igx-drop-down__item--selected,
+igx-advanced-filtering-dialog .igx-drop-down__item:hover {
+  background: #1a1d24;
+  color: #d4d7dd;
+}
+
+app-fleet-management-grid ::ng-deep .igx-excel-filter,
+app-fleet-management-grid ::ng-deep .igx-excel-filter__secondary,
+app-fleet-management-grid ::ng-deep .igx-excel-filter__secondary-footer,
+app-fleet-management ::ng-deep .igx-excel-filter,
+app-fleet-management ::ng-deep .igx-excel-filter__secondary,
+app-fleet-management ::ng-deep .igx-excel-filter__secondary-footer {
+  background: #1a1d24;
+  border-radius: 0;
+}
+
+@media (max-width: 1000px) {
+  .fleet-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fleet-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-cost-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-cost-donut-layout {
+    grid-template-columns: 1fr;
+  }
 }

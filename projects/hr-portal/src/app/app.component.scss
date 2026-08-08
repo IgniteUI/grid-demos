@@ -1,15 +1,3 @@
-@use "igniteui-angular/theming" as *;
-
-@include core();
-@include typography(
-  $font-family: $fluent-typeface,
-  $type-scale: $fluent-type-scale
-);
-@include theme(
-  $palette: $light-fluent-palette,
-  $schema: $light-fluent-schema
-);
-
 .outer-wrapper {
   display: flex;
   justify-content: center;
