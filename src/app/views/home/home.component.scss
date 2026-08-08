@@ -16,6 +16,7 @@ $custom-icon-button-theme: icon-button-theme(
 .demo-container {
   width: 100%;
   height: 100vh;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +33,7 @@ $custom-icon-button-theme: icon-button-theme(
   display: flex;
   position: relative;
   flex: 1;
+  min-height: 0;
 }
 
 .tab-container {
@@ -216,6 +218,60 @@ $custom-icon-button-theme: icon-button-theme(
     gap: 0.5rem;
     align-items: center;
   }
+}
+
+.demo-container.compact-header .tab-item-container {
+  height: 48px;
+}
+
+.demo-container.compact-header .tab-item {
+  padding: 6px 10px;
+}
+
+.demo-container.compact-header .tab-header {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.demo-container.compact-header .current-tab-info {
+  height: 64px;
+  padding: 10px 14px;
+  gap: 1rem;
+}
+
+.demo-container.compact-header .current-tab-info .sample-info {
+  height: auto;
+  row-gap: 4px;
+}
+
+.demo-container.compact-header .current-tab-info .tab-header {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.demo-container.compact-header .current-tab-info .tab-description {
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.demo-container.compact-header .current-tab-info .sample-actions {
+  gap: 12px;
+  font-size: 13px;
+}
+
+.demo-container.compact-header .current-tab-info .sample-actions .theme-info {
+  height: 32px;
+  padding-right: 12px;
+}
+
+.demo-container.compact-header .current-tab-info .sample-actions .action-buttons {
+  gap: 10px;
+}
+
+.demo-container.compact-header .current-tab-info .sample-actions .action-buttons .custom-button {
+  min-height: 32px;
+  padding-block: 4px;
+  padding-inline: 10px;
 }
 
 :fullscreen {

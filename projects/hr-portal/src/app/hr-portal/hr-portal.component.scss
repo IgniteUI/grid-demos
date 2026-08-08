@@ -1,50 +1,87 @@
-:host {
+app-hr-portal {
+  --white: #ffffff;
+  --line: #d8dde6;
+  --text: #263446;
+  --subtle-muted: #5a5d61;
+  --font-family-condensed: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-3xl: 2rem;
+  --pill-positive-text: #136045;
+  --pill-positive-bg: #d6f2e7;
+  --pill-negative-text: #9e3f74;
+  --pill-negative-bg: #f8d8e9;
+  --pill-proposal-bg: #fae7ce;
+  --pill-proposal-text: #9b4712;
+  --pill-negotiation-bg: #e6ddfb;
+  --pill-negotiation-text: #5238be;
+
   display: block;
   height: 100%;
   width: 100%;
+  min-height: 0;
   min-width: 1100px;
 }
 
-.flex-container {
-  display: block;
-  margin: 0 auto;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  gap: 8px;
+app-hr-portal .operations-shell {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 1.5rem;
 }
 
-igx-tree-grid {
-  --ig-size: var(--ig-size-medium);
-  --row-even-background: #ffffff;
-}
-
-.center-content {
+app-hr-portal .finance-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 100%;
+  justify-content: space-between;
+}
+
+app-hr-portal .finance-header h1 {
+  margin: 0;
+  font-family: var(--font-family-condensed);
+  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  line-height: 1.1;
+  color: #1d1f20;
+}
+
+app-hr-portal .subtle {
+  margin: 0.2rem 0 0;
+  color: var(--subtle-muted);
+  font-size: var(--font-size-base);
+}
+
+app-hr-portal .employee-lite-grid {
   width: 100%;
+  min-width: 100%;
+  height: 420px;
+  min-height: 320px;
+  border: 1px solid #d7dce5;
+  border-radius: 0.55rem;
+  overflow: hidden;
+
+  --header-background: #fff;
+  --header-text-color: #516073;
+  --header-border-color: #dde3ec;
+  --content-background: #ffffff;
+  --content-text-color: #223247;
+  --row-odd-background: #ffffff;
+  --row-even-background: #ffffff;
+  --row-hover-background: #eef3f8;
+  --row-border-color: #e5e9f0;
+  --filtering-row-background: #f9fbfd;
+  --filtering-row-text-color: #506176;
+  --cell-active-border-color: #ff4d92;
 }
 
-.employeeDiv {
-  display: flex;
-  align-items: center;
-  --igx-avatar-size: 28px;
-  gap: 8px;
+app-hr-portal .employee-lite-grid::part(header-cell),
+app-hr-portal .employee-lite-grid::part(header),
+app-hr-portal .employee-lite-grid::part(th) {
+  font-size: var(--font-size-base);
 }
 
-.flagDiv {
-  gap: 8px;
-  align-items: center;
-  display: flex;
-  & igx-icon {
-    height: 14px;
-    width: 18px;
-    border-radius: 1px;
-    box-shadow: var(--ig-elevation-1);
-    display: block;
-    overflow: hidden;
-  }
+app-hr-portal .employee-lite-grid::part(td),
+app-hr-portal .employee-lite-grid::part(cell) {
+  font-size: 0.92rem;
 }

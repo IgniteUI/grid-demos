@@ -1,39 +1,322 @@
-:host {
+app-finance-grid {
+  --white: #ffffff;
+  --line: #d8dde6;
+  --line-soft: #c8cfda;
+  --text: #263446;
+  --text-dark: #1d1f20;
+  --subtle-muted: #5a5d61;
+  --font-family-condensed: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-family-base: 'Barlow', 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-3xl: 2rem;
+  --top-link-active: #5f46cf;
+  --pill-positive-text: #136045;
+  --pill-positive-bg: #d6f2e7;
+  --pill-negative-text: #9e3f74;
+  --pill-negative-bg: #f8d8e9;
+  --pill-negotiation-text: #5238be;
+  --pill-negotiation-bg: #e6ddfb;
+
   display: block;
   height: 100%;
   width: 100%;
+  min-height: 0;
   min-width: 1100px;
+  color: var(--text);
+  font-family: var(--font-family-base);
 }
 
-::ng-deep {
-  :root {
-    font-family: var(--ig-font-family);
-  }
-  .profitCondition {
-    color: var(--ig-success-500);
-  }
-
-  .lossCondition {
-    color: var(--ig-error-500);
-  }
+app-finance-grid .finance-shell {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 1.5rem;
+  overflow-x: auto;
+  background: #f0f3f7;
 }
 
-.grid-sizing {
-  --ig-size: var(--ig-size-small);
-}
-
-.assets-container {
+app-finance-grid .finance-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  & igx-avatar {
-    --igx-avatar-size: 24px;
-  }
+  justify-content: space-between;
 }
 
-.progress-container {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
+app-finance-grid .finance-header h1 {
+  margin: 0;
+  font-family: var(--font-family-condensed);
+  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  line-height: 1.1;
+  color: #1d1f20;
+}
+
+app-finance-grid .subtle {
+  margin: 0.2rem 0 0;
+  color: var(--subtle-muted);
+  font-size: var(--font-size-base);
+}
+
+app-finance-grid .finance-shell .finance-grid {
+  --ig-size: 1;
   width: 100%;
+  height: 100%;
+  min-height: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  border: 1px solid #d8dde6;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  background: #ffffff;
+
+  --background: #ffffff;
+  --header-background: #ffffff;
+  --header-text-color: #516073;
+  --header-border-color: #dde3ec;
+  --content-background: #ffffff;
+  --content-text-color: #223247;
+  --row-odd-background: #ffffff;
+  --row-even-background: #ffffff;
+  --row-hover-background: #eef3f8;
+  --row-border-color: #e5e9f0;
+  --filtering-row-background: #f9fbfd;
+  --filtering-row-text-color: #506176;
+  --cell-active-border-color: #ff4d92;
+}
+
+app-finance-grid .finance-grid .igx-grid__th,
+app-finance-grid .finance-grid .igx-grid__td,
+app-finance-grid .finance-grid .igx-grid__td-inner,
+app-finance-grid .finance-grid .igx-grid__drop-area,
+app-finance-grid .finance-grid .numeric-cell,
+app-finance-grid .finance-grid .text-cell {
+  font-size: var(--font-size-base) !important;
+}
+
+app-finance-grid .finance-grid .igx-grid__th {
+  height: 50px;
+  border-bottom: 1px solid #cfd8e6;
+  border-right: 1px solid #d7dfea;
+}
+
+app-finance-grid .finance-grid .igx-grid-th__title {
+  font-size: var(--font-size-sm) !important;
+  font-weight: 600;
+}
+
+app-finance-grid .finance-grid .igx-grid__td {
+  height: 50px;
+  border-bottom: 1px solid #d7dfea;
+}
+
+app-finance-grid .finance-grid igx-grid-toolbar {
+  border-top: 1px solid #eef1f4;
+  border-bottom: 1px solid #dde3ec;
+  background: #ffffff;
+  min-height: 56px;
+  padding: 0 16px;
+  gap: 12px;
+}
+
+app-finance-grid .finance-grid igx-grid-toolbar-title {
+  color: var(--text-dark);
+  font-family: var(--font-family-condensed);
+  font-size: 1.125rem;
+  font-weight: 600;
+  flex: 0 0 auto !important;
+  margin-right: 8px;
+}
+
+/* Override Bootstrap theme pink primary on toolbar buttons */
+app-finance-grid igx-grid-toolbar .igx-button--outlined {
+  border: 1px solid var(--line-soft) !important;
+  color: var(--text-dark) !important;
+  background: var(--white) !important;
+  box-shadow: none !important;
+  height: 36px !important;
+  padding: 0 14px !important;
+  font-size: var(--font-size-sm) !important;
+  font-family: var(--font-family-base) !important;
+}
+
+app-finance-grid igx-grid-toolbar .igx-button--outlined:hover {
+  background: #f0f3f7 !important;
+  border-color: #99a4b4 !important;
+}
+
+app-finance-grid igx-grid-toolbar .igx-button--outlined igx-icon {
+  color: var(--text-dark) !important;
+  font-size: 1.1rem !important;
+}
+
+app-finance-grid .finance-toolbar-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 280px;
+}
+
+app-finance-grid .finance-search-input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.15s;
+  height: 38px;
+}
+
+app-finance-grid .finance-search-input::placeholder {
+  color: var(--subtle-muted);
+}
+
+app-finance-grid .finance-search-input:focus {
+  border-color: var(--top-link-active, #7b62e8);
+}
+
+app-finance-grid .ticker-cell,
+app-finance-grid .price-combined-cell,
+app-finance-grid .net-profit-combined-cell,
+app-finance-grid .allocation-cell {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+app-finance-grid .ticker-cell {
+  gap: 0.6rem;
+}
+
+app-finance-grid .ticker-logo {
+  flex: 0 0 auto;
+}
+
+/* Force avatar background — Bootstrap theme doesn't resolve --ig-avatar-background on .igx-avatar--circle */
+app-finance-grid .ticker-logo.igx-avatar--circle {
+  background: var(--ig-avatar-background) !important;
+}
+
+app-finance-grid .ticker-logo.igx-avatar--circle span {
+  color: var(--ig-avatar-color, #fff) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+app-finance-grid .ticker-meta {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+app-finance-grid .ticker-symbol {
+  font-weight: 700;
+  color: var(--text);
+}
+
+app-finance-grid .ticker-name {
+  color: var(--subtle-muted);
+  font-size: 0.94rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+app-finance-grid .price-trend-spark {
+  display: block;
+}
+
+app-finance-grid .price-combined-cell,
+app-finance-grid .net-profit-combined-cell {
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+app-finance-grid .price-combined-price {
+  font-weight: 600;
+}
+
+app-finance-grid .finance-delta-badge,
+app-finance-grid .finance-value-badge {
+  --ig-size: 1;
+  background: transparent !important;
+  border-radius: 999px !important;
+  padding: 0 !important;
+}
+
+app-finance-grid .finance-delta-badge .igx-badge__value,
+app-finance-grid .finance-value-badge .igx-badge__value {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  padding: 0.08rem 0.52rem;
+  border-radius: 999px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0;
+  border: none;
+  box-shadow: none;
+}
+
+app-finance-grid .finance-delta-badge.igx-badge--success .igx-badge__value,
+app-finance-grid .finance-value-badge.igx-badge--success .igx-badge__value {
+  color: var(--pill-positive-text);
+  background: var(--pill-positive-bg);
+}
+
+app-finance-grid .finance-delta-badge.igx-badge--error .igx-badge__value,
+app-finance-grid .finance-value-badge.igx-badge--error .igx-badge__value {
+  color: var(--pill-negative-text);
+  background: var(--pill-negative-bg);
+}
+
+app-finance-grid .finance-delta-badge.igx-badge--info .igx-badge__value,
+app-finance-grid .finance-value-badge.igx-badge--info .igx-badge__value {
+  color: var(--pill-negotiation-text);
+  background: var(--pill-negotiation-bg);
+}
+
+app-finance-grid .allocation-cell {
   gap: 0.5rem;
+}
+
+app-finance-grid .allocation-value {
+  min-width: 3.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+app-finance-grid .allocation-track {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  min-width: 50px;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #dde3ec;
+  overflow: hidden;
+}
+
+app-finance-grid .allocation-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7f4cf6 0%, #5f46cf 100%);
+}
+
+app-finance-grid .finance-grid .numeric-cell,
+app-finance-grid .allocation-value,
+app-finance-grid .ticker-symbol,
+app-finance-grid .price-combined-price {
+  font-variant-numeric: tabular-nums;
+}
+
+app-finance-grid .finance-col-sep {
+  border-left: 1px solid #eef1f4;
 }

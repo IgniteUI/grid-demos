@@ -1,17 +1,5 @@
-@use "igniteui-angular/theming" as *;
-
-@include core();
-@include typography(
-  $font-family: $bootstrap-typeface,
-  $type-scale: $bootstrap-type-scale
-);
-@include theme(
-  $palette: $light-bootstrap-palette,
-  $schema: $light-bootstrap-schema
-);
-
-html {
+:host {
+  display: block;
   height: 100%;
-  max-height: 1000px;
 }
 
