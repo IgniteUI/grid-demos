@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
 import { AppComponent } from 'projects/charts/step-chart/src/app/app.component';
 
 @Component({
@@ -7,6 +7,7 @@ import { AppComponent } from 'projects/charts/step-chart/src/app/app.component';
   templateUrl: './step-chart-view.component.html',
   styleUrl: './step-chart-view.component.scss',
   imports: [AppComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class StepChartViewComponent {}
