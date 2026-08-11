@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
-import { AppComponent } from 'projects/charts/pie-chart/src/app/app.component';
+import { AppComponent } from '@projects/charts/pie-chart/src/app/app.component';
 
 @Component({
   standalone: true,

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { AppComponent } from 'projects/finance-grid/src/app/app.component';
+import { AppComponent } from '@projects/finance-grid/src/app/app.component';
 
 @Component({
   standalone: true,
