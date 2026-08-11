@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-extended';
 import { CloseScrollStrategy, DefaultSortingStrategy, IgxOverlayService, RelativePosition, RelativePositionStrategy, SortingDirection, THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -78,6 +78,7 @@ import { BehaviorSubject } from 'rxjs';
     IgxLabelDirective
   ],
   templateUrl: './fleet-management-grid.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './fleet-management-grid.component.scss'
 })
 export class FleetManagementGridComponent implements OnInit {
