@@ -4,7 +4,7 @@ import { check, delivery, gitIssue, wrench } from '@igniteui/material-icons-exte
 import { CloseScrollStrategy, DefaultSortingStrategy, IgxOverlayService, RelativePosition, RelativePositionStrategy, SortingDirection, THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
-import { IgxButtonDirective, IgxButtonModule, IgxDividerDirective } from 'igniteui-angular/directives';
+import { IgxButtonDirective, IgxButtonModule, IgxDividerComponent } from 'igniteui-angular/directives';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent } from 'igniteui-angular/card';
 import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridDetailTemplateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
@@ -60,7 +60,7 @@ import { BehaviorSubject } from 'rxjs';
     IgxSlideComponent,
     IgxBadgeComponent,
     IgxCellTemplateDirective,
-    IgxDividerDirective,
+    IgxDividerComponent,
     IgxIconComponent,
     IgxButtonDirective,
     IgxButtonModule,
