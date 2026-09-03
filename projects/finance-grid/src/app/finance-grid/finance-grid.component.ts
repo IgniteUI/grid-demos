@@ -3,7 +3,8 @@ import {
   Component,
   OnDestroy,
   OnInit,
-  ViewChild
+  ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IColumnPipeArgs, IgxStringFilteringOperand, THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -50,6 +51,7 @@ import { FormsModule } from '@angular/forms';
     IgxGridToolbarExporterComponent
 ],
   templateUrl: './finance-grid.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './finance-grid.component.scss',
 })
 export class FinanceGridComponent implements OnInit, OnDestroy {
